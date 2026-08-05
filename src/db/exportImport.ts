@@ -1,9 +1,15 @@
 import type { ArabicaDB, CardStateRow, MetaRow, ReviewLogRow } from './db'
 import { setMeta } from './db'
 
+// schemaVersion history:
+//   1 - cardState, reviewLog, meta.
+//   2 - unchanged tables; meta now may carry personalized FSRS weights
+//       (key `fsrsParams`). Version-1 files import unchanged.
+export const CURRENT_SCHEMA_VERSION = 2
+
 export interface BackupFile {
   app: 'arabica'
-  schemaVersion: 1
+  schemaVersion: 1 | 2
   exportedAt: string
   cardState: CardStateRow[]
   reviewLog: ReviewLogRow[]
@@ -15,8 +21,9 @@ export const LAST_EXPORT_KEY = 'lastExportAt'
 export async function buildBackup(db: ArabicaDB, now: Date): Promise<BackupFile> {
   return {
     app: 'arabica',
-    schemaVersion: 1,
+    schemaVersion: CURRENT_SCHEMA_VERSION,
     exportedAt: now.toISOString(),
+    // meta carries the personalized FSRS weights, so they round-trip here.
     cardState: await db.cardState.toArray(),
     reviewLog: await db.reviewLog.toArray(),
     meta: await db.meta.toArray(),
@@ -39,7 +46,10 @@ export async function exportBackup(db: ArabicaDB, now: Date): Promise<void> {
 
 export function parseBackup(text: string): BackupFile {
   const data = JSON.parse(text) as Partial<BackupFile>
-  if (data.app !== 'arabica' || data.schemaVersion !== 1) {
+  if (
+    data.app !== 'arabica' ||
+    (data.schemaVersion !== 1 && data.schemaVersion !== 2)
+  ) {
     throw new Error('Not a valid arabica backup file')
   }
   if (

@@ -1,25 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { arabicAnswersMatch, normalizeArabic, stripTashkeel } from './arabic'
-
-describe('stripTashkeel', () => {
-  it('removes harakat', () => {
-    expect(stripTashkeel('مِنْ')).toBe('من')
-    expect(stripTashkeel('مِنَ الْبَيْتِ')).toBe('من البيت')
-  })
-
-  it('removes the superscript alef U+0670', () => {
-    expect(stripTashkeel('هَٰذَا')).toBe('هذا')
-  })
-
-  it('removes tatweel', () => {
-    expect(stripTashkeel('بِـ')).toBe('ب')
-    expect(stripTashkeel('كــتــاب')).toBe('كتاب')
-  })
-
-  it('leaves Latin text and spacing untouched', () => {
-    expect(stripTashkeel('from مِنْ')).toBe('from من')
-  })
-})
+import { arabicAnswersMatch, normalizeArabic } from './arabic'
 
 describe('normalizeArabic', () => {
   it('accepts a bare form for a voweled one (required: من for مِنْ)', () => {

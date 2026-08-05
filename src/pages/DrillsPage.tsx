@@ -1,7 +1,8 @@
 import { useMemo, useRef, useState } from 'react'
 import { decks } from '../content/decks'
 import type { Direction } from '../content/types'
-import { arabicAnswersMatch, stripTashkeel } from '../text/arabic'
+import { stripTashkeel } from '../lib/arabic'
+import { arabicAnswersMatch } from '../text/arabic'
 import { diffChars } from '../text/diff'
 
 // Drills are unscheduled practice. This page never touches cardState or

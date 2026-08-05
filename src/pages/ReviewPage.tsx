@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { State } from 'ts-fsrs'
 import { deckById, siblingCardsOf } from '../content/decks'
-import { locateParticle } from '../lib/arabic'
+import { locateParticle, stripTashkeel } from '../lib/arabic'
 import { db, type CardStateRow } from '../db/db'
 import {
   answerCard,
@@ -12,7 +12,6 @@ import {
   type Grade,
 } from '../srs/engine'
 import { buildQueue, type QueueItem } from '../srs/queue'
-import { stripTashkeel } from '../lib/tashkeel'
 import { setHideTashkeel, useHideTashkeel } from '../lib/useHideTashkeel'
 
 /** Learning cards answered moments ago come back within this window. */

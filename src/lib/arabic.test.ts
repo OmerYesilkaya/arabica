@@ -2,20 +2,35 @@ import { describe, expect, it } from 'vitest'
 import { locateParticle, stripTashkeel } from './arabic'
 
 describe('stripTashkeel', () => {
-  it('removes tashkeel but keeps letters', () => {
+  it('removes harakat and sukun but keeps letters', () => {
+    expect(stripTashkeel('مِنْ')).toBe('من')
     expect(stripTashkeel('مِنَ الْبَيْتِ')).toBe('من البيت')
   })
 
-  it('removes tatweel and the superscript alif', () => {
+  it('removes the superscript alef (U+0670)', () => {
+    expect(stripTashkeel('هَٰذَا')).toBe('هذا')
     expect(stripTashkeel('عَلَىٰ')).toBe('على')
-    expect(stripTashkeel('كــتاب')).toBe('كتاب')
   })
 
-  it('leaves Arabic-Indic digits untouched', () => {
+  it('removes tatweel (U+0640)', () => {
+    expect(stripTashkeel('بِـ')).toBe('ب')
+    expect(stripTashkeel('كــتــاب')).toBe('كتاب')
+  })
+
+  it('leaves bare Arabic letters untouched', () => {
+    expect(stripTashkeel('من البيت')).toBe('من البيت')
+  })
+
+  it('leaves Arabic-Indic digits (U+0660–U+0669) untouched', () => {
+    expect(stripTashkeel('١٢٣')).toBe('١٢٣')
     expect(stripTashkeel('٢٠٢٦')).toBe('٢٠٢٦')
   })
 
-  it('leaves plain Latin text untouched', () => {
+  it('handles mixed Arabic and Latin text', () => {
+    expect(stripTashkeel('from الْبَيْت home')).toBe('from البيت home')
+  })
+
+  it('is a no-op on plain Latin text', () => {
     expect(stripTashkeel('Qur’an 17:1')).toBe('Qur’an 17:1')
   })
 })

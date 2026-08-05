@@ -1,15 +1,6 @@
 // Arabic text helpers. Pure string functions, no content and no side effects.
 
-// Tashkeel (harakat and Qurʾanic marks) span U+064B–U+065F, plus the
-// superscript alef U+0670. Tatweel (kashida) U+0640 is a decorative stretch,
-// not a letter, so it is removed with the vowels.
-const TASHKEEL = /[ً-ٰٟ]/g
-const TATWEEL = /ـ/g
-
-/** Remove tashkeel and tatweel. Letters and all other characters are kept. */
-export function stripTashkeel(text: string): string {
-  return text.replace(TASHKEEL, '').replace(TATWEEL, '')
-}
+import { stripTashkeel } from '../lib/arabic'
 
 /**
  * Normalize an Arabic string for lenient answer comparison in drills.

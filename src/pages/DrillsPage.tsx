@@ -7,7 +7,7 @@ import { diffChars } from '../text/diff'
 // Drills are unscheduled practice. This page never touches cardState or
 // reviewLog; it only reads content data.
 
-interface DrillItem {
+export interface DrillItem {
   id: string
   arabic: string
   english: string
@@ -18,9 +18,10 @@ interface DrillItem {
  * Pool for drill type 1 (type the Arabic for a gloss): every note whose
  * effective directions include meaning-to-ar. That excludes the oath
  * particles, whose meanings are identical and so cannot be produced from a
- * gloss unambiguously.
+ * gloss unambiguously. The Arabic to type is `drillAnswer` when set, so
+ * label-form notes (the prefix particles) ask for the bare particle.
  */
-function buildDrillPool(): DrillItem[] {
+export function buildDrillPool(): DrillItem[] {
   const items: DrillItem[] = []
   for (const deck of decks) {
     for (const note of deck.notes) {
@@ -28,7 +29,7 @@ function buildDrillPool(): DrillItem[] {
       if (!directions.includes('meaning-to-ar')) continue
       items.push({
         id: `${deck.id}:${note.id}`,
-        arabic: note.arabic,
+        arabic: note.drillAnswer ?? note.arabic,
         english: note.english,
         turkish: note.turkish,
       })

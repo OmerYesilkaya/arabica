@@ -566,3 +566,55 @@ table.ref-table .cell-note {
 .muted {
   color: var(--text-muted);
 }
+
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.optimize-result {
+  margin-top: 12px;
+}
+
+.optimize-metrics {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 10px;
+}
+
+.optimize-metrics > div {
+  margin-bottom: 2px;
+}
+
+.optimize-metrics .muted {
+  margin-right: 6px;
+}
+
+.params-compare {
+  margin-bottom: 12px;
+}
+
+.params-compare summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.params-compare p {
+  margin: 8px 0 0;
+}
+
+.params-compare code {
+  display: block;
+  margin-top: 2px;
+  padding: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

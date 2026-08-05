@@ -5,6 +5,14 @@ import '@fontsource/noto-naskh-arabic/400.css'
 import '@fontsource/noto-naskh-arabic/700.css'
 import './index.css'
 import App from './App.tsx'
+import { db } from './db/db'
+import { loadScheduler } from './srs/engine'
+import { registerSw } from './registerSw'
+
+// Load personalized FSRS weights before rendering so scheduling uses them.
+await loadScheduler(db)
+
+registerSw()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

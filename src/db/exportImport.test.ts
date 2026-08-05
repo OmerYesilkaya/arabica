@@ -56,3 +56,37 @@ describe('backup roundtrip', () => {
     expect(() => parseBackup('{"app":"arabica","schemaVersion":1}')).toThrow()
   })
 })
+
+describe('parameter backup', () => {
+  it('round-trips personalized FSRS weights as schemaVersion 2', async () => {
+    const db = freshDb()
+    const weights = Array.from({ length: 21 }, (_, i) => i / 10)
+    await db.meta.put({ key: 'fsrsParams', value: weights })
+
+    const backup = await buildBackup(db, new Date())
+    expect(backup.schemaVersion).toBe(2)
+
+    const restored = parseBackup(JSON.stringify(backup))
+    const target = freshDb()
+    await importBackup(target, restored)
+
+    expect((await target.meta.get('fsrsParams'))?.value).toEqual(weights)
+  })
+
+  it('still imports a schemaVersion 1 backup', async () => {
+    const legacy = {
+      app: 'arabica',
+      schemaVersion: 1,
+      exportedAt: '2025-01-01T00:00:00.000Z',
+      cardState: [],
+      reviewLog: [],
+      meta: [{ key: 'lastExportAt', value: 42 }],
+    }
+    const parsed = parseBackup(JSON.stringify(legacy))
+    expect(parsed.schemaVersion).toBe(1)
+
+    const target = freshDb()
+    await importBackup(target, parsed)
+    expect((await target.meta.get('lastExportAt'))?.value).toBe(42)
+  })
+})

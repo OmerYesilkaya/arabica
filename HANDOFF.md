@@ -26,6 +26,7 @@ unless Omer decides otherwise.
 | Hosting | Public repo, GitHub Pages, HashRouter | Free, zero infrastructure. Base path `/arabica/`. |
 | Sharing | Send the URL | Content identical for everyone; progress fresh per device. |
 | Curriculum | Ājurrūmiyya | Reference entries are ordered by it; locked "coming soon" rows mark the roadmap. |
+| Example sources | Quran first, then Hadith, then plain fusha (agreed 2026-08-05) | Islamic sources are the study goal. Cite surah:ayah or collection+number in the data. |
 | Stack | Vite + React + TypeScript + pnpm | Zustand allowed only when a real need appears (none yet). |
 
 ## Hard invariants

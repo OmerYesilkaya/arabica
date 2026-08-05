@@ -516,6 +516,39 @@ table.ref-table .cell-note {
   margin: 16px 0 8px;
 }
 
+.leech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leech-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.leech-arabic {
+  font-size: 1.2rem;
+}
+
+.leech-gloss {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.leech-lapses {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--danger);
+  white-space: nowrap;
+}
+
 /* ---------- settings ---------- */
 
 .settings-block {

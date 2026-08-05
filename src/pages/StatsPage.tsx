@@ -1,13 +1,29 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '../db/db'
-import { computeStats, type DayCount } from '../srs/stats'
+import { computeStats } from '../srs/stats'
+import { computeForecast } from '../srs/forecast'
 
-function BarChart({ days }: { days: DayCount[] }) {
+interface Bar {
+  day: number
+  value: number
+}
+
+function BarChart({
+  bars,
+  ariaLabel,
+  leftLabel,
+  rightLabel,
+}: {
+  bars: Bar[]
+  ariaLabel: string
+  leftLabel: string
+  rightLabel: string
+}) {
   const width = 600
   const height = 140
   const barGap = 2
-  const barWidth = width / days.length - barGap
-  const max = Math.max(1, ...days.map((d) => d.reviews))
+  const barWidth = width / bars.length - barGap
+  const max = Math.max(1, ...bars.map((b) => b.value))
 
   return (
     <div className="card" style={{ padding: 12 }}>
@@ -15,27 +31,27 @@ function BarChart({ days }: { days: DayCount[] }) {
         viewBox={`0 0 ${width} ${height}`}
         style={{ width: '100%', height: 'auto', display: 'block' }}
         role="img"
-        aria-label="Reviews per day, last 30 days"
+        aria-label={ariaLabel}
       >
-        {days.map((d, i) => {
-          const h = (d.reviews / max) * (height - 20)
+        {bars.map((b, i) => {
+          const h = (b.value / max) * (height - 20)
           return (
             <rect
-              key={d.day}
+              key={b.day}
               x={i * (barWidth + barGap)}
               y={height - h}
               width={barWidth}
               height={h}
               rx={2}
               fill="var(--accent)"
-              opacity={d.reviews === 0 ? 0.15 : 1}
+              opacity={b.value === 0 ? 0.15 : 1}
             />
           )
         })}
       </svg>
       <p className="caption" style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span>30 days ago</span>
-        <span>today</span>
+        <span>{leftLabel}</span>
+        <span>{rightLabel}</span>
       </p>
     </div>
   )
@@ -43,8 +59,9 @@ function BarChart({ days }: { days: DayCount[] }) {
 
 export function StatsPage() {
   const stats = useLiveQuery(() => computeStats(db, new Date()))
+  const forecast = useLiveQuery(() => computeForecast(db, new Date()))
 
-  if (!stats) return <main className="page" />
+  if (!stats || !forecast) return <main className="page" />
 
   return (
     <main className="page">
@@ -74,7 +91,20 @@ export function StatsPage() {
       </div>
 
       <h2 className="chart-title">Reviews per day</h2>
-      <BarChart days={stats.last30Days} />
+      <BarChart
+        bars={stats.last30Days.map((d) => ({ day: d.day, value: d.reviews }))}
+        ariaLabel="Reviews per day, last 30 days"
+        leftLabel="30 days ago"
+        rightLabel="today"
+      />
+
+      <h2 className="chart-title">Review forecast</h2>
+      <BarChart
+        bars={forecast.map((d) => ({ day: d.day, value: d.due }))}
+        ariaLabel="Cards due per day, next 30 days"
+        leftLabel="today"
+        rightLabel="in 30 days"
+      />
 
       <p className="caption" style={{ marginTop: 12 }}>
         {stats.totalReviews} reviews all time.

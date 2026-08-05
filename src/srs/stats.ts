@@ -1,6 +1,7 @@
 import { Rating, State } from 'ts-fsrs'
 import type { ArabicaDB, ReviewLogRow } from '../db/db'
 import { startOfToday } from './engine'
+import { DAY_MS, startOfDay } from './day'
 
 export interface DayCount {
   /** Start of day, epoch ms. */
@@ -19,15 +20,13 @@ export interface Stats {
   last30Days: DayCount[]
 }
 
-const DAY_MS = 24 * 60 * 60 * 1000
-
 export async function computeStats(db: ArabicaDB, now: Date): Promise<Stats> {
   const logs = await db.reviewLog.toArray()
   const today = startOfToday(now)
 
   const byDay = new Map<number, { reviews: number; newIntroduced: number }>()
   for (const log of logs) {
-    const day = startOfDayOf(log.review)
+    const day = startOfDay(log.review)
     const entry = byDay.get(day) ?? { reviews: 0, newIntroduced: 0 }
     entry.reviews++
     if (log.state === State.New) entry.newIntroduced++
@@ -66,12 +65,6 @@ export async function computeStats(db: ArabicaDB, now: Date): Promise<Stats> {
     retention,
     last30Days,
   }
-}
-
-function startOfDayOf(ms: number): number {
-  const d = new Date(ms)
-  d.setHours(0, 0, 0, 0)
-  return d.getTime()
 }
 
 export type { ReviewLogRow }

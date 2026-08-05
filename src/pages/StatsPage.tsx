@@ -4,10 +4,56 @@ import { db } from '../db/db'
 import { computeStats } from '../srs/stats'
 import { computeForecast } from '../srs/forecast'
 import { computeLeeches, type Leech } from '../srs/leeches'
+import { computeHeatmap, type HeatmapCell } from '../srs/heatmap'
 
 interface Bar {
   day: number
   value: number
+}
+
+const HEATMAP_LEVEL_OPACITY = [0, 0.28, 0.5, 0.74, 1]
+
+function Heatmap({ weeks }: { weeks: HeatmapCell[][] }) {
+  const cell = 13
+  const gap = 3
+  const step = cell + gap
+  const width = weeks.length * step - gap
+  const height = 7 * step - gap
+
+  return (
+    <div className="card" style={{ padding: 12, overflow: 'hidden' }}>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+        role="img"
+        aria-label="Reviews per day, last 26 weeks"
+      >
+        {weeks.map((column, col) =>
+          column.map((c, row) => {
+            if (c.future) return null
+            return (
+              <rect
+                key={c.day}
+                x={col * step}
+                y={row * step}
+                width={cell}
+                height={cell}
+                rx={2}
+                fill={c.level === 0 ? 'var(--surface-2)' : 'var(--accent)'}
+                fillOpacity={c.level === 0 ? 1 : HEATMAP_LEVEL_OPACITY[c.level]}
+                stroke={c.isToday ? 'var(--text)' : 'none'}
+                strokeWidth={c.isToday ? 1.5 : 0}
+              />
+            )
+          }),
+        )}
+      </svg>
+      <p className="caption" style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <span>26 weeks ago</span>
+        <span>today</span>
+      </p>
+    </div>
+  )
 }
 
 function referenceLink(referenceId: string): string {
@@ -87,8 +133,9 @@ export function StatsPage() {
   const stats = useLiveQuery(() => computeStats(db, new Date()))
   const forecast = useLiveQuery(() => computeForecast(db, new Date()))
   const leeches = useLiveQuery(() => computeLeeches(db))
+  const heatmap = useLiveQuery(() => computeHeatmap(db, new Date()))
 
-  if (!stats || !forecast || !leeches) return <main className="page" />
+  if (!stats || !forecast || !leeches || !heatmap) return <main className="page" />
 
   return (
     <main className="page">
@@ -132,6 +179,9 @@ export function StatsPage() {
         leftLabel="today"
         rightLabel="in 30 days"
       />
+
+      <h2 className="chart-title">Activity</h2>
+      <Heatmap weeks={heatmap.weeks} />
 
       {leeches.length > 0 && (
         <>

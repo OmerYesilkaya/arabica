@@ -27,10 +27,10 @@ it works offline, and each device keeps its own progress.
 ## Development
 
 ```bash
-npm install
-npm run dev       # dev server
-npx vitest run    # tests
-npm run build     # typecheck + production build
+pnpm install
+pnpm run dev         # dev server
+pnpm exec vitest run # tests
+pnpm run build       # typecheck + production build
 ```
 
 The app is served under `/arabica/` (GitHub Pages project path).

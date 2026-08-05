@@ -7,6 +7,7 @@ import {
   parseBackup,
   LAST_EXPORT_KEY,
 } from '../db/exportImport'
+import { setHideTashkeel, useHideTashkeel } from '../lib/useHideTashkeel'
 
 export function SettingsPage() {
   const fileInput = useRef<HTMLInputElement>(null)
@@ -18,6 +19,8 @@ export function SettingsPage() {
   })
 
   const totalReviews = useLiveQuery(() => db.reviewLog.count())
+
+  const hideTashkeel = useHideTashkeel()
 
   async function onExport() {
     await exportBackup(db, new Date())
@@ -43,6 +46,23 @@ export function SettingsPage() {
       <h1 className="page-title">Settings</h1>
 
       {message && <div className="banner">{message}</div>}
+
+      <div className="card settings-block">
+        <h2>Reading</h2>
+        <label className="setting-row">
+          <span>
+            Hide tashkeel
+            <span className="muted setting-hint">
+              Vowel marks are hidden on flashcards. Reference always shows them.
+            </span>
+          </span>
+          <input
+            type="checkbox"
+            checked={hideTashkeel}
+            onChange={(e) => setHideTashkeel(e.target.checked)}
+          />
+        </label>
+      </div>
 
       <div className="card settings-block">
         <h2>Backup</h2>

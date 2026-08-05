@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { State } from 'ts-fsrs'
-import { deckById } from '../content/decks'
-import { noteIdOf } from '../content/types'
+import { deckById, siblingCardsOf } from '../content/decks'
+import { locateParticle } from '../lib/arabic'
 import { db, type CardStateRow } from '../db/db'
 import {
   answerCard,
@@ -38,6 +38,19 @@ function Meaning({ english, turkish }: { english: string; turkish: string }) {
   )
 }
 
+/** The Arabic example text with the harf `particle` highlighted. */
+function Highlighted({ text, particle }: { text: string; particle: string }) {
+  const parts = locateParticle(text, particle)
+  if (!parts) return <>{text}</>
+  return (
+    <>
+      {parts.before}
+      <mark className="harf-mark">{parts.match}</mark>
+      {parts.after}
+    </>
+  )
+}
+
 export function ReviewPage() {
   const { deckId } = useParams()
   const deck = deckId ? deckById(deckId) : undefined
@@ -50,7 +63,7 @@ export function ReviewPage() {
     hideTashkeel ? stripTashkeel(text) : text
 
   useEffect(() => {
-    if (!deck) return
+    if (!deck || deck.locked) return
     let cancelled = false
     buildQueue(db, deck, new Date()).then((q) => {
       if (!cancelled) setQueue(q)
@@ -76,23 +89,21 @@ export function ReviewPage() {
 
   const grade = useCallback(
     async (rating: Grade) => {
-      if (!current || !queue) return
+      if (!current || !queue || !deck) return
       const now = new Date()
       await answerCard(db, current.content, current.state, rating, now)
 
       const updated: CardStateRow | undefined = await db.cardState.get(
         current.content.cardId,
       )
-      const answeredNoteId = noteIdOf(current.content.cardId)
 
       // Drop the answered card and, when burying, its siblings from the session.
+      const buried = deck.burySiblings
+        ? new Set(siblingCardsOf(deck, current.content.cardId).map((c) => c.cardId))
+        : new Set<string>()
       let next = queue
         .slice(1)
-        .filter(
-          (item) =>
-            !deck?.burySiblings ||
-            noteIdOf(item.content.cardId) !== answeredNoteId,
-        )
+        .filter((item) => !buried.has(item.content.cardId))
 
       // Requeue a learning card that comes back within the learn-ahead window.
       if (
@@ -114,6 +125,17 @@ export function ReviewPage() {
     return (
       <main className="page">
         <p>Unknown deck.</p>
+      </main>
+    )
+  }
+
+  if (deck.locked) {
+    return (
+      <main className="page">
+        <p>This deck is locked.</p>
+        <p style={{ marginTop: 12 }}>
+          <Link to="/">← Back to decks</Link>
+        </p>
       </main>
     )
   }
@@ -143,6 +165,7 @@ export function ReviewPage() {
 
   const { note, direction } = current.content
   const arabicFirst = direction === 'ar-to-meaning'
+  const isSense = note.sense !== undefined
 
   return (
     <main className="page">
@@ -163,13 +186,44 @@ export function ReviewPage() {
       </div>
 
       <div className="review-card">
-        {arabicFirst ? (
+        {isSense ? (
+          <div className="prompt-arabic arabic sense-prompt">
+            <Highlighted
+              text={showArabic(note.example!.arabic)}
+              particle={note.arabic}
+            />
+          </div>
+        ) : arabicFirst ? (
           <div className="prompt-arabic arabic">{showArabic(note.arabic)}</div>
         ) : (
           <Meaning english={note.english} turkish={note.turkish} />
         )}
 
-        {revealed && (
+        {revealed && isSense && (
+          <>
+            <hr />
+            <div className="sense-term">
+              {note.sense!.term}
+              <span className="arabic">{note.sense!.termArabic}</span>
+            </div>
+            <Meaning english={note.english} turkish={note.turkish} />
+            {note.example && (
+              <div className="example example-translation">
+                {note.example.english} · {note.example.turkish}
+                {note.example.source && (
+                  <span className="source">{note.example.source}</span>
+                )}
+              </div>
+            )}
+            {note.referenceId && (
+              <Link className="info-link" to={referenceLink(note.referenceId)}>
+                ⓘ full entry
+              </Link>
+            )}
+          </>
+        )}
+
+        {revealed && !isSense && (
           <>
             <hr />
             {arabicFirst ? (
@@ -181,6 +235,9 @@ export function ReviewPage() {
               <div className="example">
                 <span className="arabic">{showArabic(note.example.arabic)}</span>
                 {note.example.english} · {note.example.turkish}
+                {note.example.source && (
+                  <span className="source">{note.example.source}</span>
+                )}
               </div>
             )}
             {note.referenceId && (

@@ -9,8 +9,7 @@ import {
 } from 'ts-fsrs'
 import type { ArabicaDB, CardStateRow } from '../db/db'
 import type { ContentCard } from '../content/types'
-import { noteIdOf, cardIdOf } from '../content/types'
-import { decks, deckById, cardsOfDeck } from '../content/decks'
+import { decks, deckById, cardsOfDeck, siblingCardsOf } from '../content/decks'
 import { BASE_SCHEDULER_CONFIG, getStoredWeights } from './fsrsParams'
 
 export { Rating, State }
@@ -139,8 +138,10 @@ export async function answerCard(
 }
 
 /**
- * Bury the answered card's siblings (same note, other directions) until
- * tomorrow, so both directions of one note never appear in one session.
+ * Bury the answered card's siblings until tomorrow, so no two siblings appear
+ * in one session. Siblings are the other cards of the same sibling group: a
+ * note's other directions by default, or every sense of one harf for the
+ * per-sense deck. See siblingGroupOf in src/content/decks/index.ts.
  */
 async function burySiblings(
   db: ArabicaDB,
@@ -149,22 +150,16 @@ async function burySiblings(
 ): Promise<void> {
   const deck = deckById(content.deckId)
   if (!deck) return
-  const noteId = noteIdOf(content.cardId)
-  const note = deck.notes.find((n) => n.id === noteId)
-  if (!note) return
 
   const buriedUntil = startOfTomorrow(now)
-  const directions = note.directions ?? deck.directions
-  for (const direction of directions) {
-    const siblingId = cardIdOf(noteId, direction)
-    if (siblingId === content.cardId) continue
-    const sibling = await db.cardState.get(siblingId)
-    if (sibling) {
-      await db.cardState.update(siblingId, { buriedUntil })
+  for (const sibling of siblingCardsOf(deck, content.cardId)) {
+    const existing = await db.cardState.get(sibling.cardId)
+    if (existing) {
+      await db.cardState.update(sibling.cardId, { buriedUntil })
     } else {
       // Not yet introduced: store a New-state row that carries the bury flag.
       await db.cardState.put(
-        fsrsCardToRow(newFsrsCard(now), siblingId, content.deckId, buriedUntil),
+        fsrsCardToRow(newFsrsCard(now), sibling.cardId, content.deckId, buriedUntil),
       )
     }
   }

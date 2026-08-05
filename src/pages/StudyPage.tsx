@@ -24,6 +24,20 @@ function ExportReminder() {
   )
 }
 
+function LockedDeckRow({ deckId }: { deckId: string }) {
+  const deck = decks.find((d) => d.id === deckId)!
+  return (
+    <div className="card deck-row locked">
+      <div className="deck-info">
+        <h2>{deck.name}</h2>
+        <div className="deck-arabic arabic">{deck.nameArabic}</div>
+        <p className="deck-locked-note">{deck.description}</p>
+      </div>
+      <span className="lock">Locked</span>
+    </div>
+  )
+}
+
 function DeckRow({ deckId }: { deckId: string }) {
   const deck = decks.find((d) => d.id === deckId)!
   const counts = useLiveQuery(
@@ -61,9 +75,13 @@ export function StudyPage() {
     <main className="page">
       <h1 className="page-title">Study</h1>
       <ExportReminder />
-      {decks.map((deck) => (
-        <DeckRow key={deck.id} deckId={deck.id} />
-      ))}
+      {decks.map((deck) =>
+        deck.locked ? (
+          <LockedDeckRow key={deck.id} deckId={deck.id} />
+        ) : (
+          <DeckRow key={deck.id} deckId={deck.id} />
+        ),
+      )}
     </main>
   )
 }

@@ -79,6 +79,9 @@ function HarfSection({ section }: { section: RefHarf }) {
             <div className="example">
               <span className="arabic">{sense.example.arabic}</span>
               {sense.example.english} · {sense.example.turkish}
+              {sense.example.source && (
+                <span className="source">{sense.example.source}</span>
+              )}
             </div>
           )}
         </div>

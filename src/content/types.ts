@@ -7,6 +7,18 @@ export interface Example {
   arabic: string
   english: string
   turkish: string
+  /**
+   * Optional citation for the Arabic, e.g. "Qur'an 17:1" or "Bukhārī 1".
+   * Rendered subtly on the card back and in Reference.
+   */
+  source?: string
+}
+
+/** Sense-card metadata: the grammatical sense a per-sense card teaches. */
+export interface NoteSense {
+  /** Transliterated grammar term, e.g. "Ibtidāʾ al-ghāyah". */
+  term: string
+  termArabic: string
 }
 
 export interface Note {
@@ -19,6 +31,17 @@ export interface Note {
   directions?: Direction[]
   /** Reference entry id (+ optional #anchor) opened by the (i) button. */
   referenceId?: string
+  /**
+   * Present on per-sense cards. The card front is the example sentence with
+   * `arabic` (the harf) highlighted; the back shows the sense term and glosses.
+   */
+  sense?: NoteSense
+  /**
+   * Cards whose notes share a sibling group bury each other for the day.
+   * Defaults to the note id, so a note's own directions are always siblings.
+   * Per-sense cards set this to the harf id so one sense per harf appears per day.
+   */
+  siblingGroup?: string
 }
 
 export interface DeckDef {
@@ -30,6 +53,8 @@ export interface DeckDef {
   newPerDay: number
   burySiblings: boolean
   notes: Note[]
+  /** Locked decks are listed but cannot be studied yet ("coming soon"). */
+  locked?: boolean
 }
 
 // A scheduled card is one (note, direction) pair, Anki-style.
@@ -87,6 +112,11 @@ export interface RefHarf {
   arabic: string
   english: string
   turkish: string
+  /**
+   * The bare harf token used to highlight it inside a sense example, e.g. "بِ".
+   * Falls back to `arabic` when the display form is already the bare token.
+   */
+  particle?: string
   senses: HarfSense[]
 }
 

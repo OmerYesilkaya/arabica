@@ -160,6 +160,25 @@ nav.tabbar svg {
 .counts .learn { color: var(--learn); }
 .counts .due { color: var(--due); }
 
+.deck-row.locked {
+  opacity: 0.6;
+}
+
+.deck-row .deck-locked-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.deck-row .lock {
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 button.primary,
 a.button-primary {
   appearance: none;
@@ -263,6 +282,38 @@ button:disabled {
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 3px 12px;
+}
+
+/* Per-sense card: the example is the prompt, the harf is highlighted. */
+.review-card .sense-prompt {
+  font-size: 2.2rem;
+  line-height: 1.9;
+}
+
+.harf-mark {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: inherit;
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+.review-card .sense-term {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.review-card .sense-term .arabic {
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+/* Subtle source citation on card backs and in Reference. */
+.source {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
 }
 
 .answer-buttons {

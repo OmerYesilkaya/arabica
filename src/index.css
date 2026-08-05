@@ -654,3 +654,39 @@ table.ref-table .cell-note {
 .muted {
   color: var(--text-muted);
 }
+
+.tashkeel-toggle {
+  appearance: none;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tashkeel-toggle[aria-pressed='true'] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+
+.setting-row input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.setting-hint {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}

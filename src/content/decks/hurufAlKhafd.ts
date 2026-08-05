@@ -93,6 +93,8 @@ export const hurufAlKhafd: DeckDef = {
     {
       id: 'ba',
       arabic: 'الْبَاءُ (بِـ)',
+      // DRAFT: the bare particle to produce in a typed drill.
+      drillAnswer: 'بِ',
       english: 'with, by (instrument)',
       turkish: 'ile, -le / -la',
       example: {
@@ -105,6 +107,8 @@ export const hurufAlKhafd: DeckDef = {
     {
       id: 'kaf',
       arabic: 'الْكَافُ (كَـ)',
+      // DRAFT: the bare particle to produce in a typed drill.
+      drillAnswer: 'كَ',
       english: 'like, as',
       turkish: 'gibi',
       example: {
@@ -117,6 +121,8 @@ export const hurufAlKhafd: DeckDef = {
     {
       id: 'lam',
       arabic: 'اللَّامُ (لِـ)',
+      // DRAFT: the bare particle to produce in a typed drill.
+      drillAnswer: 'لِ',
       english: 'for, belonging to',
       turkish: 'için; -in (aitlik)',
       example: {

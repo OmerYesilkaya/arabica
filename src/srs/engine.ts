@@ -10,15 +10,44 @@ import {
 import type { ArabicaDB, CardStateRow } from '../db/db'
 import type { ContentCard } from '../content/types'
 import { decks, deckById, cardsOfDeck, siblingCardsOf } from '../content/decks'
+import { BASE_SCHEDULER_CONFIG, getStoredWeights } from './fsrsParams'
 
 export { Rating, State }
 export type { Grade }
 
-// Anki-compatible FSRS defaults: retention 0.9, fuzz on,
-// learning steps 1m/10m via ts-fsrs short-term scheduler.
-export const scheduler = fsrs(
-  generatorParameters({ request_retention: 0.9, enable_fuzz: true }),
-)
+// Anki-compatible FSRS defaults: retention 0.9, fuzz on, learning steps
+// 1m/10m via ts-fsrs short-term scheduler. Only the `w` weight vector is
+// personalized; personalized weights are read from the `meta` table.
+function buildScheduler(weights?: number[]) {
+  return fsrs(
+    generatorParameters(
+      weights && weights.length > 0
+        ? { ...BASE_SCHEDULER_CONFIG, w: weights }
+        : BASE_SCHEDULER_CONFIG,
+    ),
+  )
+}
+
+let scheduler = buildScheduler()
+
+/** The active FSRS scheduler (default weights until loadScheduler runs). */
+export function getScheduler() {
+  return scheduler
+}
+
+/** Rebuild the scheduler with the given weights, or defaults when omitted. */
+export function setSchedulerWeights(weights: number[] | undefined) {
+  scheduler = buildScheduler(weights)
+}
+
+/**
+ * Load personalized weights from `meta` and rebuild the scheduler. Call once
+ * at startup and again after weights are applied or reset. Falls back to
+ * ts-fsrs defaults when no valid weights are stored.
+ */
+export async function loadScheduler(db: ArabicaDB): Promise<void> {
+  setSchedulerWeights(await getStoredWeights(db))
+}
 
 export function rowToFsrsCard(row: CardStateRow): Card {
   return {

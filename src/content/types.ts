@@ -27,6 +27,13 @@ export interface Note {
   english: string
   turkish: string
   example?: Example
+  /**
+   * Voweled Arabic the learner should type in a typed drill, used when
+   * `arabic` is a display label rather than the bare word (for example the
+   * prefix particles, whose `arabic` names the letter: "الْبَاءُ (بِـ)").
+   * Defaults to `arabic` when omitted.
+   */
+  drillAnswer?: string
   /** Overrides the deck-level directions for this note. */
   directions?: Direction[]
   /** Reference entry id (+ optional #anchor) opened by the (i) button. */

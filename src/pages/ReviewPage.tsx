@@ -12,6 +12,8 @@ import {
   type Grade,
 } from '../srs/engine'
 import { buildQueue, type QueueItem } from '../srs/queue'
+import { stripTashkeel } from '../lib/tashkeel'
+import { setHideTashkeel, useHideTashkeel } from '../lib/useHideTashkeel'
 
 /** Learning cards answered moments ago come back within this window. */
 const LEARN_AHEAD_MS = 20 * 60 * 1000
@@ -56,6 +58,9 @@ export function ReviewPage() {
   const [queue, setQueue] = useState<QueueItem[] | null>(null)
   const [revealed, setRevealed] = useState(false)
   const [doneCount, setDoneCount] = useState(0)
+  const hideTashkeel = useHideTashkeel()
+  const showArabic = (text: string) =>
+    hideTashkeel ? stripTashkeel(text) : text
 
   useEffect(() => {
     if (!deck || deck.locked) return
@@ -168,16 +173,28 @@ export function ReviewPage() {
         <Link to="/" style={{ color: 'inherit' }}>
           ← {deck.name}
         </Link>
+        <button
+          type="button"
+          className="tashkeel-toggle"
+          aria-pressed={hideTashkeel}
+          onClick={() => setHideTashkeel(!hideTashkeel)}
+          title={hideTashkeel ? 'Show tashkeel' : 'Hide tashkeel'}
+        >
+          {hideTashkeel ? 'ـَـ off' : 'ـَـ on'}
+        </button>
         <span>{queue.length} left</span>
       </div>
 
       <div className="review-card">
         {isSense ? (
           <div className="prompt-arabic arabic sense-prompt">
-            <Highlighted text={note.example!.arabic} particle={note.arabic} />
+            <Highlighted
+              text={showArabic(note.example!.arabic)}
+              particle={note.arabic}
+            />
           </div>
         ) : arabicFirst ? (
-          <div className="prompt-arabic arabic">{note.arabic}</div>
+          <div className="prompt-arabic arabic">{showArabic(note.arabic)}</div>
         ) : (
           <Meaning english={note.english} turkish={note.turkish} />
         )}
@@ -212,11 +229,11 @@ export function ReviewPage() {
             {arabicFirst ? (
               <Meaning english={note.english} turkish={note.turkish} />
             ) : (
-              <div className="answer-arabic arabic">{note.arabic}</div>
+              <div className="answer-arabic arabic">{showArabic(note.arabic)}</div>
             )}
             {note.example && (
               <div className="example">
-                <span className="arabic">{note.example.arabic}</span>
+                <span className="arabic">{showArabic(note.example.arabic)}</span>
                 {note.example.english} · {note.example.turkish}
                 {note.example.source && (
                   <span className="source">{note.example.source}</span>

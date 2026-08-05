@@ -360,6 +360,61 @@ button:disabled {
   font-size: 1rem;
 }
 
+/* ---------- drills ---------- */
+
+.drill-input {
+  width: 100%;
+  /* 16px+ keeps iOS Safari from zooming the viewport on focus. */
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.drill-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.drill-input[readonly] {
+  opacity: 0.8;
+}
+
+.drill-verdict {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.drill-verdict.ok {
+  color: var(--due);
+}
+
+.drill-verdict.no {
+  color: var(--danger);
+}
+
+.drill-diff {
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+}
+
+.drill-diff .diff-equal {
+  color: var(--text);
+}
+
+.drill-diff .diff-delete {
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+.drill-diff .diff-insert {
+  color: var(--new);
+  text-decoration: underline;
+}
+
 /* ---------- reference ---------- */
 
 .ref-list a.ref-row {
@@ -567,6 +622,39 @@ table.ref-table .cell-note {
   margin: 16px 0 8px;
 }
 
+.leech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leech-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.leech-arabic {
+  font-size: 1.2rem;
+}
+
+.leech-gloss {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.leech-lapses {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--danger);
+  white-space: nowrap;
+}
+
 /* ---------- settings ---------- */
 
 .settings-block {
@@ -616,4 +704,92 @@ table.ref-table .cell-note {
 
 .muted {
   color: var(--text-muted);
+}
+
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.optimize-result {
+  margin-top: 12px;
+}
+
+.optimize-metrics {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 10px;
+}
+
+.optimize-metrics > div {
+  margin-bottom: 2px;
+}
+
+.optimize-metrics .muted {
+  margin-right: 6px;
+}
+
+.params-compare {
+  margin-bottom: 12px;
+}
+
+.params-compare summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.params-compare p {
+  margin: 8px 0 0;
+}
+
+.params-compare code {
+  display: block;
+  margin-top: 2px;
+  padding: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tashkeel-toggle {
+  appearance: none;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tashkeel-toggle[aria-pressed='true'] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+
+.setting-row input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.setting-hint {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 2px;
 }

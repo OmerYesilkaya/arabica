@@ -1,11 +1,37 @@
 import { useLiveQuery } from 'dexie-react-hooks'
+import { Link } from 'react-router-dom'
 import { db } from '../db/db'
 import { computeStats } from '../srs/stats'
 import { computeForecast } from '../srs/forecast'
+import { computeLeeches, type Leech } from '../srs/leeches'
 
 interface Bar {
   day: number
   value: number
+}
+
+function referenceLink(referenceId: string): string {
+  const [entry, anchor] = referenceId.split('#')
+  return anchor ? `/reference/${entry}?h=${anchor}` : `/reference/${entry}`
+}
+
+function LeechRow({ leech }: { leech: Leech }) {
+  const body = (
+    <>
+      <span className="arabic leech-arabic">{leech.arabic}</span>
+      <span className="leech-gloss">
+        {leech.english} · {leech.turkish}
+      </span>
+      <span className="leech-lapses">{leech.lapses} lapses</span>
+    </>
+  )
+  return leech.referenceId ? (
+    <Link className="card leech-row" to={referenceLink(leech.referenceId)}>
+      {body}
+    </Link>
+  ) : (
+    <div className="card leech-row">{body}</div>
+  )
 }
 
 function BarChart({
@@ -60,8 +86,9 @@ function BarChart({
 export function StatsPage() {
   const stats = useLiveQuery(() => computeStats(db, new Date()))
   const forecast = useLiveQuery(() => computeForecast(db, new Date()))
+  const leeches = useLiveQuery(() => computeLeeches(db))
 
-  if (!stats || !forecast) return <main className="page" />
+  if (!stats || !forecast || !leeches) return <main className="page" />
 
   return (
     <main className="page">
@@ -105,6 +132,20 @@ export function StatsPage() {
         leftLabel="today"
         rightLabel="in 30 days"
       />
+
+      {leeches.length > 0 && (
+        <>
+          <h2 className="chart-title">Leeches</h2>
+          <p className="caption" style={{ marginBottom: 8 }}>
+            Cards that keep lapsing. Fix them in the deck.
+          </p>
+          <div className="leech-list">
+            {leeches.map((leech) => (
+              <LeechRow key={leech.cardId} leech={leech} />
+            ))}
+          </div>
+        </>
+      )}
 
       <p className="caption" style={{ marginTop: 12 }}>
         {stats.totalReviews} reviews all time.

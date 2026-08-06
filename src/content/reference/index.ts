@@ -3,18 +3,10 @@ import { partsOfSpeech } from './partsOfSpeech'
 import { irabSigns } from './irabSigns'
 import { hurufAlKhafdRef } from './hurufAlKhafd'
 import { nawasibAlFil } from './nawasibAlFil'
+import { jawazimAlFil } from './jawazimAlFil'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
-  {
-    id: 'jawazim-al-fil',
-    title: 'Jazm Particles of the Verb',
-    titleArabic: 'جَوَازِمُ الْفِعْلِ',
-    order: 5,
-    summary: 'The particles that put the present verb into jazm.',
-    locked: true,
-    sections: [],
-  },
   {
     id: 'damair',
     title: 'Pronouns',
@@ -58,6 +50,7 @@ export const referenceEntries: ReferenceEntry[] = [
   irabSigns,
   hurufAlKhafdRef,
   nawasibAlFil,
+  jawazimAlFil,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

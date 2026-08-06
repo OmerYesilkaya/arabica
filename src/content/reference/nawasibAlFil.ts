@@ -84,7 +84,7 @@ export const nawasibAlFil: ReferenceEntry = {
           { ar: 'لَامُ كَيْ (لِـ)' },
           'lām of purpose: in order to',
           'ta‘lîl (amaç) lâmı: ...mak için',
-          { ar: 'لِيَغْفِرَ لَكَ مَا تَقَدَّمَ مِنْ ذَنْبِكَ', note: 'Qur’an 48:2' },
+          { ar: 'لِيَغْفِرَ لَكَ اللَّهُ مَا تَقَدَّمَ مِنْ ذَنْبِكَ', note: 'Qur’an 48:2' },
           'so that He may forgive you what came before of your sin · Geçmiş günahını bağışlaması için',
         ],
         [

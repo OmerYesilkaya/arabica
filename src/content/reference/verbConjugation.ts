@@ -4,18 +4,10 @@ import type { ReferenceEntry } from '../types'
 // DRAFT: verify against your textbook before relying on it. Every Arabic form,
 // English gloss, Turkish gloss, and citation below needs Omer's check.
 //
-// MODEL VERB (decision for Omer). This entry conjugates فَعَلَ / يَفْعَلُ / اِفْعَلْ,
-// the sound triliteral of the fataḥa-yaftaḥu pattern (a-a). Reasons:
-//   1. It is the mīzān ṣarfī itself, so every cell doubles as the pattern the
-//      learner maps other verbs onto.
-//   2. Nothing in this repo's content yet names a model verb, so no course
-//      choice was available to follow.
-//   3. Real Quranic examples exist for the model verb in all three tenses and
-//      in naṣb and jazm (see the examples table), so no invented Arabic is
-//      needed to illustrate it.
-// The Ājurrūmiyya's own example verb is ضَرَبَ / يَضْرِبُ / اِضْرِبْ (a-i pattern).
-// If Omer's course drills ضَرَبَ or نَصَرَ instead, swap the forms here: the
-// row labels, the prose, and the table shapes all stay as they are.
+// MODEL VERB: ضَرَبَ / يَضْرِبُ / اِضْرِبْ (a-i pattern), the Ājurrūmiyya's own
+// example verb. Decided by Omer 2026-08-06; he studies the matn itself.
+// The muḍāriʿ middle vowel varies by verb (yaḍribu, yaftaḥu, yanṣuru), which
+// the overview prose points out.
 //
 // Sourcing: the three conjugation tables hold bare forms, which need no
 // citation. The examples table is Quran only, cited surah:ayah. RefTable has no
@@ -37,8 +29,8 @@ export const verbConjugation: ReferenceEntry = {
       paragraphs: [
         'EN: The verb has three tenses: māḍī (past), muḍāriʿ (present), and amr (command). The māḍī always ends in fatḥa. The amr is always majzūm. The muḍāriʿ starts with one of the four prefix letters collected in the mnemonic word anaytu, and it stays marfūʿ until a naṣb particle or a jazm particle enters upon it.',
         'TR: Fiil üç kısımdır: mâzî (geçmiş), muzâri (şimdiki/geniş) ve emir. Mâzînin sonu daima fetha alır. Emir daima meczûmdur. Muzâri, eneytü hatırlatma kelimesinde toplanan dört harften biriyle başlar ve başına bir nasb veya cezm edatı gelmedikçe daima merfûdur.',
-        'EN: The model verb in every table below is faʿala ("he did"), the sound triliteral pattern itself. Read each cell as a pattern: put the three letters of any other sound triliteral verb of the same vowel type in place of the three pattern letters.',
-        'TR: Aşağıdaki bütün tablolarda kullanılan örnek fiil, sahih üçlü kalıbın kendisi olan faale ("yaptı") fiilidir. Her hücreyi bir kalıp olarak okuyun: kalıbın üç harfinin yerine, aynı harekeli başka bir sahih üçlü fiilin üç harfini koyun.',
+        'EN: The model verb in every table below is ḍaraba ("he struck"), the same verb the Ājurrūmiyya itself uses. Read each cell as a pattern: keep the prefix and the ending, and put the three letters of another sound triliteral verb in place of the root letters. One caution: the middle vowel of the muḍāriʿ is not fixed by the pattern; each verb brings its own (yaḍribu, yaftaḥu, yanṣuru).',
+        'TR: Aşağıdaki bütün tablolarda kullanılan örnek fiil, Âcurrûmiyye\'nin kendi kullandığı darabe ("vurdu") fiilidir. Her hücreyi bir kalıp olarak okuyun: ön eki ve son eki koruyun, kök harflerinin yerine başka bir sahih üçlü fiilin üç harfini koyun. Bir uyarı: muzârinin orta harekesi kalıba bağlı değildir; her fiil kendi harekesini getirir (yadribu, yeftehu, yensuru).',
       ],
     },
     {
@@ -51,26 +43,26 @@ export const verbConjugation: ReferenceEntry = {
         [
           'Māḍī',
           { ar: 'اَلْمَاضِي' },
-          { ar: 'فَعَلَ' },
+          { ar: 'ضَرَبَ' },
           'always fatḥa-ended (mabnī)',
-          'past: "he did"',
-          'geçmiş zaman: "yaptı"',
+          'past: "he struck"',
+          'geçmiş zaman: "vurdu"',
         ],
         [
           'Muḍāriʿ',
           { ar: 'اَلْمُضَارِعُ' },
-          { ar: 'يَفْعَلُ' },
+          { ar: 'يَضْرِبُ' },
           'marfūʿ unless a nāṣib or jāzim enters',
-          'present or future: "he does, he will do"',
-          'geniş/şimdiki/gelecek zaman: "yapar, yapıyor"',
+          'present or future: "he strikes, he will strike"',
+          'geniş/şimdiki/gelecek zaman: "vurur, vuruyor"',
         ],
         [
           'Amr',
           { ar: 'اَلْأَمْرُ' },
-          { ar: 'اِفْعَلْ' },
+          { ar: 'اِضْرِبْ' },
           'always majzūm',
-          'command: "do!"',
-          'emir: "yap!"',
+          'command: "strike!"',
+          'emir: "vur!"',
         ],
       ],
     },
@@ -81,20 +73,20 @@ export const verbConjugation: ReferenceEntry = {
         'EN: All 14 person/gender/number forms of the past tense. The second-person dual is one form for both genders, which is why it appears twice. / TR: Geçmiş zamanın 14 şahıs/cinsiyet/sayı çekimi. İkinci şahıs ikil, her iki cinsiyet için tek şekildir; bu yüzden iki kez geçer.',
       columns: ['Person', 'Kişi', 'Pronoun', 'Form'],
       rows: [
-        ['3rd m. sg.', '3. tekil eril', { ar: 'هُوَ' }, { ar: 'فَعَلَ' }],
-        ['3rd m. dual', '3. ikil eril', { ar: 'هُمَا' }, { ar: 'فَعَلَا' }],
-        ['3rd m. pl.', '3. çoğul eril', { ar: 'هُمْ' }, { ar: 'فَعَلُوا' }],
-        ['3rd f. sg.', '3. tekil dişil', { ar: 'هِيَ' }, { ar: 'فَعَلَتْ' }],
-        ['3rd f. dual', '3. ikil dişil', { ar: 'هُمَا' }, { ar: 'فَعَلَتَا' }],
-        ['3rd f. pl.', '3. çoğul dişil', { ar: 'هُنَّ' }, { ar: 'فَعَلْنَ' }],
-        ['2nd m. sg.', '2. tekil eril', { ar: 'أَنْتَ' }, { ar: 'فَعَلْتَ' }],
-        ['2nd m. dual', '2. ikil eril', { ar: 'أَنْتُمَا' }, { ar: 'فَعَلْتُمَا' }],
-        ['2nd m. pl.', '2. çoğul eril', { ar: 'أَنْتُمْ' }, { ar: 'فَعَلْتُمْ' }],
-        ['2nd f. sg.', '2. tekil dişil', { ar: 'أَنْتِ' }, { ar: 'فَعَلْتِ' }],
-        ['2nd f. dual', '2. ikil dişil', { ar: 'أَنْتُمَا' }, { ar: 'فَعَلْتُمَا' }],
-        ['2nd f. pl.', '2. çoğul dişil', { ar: 'أَنْتُنَّ' }, { ar: 'فَعَلْتُنَّ' }],
-        ['1st sg.', '1. tekil', { ar: 'أَنَا' }, { ar: 'فَعَلْتُ' }],
-        ['1st pl.', '1. çoğul', { ar: 'نَحْنُ' }, { ar: 'فَعَلْنَا' }],
+        ['3rd m. sg.', '3. tekil eril', { ar: 'هُوَ' }, { ar: 'ضَرَبَ' }],
+        ['3rd m. dual', '3. ikil eril', { ar: 'هُمَا' }, { ar: 'ضَرَبَا' }],
+        ['3rd m. pl.', '3. çoğul eril', { ar: 'هُمْ' }, { ar: 'ضَرَبُوا' }],
+        ['3rd f. sg.', '3. tekil dişil', { ar: 'هِيَ' }, { ar: 'ضَرَبَتْ' }],
+        ['3rd f. dual', '3. ikil dişil', { ar: 'هُمَا' }, { ar: 'ضَرَبَتَا' }],
+        ['3rd f. pl.', '3. çoğul dişil', { ar: 'هُنَّ' }, { ar: 'ضَرَبْنَ' }],
+        ['2nd m. sg.', '2. tekil eril', { ar: 'أَنْتَ' }, { ar: 'ضَرَبْتَ' }],
+        ['2nd m. dual', '2. ikil eril', { ar: 'أَنْتُمَا' }, { ar: 'ضَرَبْتُمَا' }],
+        ['2nd m. pl.', '2. çoğul eril', { ar: 'أَنْتُمْ' }, { ar: 'ضَرَبْتُمْ' }],
+        ['2nd f. sg.', '2. tekil dişil', { ar: 'أَنْتِ' }, { ar: 'ضَرَبْتِ' }],
+        ['2nd f. dual', '2. ikil dişil', { ar: 'أَنْتُمَا' }, { ar: 'ضَرَبْتُمَا' }],
+        ['2nd f. pl.', '2. çoğul dişil', { ar: 'أَنْتُنَّ' }, { ar: 'ضَرَبْتُنَّ' }],
+        ['1st sg.', '1. tekil', { ar: 'أَنَا' }, { ar: 'ضَرَبْتُ' }],
+        ['1st pl.', '1. çoğul', { ar: 'نَحْنُ' }, { ar: 'ضَرَبْنَا' }],
       ],
     },
     {
@@ -104,20 +96,20 @@ export const verbConjugation: ReferenceEntry = {
         'EN: All 14 forms of the present tense in rafʿ, the state it carries by default. Five of these rows are the "five verbs"; see the section below. / TR: Şimdiki/geniş zamanın, aslî durumu olan ref hâlindeki 14 çekimi. Bu satırlardan beşi "beş fiil"dir; aşağıdaki bölüme bakın.',
       columns: ['Person', 'Kişi', 'Pronoun', 'Form'],
       rows: [
-        ['3rd m. sg.', '3. tekil eril', { ar: 'هُوَ' }, { ar: 'يَفْعَلُ' }],
-        ['3rd m. dual', '3. ikil eril', { ar: 'هُمَا' }, { ar: 'يَفْعَلَانِ' }],
-        ['3rd m. pl.', '3. çoğul eril', { ar: 'هُمْ' }, { ar: 'يَفْعَلُونَ' }],
-        ['3rd f. sg.', '3. tekil dişil', { ar: 'هِيَ' }, { ar: 'تَفْعَلُ' }],
-        ['3rd f. dual', '3. ikil dişil', { ar: 'هُمَا' }, { ar: 'تَفْعَلَانِ' }],
-        ['3rd f. pl.', '3. çoğul dişil', { ar: 'هُنَّ' }, { ar: 'يَفْعَلْنَ' }],
-        ['2nd m. sg.', '2. tekil eril', { ar: 'أَنْتَ' }, { ar: 'تَفْعَلُ' }],
-        ['2nd m. dual', '2. ikil eril', { ar: 'أَنْتُمَا' }, { ar: 'تَفْعَلَانِ' }],
-        ['2nd m. pl.', '2. çoğul eril', { ar: 'أَنْتُمْ' }, { ar: 'تَفْعَلُونَ' }],
-        ['2nd f. sg.', '2. tekil dişil', { ar: 'أَنْتِ' }, { ar: 'تَفْعَلِينَ' }],
-        ['2nd f. dual', '2. ikil dişil', { ar: 'أَنْتُمَا' }, { ar: 'تَفْعَلَانِ' }],
-        ['2nd f. pl.', '2. çoğul dişil', { ar: 'أَنْتُنَّ' }, { ar: 'تَفْعَلْنَ' }],
-        ['1st sg.', '1. tekil', { ar: 'أَنَا' }, { ar: 'أَفْعَلُ' }],
-        ['1st pl.', '1. çoğul', { ar: 'نَحْنُ' }, { ar: 'نَفْعَلُ' }],
+        ['3rd m. sg.', '3. tekil eril', { ar: 'هُوَ' }, { ar: 'يَضْرِبُ' }],
+        ['3rd m. dual', '3. ikil eril', { ar: 'هُمَا' }, { ar: 'يَضْرِبَانِ' }],
+        ['3rd m. pl.', '3. çoğul eril', { ar: 'هُمْ' }, { ar: 'يَضْرِبُونَ' }],
+        ['3rd f. sg.', '3. tekil dişil', { ar: 'هِيَ' }, { ar: 'تَضْرِبُ' }],
+        ['3rd f. dual', '3. ikil dişil', { ar: 'هُمَا' }, { ar: 'تَضْرِبَانِ' }],
+        ['3rd f. pl.', '3. çoğul dişil', { ar: 'هُنَّ' }, { ar: 'يَضْرِبْنَ' }],
+        ['2nd m. sg.', '2. tekil eril', { ar: 'أَنْتَ' }, { ar: 'تَضْرِبُ' }],
+        ['2nd m. dual', '2. ikil eril', { ar: 'أَنْتُمَا' }, { ar: 'تَضْرِبَانِ' }],
+        ['2nd m. pl.', '2. çoğul eril', { ar: 'أَنْتُمْ' }, { ar: 'تَضْرِبُونَ' }],
+        ['2nd f. sg.', '2. tekil dişil', { ar: 'أَنْتِ' }, { ar: 'تَضْرِبِينَ' }],
+        ['2nd f. dual', '2. ikil dişil', { ar: 'أَنْتُمَا' }, { ar: 'تَضْرِبَانِ' }],
+        ['2nd f. pl.', '2. çoğul dişil', { ar: 'أَنْتُنَّ' }, { ar: 'تَضْرِبْنَ' }],
+        ['1st sg.', '1. tekil', { ar: 'أَنَا' }, { ar: 'أَضْرِبُ' }],
+        ['1st pl.', '1. çoğul', { ar: 'نَحْنُ' }, { ar: 'نَضْرِبُ' }],
       ],
     },
     {
@@ -127,12 +119,12 @@ export const verbConjugation: ReferenceEntry = {
         'EN: The command form exists for the addressee only, so 6 of the 14 forms. The other 8 persons express a command with lām al-amr, a jazm particle placed on the muḍāriʿ, which the jazm-particles entry (jawazim-al-fil) covers. / TR: Emir kipi yalnız muhatap için vardır, yani 14 çekimin 6\'sı. Diğer 8 şahısta emir, muzâri fiilin başına gelen cezm edatı lâm-ı emir ile kurulur; bu, cezm edatları girişinde (jawazim-al-fil) ele alınır.',
       columns: ['Person', 'Kişi', 'Pronoun', 'Form'],
       rows: [
-        ['2nd m. sg.', '2. tekil eril', { ar: 'أَنْتَ' }, { ar: 'اِفْعَلْ' }],
-        ['2nd m. dual', '2. ikil eril', { ar: 'أَنْتُمَا' }, { ar: 'اِفْعَلَا' }],
-        ['2nd m. pl.', '2. çoğul eril', { ar: 'أَنْتُمْ' }, { ar: 'اِفْعَلُوا' }],
-        ['2nd f. sg.', '2. tekil dişil', { ar: 'أَنْتِ' }, { ar: 'اِفْعَلِي' }],
-        ['2nd f. dual', '2. ikil dişil', { ar: 'أَنْتُمَا' }, { ar: 'اِفْعَلَا' }],
-        ['2nd f. pl.', '2. çoğul dişil', { ar: 'أَنْتُنَّ' }, { ar: 'اِفْعَلْنَ' }],
+        ['2nd m. sg.', '2. tekil eril', { ar: 'أَنْتَ' }, { ar: 'اِضْرِبْ' }],
+        ['2nd m. dual', '2. ikil eril', { ar: 'أَنْتُمَا' }, { ar: 'اِضْرِبَا' }],
+        ['2nd m. pl.', '2. çoğul eril', { ar: 'أَنْتُمْ' }, { ar: 'اِضْرِبُوا' }],
+        ['2nd f. sg.', '2. tekil dişil', { ar: 'أَنْتِ' }, { ar: 'اِضْرِبِي' }],
+        ['2nd f. dual', '2. ikil dişil', { ar: 'أَنْتُمَا' }, { ar: 'اِضْرِبَا' }],
+        ['2nd f. pl.', '2. çoğul dişil', { ar: 'أَنْتُنَّ' }, { ar: 'اِضْرِبْنَ' }],
       ],
     },
     {
@@ -156,28 +148,28 @@ export const verbConjugation: ReferenceEntry = {
           { ar: 'أَ' },
           'I (1st sg.)',
           'ben (1. tekil)',
-          { ar: 'أَفْعَلُ' },
+          { ar: 'أَضْرِبُ' },
         ],
         [
           { ar: 'اَلنُّونُ' },
           { ar: 'نَ' },
           'we (1st pl.)',
           'biz (1. çoğul)',
-          { ar: 'نَفْعَلُ' },
+          { ar: 'نَضْرِبُ' },
         ],
         [
           { ar: 'اَلْيَاءُ' },
           { ar: 'يَ' },
           'he, they (3rd, not f. dual)',
           'o, onlar (3. şahıs, dişil ikil hariç)',
-          { ar: 'يَفْعَلُ' },
+          { ar: 'يَضْرِبُ' },
         ],
         [
           { ar: 'اَلتَّاءُ' },
           { ar: 'تَ' },
           'you (all), she, they two (f.)',
           'sen/siz (hepsi), o (dişil), o ikisi (dişil)',
-          { ar: 'تَفْعَلُ' },
+          { ar: 'تَضْرِبُ' },
         ],
       ],
     },
@@ -204,59 +196,59 @@ export const verbConjugation: ReferenceEntry = {
         [
           '3rd m. dual',
           '3. ikil eril',
-          { ar: 'يَفْعَلَانِ', note: 'nūn stays' },
-          { ar: 'يَفْعَلَا', note: 'nūn drops' },
-          { ar: 'يَفْعَلَا', note: 'nūn drops' },
+          { ar: 'يَضْرِبَانِ', note: 'nūn stays' },
+          { ar: 'يَضْرِبَا', note: 'nūn drops' },
+          { ar: 'يَضْرِبَا', note: 'nūn drops' },
         ],
         [
           '2nd dual, 3rd f. dual',
           '2. ikil, 3. dişil ikil',
-          { ar: 'تَفْعَلَانِ', note: 'nūn stays' },
-          { ar: 'تَفْعَلَا', note: 'nūn drops' },
-          { ar: 'تَفْعَلَا', note: 'nūn drops' },
+          { ar: 'تَضْرِبَانِ', note: 'nūn stays' },
+          { ar: 'تَضْرِبَا', note: 'nūn drops' },
+          { ar: 'تَضْرِبَا', note: 'nūn drops' },
         ],
         [
           '3rd m. pl.',
           '3. çoğul eril',
-          { ar: 'يَفْعَلُونَ', note: 'nūn stays' },
-          { ar: 'يَفْعَلُوا', note: 'nūn drops' },
-          { ar: 'يَفْعَلُوا', note: 'nūn drops' },
+          { ar: 'يَضْرِبُونَ', note: 'nūn stays' },
+          { ar: 'يَضْرِبُوا', note: 'nūn drops' },
+          { ar: 'يَضْرِبُوا', note: 'nūn drops' },
         ],
         [
           '2nd m. pl.',
           '2. çoğul eril',
-          { ar: 'تَفْعَلُونَ', note: 'nūn stays' },
-          { ar: 'تَفْعَلُوا', note: 'nūn drops' },
-          { ar: 'تَفْعَلُوا', note: 'nūn drops' },
+          { ar: 'تَضْرِبُونَ', note: 'nūn stays' },
+          { ar: 'تَضْرِبُوا', note: 'nūn drops' },
+          { ar: 'تَضْرِبُوا', note: 'nūn drops' },
         ],
         [
           '2nd f. sg.',
           '2. tekil dişil',
-          { ar: 'تَفْعَلِينَ', note: 'nūn stays' },
-          { ar: 'تَفْعَلِي', note: 'nūn drops' },
-          { ar: 'تَفْعَلِي', note: 'nūn drops' },
+          { ar: 'تَضْرِبِينَ', note: 'nūn stays' },
+          { ar: 'تَضْرِبِي', note: 'nūn drops' },
+          { ar: 'تَضْرِبِي', note: 'nūn drops' },
         ],
       ],
     },
     {
       kind: 'table',
-      title: 'The model verb in the Qur\'an',
+      title: 'The verb in the Qur\'an',
       caption:
-        'EN: The model verb in real Quranic context, one row per tense and state. Citations are surah:ayah. / TR: Örnek fiilin Kur\'an\'daki gerçek kullanımı; her zaman ve durum için bir satır. Atıflar sûre:âyet biçimindedir.',
+        'EN: Real Quranic context, one row per tense and state; the model verb where the Quran supplies it. Citations are surah:ayah. / TR: Kur\'an\'dan gerçek kullanım; her zaman ve durum için bir satır, Kur\'an\'da geçtiği yerde örnek fiil. Atıflar sûre:âyet biçimindedir.',
       columns: ['Form', 'Example', 'Meaning'],
       rows: [
         [
-          { ar: 'فَعَلَ', note: 'māḍī, 3rd m. sg.' },
+          { ar: 'ضَرَبَ', note: 'māḍī, 3rd m. sg.' },
           {
-            ar: 'أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ',
-            note: "Qur'an 105:1",
+            ar: 'أَلَمْ تَرَ كَيْفَ ضَرَبَ اللَّهُ مَثَلًا كَلِمَةً طَيِّبَةً',
+            note: "Qur'an 14:24",
           },
-          'EN: Have you not seen how your Lord dealt with the people of the elephant? / TR: Rabbinin, fil sahiplerine ne yaptığını görmedin mi?',
+          'EN: Have you not seen how Allah sets forth a parable: a good word... / TR: Allah\'ın nasıl bir misal verdiğini görmedin mi: güzel bir söz...',
         ],
         [
-          { ar: 'يَفْعَلُ', note: 'muḍāriʿ, marfūʿ' },
-          { ar: 'كَذَلِكَ اللَّهُ يَفْعَلُ مَا يَشَاءُ', note: "Qur'an 3:40" },
-          'EN: So it is: Allah does what He wills. / TR: İşte böyle; Allah dilediğini yapar.',
+          { ar: 'يَضْرِبُ', note: 'muḍāriʿ, marfūʿ' },
+          { ar: 'وَيَضْرِبُ اللَّهُ الْأَمْثَالَ لِلنَّاسِ', note: "Qur'an 14:25" },
+          'EN: And Allah sets forth parables for mankind. / TR: Allah insanlara misaller verir.',
         ],
         [
           { ar: 'تَفْعَلُوا', note: 'five verbs, jazm then naṣb' },
@@ -267,9 +259,9 @@ export const verbConjugation: ReferenceEntry = {
           'EN: If you do not do it, and you never will, then guard yourselves against the Fire. / TR: Bunu yapamazsanız, ki asla yapamayacaksınız, o ateşten sakının.',
         ],
         [
-          { ar: 'اِفْعَلُوا', note: 'amr, 2nd m. pl.' },
-          { ar: 'وَافْعَلُوا الْخَيْرَ لَعَلَّكُمْ تُفْلِحُونَ', note: "Qur'an 22:77" },
-          'EN: And do good, so that you may succeed. / TR: Hayır işleyin ki kurtuluşa erersiniz.',
+          { ar: 'اِضْرِبْ', note: 'amr, 2nd m. sg.' },
+          { ar: 'فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ', note: "Qur'an 2:60" },
+          'EN: We said: strike the rock with your staff. / TR: "Asânla taşa vur" dedik.',
         ],
         [
           { ar: 'يُؤْمِنُونَ', note: 'five verbs, rafʿ' },

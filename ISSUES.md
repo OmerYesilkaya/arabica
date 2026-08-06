@@ -28,20 +28,23 @@ Every example carries its citation in the data; edition notes and fusha
 fallback reasons are in code comments in each file. Verify against the
 textbook and a muṣḥaf:
 
-- [ ] `nawasibAlFil.ts`: 10 particles; 3 fusha fallbacks (إِذَنْ, wāw
-      al-maʿiyyah, أَوْ). High-risk ayat flagged: 2:55, 20:33, 48:2,
-      35:36, 2:254, 20:114.
-- [ ] `jawazimAlFil.ts`: 6 + 13 particles; matn says eighteen, lists
-      nineteen (note in file). 7 fusha fallbacks. Muṣḥaf assimilation
-      spellings written in plain voweled form (note in file).
-- [ ] `damair.ts`: all examples Quranic; check fragments 2:32, 103:3,
-      2:5, 12:53. Grammar calls on hidden fāʿil / feminine tāʾ noted.
-- [ ] `kanaWaAkhawatuha.ts`: 13 sisters; 6 fusha fallbacks (never nāqiṣ
-      in the Quran); لَيْسَ khabar is shibh al-jumla (alternative noted).
-- [ ] `innaWaAkhawatuha.ts`: 6 sisters, all Quranic; check the matn
-      passages and the two-word khabar of 2:173.
-- [ ] `verbConjugation.ts`: model verb فَعَلَ chosen, NOT the matn's
-      ضَرَبَ; decide and swap form cells if the course verb differs.
+Done 2026-08-06: every Quranic quote in src/content (72 of them) was
+machine-verified against the canonical text, wording and citation, with
+`pnpm exec vitest run --config scripts/vitest.citations.config.ts`
+(one error found and fixed: 48:2 was missing اللَّهُ). Re-run this after
+any content change. Model verb set to ضَرَبَ per Omer (matn's own verb);
+jazm list follows the matn as printed. Remaining for Omer:
+
+- [ ] Compare each entry's word list and order against the matn (counts:
+      naṣb 10, jazm 6 + 13, kāna 13, inna 6).
+- [ ] The constructed fusha examples cannot be machine-verified: naṣb 3
+      (إِذَنْ, wāw al-maʿiyyah, أَوْ), jazm 7, kāna 6. Decide: keep as
+      marked placeholders or replace with commentary shawāhid.
+- [ ] Tashkeel of the quoted fragments is eyeball-checked only for
+      letters, not vowels, by the script. Spot-check vowels while
+      studying; the wording and citations are verified.
+- [ ] TR glosses: align with the matn's terminology lazily while
+      studying; flag any clash.
 
 ---
 

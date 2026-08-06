@@ -37,8 +37,8 @@ export const jawazimAlFil: ReferenceEntry = {
       paragraphs: [
         'EN: The present verb (muḍāriʿ) stays in rafʿ until a naṣb agent or a jazm agent enters on it. A jazm particle puts it into jazm: its ending becomes sukūn, or the substitute sign of its form. The first six particles govern one verb only. The remaining thirteen are conditional particles (adawāt al-sharṭ): they govern two verbs, the condition verb (fiʿl al-sharṭ) and its answer (jawāb al-sharṭ).',
         'TR: Muzari fiil, başına bir nasb veya cezm edatı gelmedikçe daima merfûdur. Cezm edatı fiili cezm eder: sonu sükûn olur veya o kalıbın vekil alâmetini alır. İlk altı edat yalnız bir fiili cezm eder. Kalan on üçü şart edatlarıdır (edevât-ı şart): iki fiili cezm ederler, şart fiili (fiil-i şart) ve cevabı (cevâb-ı şart).',
-        'EN: The matn counts eighteen and then lists nineteen. See the code comment at the top of this file for the two explanations the commentaries give, and verify against your textbook.',
-        'TR: Metin "on sekiz" der, sonra on dokuz madde sayar. Şerhlerin verdiği iki izah bu dosyanın başındaki koda düşülen notta; kendi kitabınla karşılaştır.',
+        'EN: The matn gives the count as eighteen and its list has nineteen items. This entry follows the list exactly as the matn gives it. The usual reconciliation: alam and alammā are lam and lammā with the question hamza in front, so they are not counted separately.',
+        'TR: Metin sayıyı "on sekiz" verir, listesinde ise on dokuz madde vardır. Bu giriş, listeyi metnin verdiği hâliyle aynen izler. Yaygın izah şudur: elem ve elemmâ, başına soru hemzesi gelmiş lem ve lemmâdır; bu yüzden ayrıca sayılmazlar.',
       ],
     },
     {

@@ -2,6 +2,7 @@ import type { ReferenceEntry } from '../types'
 import { partsOfSpeech } from './partsOfSpeech'
 import { irabSigns } from './irabSigns'
 import { hurufAlKhafdRef } from './hurufAlKhafd'
+import { verbConjugation } from './verbConjugation'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
@@ -50,21 +51,13 @@ const comingSoon: ReferenceEntry[] = [
     locked: true,
     sections: [],
   },
-  {
-    id: 'verb-conjugation',
-    title: 'Verb Conjugation Tables',
-    titleArabic: 'تَصْرِيفُ الْأَفْعَالِ',
-    order: 9,
-    summary: 'Māḍī, muḍāriʿ, and amr tables for the sound triliteral verb.',
-    locked: true,
-    sections: [],
-  },
 ]
 
 export const referenceEntries: ReferenceEntry[] = [
   partsOfSpeech,
   irabSigns,
   hurufAlKhafdRef,
+  verbConjugation,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

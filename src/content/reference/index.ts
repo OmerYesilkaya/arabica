@@ -5,6 +5,7 @@ import { hurufAlKhafdRef } from './hurufAlKhafd'
 import { nawasibAlFil } from './nawasibAlFil'
 import { jawazimAlFil } from './jawazimAlFil'
 import { kanaWaAkhawatuha } from './kanaWaAkhawatuha'
+import { innaWaAkhawatuha } from './innaWaAkhawatuha'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
@@ -14,15 +15,6 @@ const comingSoon: ReferenceEntry[] = [
     titleArabic: 'اَلضَّمَائِرُ',
     order: 6,
     summary: 'Attached and detached pronoun tables.',
-    locked: true,
-    sections: [],
-  },
-  {
-    id: 'inna-wa-akhawatuha',
-    title: 'Inna and its Sisters',
-    titleArabic: 'إِنَّ وَأَخَوَاتُهَا',
-    order: 8,
-    summary: 'The particles that put the subject into naṣb and raise the predicate.',
     locked: true,
     sections: [],
   },
@@ -44,6 +36,7 @@ export const referenceEntries: ReferenceEntry[] = [
   nawasibAlFil,
   jawazimAlFil,
   kanaWaAkhawatuha,
+  innaWaAkhawatuha,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

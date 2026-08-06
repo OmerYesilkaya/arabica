@@ -2,18 +2,10 @@ import type { ReferenceEntry } from '../types'
 import { partsOfSpeech } from './partsOfSpeech'
 import { irabSigns } from './irabSigns'
 import { hurufAlKhafdRef } from './hurufAlKhafd'
+import { nawasibAlFil } from './nawasibAlFil'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
-  {
-    id: 'nawasib-al-fil',
-    title: 'Naṣb Particles of the Verb',
-    titleArabic: 'نَوَاصِبُ الْفِعْلِ',
-    order: 4,
-    summary: 'The particles that put the present verb into naṣb.',
-    locked: true,
-    sections: [],
-  },
   {
     id: 'jawazim-al-fil',
     title: 'Jazm Particles of the Verb',
@@ -65,6 +57,7 @@ export const referenceEntries: ReferenceEntry[] = [
   partsOfSpeech,
   irabSigns,
   hurufAlKhafdRef,
+  nawasibAlFil,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

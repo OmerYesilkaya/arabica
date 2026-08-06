@@ -4,6 +4,7 @@ import { irabSigns } from './irabSigns'
 import { hurufAlKhafdRef } from './hurufAlKhafd'
 import { nawasibAlFil } from './nawasibAlFil'
 import { jawazimAlFil } from './jawazimAlFil'
+import { kanaWaAkhawatuha } from './kanaWaAkhawatuha'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
@@ -13,15 +14,6 @@ const comingSoon: ReferenceEntry[] = [
     titleArabic: 'اَلضَّمَائِرُ',
     order: 6,
     summary: 'Attached and detached pronoun tables.',
-    locked: true,
-    sections: [],
-  },
-  {
-    id: 'kana-wa-akhawatuha',
-    title: 'Kāna and its Sisters',
-    titleArabic: 'كَانَ وَأَخَوَاتُهَا',
-    order: 7,
-    summary: 'The verbs that raise the subject and put the predicate into naṣb.',
     locked: true,
     sections: [],
   },
@@ -51,6 +43,7 @@ export const referenceEntries: ReferenceEntry[] = [
   hurufAlKhafdRef,
   nawasibAlFil,
   jawazimAlFil,
+  kanaWaAkhawatuha,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

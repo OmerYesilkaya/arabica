@@ -2,6 +2,7 @@ import type { ReferenceEntry } from '../types'
 import { partsOfSpeech } from './partsOfSpeech'
 import { irabSigns } from './irabSigns'
 import { hurufAlKhafdRef } from './hurufAlKhafd'
+import { damair } from './damair'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
@@ -20,15 +21,6 @@ const comingSoon: ReferenceEntry[] = [
     titleArabic: 'جَوَازِمُ الْفِعْلِ',
     order: 5,
     summary: 'The particles that put the present verb into jazm.',
-    locked: true,
-    sections: [],
-  },
-  {
-    id: 'damair',
-    title: 'Pronouns',
-    titleArabic: 'اَلضَّمَائِرُ',
-    order: 6,
-    summary: 'Attached and detached pronoun tables.',
     locked: true,
     sections: [],
   },
@@ -65,6 +57,7 @@ export const referenceEntries: ReferenceEntry[] = [
   partsOfSpeech,
   irabSigns,
   hurufAlKhafdRef,
+  damair,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

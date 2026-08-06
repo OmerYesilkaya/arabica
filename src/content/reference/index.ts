@@ -7,19 +7,11 @@ import { jawazimAlFil } from './jawazimAlFil'
 import { damair } from './damair'
 import { kanaWaAkhawatuha } from './kanaWaAkhawatuha'
 import { innaWaAkhawatuha } from './innaWaAkhawatuha'
+import { verbConjugation } from './verbConjugation'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
-const comingSoon: ReferenceEntry[] = [
-  {
-    id: 'verb-conjugation',
-    title: 'Verb Conjugation Tables',
-    titleArabic: 'تَصْرِيفُ الْأَفْعَالِ',
-    order: 9,
-    summary: 'Māḍī, muḍāriʿ, and amr tables for the sound triliteral verb.',
-    locked: true,
-    sections: [],
-  },
-]
+// All planned entries are unlocked; add future locked stubs here.
+const comingSoon: ReferenceEntry[] = []
 
 export const referenceEntries: ReferenceEntry[] = [
   partsOfSpeech,
@@ -30,6 +22,7 @@ export const referenceEntries: ReferenceEntry[] = [
   damair,
   kanaWaAkhawatuha,
   innaWaAkhawatuha,
+  verbConjugation,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

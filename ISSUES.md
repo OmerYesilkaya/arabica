@@ -2,7 +2,6 @@
 
 Issues 1–7 (hide-tashkeel, drills, per-sense cards, FSRS optimization,
 forecast, leeches, heatmap) are implemented and merged; see git history.
-Each issue must obey the hard invariants in [HANDOFF.md](HANDOFF.md).
 
 **Content sourcing rule (applies to every issue that adds Arabic text):**
 When an example or Arabic text is needed, use this priority:
@@ -21,6 +20,28 @@ DRAFT until Omer verifies it (invariant 1).
       for the oath example occurs at 6:109, 16:38, 24:53, 35:42.
 - [ ] On-iPhone PWA checks: drills typing (keyboard, zoom, focus) and the
       one-time cross-origin-isolation reload for the FSRS optimizer.
+
+## Carried over from issues 8–13 (implemented; Omer's verification)
+
+All six reference entries are unlocked and merged, all content DRAFT.
+Every example carries its citation in the data; edition notes and fusha
+fallback reasons are in code comments in each file. Verify against the
+textbook and a muṣḥaf:
+
+- [ ] `nawasibAlFil.ts`: 10 particles; 3 fusha fallbacks (إِذَنْ, wāw
+      al-maʿiyyah, أَوْ). High-risk ayat flagged: 2:55, 20:33, 48:2,
+      35:36, 2:254, 20:114.
+- [ ] `jawazimAlFil.ts`: 6 + 13 particles; matn says eighteen, lists
+      nineteen (note in file). 7 fusha fallbacks. Muṣḥaf assimilation
+      spellings written in plain voweled form (note in file).
+- [ ] `damair.ts`: all examples Quranic; check fragments 2:32, 103:3,
+      2:5, 12:53. Grammar calls on hidden fāʿil / feminine tāʾ noted.
+- [ ] `kanaWaAkhawatuha.ts`: 13 sisters; 6 fusha fallbacks (never nāqiṣ
+      in the Quran); لَيْسَ khabar is shibh al-jumla (alternative noted).
+- [ ] `innaWaAkhawatuha.ts`: 6 sisters, all Quranic; check the matn
+      passages and the two-word khabar of 2:173.
+- [ ] `verbConjugation.ts`: model verb فَعَلَ chosen, NOT the matn's
+      ضَرَبَ; decide and swap form cells if the course verb differs.
 
 ---
 

@@ -2,6 +2,7 @@ import type { ReferenceEntry } from '../types'
 import { partsOfSpeech } from './partsOfSpeech'
 import { irabSigns } from './irabSigns'
 import { hurufAlKhafdRef } from './hurufAlKhafd'
+import { innaWaAkhawatuha } from './innaWaAkhawatuha'
 
 // Locked entries: planned, ordered by the Ājurrūmiyya; unlocked as the course reaches them.
 const comingSoon: ReferenceEntry[] = [
@@ -42,15 +43,6 @@ const comingSoon: ReferenceEntry[] = [
     sections: [],
   },
   {
-    id: 'inna-wa-akhawatuha',
-    title: 'Inna and its Sisters',
-    titleArabic: 'إِنَّ وَأَخَوَاتُهَا',
-    order: 8,
-    summary: 'The particles that put the subject into naṣb and raise the predicate.',
-    locked: true,
-    sections: [],
-  },
-  {
     id: 'verb-conjugation',
     title: 'Verb Conjugation Tables',
     titleArabic: 'تَصْرِيفُ الْأَفْعَالِ',
@@ -65,6 +57,7 @@ export const referenceEntries: ReferenceEntry[] = [
   partsOfSpeech,
   irabSigns,
   hurufAlKhafdRef,
+  innaWaAkhawatuha,
   ...comingSoon,
 ].sort((a, b) => a.order - b.order)
 

@@ -31,6 +31,43 @@ export interface Example extends Meaning {
  */
 export type NoteSense = Pick<HarfSense, 'term' | 'termArabic'>
 
+/** The Ājurrūmiyya's three-way division of the word. */
+export type PartOfSpeech = 'ism' | 'fil' | 'harf'
+
+/**
+ * A named principal part of a word: the plural of an ism, the muḍāriʿ or
+ * maṣdar of a fiʿl. Neither is predictable from the headword, so a vocabulary
+ * card that omitted them would teach a word the learner cannot use.
+ */
+export interface VocabForm {
+  /** UI label, e.g. "plural", "muḍāriʿ", "maṣdar". */
+  label: string
+  arabic: string
+}
+
+/**
+ * Word-intrinsic detail for a vocabulary Note: what a learner may want to know
+ * *about the word*, as opposed to what the card tests. Shown in the detail
+ * sheet on the card back and never on the front, where the root and the forms
+ * would give the meaning away. Opening the sheet is a lookup, not a hint: it
+ * must not affect grading.
+ */
+export interface VocabDetail {
+  partOfSpeech: PartOfSpeech
+  /** Triliteral root. Absent for words that have none (particles, some nouns). */
+  root?: string
+  forms?: VocabForm[]
+  /** Occurrences in the Qurʾān, counting every inflected form of the lemma. */
+  occurrences: number
+  /**
+   * The inflected form as it occurs in `example`, which is the token
+   * highlighted there. A vocabulary card quotes an ayah containing any form of
+   * the headword, not necessarily the headword itself — yadribuna teaches
+   * daraba — so the form to highlight cannot be derived from `arabic`.
+   */
+  occurringForm: string
+}
+
 export interface Note extends Meaning {
   id: string
   arabic: string
@@ -38,7 +75,7 @@ export interface Note extends Meaning {
   /**
    * Voweled Arabic the learner should type in a typed drill, used when
    * `arabic` is a display label rather than the bare word (for example the
-   * prefix particles, whose `arabic` names the letter: "الْبَاءُ (بِـ)").
+   * prefix particles, whose `arabic` names the letter, as "al-ba'u" does).
    * Defaults to `arabic` when omitted.
    */
   drillAnswer?: string
@@ -51,6 +88,11 @@ export interface Note extends Meaning {
    * `arabic` (the harf) highlighted; the back shows the sense term and meanings.
    */
   sense?: NoteSense
+  /**
+   * Present on vocabulary cards. The card front is the bare headword and the
+   * back carries the ayah; this is the word detail behind the sheet.
+   */
+  vocab?: VocabDetail
   /**
    * Cards whose notes share a sibling group bury each other for the day.
    * Defaults to the note id, so a note's own directions are always siblings.
@@ -140,7 +182,8 @@ export interface RefHarf extends Meaning {
   id: string
   arabic: string
   /**
-   * The bare harf token used to highlight it inside a sense example, e.g. "بِ".
+   * The bare harf token used to highlight it inside a sense example, the
+   * particle alone without the name it is listed under.
    * Falls back to `arabic` when the display form is already the bare token.
    */
   bareForm?: string

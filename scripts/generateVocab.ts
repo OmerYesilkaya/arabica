@@ -119,9 +119,9 @@ export function indexLemmas(segments: Segment[]): Map<string, Lemma> {
 
 /**
  * A lemma that never appears as a standalone word is a clitic, not vocabulary:
- * the definite article ال, the conjunctions و and ف, the attached pronouns.
- * Exactly 13 lemmas are filtered out here, and every one of them is 100%
- * affix — there is no judgement call in the threshold.
+ * the definite article al-, the conjunctions wa- and fa-, the attached
+ * pronouns. Exactly 13 lemmas are filtered out here, and every one of them is
+ * 100% affix — there is no judgement call in the threshold.
  */
 export function isStandaloneWord(lemma: Lemma): boolean {
   return lemma.occurrences.some((seg) => !seg.affix)
@@ -130,7 +130,7 @@ export function isStandaloneWord(lemma: Lemma): boolean {
 /**
  * Words already taught by an existing deck, as normalized Arabic. Matching is
  * on `drillAnswer ?? arabic` so the prefix particles, whose display form names
- * the letter ("الْبَاءُ (بِـ)"), are matched by their bare particle.
+ * the letter ("al-ba'u"), are matched by their bare particle.
  */
 export function taughtAlready(): Set<string> {
   const taught = new Set<string>()
@@ -220,6 +220,103 @@ export function chooseAyah(lemma: Lemma, lengths: Map<string, number>): AyahChoi
 export function load(): { segments: Segment[]; index: Map<string, Lemma> } {
   const segments = parseMorphology(readFileSync(MORPHOLOGY, 'utf8'))
   return { segments, index: indexLemmas(segments) }
+}
+
+// ---------- ayah text ----------
+
+// The displayed ayah is fetched from api.alquran.cloud, the same canonical
+// source checkCitations.test.ts verifies against — deliberately not
+// reconstructed from the corpus, so generation and verification stay
+// independent. The API rate-limits bursts, so requests are serialized.
+let queue: Promise<unknown> = Promise.resolve()
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+export async function fetchAyah(surah: number, ayah: number): Promise<string> {
+  const job = queue.then(async () => {
+    for (let attempt = 1; ; attempt++) {
+      const res = await fetch(
+        `https://api.alquran.cloud/v1/ayah/${surah}:${ayah}/quran-uthmani`,
+      )
+      if (res.ok) {
+        const body = (await res.json()) as { data?: { text?: string } }
+        const text = body.data?.text
+        if (!text) throw new Error(`no text for ${surah}:${ayah}`)
+        return text
+      }
+      if (res.status !== 429 || attempt >= 6)
+        throw new Error(`HTTP ${res.status} for ${surah}:${ayah}`)
+      await sleep(1000 * attempt)
+    }
+  })
+  queue = job.then(() => sleep(250), () => sleep(250))
+  return job
+}
+
+/** Corpus tag to the Ājurrūmiyya's division. N covers adjectives too. */
+export function partOfSpeech(tag: string): 'ism' | 'fil' | 'harf' {
+  if (tag === 'V') return 'fil'
+  if (tag === 'P') return 'harf'
+  return 'ism'
+}
+
+/**
+ * A transliterated, unique, stable note id. Arabic ids would be unreadable in
+ * card ids, review logs and export files, all of which are read by eye.
+ */
+export function noteId(lemma: string, taken: Set<string>): string {
+  const map: Record<string, string> = {
+    ء: "'", ا: 'a', آ: 'a', أ: 'a', إ: 'i', ب: 'b', ت: 't', ث: 'th', ج: 'j',
+    ح: 'h', خ: 'kh', د: 'd', ذ: 'dh', ر: 'r', ز: 'z', س: 's', ش: 'sh',
+    ص: 's', ض: 'd', ط: 't', ظ: 'z', ع: "'", غ: 'gh', ف: 'f', ق: 'q',
+    ك: 'k', ل: 'l', م: 'm', ن: 'n', ه: 'h', و: 'w', ي: 'y', ى: 'a',
+    ة: 'a', ٱ: 'a', ئ: "'", ؤ: "'",
+  }
+  const base =
+    [...lemma]
+      .map((ch) => map[ch] ?? '')
+      .join('')
+      .replace(/'/g, '')
+      .replace(/^-+|-+$/g, '') || 'word'
+  let id = base
+  for (let n = 2; taken.has(id); n++) id = `${base}-${n}`
+  taken.add(id)
+  return id
+}
+
+export interface Scaffold {
+  id: string
+  arabic: string
+  partOfSpeech: string
+  root?: string
+  occurrences: number
+  occurringForm: string
+  ayahArabic: string
+  source: string
+  fragment: boolean
+}
+
+export async function scaffoldLevel(
+  words: Lemma[],
+  lengths: Map<string, number>,
+): Promise<Scaffold[]> {
+  const taken = new Set<string>()
+  const out: Scaffold[] = []
+  for (const lemma of words) {
+    const choice = chooseAyah(lemma, lengths)
+    if (!choice) throw new Error(`no ayah for ${lemma.lemma}`)
+    out.push({
+      id: noteId(lemma.lemma, taken),
+      arabic: lemma.lemma,
+      partOfSpeech: partOfSpeech(lemma.tag),
+      root: lemma.root,
+      occurrences: lemma.count,
+      occurringForm: choice.form,
+      ayahArabic: await fetchAyah(choice.surah, choice.ayah),
+      source: `Qur'an ${choice.surah}:${choice.ayah}`,
+      fragment: choice.fragment,
+    })
+  }
+  return out
 }
 
 /** The selected lemmas split into levels, in frequency order. */

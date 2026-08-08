@@ -1,12 +1,15 @@
 # arabica
 
-A personal Arabic study app: a static PWA that teaches the grammar of the
-Ājurrūmiyya through spaced repetition. Content is authored in the repo; a
-learner's progress never leaves their device.
+A personal Arabic learning tool: a static PWA that teaches Arabic along one
+opinionated path — the grammar of the Ājurrūmiyya, the vocabulary of the
+Qurʾān, and the reading of real text — through spaced repetition. Content is
+authored in the repo; a learner's progress never leaves their device.
+
+It is not a grammar app. Grammar is where it starts, not what it is.
 
 ## Language
 
-### The content/progress divide
+### The content / progress / corpus divide
 
 The single most important distinction in this codebase. Every term below sits
 on one side of it.
@@ -20,6 +23,15 @@ _Avoid_: data, material
 Everything a device knows about one learner — scheduling state and the record
 of past answers. Lives in IndexedDB, never in the repo, never synced.
 _Avoid_: user data, state, history
+
+**Corpus**:
+Third-party linguistic data about real Arabic text — the text itself, and the
+morphology of every word in it — imported by a generator under `scripts/` and
+never hand-edited. Corpus is read, never scheduled: no Card is ever built from
+it. It is not Content and does not inherit Content's rules — it is not verified
+against the matn and carries no DRAFT marker, because there is far too much of
+it to verify by hand. See `docs/adr/0002-corpus-is-neither-content-nor-progress.md`.
+_Avoid_: data, dataset, source text
 
 ### Content
 
@@ -95,6 +107,30 @@ _Avoid_: vowels, harakat, diacritics
 A file-top marker meaning the content has not yet been verified against the
 matn. Draft content may still be studied, at the learner's risk.
 
+### Corpus
+
+**Text**:
+One continuous piece of real Arabic that can be Read, kept whole and in its own
+order — a surah, not a selection of ayāt. The unit the Reading tab opens.
+_Avoid_: passage, document, reading
+
+**Token**:
+One word as it occurs in a Text, at one position in it. Carries the morphology
+of that particular occurrence: its case or mood, and the sign that shows it.
+_Avoid_: word, occurrence
+
+**Lemma**:
+The dictionary form a Token inflects from. The split that matters: **glosses
+hang on the Lemma, grammar hangs on the Token.** One Lemma is glossed once;
+what it means *here* is carried by its Token's morphology, not by a second
+gloss.
+_Avoid_: headword, root, dictionary form
+
+**Provenance**:
+Where a piece of Corpus came from, shown to the learner beside it. Corpus is
+unverified by design, so an error must be attributable rather than anonymous.
+_Avoid_: source (that is a citation on Content), attribution, credit
+
 ### Progress
 
 **Card State**:
@@ -159,6 +195,13 @@ _Avoid_: drill card, question
 The correct/incorrect outcome of one Drill Item. Distinct from a Rating, which
 is a self-assessment the learner chooses.
 _Avoid_: rating, grade, result
+
+**Read**:
+The act of moving through a Text with no translation on the page, tapping a
+Token to check it. Reading is stateless: it produces nothing, records nothing,
+and never touches Progress. Where Study tests recall of what was taught,
+Reading tests recognition of what was not.
+_Avoid_: browse, view, study (Reading is not Study)
 
 ## Borrowed vocabulary
 

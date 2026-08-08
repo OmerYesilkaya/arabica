@@ -65,7 +65,7 @@ function LeechRow({ leech }: { leech: Leech }) {
   const body = (
     <>
       <span className="arabic leech-arabic">{leech.arabic}</span>
-      <span className="leech-gloss">
+      <span className="leech-meaning">
         {leech.english} · {leech.turkish}
       </span>
       <span className="leech-lapses">{leech.lapses} lapses</span>

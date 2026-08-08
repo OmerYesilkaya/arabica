@@ -4,7 +4,7 @@ import type { DeckDef } from '../types'
 // مِنْ، إِلَى، عَنْ، عَلَى، فِي، رُبَّ، الْبَاء، الْكَاف، اللَّام،
 // وَحُرُوفُ الْقَسَمِ: الْوَاوُ وَالْبَاءُ وَالتَّاءُ
 //
-// DRAFT: verify every gloss against your textbook before first study.
+// DRAFT: verify every meaning against your textbook before first study.
 // The three oath particles share the meaning "by (oath)", so their
 // meaning->ar direction is disabled to keep answers unambiguous.
 

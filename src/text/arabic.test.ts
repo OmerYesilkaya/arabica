@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { arabicAnswersMatch, normalizeArabic, stripTashkeel } from './arabic'
+import {
+  arabicAnswersMatch,
+  locateHarf,
+  normalizeArabic,
+  stripTashkeel,
+} from './arabic'
 
 describe('stripTashkeel', () => {
   it('removes harakat', () => {
@@ -18,6 +23,50 @@ describe('stripTashkeel', () => {
 
   it('leaves Latin text and spacing untouched', () => {
     expect(stripTashkeel('from مِنْ')).toBe('from من')
+    expect(stripTashkeel('Qur’an 17:1')).toBe('Qur’an 17:1')
+  })
+
+  // U+0660-U+066F sits just past the tashkeel range and must survive: the
+  // class is U+064B-U+065F plus U+0670 and U+0640, never a span to U+0670.
+  it('preserves Arabic-Indic digits and punctuation (U+0660-U+066F)', () => {
+    expect(stripTashkeel('٢٠٢٦')).toBe('٢٠٢٦')
+    expect(stripTashkeel('١٢٣')).toBe('١٢٣')
+    expect(stripTashkeel('٪٫ٮٯ')).toBe('٪٫ٮٯ')
+  })
+})
+
+describe('locateHarf', () => {
+  it('matches a standalone harf despite case-vowel changes', () => {
+    const parts = locateHarf('مِنَ الْبَيْتِ', 'مِنْ')
+    expect(parts).not.toBeNull()
+    expect(parts!.before).toBe('')
+    expect(parts!.match).toBe('مِنَ')
+    expect(parts!.after).toBe(' الْبَيْتِ')
+  })
+
+  it('matches an attached prefix harf', () => {
+    const parts = locateHarf('بِالْقَلَمِ', 'بِ')
+    expect(parts).not.toBeNull()
+    expect(parts!.before).toBe('')
+    expect(stripTashkeel(parts!.match)).toBe('ب')
+    expect(parts!.before + parts!.match + parts!.after).toBe('بِالْقَلَمِ')
+  })
+
+  it('finds the harf mid-sentence and preserves the whole string', () => {
+    const text = 'ثُمَّ أَتِمُّوا الصِّيَامَ إِلَى اللَّيْلِ'
+    const parts = locateHarf(text, 'إِلَى')
+    expect(parts).not.toBeNull()
+    expect(stripTashkeel(parts!.match)).toBe('إلى')
+    expect(parts!.before + parts!.match + parts!.after).toBe(text)
+  })
+
+  it('returns null when the harf is absent', () => {
+    expect(locateHarf('الْبَيْتُ كَبِيرٌ', 'مِنْ')).toBeNull()
+  })
+
+  it('is not affected by regex lastIndex across repeated calls', () => {
+    const text = 'مِنَ الْبَيْتِ'
+    expect(locateHarf(text, 'مِنْ')!.match).toBe(locateHarf(text, 'مِنْ')!.match)
   })
 })
 

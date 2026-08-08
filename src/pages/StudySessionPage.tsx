@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { State } from 'ts-fsrs'
 import { deckById, siblingCardsOf } from '../content/decks'
-import { locateParticle } from '../lib/arabic'
+import type { Meaning } from '../content/types'
 import { db, type CardStateRow } from '../db/db'
 import {
   answerCard,
@@ -12,8 +12,8 @@ import {
   type Grade,
 } from '../srs/engine'
 import { buildQueue, type QueueItem } from '../srs/queue'
-import { stripTashkeel } from '../lib/tashkeel'
-import { setHideTashkeel, useHideTashkeel } from '../lib/useHideTashkeel'
+import { locateHarf, stripTashkeel } from '../text/arabic'
+import { setHideTashkeel, useHideTashkeel } from '../settings/useHideTashkeel'
 
 /** Learning cards answered moments ago come back within this window. */
 const LEARN_AHEAD_MS = 20 * 60 * 1000
@@ -23,24 +23,25 @@ function referenceLink(referenceId: string): string {
   return anchor ? `/reference/${entry}?h=${anchor}` : `/reference/${entry}`
 }
 
-function Meaning({ english, turkish }: { english: string; turkish: string }) {
+/** Renders a Meaning as its two language lines. */
+function MeaningLines({ meaning }: { meaning: Meaning }) {
   return (
     <>
       <div className="meaning">
         <span className="lang">English</span>
-        {english}
+        {meaning.english}
       </div>
       <div className="meaning">
         <span className="lang">Türkçe</span>
-        {turkish}
+        {meaning.turkish}
       </div>
     </>
   )
 }
 
-/** The Arabic example text with the harf `particle` highlighted. */
-function Highlighted({ text, particle }: { text: string; particle: string }) {
-  const parts = locateParticle(text, particle)
+/** The Arabic example text with `harf` highlighted inside it. */
+function Highlighted({ text, harf }: { text: string; harf: string }) {
+  const parts = locateHarf(text, harf)
   if (!parts) return <>{text}</>
   return (
     <>
@@ -51,7 +52,7 @@ function Highlighted({ text, particle }: { text: string; particle: string }) {
   )
 }
 
-export function ReviewPage() {
+export function StudySessionPage() {
   const { deckId } = useParams()
   const deck = deckId ? deckById(deckId) : undefined
 
@@ -169,7 +170,7 @@ export function ReviewPage() {
 
   return (
     <main className="page">
-      <div className="review-top">
+      <div className="session-top">
         <Link to="/" style={{ color: 'inherit' }}>
           ← {deck.name}
         </Link>
@@ -185,18 +186,18 @@ export function ReviewPage() {
         <span>{queue.length} left</span>
       </div>
 
-      <div className="review-card">
+      <div className="session-card">
         {isSense ? (
           <div className="prompt-arabic arabic sense-prompt">
             <Highlighted
               text={showArabic(note.example!.arabic)}
-              particle={note.arabic}
+              harf={note.arabic}
             />
           </div>
         ) : arabicFirst ? (
           <div className="prompt-arabic arabic">{showArabic(note.arabic)}</div>
         ) : (
-          <Meaning english={note.english} turkish={note.turkish} />
+          <MeaningLines meaning={note} />
         )}
 
         {revealed && isSense && (
@@ -206,7 +207,7 @@ export function ReviewPage() {
               {note.sense!.term}
               <span className="arabic">{note.sense!.termArabic}</span>
             </div>
-            <Meaning english={note.english} turkish={note.turkish} />
+            <MeaningLines meaning={note} />
             {note.example && (
               <div className="example example-translation">
                 {note.example.english} · {note.example.turkish}
@@ -227,7 +228,7 @@ export function ReviewPage() {
           <>
             <hr />
             {arabicFirst ? (
-              <Meaning english={note.english} turkish={note.turkish} />
+              <MeaningLines meaning={note} />
             ) : (
               <div className="answer-arabic arabic">{showArabic(note.arabic)}</div>
             )}

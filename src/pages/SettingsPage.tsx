@@ -7,7 +7,7 @@ import {
   parseBackup,
   LAST_EXPORT_KEY,
 } from '../db/exportImport'
-import { setHideTashkeel, useHideTashkeel } from '../lib/useHideTashkeel'
+import { setHideTashkeel, useHideTashkeel } from '../settings/useHideTashkeel'
 import { setSchedulerWeights } from '../srs/engine'
 import {
   MIN_REVIEWS_TO_OPTIMIZE,

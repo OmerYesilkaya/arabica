@@ -2,7 +2,7 @@ import type { ReferenceEntry } from '../types'
 
 // Ājurrūmiyya, chapter on the agents that enter the mubtadaʾ and the khabar:
 // the section on إِنَّ وَأَخَوَاتُهَا.
-// DRAFT: verify every Arabic line, gloss, and citation against your textbook
+// DRAFT: verify every Arabic line, meaning, and citation against your textbook
 // and a muṣḥaf before relying on it.
 //
 // Membership: the matn lists six sisters, in this order: إِنَّ، أَنَّ، لَكِنَّ،
@@ -264,21 +264,21 @@ export const innaWaAkhawatuha: ReferenceEntry = {
       rows: [
         [
           'Plain nominal sentence',
-          { ar: 'زَيْدٌ قَائِمٌ', note: 'Zayd is standing / Zeyd ayaktadır' },
-          { ar: 'زَيْدٌ', note: 'mubtadaʾ · rafʿ, ḍamma' },
-          { ar: 'قَائِمٌ', note: 'khabar · rafʿ, ḍamma' },
+          { ar: 'زَيْدٌ قَائِمٌ', footnote: 'Zayd is standing / Zeyd ayaktadır' },
+          { ar: 'زَيْدٌ', footnote: 'mubtadaʾ · rafʿ, ḍamma' },
+          { ar: 'قَائِمٌ', footnote: 'khabar · rafʿ, ḍamma' },
         ],
         [
           'After inna',
-          { ar: 'إِنَّ زَيْدًا قَائِمٌ', note: 'Indeed Zayd is standing / Şüphesiz Zeyd ayaktadır' },
-          { ar: 'زَيْدًا', note: 'ism inna · naṣb, fatḥa' },
-          { ar: 'قَائِمٌ', note: 'khabar inna · rafʿ, ḍamma' },
+          { ar: 'إِنَّ زَيْدًا قَائِمٌ', footnote: 'Indeed Zayd is standing / Şüphesiz Zeyd ayaktadır' },
+          { ar: 'زَيْدًا', footnote: 'ism inna · naṣb, fatḥa' },
+          { ar: 'قَائِمٌ', footnote: 'khabar inna · rafʿ, ḍamma' },
         ],
         [
           'Compare: after kāna',
-          { ar: 'كَانَ زَيْدٌ قَائِمًا', note: 'Zayd was standing / Zeyd ayakta idi' },
-          { ar: 'زَيْدٌ', note: 'ism kāna · rafʿ, ḍamma' },
-          { ar: 'قَائِمًا', note: 'khabar kāna · naṣb, fatḥa' },
+          { ar: 'كَانَ زَيْدٌ قَائِمًا', footnote: 'Zayd was standing / Zeyd ayakta idi' },
+          { ar: 'زَيْدٌ', footnote: 'ism kāna · rafʿ, ḍamma' },
+          { ar: 'قَائِمًا', footnote: 'khabar kāna · naṣb, fatḥa' },
         ],
       ],
     },

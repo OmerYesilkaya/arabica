@@ -60,7 +60,7 @@ function DeckRow({ deckId }: { deckId: string }) {
         </div>
       </div>
       {total > 0 ? (
-        <Link className="button-primary" to={`/review/${deck.id}`}>
+        <Link className="button-primary" to={`/study/${deck.id}`}>
           Study
         </Link>
       ) : (
@@ -70,7 +70,7 @@ function DeckRow({ deckId }: { deckId: string }) {
   )
 }
 
-export function StudyPage() {
+export function DecksPage() {
   return (
     <main className="page">
       <h1 className="page-title">Study</h1>

@@ -6,6 +6,12 @@
 const TASHKEEL = /[ً-ٰٟ]/g
 const TATWEEL = /ـ/g
 
+/**
+ * The same set as TASHKEEL + TATWEEL, as a single non-global class. Kept
+ * separate because `.test()` on a /g regex advances lastIndex between calls.
+ */
+const MARK = /[ً-ٰٟـ]/
+
 /** Remove tashkeel and tatweel. Letters and all other characters are kept. */
 export function stripTashkeel(text: string): string {
   return text.replace(TASHKEEL, '').replace(TATWEEL, '')
@@ -42,4 +48,46 @@ export function normalizeArabic(text: string): string {
 /** True when two Arabic strings match after normalization. */
 export function arabicAnswersMatch(a: string, b: string): boolean {
   return normalizeArabic(a) === normalizeArabic(b)
+}
+
+export interface HighlightParts {
+  before: string
+  match: string
+  after: string
+}
+
+/**
+ * Locate `harf` inside `text`, ignoring tashkeel differences (so a bare
+ * "bi" matches the attached one of "bi-al-qalam", and "min" matches the
+ * case-inflected "mina"). Returns the original substrings around the first
+ * match, with the matched letters' trailing marks kept inside `match`, or
+ * null when the harf does not occur.
+ */
+export function locateHarf(text: string, harf: string): HighlightParts | null {
+  const target = stripTashkeel(harf)
+  if (!target) return null
+
+  // Map each kept (non-mark) character to its index in the original string.
+  const origIndex: number[] = []
+  let stripped = ''
+  for (let i = 0; i < text.length; i++) {
+    if (!MARK.test(text[i])) {
+      origIndex.push(i)
+      stripped += text[i]
+    }
+  }
+
+  const at = stripped.indexOf(target)
+  if (at < 0) return null
+
+  const start = origIndex[at]
+  const afterStripped = at + target.length
+  const end =
+    afterStripped < origIndex.length ? origIndex[afterStripped] : text.length
+
+  return {
+    before: text.slice(0, start),
+    match: text.slice(start, end),
+    after: text.slice(end),
+  }
 }

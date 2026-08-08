@@ -1,25 +1,25 @@
 import type { ReferenceEntry } from '../types'
 
 // Ājurrūmiyya, chapter on the agents that enter the mubtadaʾ and the khabar:
-// the section on إِنَّ وَأَخَوَاتُهَا.
+// the section on inna wa-akhawatuha.
 // DRAFT: verify every Arabic line, meaning, and citation against your textbook
 // and a muṣḥaf before relying on it.
 //
-// Membership: the matn lists six sisters, in this order: إِنَّ، أَنَّ، لَكِنَّ،
-// كَأَنَّ، لَيْتَ، لَعَلَّ. Printed editions agree on these six and on the
+// Membership: the matn lists six sisters, in this order: inna, anna, lakinna,
+// ka-anna, layta, laalla. Printed editions agree on these six and on the
 // meanings assigned to them (tawkīd, istidrāk, tashbīh, tamannī, tarajjī +
 // tawaqquʿ). Editions differ only in wording around the list (some print
-// "وَتَقُولُ" where others print "تَقُولُ"). Later grammars often add
-// لَا النَّافِيَةُ لِلْجِنْسِ as a seventh "sister"; the Ājurrūmiyya does not
+// "wa-taqulu" where others print "taqulu"). Later grammars often add
+// la an-nafiya li-l-jins as a seventh "sister"; the Ājurrūmiyya does not
 // list it here, so it is not included.
 //
 // Sourcing: every example follows Quran > Hadith > fusha. All six sister
 // examples are Quranic and carry a surah:ayah citation in Example.source.
 // The only unsourced Arabic is the matn's own teaching sentence
-// (إِنَّ زَيْدًا قَائِمٌ), used in the worked example; it comes from the matn
+// ("inna zaydan qa'imun"), used in the worked example; it comes from the matn
 // itself, not from an agent's invention.
 //
-// Note on the inna example: the closing phrase إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ
+// Note on the inna example: the closing phrase "inna llaha ghafurun rahim"
 // recurs many times in the Qur'an; 2:173 is one occurrence.
 
 export const innaWaAkhawatuha: ReferenceEntry = {

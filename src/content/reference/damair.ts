@@ -5,15 +5,15 @@ import type { ReferenceEntry } from '../types'
 //
 // Sourcing: every example follows Quran > Hadith > fusha, citation in
 // `Example.source`. All examples in this entry are Quranic; no fusha fallback
-// was needed. The paradigm tables (ضَرَبَ, كِتَاب, بِـ) are not examples: the
-// verb paradigms are the matn's own word lists, and the كِتَاب / بِـ paradigm is
+// was needed. The paradigm tables (daraba, kitab, bi-) are not examples: the
+// verb paradigms are the matn's own word lists, and the kitab / bi- paradigm is
 // a plain fusha model built to show the suffixes on a noun and on a ḥarf jarr.
 //
-// EDITION NOTE for Omer: the matn counts the pronouns as twelve (اِثْنَا عَشَرَ)
+// EDITION NOTE for Omer: the matn counts the pronouns as twelve (ithna ashar)
 // in both chapters, because the dual has one form for masculine and feminine
-// (أَنْتُمَا / هُمَا). The detached table below lists the fourteen ṣarf slots
-// (the grid used for verb conjugation), so هُمَا and أَنْتُمَا each appear twice.
-// The matn also gives no list of the detached rafʿ pronouns (أَنَا، نَحْنُ...);
+// (antuma / huma). The detached table below lists the fourteen ṣarf slots
+// (the grid used for verb conjugation), so huma and antuma each appear twice.
+// The matn also gives no list of the detached rafʿ pronouns (ana, nahnu, ...);
 // that list comes from the ṣarf tables, not from the Ājurrūmiyya.
 
 export const damair: ReferenceEntry = {

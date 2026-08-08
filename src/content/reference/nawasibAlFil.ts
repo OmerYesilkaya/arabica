@@ -3,23 +3,24 @@ import type { ReferenceEntry } from '../types'
 // Ājurrūmiyya, bāb al-afʿāl: the nawāṣib of the muḍāriʿ.
 // DRAFT: verify against your textbook before relying on it.
 //
-// Membership: the matn counts ten nawāṣib, in this order —
-//   أَنْ، لَنْ، إِذَنْ، كَيْ، لَامُ كَيْ، لَامُ الْجُحُودِ، حَتَّى،
-//   وَالْجَوَابُ بِالْفَاءِ، وَالْوَاوِ، وَأَوْ
+// Membership: the matn counts ten nawāṣib, in this order — an, lan, idhan,
+// kay, lām kay, lām al-juḥūd, ḥattā, and the answer with fāʾ, wāw and aw. The
+// matn's own wording is carried in the Overview section below, where it
+// renders for the learner.
 // Edition notes for Omer:
-//   * Some prints write إِذَنْ as إِذًا (with alif + tanwīn). Same particle.
-//   * "الْجَوَابُ بِالْفَاءِ وَالْوَاوِ وَأَوْ" is one clause in the matn; the
+//   * Some prints write idhan with alif + tanwīn instead. Same particle.
+//   * "the answer with fāʾ, wāw and aw" is one clause in the matn; the
 //     count of ten only works if fāʾ, wāw, and aw are counted separately, which
 //     is how the common commentaries (al-Kafrāwī, al-Ashmūnī) read it. A few
 //     prints therefore print the list as nine or eleven items. Membership is
 //     unchanged either way, so all ten rows are kept here.
-//   * Later grammarians add أَنْ الْمَصْدَرِيَّةَ after حَتَّى / فَاءِ السَّبَبِيَّةِ
+//   * Later grammarians add an al-maṣdariyya after ḥattā / fāʾ al-sababiyya
 //     as the real operator (see the "How they operate" section). The matn does
 //     not, so this entry follows the matn.
 //
 // Sourcing: Quran > Hadith > fusha. Quranic examples carry a surah:ayah
 // citation. Three particles have no safe Quranic šāhid governing a manṣūb
-// muḍāriʿ (إِذَنْ, wāw al-maʿiyyah, أَوْ); those keep the standard grammarians'
+// muḍāriʿ (idhan, wāw al-maʿiyyah, aw); those keep the standard grammarians'
 // fusha example and are flagged with a "DRAFT (fusha fallback)" comment.
 
 export const nawasibAlFil: ReferenceEntry = {
@@ -66,9 +67,9 @@ export const nawasibAlFil: ReferenceEntry = {
           { ar: 'إِذَنْ' },
           'then, in that case (answers what was just said)',
           'öyleyse, o hâlde (söylenene cevap verir)',
-          // DRAFT (fusha fallback): إِذَنْ does not occur in the Qur’an as an
-          // operating nāṣib. The nearest form, وَإِذًا لَا يَلْبَثُونَ (17:76),
-          // has the verb in rafʿ because لَا separates the particle from it.
+          // DRAFT (fusha fallback): idhan does not occur in the Qur’an as an
+          // operating nāṣib. The nearest form, "wa-idhan la yalbathuna" (17:76),
+          // has the verb in rafʿ because la separates the particle from it.
           // This is the standard grammarians' example instead.
           { ar: 'إِذَنْ أُكْرِمَكَ' },
           'Then I will honour you · Öyleyse sana ikram ederim',
@@ -114,7 +115,7 @@ export const nawasibAlFil: ReferenceEntry = {
           'ma‘iyyet (beraberlik) vavı: "aynı anda, bir yandan da"',
           // DRAFT (fusha fallback): no safe Qur’anic wāw al-maʿiyyah governing a
           // manṣūb muḍāriʿ is at hand; the near misses (2:214, 3:142) have the
-          // verb in jazm after لَمَّا. This is the standard textbook example.
+          // verb in jazm after lamma. This is the standard textbook example.
           { ar: 'لَا تَأْكُلِ السَّمَكَ وَتَشْرَبَ اللَّبَنَ' },
           'Do not eat fish and drink milk at the same time · Balığı yiyip aynı anda süt içme',
         ],
@@ -122,10 +123,10 @@ export const nawasibAlFil: ReferenceEntry = {
           { ar: 'أَوْ' },
           'until, unless (meaning ilā an / illā an)',
           '...ıncaya kadar; ...madıkça (ilâ en / illâ en anlamında)',
-          // DRAFT (fusha fallback): أَوْ meaning "until / unless" before a
-          // manṣūb muḍāriʿ has no Qur’anic šāhid at hand; the Qur’anic أَوْ is
+          // DRAFT (fusha fallback): aw meaning "until / unless" before a
+          // manṣūb muḍāriʿ has no Qur’anic šāhid at hand; the Qur’anic aw is
           // the coordinating one, which passes on the state of what precedes
-          // it (e.g. أَنْ تَكُونَا ... أَوْ تَكُونَا, 7:20). Grammarians' example.
+          // it (e.g. "an takuna ... aw takuna", 7:20). Grammarians' example.
           { ar: 'لَأَلْزَمَنَّكَ أَوْ تَقْضِيَنِي حَقِّي' },
           'I will stay with you until you pay me my due · Hakkımı bana ödeyinceye kadar peşini bırakmam',
         ],

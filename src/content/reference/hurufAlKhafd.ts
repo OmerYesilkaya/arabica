@@ -69,7 +69,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           english: 'Partitive: "some of".',
           turkish: 'Kısmîlik bildirir: "bir kısmı, -den bazısı".',
           // DRAFT (fusha fallback): clear Quranic partitives use the contracted
-          // مِمَّا, which hides the harf; a plain مِنْ + noun reads as ibtidāʾ.
+          // mimma, which hides the harf; a plain min + noun reads as ibtidāʾ.
           example: {
             arabic: 'أَخَذْتُ مِنَ الدَّرَاهِمِ',
             english: 'I took some of the dirhams',
@@ -200,7 +200,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
             'Expresses abundance ("many a ...") or, by context, scarcity ("few a ..."). Enters only on indefinite nouns.',
           turkish:
             'Çokluk ("nice") veya bağlama göre azlık bildirir. Yalnız nekre (belirsiz) isimlerin başına gelir.',
-          // DRAFT (fusha fallback): رُبَّ occurs in the Qur’an only as رُبَمَا
+          // DRAFT (fusha fallback): rubba occurs in the Qur’an only as rubama
           // (15:2), which does not enter on a bare indefinite noun as here.
           example: {
             arabic: 'رُبَّ رَجُلٍ كَرِيمٍ لَقِيتُهُ',
@@ -224,7 +224,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           english: 'Attachment or contact: "at, by, in contact with".',
           turkish: 'Yapışma ve temas bildirir: "değme, temas".',
           // DRAFT (fusha fallback): the textbook ilṣāq example; the Qur’anic
-          // بِرُءُوسِكُمْ (5:6) is disputed (ilṣāq vs tabʿīḍ), so it teaches less cleanly.
+          // "bi-ru'usikum" (5:6) is disputed (ilṣāq vs tabʿīḍ), so it teaches less cleanly.
           example: {
             arabic: 'مَرَرْتُ بِزَيْدٍ',
             english: 'I passed by Zayd',
@@ -305,7 +305,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           english: 'Reason or purpose: "for, in order to".',
           turkish: 'Sebep ve amaç bildirir: "için".',
           // DRAFT (fusha fallback): the Qur’anic lām of taʿlīl governs verbs
-          // (lām kay), e.g. لِيَعْبُدُونِ (51:56); a short one over a bare noun is not at hand.
+          // (lām kay), e.g. "li-yaʿbuduni" (51:56); a short one over a bare noun is not at hand.
           example: {
             arabic: 'جِئْتُ لِلْعِلْمِ',
             english: 'I came for knowledge',

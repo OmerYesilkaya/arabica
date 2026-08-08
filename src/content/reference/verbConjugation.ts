@@ -4,7 +4,7 @@ import type { ReferenceEntry } from '../types'
 // DRAFT: verify against your textbook before relying on it. Every Arabic form,
 // meaning (English and Turkish), and citation below needs Omer's check.
 //
-// MODEL VERB: ضَرَبَ / يَضْرِبُ / اِضْرِبْ (a-i pattern), the Ājurrūmiyya's own
+// MODEL VERB: daraba / yadribu / idrib (a-i pattern), the Ājurrūmiyya's own
 // example verb. Decided by Omer 2026-08-06; he studies the matn itself.
 // The muḍāriʿ middle vowel varies by verb (yaḍribu, yaftaḥu, yanṣuru), which
 // the overview prose points out.

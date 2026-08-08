@@ -29,4 +29,9 @@ once.
 
 When a comment needs to name an exact form and transliteration would be
 ambiguous, name the note id or point at the data file instead of inlining the
-script.
+script. A matn passage worth quoting belongs in a rendered `RefProse` section,
+where the learner sees it, rather than in a comment where only you do.
+
+`src/conventions.test.ts` enforces this over `src/` and `scripts/`. It checks
+comments only, which is why the allowances above need no exception in it: data,
+literals and character maps are code, not comments.

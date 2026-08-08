@@ -9,15 +9,15 @@ import type { ReferenceEntry } from '../types'
 //
 // Edition note for Omer: the matn says "wal-jawāzimu thamāniyata ʿashara"
 // (eighteen), then lists nineteen items. Commentaries explain the gap in two
-// ways: either أَلَمْ and أَلَمَّا are counted as لَمْ and لَمَّا with the
-// interrogative hamza (so the count drops), or the poetry-only إِذَا is not
+// ways: either alam and alamma are counted as lam and lamma carrying the
+// interrogative hamza (so the count drops), or the poetry-only idha is not
 // counted with the rest. Some printings drop one of the two accordingly, and
-// some grammarians (mainly the Basrans) deny that كَيْفَمَا jazms at all. All
+// some grammarians (mainly the Basrans) deny that kayfama jazms at all. All
 // nineteen items are listed below so nothing is silently dropped.
 //
 // Sourcing: examples follow Quran > Hadith > fusha. Quranic examples carry a
-// surah:ayah citation. Seven particles (أَلَمَّا, إِذْمَا, مَتَى, أَيَّانَ,
-// أَنَّى, كَيْفَمَا, and the poetry-only إِذَا) have no Quranic occurrence as a
+// surah:ayah citation. Seven particles (alamma, idhma, mata, ayyana, anna,
+// kayfama, and the poetry-only idha) have no Quranic occurrence as a
 // jāzim of two verbs, so they use a plain fusha example, each flagged with a
 // "DRAFT (fusha fallback)" comment saying why.
 
@@ -76,7 +76,7 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'أَلَمَّا' },
           'has not yet ...? (lammā with the interrogative hamza)',
           'henüz -memiş mi? (soru hemzesi + lemmâ)',
-          // DRAFT (fusha fallback): أَلَمَّا has no Quranic or Hadith occurrence.
+          // DRAFT (fusha fallback): alamma has no Quranic or Hadith occurrence.
           { ar: 'أَلَمَّا يَرْجِعْ أَخُوكَ؟' },
           'EN: Has your brother not returned yet? · TR: Kardeşin henüz dönmedi mi?',
           'Fusha (no Quranic occurrence)',
@@ -150,7 +150,7 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'إِذْمَا' },
           'whenever',
           'her ne zaman',
-          // DRAFT (fusha fallback): إِذْمَا has no Quranic or Hadith occurrence.
+          // DRAFT (fusha fallback): idhma has no Quranic or Hadith occurrence.
           { ar: 'إِذْمَا تَجْتَهِدْ تَنْجَحْ' },
           'EN: Whenever you strive, you succeed · TR: Ne zaman gayret edersen başarırsın',
           'Fusha (no Quranic occurrence)',
@@ -167,8 +167,8 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'مَتَى' },
           'whenever, when',
           'ne zaman (olursa)',
-          // DRAFT (fusha fallback): مَتَى occurs in the Quran only as a question
-          // (e.g. مَتَى نَصْرُ اللَّهِ, 2:214), never as a jāzim of two verbs.
+          // DRAFT (fusha fallback): mata occurs in the Quran only as a question
+          // (e.g. "mata nasru llah", 2:214), never as a jāzim of two verbs.
           { ar: 'مَتَى تَذْهَبْ أَذْهَبْ مَعَكَ' },
           'EN: Whenever you go, I go with you · TR: Ne zaman gidersen seninle giderim',
           'Fusha (Quranic uses are interrogative only)',
@@ -177,8 +177,8 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'أَيَّانَ' },
           'whenever (emphatic)',
           'her ne zaman (tekitli)',
-          // DRAFT (fusha fallback): أَيَّانَ occurs in the Quran only as a
-          // question (e.g. أَيَّانَ يَوْمُ الدِّينِ, 51:12), never as a jāzim.
+          // DRAFT (fusha fallback): ayyana occurs in the Quran only as a
+          // question (e.g. "ayyana yawmu d-din", 51:12), never as a jāzim.
           { ar: 'أَيَّانَ تَرْحَلْ أَرْحَلْ مَعَكَ' },
           'EN: Whenever you set out, I set out with you · TR: Her ne zaman yola çıkarsan seninle çıkarım',
           'Fusha (Quranic uses are interrogative only)',
@@ -195,7 +195,7 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'أَنَّى' },
           'wherever, however',
           'nerede, nasıl olursa',
-          // DRAFT (fusha fallback): the Quranic أَنَّى (e.g. 2:223) is followed
+          // DRAFT (fusha fallback): the Quranic anna (e.g. 2:223) is followed
           // by a māḍī or is interrogative, so no visible jazm is shown.
           { ar: 'أَنَّى تَجْلِسْ أَجْلِسْ' },
           'EN: Wherever you sit, I sit · TR: Nereye oturursan otururum',
@@ -213,7 +213,7 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'كَيْفَمَا' },
           'however, in whatever way',
           'nasıl olursa, nasıl yaparsan',
-          // DRAFT (fusha fallback): كَيْفَمَا has no Quranic occurrence, and the
+          // DRAFT (fusha fallback): kayfama has no Quranic occurrence, and the
           // Basran grammarians deny that it jazms at all.
           { ar: 'كَيْفَمَا تَفْعَلْ أَفْعَلْ' },
           'EN: However you act, I act · TR: Nasıl davranırsan öyle davranırım',
@@ -223,7 +223,7 @@ export const jawazimAlFil: ReferenceEntry = {
           { ar: 'إِذَا', footnote: 'in poetry only' },
           'when (jazms only in poetry; in prose it takes the māḍī)',
           '-dığı zaman (yalnız şiirde cezm eder)',
-          // DRAFT (fusha fallback): the matn allows إِذَا as a jāzim only in
+          // DRAFT (fusha fallback): the matn allows idha as a jāzim only in
           // poetry, and the commentaries' proof is a line of verse. That line is
           // not quoted here because its exact wording could not be confirmed;
           // a plain constructed example stands in its place.

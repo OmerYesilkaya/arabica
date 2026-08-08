@@ -21,7 +21,7 @@ describe('diffChars', () => {
   })
 
   it('marks a substitution as delete then insert', () => {
-    // "الى" vs "الي": last character differs.
+    // "ila" spelled with alef maqsura vs with ya: the last letter differs.
     expect(diffChars('الى', 'الي')).toEqual([
       { op: 'equal', value: 'ال' },
       { op: 'delete', value: 'ى' },

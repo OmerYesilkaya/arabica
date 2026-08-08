@@ -1,8 +1,8 @@
 import type { DeckDef } from '../types'
 
-// Ḥurūf al-Khafḍ per the Ājurrūmiyya:
-// مِنْ، إِلَى، عَنْ، عَلَى، فِي، رُبَّ، الْبَاء، الْكَاف، اللَّام،
-// وَحُرُوفُ الْقَسَمِ: الْوَاوُ وَالْبَاءُ وَالتَّاءُ
+// Hurūf al-Khafd per the Ājurrūmiyya, in the matn's order: min, ila, an,
+// ala, fi, rubba, al-ba, al-kaf, al-lam, and the oath particles al-waw,
+// al-ba and al-ta. The particles themselves are the deck's data below.
 //
 // DRAFT: verify every meaning against your textbook before first study.
 // The three oath particles share the meaning "by (oath)", so their

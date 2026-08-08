@@ -42,7 +42,7 @@ export const damair: ReferenceEntry = {
       rows: [
         [{ ar: 'هُوَ' }, { ar: 'إِيَّاهُ' }, 'he, him (3rd m. sg.)', 'o, onu (3. tekil eril)'],
         [
-          { ar: 'هُمَا', note: 'same form for m. and f.' },
+          { ar: 'هُمَا', footnote: 'same form for m. and f.' },
           { ar: 'إِيَّاهُمَا' },
           'they two, them two (3rd m. dual)',
           'o ikisi, o ikisini (3. ikil eril)',
@@ -50,7 +50,7 @@ export const damair: ReferenceEntry = {
         [{ ar: 'هُمْ' }, { ar: 'إِيَّاهُمْ' }, 'they, them (3rd m. pl.)', 'onlar, onları (3. çoğul eril)'],
         [{ ar: 'هِيَ' }, { ar: 'إِيَّاهَا' }, 'she, her (3rd f. sg.)', 'o, onu (3. tekil dişil)'],
         [
-          { ar: 'هُمَا', note: 'same form for m. and f.' },
+          { ar: 'هُمَا', footnote: 'same form for m. and f.' },
           { ar: 'إِيَّاهُمَا' },
           'they two, them two (3rd f. dual)',
           'o ikisi, o ikisini (3. ikil dişil)',
@@ -58,7 +58,7 @@ export const damair: ReferenceEntry = {
         [{ ar: 'هُنَّ' }, { ar: 'إِيَّاهُنَّ' }, 'they, them (3rd f. pl.)', 'onlar, onları (3. çoğul dişil)'],
         [{ ar: 'أَنْتَ' }, { ar: 'إِيَّاكَ' }, 'you (2nd m. sg.)', 'sen, seni (2. tekil eril)'],
         [
-          { ar: 'أَنْتُمَا', note: 'same form for m. and f.' },
+          { ar: 'أَنْتُمَا', footnote: 'same form for m. and f.' },
           { ar: 'إِيَّاكُمَا' },
           'you two (2nd m. dual)',
           'siz ikiniz, ikinizi (2. ikil eril)',
@@ -66,7 +66,7 @@ export const damair: ReferenceEntry = {
         [{ ar: 'أَنْتُمْ' }, { ar: 'إِيَّاكُمْ' }, 'you (2nd m. pl.)', 'siz, sizi (2. çoğul eril)'],
         [{ ar: 'أَنْتِ' }, { ar: 'إِيَّاكِ' }, 'you (2nd f. sg.)', 'sen, seni (2. tekil dişil)'],
         [
-          { ar: 'أَنْتُمَا', note: 'same form for m. and f.' },
+          { ar: 'أَنْتُمَا', footnote: 'same form for m. and f.' },
           { ar: 'إِيَّاكُمَا' },
           'you two (2nd f. dual)',
           'siz ikiniz, ikinizi (2. ikil dişil)',
@@ -104,31 +104,31 @@ export const damair: ReferenceEntry = {
         [{ ar: 'ضَرَبْتُنَّ' }, { ar: 'ـتُنَّ' }, 'you struck (2nd f. pl.)', 'vurdunuz (2. çoğul dişil)'],
         [
           { ar: 'ضَرَبَ' },
-          { ar: 'هُوَ', note: 'hidden (mustatir)' },
+          { ar: 'هُوَ', footnote: 'hidden (mustatir)' },
           'he struck (3rd m. sg.)',
           'vurdu (3. tekil eril)',
         ],
         [
           { ar: 'ضَرَبَتْ' },
-          { ar: 'هِيَ', note: 'hidden; the tāʾ is the fem. marker' },
+          { ar: 'هِيَ', footnote: 'hidden; the tāʾ is the fem. marker' },
           'she struck (3rd f. sg.)',
           'vurdu (3. tekil dişil)',
         ],
         [
           { ar: 'ضَرَبَا' },
-          { ar: 'ـَا', note: 'alif of the dual' },
+          { ar: 'ـَا', footnote: 'alif of the dual' },
           'they two struck (3rd m. dual)',
           'o ikisi vurdu (3. ikil eril)',
         ],
         [
           { ar: 'ضَرَبُوا' },
-          { ar: 'ـُوا', note: 'wāw of the group' },
+          { ar: 'ـُوا', footnote: 'wāw of the group' },
           'they struck (3rd m. pl.)',
           'vurdular (3. çoğul eril)',
         ],
         [
           { ar: 'ضَرَبْنَ' },
-          { ar: 'ـنَ', note: 'nūn of the feminine' },
+          { ar: 'ـنَ', footnote: 'nūn of the feminine' },
           'they struck (3rd f. pl.)',
           'vurdular (3. çoğul dişil)',
         ],
@@ -188,7 +188,7 @@ export const damair: ReferenceEntry = {
       rows: [
         [
           { ar: 'ضَرَبَنِي' },
-          { ar: 'ـنِي', note: 'nūn al-wiqāyah + yāʾ' },
+          { ar: 'ـنِي', footnote: 'nūn al-wiqāyah + yāʾ' },
           'he struck me (1st sg.)',
           'bana vurdu (1. tekil)',
         ],
@@ -264,7 +264,7 @@ export const damair: ReferenceEntry = {
       columns: ['Pronoun', 'On a noun', 'On a ḥarf jarr', 'English', 'Türkçe'],
       rows: [
         [
-          { ar: 'ـِي', note: 'no protective nūn' },
+          { ar: 'ـِي', footnote: 'no protective nūn' },
           { ar: 'كِتَابِي' },
           { ar: 'بِي' },
           'my (1st sg.)',
@@ -279,7 +279,7 @@ export const damair: ReferenceEntry = {
         [
           { ar: 'ـهُ' },
           { ar: 'كِتَابُهُ' },
-          { ar: 'بِهِ', note: 'kasra after بِ' },
+          { ar: 'بِهِ', footnote: 'kasra after بِ' },
           'his (3rd m. sg.)',
           'onun (3. tekil eril)',
         ],
@@ -287,21 +287,21 @@ export const damair: ReferenceEntry = {
         [
           { ar: 'ـهُمَا' },
           { ar: 'كِتَابُهُمَا' },
-          { ar: 'بِهِمَا', note: 'kasra after بِ' },
+          { ar: 'بِهِمَا', footnote: 'kasra after بِ' },
           'their (3rd dual)',
           'o ikisinin (3. ikil)',
         ],
         [
           { ar: 'ـهُمْ' },
           { ar: 'كِتَابُهُمْ' },
-          { ar: 'بِهِمْ', note: 'kasra after بِ' },
+          { ar: 'بِهِمْ', footnote: 'kasra after بِ' },
           'their (3rd m. pl.)',
           'onların (3. çoğul eril)',
         ],
         [
           { ar: 'ـهُنَّ' },
           { ar: 'كِتَابُهُنَّ' },
-          { ar: 'بِهِنَّ', note: 'kasra after بِ' },
+          { ar: 'بِهِنَّ', footnote: 'kasra after بِ' },
           'their (3rd f. pl.)',
           'onların (3. çoğul dişil)',
         ],

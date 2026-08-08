@@ -22,10 +22,10 @@ describe('hurufAlKhafdSenses deck', () => {
     expect(hurufAlKhafdSenses.notes.length).toBe(sensesWithExample.length)
   })
 
-  it('derives glosses and example from the reference (no duplicated text)', () => {
+  it('derives meanings and example from the reference (no duplicated text)', () => {
     for (const { harf, sense } of sensesWithExample) {
       const note = hurufAlKhafdSenses.notes.find(
-        (n) => n.sense?.termArabic === sense.termArabic && n.arabic === (harf.particle ?? harf.arabic),
+        (n) => n.sense?.termArabic === sense.termArabic && n.arabic === (harf.bareForm ?? harf.arabic),
       )
       expect(note, `note for ${harf.id} / ${sense.term}`).toBeDefined()
       // Same object references prove the deck reads the reference, not a copy.

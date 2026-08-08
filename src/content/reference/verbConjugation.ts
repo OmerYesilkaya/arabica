@@ -2,7 +2,7 @@ import type { ReferenceEntry } from '../types'
 
 // Ājurrūmiyya, bāb al-afʿāl: the three tenses of the verb and their iʿrāb.
 // DRAFT: verify against your textbook before relying on it. Every Arabic form,
-// English gloss, Turkish gloss, and citation below needs Omer's check.
+// meaning (English and Turkish), and citation below needs Omer's check.
 //
 // MODEL VERB: ضَرَبَ / يَضْرِبُ / اِضْرِبْ (a-i pattern), the Ājurrūmiyya's own
 // example verb. Decided by Omer 2026-08-06; he studies the matn itself.
@@ -10,9 +10,8 @@ import type { ReferenceEntry } from '../types'
 // the overview prose points out.
 //
 // Sourcing: the three conjugation tables hold bare forms, which need no
-// citation. The examples table is Quran only, cited surah:ayah. RefTable has no
-// Example field, so each citation rides in the cell `note` beside its Arabic.
-// If Omer wants citations as first-class data, extend RefTable in its own commit.
+// citation. The examples table is Quran only, cited surah:ayah in the cell's
+// `source` field, which the citation checker in scripts/ reads.
 
 export const verbConjugation: ReferenceEntry = {
   id: 'verb-conjugation',
@@ -196,37 +195,37 @@ export const verbConjugation: ReferenceEntry = {
         [
           '3rd m. dual',
           '3. ikil eril',
-          { ar: 'يَضْرِبَانِ', note: 'nūn stays' },
-          { ar: 'يَضْرِبَا', note: 'nūn drops' },
-          { ar: 'يَضْرِبَا', note: 'nūn drops' },
+          { ar: 'يَضْرِبَانِ', footnote: 'nūn stays' },
+          { ar: 'يَضْرِبَا', footnote: 'nūn drops' },
+          { ar: 'يَضْرِبَا', footnote: 'nūn drops' },
         ],
         [
           '2nd dual, 3rd f. dual',
           '2. ikil, 3. dişil ikil',
-          { ar: 'تَضْرِبَانِ', note: 'nūn stays' },
-          { ar: 'تَضْرِبَا', note: 'nūn drops' },
-          { ar: 'تَضْرِبَا', note: 'nūn drops' },
+          { ar: 'تَضْرِبَانِ', footnote: 'nūn stays' },
+          { ar: 'تَضْرِبَا', footnote: 'nūn drops' },
+          { ar: 'تَضْرِبَا', footnote: 'nūn drops' },
         ],
         [
           '3rd m. pl.',
           '3. çoğul eril',
-          { ar: 'يَضْرِبُونَ', note: 'nūn stays' },
-          { ar: 'يَضْرِبُوا', note: 'nūn drops' },
-          { ar: 'يَضْرِبُوا', note: 'nūn drops' },
+          { ar: 'يَضْرِبُونَ', footnote: 'nūn stays' },
+          { ar: 'يَضْرِبُوا', footnote: 'nūn drops' },
+          { ar: 'يَضْرِبُوا', footnote: 'nūn drops' },
         ],
         [
           '2nd m. pl.',
           '2. çoğul eril',
-          { ar: 'تَضْرِبُونَ', note: 'nūn stays' },
-          { ar: 'تَضْرِبُوا', note: 'nūn drops' },
-          { ar: 'تَضْرِبُوا', note: 'nūn drops' },
+          { ar: 'تَضْرِبُونَ', footnote: 'nūn stays' },
+          { ar: 'تَضْرِبُوا', footnote: 'nūn drops' },
+          { ar: 'تَضْرِبُوا', footnote: 'nūn drops' },
         ],
         [
           '2nd f. sg.',
           '2. tekil dişil',
-          { ar: 'تَضْرِبِينَ', note: 'nūn stays' },
-          { ar: 'تَضْرِبِي', note: 'nūn drops' },
-          { ar: 'تَضْرِبِي', note: 'nūn drops' },
+          { ar: 'تَضْرِبِينَ', footnote: 'nūn stays' },
+          { ar: 'تَضْرِبِي', footnote: 'nūn drops' },
+          { ar: 'تَضْرِبِي', footnote: 'nūn drops' },
         ],
       ],
     },
@@ -238,34 +237,34 @@ export const verbConjugation: ReferenceEntry = {
       columns: ['Form', 'Example', 'Meaning'],
       rows: [
         [
-          { ar: 'ضَرَبَ', note: 'māḍī, 3rd m. sg.' },
+          { ar: 'ضَرَبَ', footnote: 'māḍī, 3rd m. sg.' },
           {
             ar: 'أَلَمْ تَرَ كَيْفَ ضَرَبَ اللَّهُ مَثَلًا كَلِمَةً طَيِّبَةً',
-            note: "Qur'an 14:24",
+            source: "Qur'an 14:24",
           },
           'EN: Have you not seen how Allah sets forth a parable: a good word... / TR: Allah\'ın nasıl bir misal verdiğini görmedin mi: güzel bir söz...',
         ],
         [
-          { ar: 'يَضْرِبُ', note: 'muḍāriʿ, marfūʿ' },
-          { ar: 'وَيَضْرِبُ اللَّهُ الْأَمْثَالَ لِلنَّاسِ', note: "Qur'an 14:25" },
+          { ar: 'يَضْرِبُ', footnote: 'muḍāriʿ, marfūʿ' },
+          { ar: 'وَيَضْرِبُ اللَّهُ الْأَمْثَالَ لِلنَّاسِ', source: "Qur'an 14:25" },
           'EN: And Allah sets forth parables for mankind. / TR: Allah insanlara misaller verir.',
         ],
         [
-          { ar: 'تَفْعَلُوا', note: 'five verbs, jazm then naṣb' },
+          { ar: 'تَفْعَلُوا', footnote: 'five verbs, jazm then naṣb' },
           {
             ar: 'فَإِنْ لَمْ تَفْعَلُوا وَلَنْ تَفْعَلُوا فَاتَّقُوا النَّارَ',
-            note: "Qur'an 2:24",
+            source: "Qur'an 2:24",
           },
           'EN: If you do not do it, and you never will, then guard yourselves against the Fire. / TR: Bunu yapamazsanız, ki asla yapamayacaksınız, o ateşten sakının.',
         ],
         [
-          { ar: 'اِضْرِبْ', note: 'amr, 2nd m. sg.' },
-          { ar: 'فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ', note: "Qur'an 2:60" },
+          { ar: 'اِضْرِبْ', footnote: 'amr, 2nd m. sg.' },
+          { ar: 'فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ', source: "Qur'an 2:60" },
           'EN: We said: strike the rock with your staff. / TR: "Asânla taşa vur" dedik.',
         ],
         [
-          { ar: 'يُؤْمِنُونَ', note: 'five verbs, rafʿ' },
-          { ar: 'الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ', note: "Qur'an 2:3" },
+          { ar: 'يُؤْمِنُونَ', footnote: 'five verbs, rafʿ' },
+          { ar: 'الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ', source: "Qur'an 2:3" },
           'EN: Those who believe in the unseen and establish the prayer. / TR: Onlar, gayba inanır ve namazı dosdoğru kılarlar.',
         ],
       ],

@@ -10,12 +10,12 @@ When an example or Arabic text is needed, use this priority:
 2. Hadith (cite collection and number)
 3. Plain fusha only when no suitable Quranic or Hadith example exists
 
-Every example carries English and Turkish glosses. All drafted content stays
+Every example carries English and Turkish meanings. All drafted content stays
 DRAFT until Omer verifies it (invariant 1).
 
 ## Carried over from issues 1–7 (Omer's manual steps)
 
-- [ ] Verify the per-sense deck content (Quran citations, glosses) against
+- [ ] Verify the per-sense deck content (Quran citations, meanings) against
       the textbook and a muṣḥaf, then unlock the deck. Note: the cited ayah
       for the oath example occurs at 6:109, 16:38, 24:53, 35:42.
 - [ ] On-iPhone PWA checks: drills typing (keyboard, zoom, focus) and the
@@ -43,7 +43,7 @@ jazm list follows the matn as printed. Remaining for Omer:
 - [ ] Tashkeel of the quoted fragments is eyeball-checked only for
       letters, not vowels, by the script. Spot-check vowels while
       studying; the wording and citations are verified.
-- [ ] TR glosses: align with the matn's terminology lazily while
+- [ ] TR meanings: align with the matn's terminology lazily while
       studying; flag any clash.
 
 ---
@@ -66,7 +66,7 @@ requirements for all six:
 - The word lists (which particles, which sisters, which forms) follow the
   Ājurrūmiyya. Do not improvise membership; if editions differ, note it in
   a code comment for Omer.
-- Every gloss in English AND Turkish. Every example follows the sourcing
+- Every meaning in English AND Turkish. Every example follows the sourcing
   rule above, citation in the `Example.source` field.
 - All content marked DRAFT in a file-top comment.
 - Reference only: no new decks in these issues. Decks for these topics are

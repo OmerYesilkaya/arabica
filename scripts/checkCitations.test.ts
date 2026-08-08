@@ -3,7 +3,7 @@
 //
 //   pnpm exec vitest run --config scripts/vitest.citations.config.ts
 //
-// It walks every Example.source and table-cell note in src/content that cites
+// It walks every Example.source and RefText.source in src/content that cites
 // "Qur'an S:A", fetches the canonical ayah text (api.alquran.cloud, simple and
 // uthmani editions), and checks that the quoted fragment's letter skeleton is
 // a substring of the ayah's. Letter-skeleton comparison ignores tashkeel, so
@@ -44,8 +44,8 @@ function fromExample(where: string, ex: Example | undefined): Quote[] {
 }
 
 function fromCell(where: string, cell: RefText): Quote[] {
-  if (typeof cell === 'string' || !cell.note) return []
-  const q = quoteOf(where, cell.ar, cell.note)
+  if (typeof cell === 'string' || !cell.source) return []
+  const q = quoteOf(where, cell.ar, cell.source)
   return q ? [q] : []
 }
 

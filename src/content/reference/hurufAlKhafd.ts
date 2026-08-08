@@ -13,7 +13,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
   title: 'Ḥurūf al-Khafḍ',
   titleArabic: 'حُرُوفُ الْخَفْضِ',
   order: 3,
-  summary: 'All particles of khafḍ with their senses, examples, and glosses.',
+  summary: 'All particles of khafḍ with their senses, examples, and meanings.',
   sections: [
     {
       kind: 'prose',
@@ -214,7 +214,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
       kind: 'harf',
       id: 'ba',
       arabic: 'الْبَاءُ (بِـ)',
-      particle: 'بِ',
+      bareForm: 'بِ',
       english: 'with, by',
       turkish: 'ile, -le / -la',
       senses: [
@@ -261,7 +261,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
       kind: 'harf',
       id: 'kaf',
       arabic: 'الْكَافُ (كَـ)',
-      particle: 'كَ',
+      bareForm: 'كَ',
       english: 'like, as',
       turkish: 'gibi',
       senses: [
@@ -283,7 +283,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
       kind: 'harf',
       id: 'lam',
       arabic: 'اللَّامُ (لِـ)',
-      particle: 'لِ',
+      bareForm: 'لِ',
       english: 'for, belonging to',
       turkish: 'için; -in (aitlik)',
       senses: [
@@ -318,7 +318,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
       kind: 'harf',
       id: 'waw-qasam',
       arabic: 'وَاوُ الْقَسَمِ (وَ)',
-      particle: 'وَ',
+      bareForm: 'وَ',
       english: 'by ... (oath)',
       turkish: 'yemin vavı',
       senses: [
@@ -342,7 +342,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
       kind: 'harf',
       id: 'ba-qasam',
       arabic: 'بَاءُ الْقَسَمِ (بِ)',
-      particle: 'بِ',
+      bareForm: 'بِ',
       english: 'by ... (oath)',
       turkish: 'yemin bâsı',
       senses: [
@@ -366,7 +366,7 @@ export const hurufAlKhafdRef: ReferenceEntry = {
       kind: 'harf',
       id: 'ta-qasam',
       arabic: 'تَاءُ الْقَسَمِ (تَ)',
-      particle: 'تَ',
+      bareForm: 'تَ',
       english: 'by ... (oath)',
       turkish: 'yemin tâsı',
       senses: [

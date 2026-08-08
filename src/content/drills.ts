@@ -1,21 +1,19 @@
 import { decks } from './decks'
-import type { Direction } from './types'
+import type { Direction, Meaning } from './types'
 
 // Drills are unscheduled practice, so this pool is derived purely from content
 // data: nothing here reads cardState or reviewLog.
 
-export interface DrillItem {
+export interface DrillItem extends Meaning {
   id: string
   arabic: string
-  english: string
-  turkish: string
 }
 
 /**
- * Pool for drill type 1 (type the Arabic for a gloss): every note whose
+ * Pool for drill type 1 (type the Arabic for a meaning): every note whose
  * effective directions include meaning-to-ar. That excludes the oath
  * particles, whose meanings are identical and so cannot be produced from a
- * gloss unambiguously. The Arabic to type is `drillAnswer` when set, so
+ * meaning unambiguously. The Arabic to type is `drillAnswer` when set, so
  * label-form notes (the prefix particles) ask for the bare particle.
  */
 export function buildDrillPool(): DrillItem[] {

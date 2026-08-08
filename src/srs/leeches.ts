@@ -1,17 +1,15 @@
 import type { ArabicaDB } from '../db/db'
-import type { Direction } from '../content/types'
+import type { Direction, Meaning } from '../content/types'
 import { decks, cardsOfDeck } from '../content/decks'
 
 /** Anki default: a card is a leech once it has lapsed this many times. */
 export const LEECH_THRESHOLD = 8
 
-export interface Leech {
+export interface Leech extends Meaning {
   cardId: string
   deckId: string
   direction: Direction
   arabic: string
-  english: string
-  turkish: string
   lapses: number
   referenceId?: string
 }

@@ -212,7 +212,7 @@ button:disabled {
 
 /* ---------- review screen ---------- */
 
-.review-top {
+.session-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -221,7 +221,7 @@ button:disabled {
   color: var(--text-muted);
 }
 
-.review-card {
+.session-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -236,19 +236,19 @@ button:disabled {
   text-align: center;
 }
 
-.review-card .prompt-arabic {
+.session-card .prompt-arabic {
   font-size: 3rem;
 }
 
-.review-card .answer-arabic {
+.session-card .answer-arabic {
   font-size: 2.4rem;
 }
 
-.review-card .meaning {
+.session-card .meaning {
   font-size: 1.25rem;
 }
 
-.review-card .meaning .lang {
+.session-card .meaning .lang {
   display: block;
   font-size: 0.7rem;
   letter-spacing: 0.08em;
@@ -257,18 +257,18 @@ button:disabled {
   margin-bottom: 2px;
 }
 
-.review-card hr {
+.session-card hr {
   width: 60%;
   border: none;
   border-top: 1px solid var(--border);
 }
 
-.review-card .example {
+.session-card .example {
   font-size: 0.95rem;
   color: var(--text-muted);
 }
 
-.review-card .example .arabic {
+.session-card .example .arabic {
   font-size: 1.4rem;
   color: var(--text);
   display: block;
@@ -285,7 +285,7 @@ button:disabled {
 }
 
 /* Per-sense card: the example is the prompt, the harf is highlighted. */
-.review-card .sense-prompt {
+.session-card .sense-prompt {
   font-size: 2.2rem;
   line-height: 1.9;
 }
@@ -297,12 +297,12 @@ button:disabled {
   padding: 0 2px;
 }
 
-.review-card .sense-term {
+.session-card .sense-term {
   font-weight: 600;
   font-size: 1.05rem;
 }
 
-.review-card .sense-term .arabic {
+.session-card .sense-term .arabic {
   font-weight: 400;
   margin-left: 10px;
 }
@@ -524,10 +524,19 @@ table.ref-table .arabic {
   white-space: nowrap;
 }
 
-table.ref-table .cell-note {
+table.ref-table .cell-footnote {
   display: block;
   font-size: 0.75rem;
   color: var(--text-muted);
+  direction: ltr;
+}
+
+/* A citation reads as a citation everywhere: same treatment as .source. */
+table.ref-table .cell-source {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
   direction: ltr;
 }
 
@@ -554,7 +563,7 @@ table.ref-table .cell-note {
   font-size: 2rem;
 }
 
-.harf-detail .harf-head .gloss {
+.harf-detail .harf-head .meaning {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
@@ -642,7 +651,7 @@ table.ref-table .cell-note {
   font-size: 1.2rem;
 }
 
-.leech-gloss {
+.leech-meaning {
   font-size: 0.85rem;
   color: var(--text-muted);
   min-width: 0;

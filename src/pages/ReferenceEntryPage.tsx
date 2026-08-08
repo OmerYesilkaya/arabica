@@ -8,7 +8,8 @@ function TextCell({ value }: { value: RefText }) {
   return (
     <>
       <span className="arabic">{value.ar}</span>
-      {value.note && <span className="cell-note">{value.note}</span>}
+      {value.footnote && <span className="cell-footnote">{value.footnote}</span>}
+      {value.source && <span className="cell-source">{value.source}</span>}
     </>
   )
 }
@@ -63,7 +64,7 @@ function HarfSection({ section }: { section: RefHarf }) {
     <section className="ref-section harf-detail card" id={section.id}>
       <div className="harf-head">
         <span className="arabic">{section.arabic}</span>
-        <span className="gloss">
+        <span className="meaning">
           {section.english} · {section.turkish}
         </span>
       </div>

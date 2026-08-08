@@ -13,6 +13,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { decks } from '../src/content/decks'
+import { isVocabTrackDeck } from '../src/content/decks/quranVocabTrack'
 import { normalizeArabic } from '../src/text/arabic'
 
 const MORPHOLOGY = join(import.meta.dirname, 'data/quran-morphology.txt')
@@ -132,13 +133,20 @@ export function isStandaloneWord(lemma: Lemma): boolean {
 }
 
 /**
- * Words already taught by an existing deck, as normalized Arabic. Matching is
- * on `drillAnswer ?? arabic` so the prefix particles, whose display form names
- * the letter ("al-ba'u"), are matched by their bare particle.
+ * Words already taught by a deck *outside* the vocabulary track, as normalized
+ * Arabic. Matching is on `drillAnswer ?? arabic` so the prefix particles, whose
+ * display form names the letter ("al-ba'u"), are matched by their bare particle.
+ *
+ * The track's own decks are deliberately excluded. They are slices of the very
+ * list this function filters, so counting them as "already taught" would drop
+ * them from the ranking and shift every later level up the frequency order -
+ * emitting level 5 after level 4 shipped would silently skip a hundred words.
+ * The selection must stay identical no matter how many levels exist.
  */
 export function taughtAlready(): Set<string> {
   const taught = new Set<string>()
   for (const deck of decks) {
+    if (isVocabTrackDeck(deck.id)) continue
     for (const note of deck.notes) {
       taught.add(normalizeArabic(note.drillAnswer ?? note.arabic))
     }

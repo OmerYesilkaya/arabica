@@ -2,8 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { State } from 'ts-fsrs'
 import { ArabicaDB } from '../db/db'
 import { cardsOfDeck } from '../content/decks'
-import { quranVocab1 } from '../content/decks/quranVocab1'
-import { quranVocab2 } from '../content/decks/quranVocab2'
+import type { DeckDef } from '../content/types'
 import { GRADUATION_THRESHOLD } from '../content/decks/quranVocabTrack'
 import { trackStatus } from './vocabTrack'
 
@@ -14,6 +13,31 @@ beforeEach(() => {
   db = new ArabicaDB(`track-test-${++counter}`)
 })
 
+/**
+ * Synthetic levels rather than the real decks: this tests the unlock rule, and
+ * pinning it to whichever words happen to be in level 1 would make a content
+ * edit fail a scheduling test.
+ */
+function level(id: string, size: number): DeckDef {
+  return {
+    id,
+    name: id,
+    nameArabic: id,
+    description: id,
+    directions: ['ar-to-meaning'],
+    newPerDay: 10,
+    burySiblings: true,
+    notes: Array.from({ length: size }, (_, i) => ({
+      id: `${id}-${i}`,
+      arabic: 'x',
+      english: 'x',
+      turkish: 'x',
+    })),
+  }
+}
+
+const quranVocab1 = level('level-one', 50)
+const quranVocab2 = level('level-two', 50)
 const track = [quranVocab1, quranVocab2]
 
 /** Put `count` of the deck's cards into `state`. */

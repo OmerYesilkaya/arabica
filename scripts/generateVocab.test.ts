@@ -95,6 +95,12 @@ describe('vocabulary selection', () => {
     console.log(`wrote ${scaffold.length} words of level ${level} to ${process.env.EMIT}`)
   })
 
+  // Dumps every note id in the repo, for the composer that merges authored
+  // meanings into deck files: ids must be unique across decks, not just levels.
+  it.runIf(process.env.DUMP_IDS)('dumps existing note ids', () => {
+    writeFileSync(process.env.DUMP_IDS!, JSON.stringify([...existingNoteIds()], null, 2))
+  })
+
   it('reports the selection', () => {
     const standalone = [...index.values()].filter(isStandaloneWord)
     const total = standalone.reduce((sum, lemma) => sum + lemma.count, 0)

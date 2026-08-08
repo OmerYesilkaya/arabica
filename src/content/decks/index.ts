@@ -6,6 +6,14 @@ import { quranVocab1 } from './quranVocab1'
 import { quranVocab2 } from './quranVocab2'
 import { quranVocab3 } from './quranVocab3'
 import { quranVocab4 } from './quranVocab4'
+import { quranVocab5 } from './quranVocab5'
+import { quranVocab6 } from './quranVocab6'
+import { quranVocab7 } from './quranVocab7'
+import { quranVocab8 } from './quranVocab8'
+import { quranVocab9 } from './quranVocab9'
+import { quranVocab10 } from './quranVocab10'
+import { quranVocab11 } from './quranVocab11'
+import { quranVocab12 } from './quranVocab12'
 
 export const decks: DeckDef[] = [
   hurufAlKhafd,
@@ -14,6 +22,14 @@ export const decks: DeckDef[] = [
   quranVocab2,
   quranVocab3,
   quranVocab4,
+  quranVocab5,
+  quranVocab6,
+  quranVocab7,
+  quranVocab8,
+  quranVocab9,
+  quranVocab10,
+  quranVocab11,
+  quranVocab12,
 ]
 
 export function deckById(deckId: string): DeckDef | undefined {

@@ -215,7 +215,7 @@ export const quranVocab1: DeckDef = {
       },
     },
     {
-      id: 'an',
+      id: 'an-2',
       arabic: 'أَن',
       english: 'that, to (subordinating)',
       turkish: '-mesi, -mek (mastar edatı)',
@@ -429,7 +429,7 @@ export const quranVocab1: DeckDef = {
       },
     },
     {
-      id: 'lam',
+      id: 'lam-2',
       arabic: 'لَم',
       english: 'not (with the jussive)',
       turkish: '-medi, -madı (cezm edatı)',

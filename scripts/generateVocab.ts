@@ -377,12 +377,23 @@ export interface Scaffold {
   fragment: boolean
 }
 
+/**
+ * Note ids already used by any deck. Card ids are `noteId|direction` and the
+ * card-state table is keyed on that, with no deck in the key: two decks
+ * sharing a note id would share one learner's scheduling state.
+ */
+export function existingNoteIds(): Set<string> {
+  const ids = new Set<string>()
+  for (const deck of decks) for (const note of deck.notes) ids.add(note.id)
+  return ids
+}
+
 export async function scaffoldLevel(
   lemmas: Lemma[],
   lengths: Map<string, number>,
   words: Map<string, Segment[]>,
 ): Promise<Scaffold[]> {
-  const taken = new Set<string>()
+  const taken = existingNoteIds()
   const out: Scaffold[] = []
   for (const lemma of lemmas) {
     const choice = chooseAyah(lemma, lengths, words)

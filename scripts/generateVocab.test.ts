@@ -17,10 +17,12 @@ import {
   LEVEL_SIZE,
   ayahLengths,
   chooseAyah,
+  existingNoteIds,
   indexWords,
   isStandaloneWord,
   levels,
   load,
+  noteId,
   scaffoldLevel,
   selectLemmas,
   taughtAlready,
@@ -50,6 +52,19 @@ describe('vocabulary selection', () => {
     expect(taught.has(normalizeArabic('مِنْ'))).toBe(true)
     for (const lemma of selected) {
       expect(taught.has(normalizeArabic(lemma.lemma)), lemma.lemma).toBe(false)
+    }
+  })
+
+  it('never reuses a note id an existing deck already owns', () => {
+    // cardId is `noteId|direction` with no deck in it, so a duplicate id would
+    // make two decks share one card's scheduling state.
+    const existing = existingNoteIds()
+    expect(existing.size).toBeGreaterThan(0)
+    const scaffoldIds = new Set<string>()
+    for (const lemma of selected.slice(0, LEVEL_SIZE)) {
+      const id = noteId(lemma.lemma, new Set([...existing, ...scaffoldIds]))
+      expect(existing.has(id), lemma.lemma).toBe(false)
+      scaffoldIds.add(id)
     }
   })
 

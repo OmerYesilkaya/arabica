@@ -1,16 +1,24 @@
 // Arabic text helpers. Pure string functions, no content and no side effects.
 
-// Tashkeel (harakat and Qurʾanic marks) span U+064B–U+065F, plus the
-// superscript alef U+0670. Tatweel (kashida) U+0640 is a decorative stretch,
-// not a letter, so it is removed with the vowels.
-const TASHKEEL = /[ً-ٰٟ]/g
-const TATWEEL = /ـ/g
+// Tashkeel (harakat) spans U+064B-U+065F, plus the superscript alef U+0670.
+// Tatweel (kashida) U+0640 is a decorative stretch, not a letter, so it goes
+// with the vowels.
+//
+// U+06D6-U+06ED are the Qur'anic annotation marks: waqf signs, the small high
+// seen, the small low meem. Mushaf orthography sets them between letters, so
+// leaving them in breaks letter-level comparison - a word quoted from an ayah
+// stops matching the same word written plainly.
+//
+// Written as codepoints rather than literals: these are invisible combining
+// marks, and a range of them inside a character class cannot be reviewed.
+const TASHKEEL = /[\u064B-\u065F\u0670\u06D6-\u06ED]/g
+const TATWEEL = /\u0640/g
 
 /**
  * The same set as TASHKEEL + TATWEEL, as a single non-global class. Kept
  * separate because `.test()` on a /g regex advances lastIndex between calls.
  */
-const MARK = /[ً-ٰٟـ]/
+const MARK = /[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/
 
 /** Remove tashkeel and tatweel. Letters and all other characters are kept. */
 export function stripTashkeel(text: string): string {

@@ -1,8 +1,15 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { decks } from '../content/decks'
 import { db } from '../db/db'
 import { deckCounts } from '../srs/queue'
+import {
+  GRADUATION_THRESHOLD,
+  isVocabTrackDeck,
+  quranVocabTrack,
+} from '../content/decks/quranVocabTrack'
+import { trackStatus } from '../srs/vocabTrack'
 import { LAST_EXPORT_KEY } from '../db/exportImport'
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000
@@ -70,18 +77,82 @@ function DeckRow({ deckId }: { deckId: string }) {
   )
 }
 
+/**
+ * The vocabulary track as one row. Twelve peer rows, ten of them saying
+ * "Locked", would be noise: the track is a single thing being progressed
+ * through, so it shows where you are and expands to the levels on demand.
+ */
+function VocabTrackRow() {
+  const [expanded, setExpanded] = useState(false)
+  const status = useLiveQuery(() => trackStatus(db, quranVocabTrack), [])
+
+  if (!status) return null
+  const percent = status.total ? Math.round((100 * status.graduated) / status.total) : 0
+
+  return (
+    <div className="card deck-track">
+      <button
+        type="button"
+        className="track-summary"
+        aria-expanded={expanded}
+        onClick={() => setExpanded(!expanded)}
+      >
+        <span className="deck-info">
+          <h2>Quran Vocabulary</h2>
+          <span className="deck-arabic arabic">مُفْرَدَاتُ الْقُرْآنِ</span>
+          <span className="track-progress">
+            Level {status.currentLevel} · {status.graduated}/{status.total} words known
+          </span>
+          <span className="track-bar" aria-hidden="true">
+            <span className="track-bar-fill" style={{ width: `${percent}%` }} />
+          </span>
+        </span>
+        <span className="track-chevron" aria-hidden="true">
+          {expanded ? '▾' : '▸'}
+        </span>
+      </button>
+
+      {expanded && (
+        <ol className="track-levels">
+          {status.levels.map((level) => (
+            <li key={level.deck.id} className={level.unlocked ? undefined : 'locked'}>
+              <span className="track-level-name">{level.deck.name}</span>
+              {level.unlocked ? (
+                <>
+                  <span className="muted">
+                    {level.graduated}/{level.total} known
+                  </span>
+                  <Link className="button-primary" to={`/study/${level.deck.id}`}>
+                    Study
+                  </Link>
+                </>
+              ) : (
+                <span className="lock">
+                  Opens at {Math.round(GRADUATION_THRESHOLD * 100)}% of the level before
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  )
+}
+
 export function DecksPage() {
+  const standalone = decks.filter((deck) => !isVocabTrackDeck(deck.id))
   return (
     <main className="page">
       <h1 className="page-title">Study</h1>
       <ExportReminder />
-      {decks.map((deck) =>
+      {standalone.map((deck) =>
         deck.locked ? (
           <LockedDeckRow key={deck.id} deckId={deck.id} />
         ) : (
           <DeckRow key={deck.id} deckId={deck.id} />
         ),
       )}
+      <VocabTrackRow />
     </main>
   )
 }

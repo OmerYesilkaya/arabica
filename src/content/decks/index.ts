@@ -3,8 +3,14 @@ import { cardIdOf } from '../types'
 import { hurufAlKhafd } from './hurufAlKhafd'
 import { hurufAlKhafdSenses } from './hurufAlKhafdSenses'
 import { quranVocab1 } from './quranVocab1'
+import { quranVocab2 } from './quranVocab2'
 
-export const decks: DeckDef[] = [hurufAlKhafd, hurufAlKhafdSenses, quranVocab1]
+export const decks: DeckDef[] = [
+  hurufAlKhafd,
+  hurufAlKhafdSenses,
+  quranVocab1,
+  quranVocab2,
+]
 
 export function deckById(deckId: string): DeckDef | undefined {
   return decks.find((d) => d.id === deckId)

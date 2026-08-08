@@ -927,3 +927,79 @@ table.ref-table .cell-source {
     animation: none;
   }
 }
+
+/* ---------- Vocabulary track row ---------- */
+
+.deck-track {
+  padding: 0;
+  overflow: hidden;
+}
+
+.track-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.track-progress {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.track-bar {
+  display: block;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.track-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.track-chevron {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.track-levels {
+  margin: 0;
+  padding: 0 16px 8px;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.track-levels li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.track-levels li:last-child {
+  border-bottom: none;
+}
+
+.track-level-name {
+  flex: 1;
+}
+
+.track-levels li.locked .track-level-name {
+  color: var(--text-muted);
+}

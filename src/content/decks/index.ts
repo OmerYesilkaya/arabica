@@ -4,12 +4,16 @@ import { hurufAlKhafd } from './hurufAlKhafd'
 import { hurufAlKhafdSenses } from './hurufAlKhafdSenses'
 import { quranVocab1 } from './quranVocab1'
 import { quranVocab2 } from './quranVocab2'
+import { quranVocab3 } from './quranVocab3'
+import { quranVocab4 } from './quranVocab4'
 
 export const decks: DeckDef[] = [
   hurufAlKhafd,
   hurufAlKhafdSenses,
   quranVocab1,
   quranVocab2,
+  quranVocab3,
+  quranVocab4,
 ]
 
 export function deckById(deckId: string): DeckDef | undefined {

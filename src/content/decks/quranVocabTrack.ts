@@ -1,6 +1,8 @@
 import type { DeckDef } from '../types'
 import { quranVocab1 } from './quranVocab1'
 import { quranVocab2 } from './quranVocab2'
+import { quranVocab3 } from './quranVocab3'
+import { quranVocab4 } from './quranVocab4'
 
 /**
  * The Quran vocabulary levels, in the order they are studied. Frequency order
@@ -10,7 +12,12 @@ import { quranVocab2 } from './quranVocab2'
  * The track is one thing being progressed through rather than a set of peer
  * decks, so the decks page collapses it into a single row.
  */
-export const quranVocabTrack: DeckDef[] = [quranVocab1, quranVocab2]
+export const quranVocabTrack: DeckDef[] = [
+  quranVocab1,
+  quranVocab2,
+  quranVocab3,
+  quranVocab4,
+]
 
 /**
  * Share of a level's cards that must have graduated to the review state before

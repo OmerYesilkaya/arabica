@@ -5,6 +5,7 @@ import { computeStats } from '../srs/stats'
 import { computeForecast } from '../srs/forecast'
 import { computeLeeches, type Leech } from '../srs/leeches'
 import { computeHeatmap, type HeatmapCell } from '../srs/heatmap'
+import { computeCoverage, type Coverage } from '../srs/coverage'
 
 interface Bar {
   day: number
@@ -129,17 +130,64 @@ function BarChart({
   )
 }
 
+/**
+ * How much of the Qurʾan the learner can read, by word occurrence.
+ *
+ * Occurrences rather than words: the commonest 50 words are a far larger share
+ * of the text than 50 taken at random, and that is the whole reason the
+ * vocabulary track is ordered by frequency. The denominator is stated so the
+ * number can be read as a claim rather than a score.
+ */
+function CoveragePanel({ coverage }: { coverage: Coverage }) {
+  const percent = coverage.percent
+  const shown = percent > 0 && percent < 1 ? percent.toFixed(1) : Math.round(percent)
+
+  return (
+    <div className="card coverage">
+      <div className="coverage-head">
+        <div>
+          <div className="coverage-value">
+            {shown}
+            <span className="coverage-unit">%</span>
+          </div>
+          <div className="label">of the Qurʾan you can read</div>
+        </div>
+        {coverage.gained > 0 && (
+          <div className="coverage-gain">
+            +{coverage.gained < 1 ? coverage.gained.toFixed(1) : Math.round(coverage.gained)}%
+            <span className="label">this month</span>
+          </div>
+        )}
+      </div>
+
+      <div className="coverage-bar" aria-hidden="true">
+        <div className="coverage-bar-fill" style={{ width: `${Math.min(100, percent)}%` }} />
+      </div>
+
+      <p className="coverage-note">
+        {coverage.words} word{coverage.words === 1 ? '' : 's'} known, covering{' '}
+        {coverage.known.toLocaleString()} of {coverage.total.toLocaleString()} word
+        occurrences. Attached particles are excluded from both sides.
+      </p>
+    </div>
+  )
+}
+
 export function StatsPage() {
   const stats = useLiveQuery(() => computeStats(db, new Date()))
   const forecast = useLiveQuery(() => computeForecast(db, new Date()))
   const leeches = useLiveQuery(() => computeLeeches(db))
   const heatmap = useLiveQuery(() => computeHeatmap(db, new Date()))
+  const coverage = useLiveQuery(() => computeCoverage(db, new Date()))
 
-  if (!stats || !forecast || !leeches || !heatmap) return <main className="page" />
+  if (!stats || !forecast || !leeches || !heatmap || !coverage)
+    return <main className="page" />
 
   return (
     <main className="page">
       <h1 className="page-title">Stats</h1>
+
+      <CoveragePanel coverage={coverage} />
 
       <div className="stat-tiles">
         <div className="card">

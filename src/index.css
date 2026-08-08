@@ -14,7 +14,7 @@
   --shadow: 0 1px 3px rgba(43, 38, 32, 0.08);
 
   color-scheme: light dark;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Merriweather Variable', Georgia, 'Times New Roman', serif;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -1109,4 +1109,57 @@ table.ref-table .cell-source {
 .track-levels .muted {
   font-size: 13px;
   white-space: nowrap;
+}
+
+/* ---------- Quran coverage ---------- */
+
+.coverage-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.coverage-value {
+  font-size: 40px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.coverage-unit {
+  font-size: 22px;
+  margin-left: 2px;
+  color: var(--text-muted);
+}
+
+.coverage-gain {
+  color: var(--accent);
+  font-size: 15px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.coverage-gain .label {
+  display: block;
+}
+
+.coverage-bar {
+  height: 8px;
+  margin: 14px 0 10px;
+  border-radius: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.coverage-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.coverage-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
 }

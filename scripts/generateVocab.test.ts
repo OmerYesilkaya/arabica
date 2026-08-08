@@ -12,6 +12,8 @@
 import { writeFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { normalizeArabic } from '../src/text/arabic'
+import { decks } from '../src/content/decks'
+import { isVocabTrackDeck } from '../src/content/decks/quranVocabTrack'
 import {
   LEVEL_COUNT,
   LEVEL_SIZE,
@@ -99,6 +101,35 @@ describe('vocabulary selection', () => {
   // meanings into deck files: ids must be unique across decks, not just levels.
   it.runIf(process.env.DUMP_IDS)('dumps existing note ids', () => {
     writeFileSync(process.env.DUMP_IDS!, JSON.stringify([...existingNoteIds()], null, 2))
+  })
+
+  // Dumps the numbers the coverage metric needs (GitHub issue #9): the
+  // denominator, and the occurrence count of every word taught outside the
+  // vocabulary track, which carries its counts in its own data.
+  it.runIf(process.env.DUMP_COVERAGE)('dumps coverage figures', () => {
+    const standalone = [...index.values()].filter(isStandaloneWord)
+    const total = standalone.reduce((sum, lemma) => sum + lemma.count, 0)
+
+    // Normalization folds distinct lemmas together (min and man both reduce to
+    // the same skeleton), so keep the commonest reading of each skeleton
+    // rather than whichever happened to come last.
+    const byNormalized = new Map<string, number>()
+    for (const lemma of standalone) {
+      const key = normalizeArabic(lemma.lemma)
+      byNormalized.set(key, Math.max(byNormalized.get(key) ?? 0, lemma.count))
+    }
+
+    const outside: Record<string, number> = {}
+    for (const deck of decks) {
+      if (isVocabTrackDeck(deck.id)) continue
+      for (const note of deck.notes) {
+        // Per-sense cards teach a harf already counted by its main note.
+        if (note.sense) continue
+        const count = byNormalized.get(normalizeArabic(note.drillAnswer ?? note.arabic))
+        if (count) outside[note.id] = count
+      }
+    }
+    writeFileSync(process.env.DUMP_COVERAGE!, JSON.stringify({ total, outside }, null, 2))
   })
 
   it('reports the selection', () => {

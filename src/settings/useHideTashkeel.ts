@@ -6,7 +6,8 @@ export const HIDE_TASHKEEL_KEY = 'hideTashkeel'
 
 // TODO(deck-browse): a card-level deck browse view does not exist yet. When
 // one is added, strip its card Arabic with stripTashkeel + this hook, the same
-// as StudySessionPage. Reference pages must keep full tashkeel (ISSUES.md issue 1).
+// as StudySessionPage. Reference pages must keep full tashkeel: hiding tashkeel
+// is a render-time choice in Study only, never a change to the data.
 
 /** Live hide-tashkeel setting. Defaults to false (full tashkeel shown). */
 export function useHideTashkeel(): boolean {

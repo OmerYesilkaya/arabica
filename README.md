@@ -27,10 +27,26 @@ Read it before naming anything new.
 
 - All content is hardcoded in `src/content/`. To add cards or entries:
   edit the data files, commit, push. GitHub Actions deploys to Pages.
-- Content files are drafts until verified against a textbook.
-  Verify every meaning before you memorize it.
+- **Sourcing priority.** When an example or any Arabic text is needed, take it
+  from, in this order:
+  1. the Qurʾān, cited as `surah:ayah`;
+  2. hadith, cited by collection and number;
+  3. plain fuṣḥā, only when no suitable Qurʾānic or hadith example exists.
+  The citation goes in the `Source` field, never buried in prose.
+- **Every meaning carries English and Turkish.** Both languages together are
+  one Meaning; neither alone is one.
+- **DRAFT until verified.** New content ships with a `DRAFT` marker in a
+  file-top comment and stays DRAFT until Omer has verified it against the matn
+  and a muṣḥaf. Verify every meaning before you memorize it.
+- Quranic quotations are machine-checked for wording and citation:
+  `pnpm exec vitest run --config scripts/vitest.citations.config.ts`.
+  Re-run it after any content change.
 - Progress (FSRS card state + append-only review log) lives in IndexedDB
   on the device, never in this repo.
+
+## Planned work
+
+Tracked in [GitHub issues](https://github.com/OmerYesilkaya/arabica/issues).
 
 ## Development
 

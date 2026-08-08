@@ -1,7 +1,7 @@
 import type { DeckDef, Note } from '../types'
 import { hurufAlKhafdRef } from '../reference/hurufAlKhafd'
 
-// Per-sense deck for Ḥurūf al-Khafḍ (ISSUES.md issue 3).
+// Per-sense deck for Ḥurūf al-Khafḍ.
 //
 // Single source of truth: every card is generated from the sense data in
 // src/content/reference/hurufAlKhafd.ts. No sense text is duplicated here.

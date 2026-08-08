@@ -2,8 +2,9 @@ import type { ContentCard, DeckDef, Direction, Note } from '../types'
 import { cardIdOf } from '../types'
 import { hurufAlKhafd } from './hurufAlKhafd'
 import { hurufAlKhafdSenses } from './hurufAlKhafdSenses'
+import { quranVocab1 } from './quranVocab1'
 
-export const decks: DeckDef[] = [hurufAlKhafd, hurufAlKhafdSenses]
+export const decks: DeckDef[] = [hurufAlKhafd, hurufAlKhafdSenses, quranVocab1]
 
 export function deckById(deckId: string): DeckDef | undefined {
   return decks.find((d) => d.id === deckId)

@@ -802,3 +802,128 @@ table.ref-table .cell-source {
   font-size: 0.8rem;
   margin-top: 2px;
 }
+
+/* ---------- Vocabulary detail sheet ---------- */
+
+/*
+ * A bottom sheet, not an inline expander: an expander reflows the card and
+ * moves the grading buttons under the thumb mid-review.
+ */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(43, 38, 32, 0.45);
+  display: flex;
+  align-items: flex-end;
+  animation: sheet-fade 140ms ease-out;
+}
+
+.sheet {
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--surface);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-top: 1px solid var(--border);
+  padding: 8px 20px calc(20px + env(safe-area-inset-bottom));
+  animation: sheet-up 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Dragging sets an inline transform; keep the release snap smooth. */
+  transition: transform 140ms ease-out;
+}
+
+.sheet-grip {
+  width: 36px;
+  height: 4px;
+  margin: 4px auto 12px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.sheet-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sheet-word {
+  font-size: 28px;
+}
+
+.sheet-pos {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.sheet-rows {
+  margin: 0;
+  padding: 4px 0 16px;
+}
+
+.sheet-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.sheet-row:last-child {
+  border-bottom: none;
+}
+
+.sheet-row dt {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.sheet-row dd {
+  margin: 0;
+  text-align: right;
+}
+
+.sheet-row dd.arabic {
+  font-size: 20px;
+}
+
+.sheet-close {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+}
+
+.detail-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes sheet-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet,
+  .sheet-backdrop {
+    animation: none;
+  }
+}

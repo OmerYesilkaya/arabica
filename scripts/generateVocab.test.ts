@@ -9,6 +9,7 @@
 // output — they pin the selection invariants the issue settled, so a corpus
 // swap or a content rename cannot quietly change which words get taught.
 
+import { writeFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { normalizeArabic } from '../src/text/arabic'
 import {
@@ -16,15 +17,18 @@ import {
   LEVEL_SIZE,
   ayahLengths,
   chooseAyah,
+  indexWords,
   isStandaloneWord,
   levels,
   load,
+  scaffoldLevel,
   selectLemmas,
   taughtAlready,
 } from './generateVocab'
 
 const { segments, index } = load()
 const lengths = ayahLengths(segments)
+const words = indexWords(segments)
 const selected = selectLemmas(index)
 
 describe('vocabulary selection', () => {
@@ -62,27 +66,37 @@ describe('vocabulary selection', () => {
 
   it('finds an ayah for every selected word', () => {
     for (const lemma of selected) {
-      expect(chooseAyah(lemma, lengths), lemma.lemma).toBeDefined()
+      expect(chooseAyah(lemma, lengths, words), lemma.lemma).toBeDefined()
     }
+  })
+
+  // The emit step reaches the network, so it is opt-in even within this
+  // manual config: EMIT=<path> pnpm exec vitest run --config ...
+  it.runIf(process.env.EMIT)('emits a level scaffold', async () => {
+    const level = Number(process.env.LEVEL ?? 1)
+    const levelWords = levels(selected)[level - 1]
+    const scaffold = await scaffoldLevel(levelWords, lengths, words)
+    writeFileSync(process.env.EMIT!, JSON.stringify(scaffold, null, 2))
+    console.log(`wrote ${scaffold.length} words of level ${level} to ${process.env.EMIT}`)
   })
 
   it('reports the selection', () => {
     const standalone = [...index.values()].filter(isStandaloneWord)
     const total = standalone.reduce((sum, lemma) => sum + lemma.count, 0)
     const covered = selected.reduce((sum, lemma) => sum + lemma.count, 0)
-    const fragments = selected.filter((l) => chooseAyah(l, lengths)?.fragment).length
+    const fragments = selected.filter((l) => chooseAyah(l, lengths, words)?.fragment).length
 
     console.log(
       `${selected.length} of ${standalone.length} standalone lemmas, ` +
         `covering ${((100 * covered) / total).toFixed(1)}% of standalone-word occurrences; ` +
         `${fragments} need a clause fragment`,
     )
-    for (const [i, words] of levels(selected).entries()) {
+    for (const [i, group] of levels(selected).entries()) {
       console.log(
-        `\n--- level ${i + 1} (occurrences ${words[0].count}-${words[words.length - 1].count}) ---\n` +
-          words
+        `\n--- level ${i + 1} (occurrences ${group[0].count}-${group[group.length - 1].count}) ---\n` +
+          group
             .map((lemma) => {
-              const choice = chooseAyah(lemma, lengths)!
+              const choice = chooseAyah(lemma, lengths, words)!
               return `${lemma.lemma}\t${lemma.tag}\t${lemma.root ?? '-'}\t${lemma.count}\t${choice.surah}:${choice.ayah}${choice.fragment ? '*' : ''}`
             })
             .join('\n'),

@@ -12,6 +12,7 @@ import {
   type Grade,
 } from '../srs/engine'
 import { buildQueue, type QueueItem } from '../srs/queue'
+import { VocabSheet } from '../components/VocabSheet'
 import { locateHarf, stripTashkeel } from '../text/arabic'
 import { setHideTashkeel, useHideTashkeel } from '../settings/useHideTashkeel'
 
@@ -58,6 +59,7 @@ export function StudySessionPage() {
 
   const [queue, setQueue] = useState<QueueItem[] | null>(null)
   const [revealed, setRevealed] = useState(false)
+  const [sheetOpen, setSheetOpen] = useState(false)
   const [doneCount, setDoneCount] = useState(0)
   const hideTashkeel = useHideTashkeel()
   const showArabic = (text: string) =>
@@ -118,6 +120,7 @@ export function StudySessionPage() {
       setQueue(next)
       setDoneCount((n) => n + 1)
       setRevealed(false)
+      setSheetOpen(false)
     },
     [current, queue, deck],
   )
@@ -167,6 +170,7 @@ export function StudySessionPage() {
   const { note, direction } = current.content
   const arabicFirst = direction === 'ar-to-meaning'
   const isSense = note.sense !== undefined
+  const isVocab = note.vocab !== undefined
 
   return (
     <main className="page">
@@ -234,12 +238,30 @@ export function StudySessionPage() {
             )}
             {note.example && (
               <div className="example">
-                <span className="arabic">{showArabic(note.example.arabic)}</span>
+                <span className="arabic">
+                  {isVocab ? (
+                    <Highlighted
+                      text={showArabic(note.example.arabic)}
+                      harf={note.vocab!.occurringForm}
+                    />
+                  ) : (
+                    showArabic(note.example.arabic)
+                  )}
+                </span>
                 {note.example.english} · {note.example.turkish}
                 {note.example.source && (
                   <span className="source">{note.example.source}</span>
                 )}
               </div>
+            )}
+            {isVocab && (
+              <button
+                type="button"
+                className="info-link detail-button"
+                onClick={() => setSheetOpen(true)}
+              >
+                ⓘ word detail
+              </button>
             )}
             {note.referenceId && (
               <Link className="info-link" to={referenceLink(note.referenceId)}>
@@ -249,6 +271,10 @@ export function StudySessionPage() {
           </>
         )}
       </div>
+
+      {sheetOpen && isVocab && (
+        <VocabSheet note={note} onClose={() => setSheetOpen(false)} />
+      )}
 
       {revealed ? (
         <div className="answer-buttons">

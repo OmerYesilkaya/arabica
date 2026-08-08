@@ -77,17 +77,34 @@ function DeckRow({ deckId }: { deckId: string }) {
   )
 }
 
+/** Status dot: solid when finished, a ring while in progress, hollow when shut. */
+function LevelDot({ done, current }: { done: boolean; current: boolean }) {
+  const kind = done ? 'done' : current ? 'current' : 'shut'
+  return <span className={`level-dot ${kind}`} aria-hidden="true" />
+}
+
 /**
- * The vocabulary track as one row. Twelve peer rows, ten of them saying
- * "Locked", would be noise: the track is a single thing being progressed
- * through, so it shows where you are and expands to the levels on demand.
+ * The vocabulary track as one row. Twelve peer rows, ten of them repeating the
+ * same "locked" sentence, would be noise: the track is a single thing being
+ * progressed through.
+ *
+ * Each expanded row earns its place by saying something the others do not -
+ * what is finished, where you are, how many words open the next level, and for
+ * the rest, which slice of the frequency order they teach. The unlock rule is
+ * stated once, on the only level it currently applies to.
  */
 function VocabTrackRow() {
   const [expanded, setExpanded] = useState(false)
   const status = useLiveQuery(() => trackStatus(db, quranVocabTrack), [])
 
   if (!status) return null
+
   const percent = status.total ? Math.round((100 * status.graduated) / status.total) : 0
+  const nextShut = status.levels.findIndex((level) => !level.unlocked)
+  const previous = nextShut > 0 ? status.levels[nextShut - 1] : undefined
+  const toUnlock = previous
+    ? Math.max(0, Math.ceil(previous.total * GRADUATION_THRESHOLD) - previous.graduated)
+    : 0
 
   return (
     <div className="card deck-track">
@@ -97,42 +114,89 @@ function VocabTrackRow() {
         aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
       >
-        <span className="deck-info">
-          <h2>Quran Vocabulary</h2>
-          <span className="deck-arabic arabic">مُفْرَدَاتُ الْقُرْآنِ</span>
-          <span className="track-progress">
-            Level {status.currentLevel} · {status.graduated}/{status.total} words known
+        <span className="track-head">
+          <span className="track-title">
+            <h2>Quran Vocabulary</h2>
+            <span className="deck-arabic arabic">مُفْرَدَاتُ الْقُرْآنِ</span>
           </span>
-          <span className="track-bar" aria-hidden="true">
-            <span className="track-bar-fill" style={{ width: `${percent}%` }} />
+          <span className="track-count">
+            <strong>{status.graduated}</strong>
+            <span className="muted">/{status.total}</span>
           </span>
         </span>
-        <span className="track-chevron" aria-hidden="true">
-          {expanded ? '▾' : '▸'}
+
+        {/* One segment per level, each filled by its own progress: the shape of
+            the whole track, readable without expanding it. */}
+        <span className="track-meter" aria-hidden="true">
+          {status.levels.map((level) => (
+            <span
+              key={level.deck.id}
+              className={`meter-cell ${level.unlocked ? 'open' : 'shut'}`}
+            >
+              <span
+                className="meter-fill"
+                style={{ width: `${level.total ? (100 * level.graduated) / level.total : 0}%` }}
+              />
+            </span>
+          ))}
+        </span>
+
+        <span className="track-foot">
+          <span className="muted">
+            Level {status.currentLevel} of {status.levels.length} · {percent}% known
+          </span>
+          <span className="track-chevron">{expanded ? 'Hide levels' : 'All levels'}</span>
         </span>
       </button>
 
       {expanded && (
         <ol className="track-levels">
-          {status.levels.map((level) => (
-            <li key={level.deck.id} className={level.unlocked ? undefined : 'locked'}>
-              <span className="track-level-name">{level.deck.name}</span>
-              {level.unlocked ? (
-                <>
-                  <span className="muted">
-                    {level.graduated}/{level.total} known
+          {status.levels.map((level, index) => {
+            const done = level.total > 0 && level.graduated === level.total
+            const current = level.unlocked && !done
+            const isNext = index === nextShut
+            return (
+              <li key={level.deck.id} className={level.unlocked ? 'open' : 'shut'}>
+                <LevelDot done={done} current={current} />
+                <span className="level-name">
+                  Level {index + 1}
+                  <span className="level-band">
+                    words {index * level.total + 1}–{(index + 1) * level.total}
                   </span>
-                  <Link className="button-primary" to={`/study/${level.deck.id}`}>
+                </span>
+
+                {done && <span className="muted">all {level.total} known</span>}
+
+                {current && (
+                  <span className="level-progress">
+                    <span className="level-bar">
+                      <span
+                        className="level-bar-fill"
+                        style={{ width: `${(100 * level.graduated) / level.total}%` }}
+                      />
+                    </span>
+                    <span className="muted">
+                      {level.graduated}/{level.total}
+                    </span>
+                  </span>
+                )}
+
+                {isNext && (
+                  <span className="muted">
+                    {toUnlock} more to open
+                  </span>
+                )}
+
+                {level.unlocked ? (
+                  <Link className="level-go" to={`/study/${level.deck.id}`}>
                     Study
                   </Link>
-                </>
-              ) : (
-                <span className="lock">
-                  Opens at {Math.round(GRADUATION_THRESHOLD * 100)}% of the level before
-                </span>
-              )}
-            </li>
-          ))}
+                ) : (
+                  <span className="level-go placeholder" aria-hidden="true" />
+                )}
+              </li>
+            )
+          })}
         </ol>
       )}
     </div>

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { State } from 'ts-fsrs'
 import { deckById, siblingCardsOf } from '../content/decks'
-import type { Meaning } from '../content/types'
+import type { Direction, Meaning, Note } from '../content/types'
 import { db, type CardStateRow } from '../db/db'
 import {
   answerCard,
@@ -38,6 +38,16 @@ function MeaningLines({ meaning }: { meaning: Meaning }) {
       </div>
     </>
   )
+}
+
+/**
+ * What the front of the card asks you to produce. Two-direction decks show
+ * the same note from both sides, and a bare meaning prompt is otherwise
+ * indistinguishable from the back of an ar-to-meaning card.
+ */
+function askLabel(note: Note, direction: Direction): string {
+  if (note.sense !== undefined) return '→ Sense'
+  return direction === 'ar-to-meaning' ? '→ Meaning' : '→ Arabic'
 }
 
 /** The Arabic example text with `harf` highlighted inside it. */
@@ -191,6 +201,8 @@ export function StudySessionPage() {
       </div>
 
       <div className="session-card">
+        <div className="prompt-ask">{askLabel(note, direction)}</div>
+
         {isSense ? (
           <div className="prompt-arabic arabic sense-prompt">
             <Highlighted

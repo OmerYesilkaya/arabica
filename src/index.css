@@ -236,6 +236,15 @@ button:disabled {
   text-align: center;
 }
 
+/* Names what the front asks for, so the two directions of a note never
+   read as the same card. Matches the .lang micro-label treatment. */
+.session-card .prompt-ask {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 .session-card .prompt-arabic {
   font-size: 3rem;
 }
@@ -928,7 +937,7 @@ table.ref-table .cell-source {
   }
 }
 
-/* ---------- Vocabulary track row ---------- */
+/* ---------- Vocabulary track ---------- */
 
 .deck-track {
   padding: 0;
@@ -936,10 +945,7 @@ table.ref-table .cell-source {
 }
 
 .track-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  display: block;
   width: 100%;
   padding: 16px;
   background: none;
@@ -950,36 +956,71 @@ table.ref-table .cell-source {
   cursor: pointer;
 }
 
-.track-progress {
-  display: block;
-  margin-top: 6px;
-  color: var(--text-muted);
-  font-size: 13px;
+.track-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.track-bar {
-  display: block;
-  height: 4px;
-  margin-top: 8px;
-  border-radius: 2px;
+.track-title h2 {
+  margin: 0;
+}
+
+.track-count {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.track-count strong {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* One cell per level, each filled by that level's own progress. The shape of
+   the whole track is legible without expanding it. */
+.track-meter {
+  display: flex;
+  gap: 3px;
+  margin: 14px 0 10px;
+}
+
+.meter-cell {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
   background: var(--border);
   overflow: hidden;
 }
 
-.track-bar-fill {
+.meter-cell.shut {
+  opacity: 0.45;
+}
+
+.meter-fill {
   display: block;
   height: 100%;
+  border-radius: 3px;
   background: var(--accent);
 }
 
-.track-chevron {
-  color: var(--text-muted);
-  font-size: 14px;
+.track-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
 }
+
+.track-chevron {
+  color: var(--accent);
+}
+
+/* ---------- expanded level list ---------- */
 
 .track-levels {
   margin: 0;
-  padding: 0 16px 8px;
+  padding: 4px 16px 8px;
   list-style: none;
   border-top: 1px solid var(--border);
 }
@@ -987,8 +1028,8 @@ table.ref-table .cell-source {
 .track-levels li {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 0;
+  gap: 10px;
+  padding: 11px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -996,10 +1037,76 @@ table.ref-table .cell-source {
   border-bottom: none;
 }
 
-.track-level-name {
-  flex: 1;
+.track-levels li.shut {
+  color: var(--text-muted);
 }
 
-.track-levels li.locked .track-level-name {
+.level-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.level-dot.done {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.level-dot.current {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.level-name {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Which slice of the frequency order this level teaches - the one thing a
+   locked level can usefully say about itself. */
+.level-band {
   color: var(--text-muted);
+  font-size: 12px;
+}
+
+.level-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.level-bar {
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.level-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.level-go {
+  flex: none;
+  min-width: 56px;
+  text-align: right;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.level-go.placeholder {
+  min-width: 56px;
+}
+
+.track-levels .muted {
+  font-size: 13px;
+  white-space: nowrap;
 }

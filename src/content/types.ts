@@ -3,10 +3,18 @@
 
 export type Direction = 'ar-to-meaning' | 'meaning-to-ar'
 
-export interface Example {
-  arabic: string
+/**
+ * The English and Turkish rendering of an Arabic form. Both languages together
+ * are one Meaning; neither alone is. Carried by everything the learner reads:
+ * Notes, Examples, Harf senses, drill items, leeches.
+ */
+export interface Meaning {
   english: string
   turkish: string
+}
+
+export interface Example extends Meaning {
+  arabic: string
   /**
    * Optional citation for the Arabic, e.g. "Qur'an 17:1" or "Bukhārī 1".
    * Rendered subtly on the card back and in Reference.
@@ -14,18 +22,18 @@ export interface Example {
   source?: string
 }
 
-/** Sense-card metadata: the grammatical sense a per-sense card teaches. */
-export interface NoteSense {
-  /** Transliterated grammar term, e.g. "Ibtidāʾ al-ghāyah". */
-  term: string
-  termArabic: string
-}
+/**
+ * Sense-card metadata: the grammatical sense a per-sense card teaches, named
+ * by its term. Derived from HarfSense (declared below, in the Reference
+ * section) because the reference entry is where a Sense is defined — the deck
+ * only names one. Renaming a field on HarfSense now breaks here rather than
+ * letting the two drift apart.
+ */
+export type NoteSense = Pick<HarfSense, 'term' | 'termArabic'>
 
-export interface Note {
+export interface Note extends Meaning {
   id: string
   arabic: string
-  english: string
-  turkish: string
   example?: Example
   /**
    * Voweled Arabic the learner should type in a typed drill, used when
@@ -40,7 +48,7 @@ export interface Note {
   referenceId?: string
   /**
    * Present on per-sense cards. The card front is the example sentence with
-   * `arabic` (the harf) highlighted; the back shows the sense term and glosses.
+   * `arabic` (the harf) highlighted; the back shows the sense term and meanings.
    */
   sense?: NoteSense
   /**
@@ -84,8 +92,20 @@ export function noteIdOf(cardId: string): string {
 
 // ---------- Reference section ----------
 
-/** Table cell / heading text. Strings render as UI text, { ar } renders as Arabic. */
-export type RefText = string | { ar: string; note?: string }
+/**
+ * Table cell / heading text. Strings render as UI text, { ar } renders as
+ * Arabic.
+ *
+ * `footnote` is the small annotation beside the Arabic — a grammatical remark
+ * or a variant form. Deliberately not `note`, which is the flashcard unit.
+ *
+ * `source` is a citation, in the same form as `Example.source`. It is kept
+ * apart from `footnote` because the citation checker in `scripts/` reads it:
+ * a citation hidden inside a footnote is a citation nobody verifies.
+ */
+export type RefText =
+  | string
+  | { ar: string; footnote?: string; source?: string }
 
 export interface RefProse {
   kind: 'prose'
@@ -103,27 +123,27 @@ export interface RefTable {
   rows: RefText[][]
 }
 
-export interface HarfSense {
-  /** Grammar term, e.g. "Ibtidāʾ al-ghāyah" */
+/**
+ * One grammatical function of a Harf. The origin of a Sense's identity:
+ * NoteSense picks `term` and `termArabic` from here.
+ */
+export interface HarfSense extends Meaning {
+  /** Transliterated grammar term, e.g. "Ibtidāʾ al-ghāyah". */
   term: string
   termArabic: string
-  english: string
-  turkish: string
   example?: Example
 }
 
-export interface RefHarf {
+export interface RefHarf extends Meaning {
   kind: 'harf'
   /** Anchor id, matches Note.id of the deck card. */
   id: string
   arabic: string
-  english: string
-  turkish: string
   /**
    * The bare harf token used to highlight it inside a sense example, e.g. "بِ".
    * Falls back to `arabic` when the display form is already the bare token.
    */
-  particle?: string
+  bareForm?: string
   senses: HarfSense[]
 }
 

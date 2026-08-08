@@ -1,7 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
-import { buildDrillPool, type DrillItem } from '../drills/pool'
-import { stripTashkeel } from '../lib/arabic'
-import { arabicAnswersMatch } from '../text/arabic'
+import { buildDrillPool, type DrillItem } from '../content/drills'
+import { arabicAnswersMatch, stripTashkeel } from '../text/arabic'
 import { diffChars } from '../text/diff'
 
 // Drills are unscheduled practice. This page never touches cardState or
@@ -77,7 +76,7 @@ export function DrillsPage() {
     return (
       <main className="page">
         <h1 className="page-title">Drills</h1>
-        <p className="muted">No drill cards available yet.</p>
+        <p className="muted">No drill items available yet.</p>
       </main>
     )
   }
@@ -104,14 +103,14 @@ export function DrillsPage() {
   return (
     <main className="page">
       <h1 className="page-title">Drills</h1>
-      <div className="review-top">
+      <div className="session-top">
         <span>Type the Arabic</span>
         <span>
           {index + 1} / {order.length}
         </span>
       </div>
 
-      <div className="review-card">
+      <div className="session-card">
         <div className="meaning">
           <span className="lang">English</span>
           {current.english}

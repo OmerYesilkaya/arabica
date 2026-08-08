@@ -7,7 +7,7 @@ import { hurufAlKhafdRef } from '../reference/hurufAlKhafd'
 // src/content/reference/hurufAlKhafd.ts. No sense text is duplicated here.
 //
 // The card is ar-to-meaning only: the front is the sense example with the harf
-// highlighted, the back is the grammatical sense and the glosses.
+// highlighted, the back is the grammatical sense and the meanings.
 //
 // Locked until Omer confirms he moved past first meanings. Sense content stays
 // DRAFT until verified against the textbook.
@@ -18,14 +18,14 @@ function sensesToNotes(): Note[] {
   for (const section of hurufAlKhafdRef.sections) {
     if (section.kind !== 'harf') continue
     const harf = section
-    const token = harf.particle ?? harf.arabic
+    const token = harf.bareForm ?? harf.arabic
     harf.senses.forEach((sense, index) => {
       if (!sense.example) return
       notes.push({
         id: `${harf.id}-${index}`,
         // The harf token, highlighted inside the example on the card front.
         arabic: token,
-        // Sense glosses (the answer).
+        // Sense meanings (the answer).
         english: sense.english,
         turkish: sense.turkish,
         example: sense.example,

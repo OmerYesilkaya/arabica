@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildDrillPool } from './pool'
+import { buildDrillPool } from './drills'
 import { arabicAnswersMatch } from '../text/arabic'
 
 describe('buildDrillPool', () => {

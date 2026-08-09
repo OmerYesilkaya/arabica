@@ -1163,3 +1163,197 @@ table.ref-table .cell-source {
   font-size: 12px;
   line-height: 1.5;
 }
+
+/* ---------- Reading ---------- */
+
+.page-intro {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.corpus-credit {
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.corpus-credit a {
+  color: var(--text-muted);
+}
+
+.reading-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+button.toggle {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button.toggle.on {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.reading-text {
+  font-size: 26px;
+  /*
+   * Roomy lines and a tall line-height are not decoration: the tap targets are
+   * words on a dense Arabic line, and at phone width they have to be reachable
+   * without hitting the word beside them.
+   */
+  line-height: 2.5;
+  text-align: justify;
+  text-align-last: right;
+}
+
+.reading-basmala {
+  margin-bottom: 18px;
+  text-align: center;
+  text-align-last: center;
+  font-size: 22px;
+  color: var(--text-muted);
+}
+
+.reading-body {
+  margin: 0;
+}
+
+.reading-empty {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/*
+ * A word. A button rather than a span so that it is reachable by keyboard and
+ * announced as tappable, but it must not look like one — the page is meant to
+ * read as plain text until it is touched.
+ */
+button.tok {
+  padding: 0 1px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  /* The whole word stays on one line; only spaces between words may break. */
+  white-space: nowrap;
+}
+
+button.tok:active {
+  background: var(--surface-2);
+}
+
+/*
+ * Known words. Quiet on purpose: the point of the reader is to meet the
+ * grammar unprepared, so this marks progress without turning a reading session
+ * into a dashboard. An underline sits below the letters, clear of the tashkeel
+ * above them, and survives with the vowels hidden.
+ */
+button.tok.known {
+  box-shadow: inset 0 -2px 0 0 color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+button.tok.flagged {
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+}
+
+.ayah-mark {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+  vertical-align: middle;
+}
+
+/* ---------- Reading: the word detail sheet ---------- */
+
+.token-gloss {
+  padding: 12px 0 4px;
+}
+
+.token-english {
+  font-size: 17px;
+}
+
+.token-turkish {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.known-badge {
+  color: var(--accent);
+}
+
+.segment-form {
+  font-size: 19px;
+  margin-inline-end: 8px;
+}
+
+.segment-role {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.sheet-row dd {
+  font-size: 13px;
+}
+
+.token-more,
+.token-flag {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.token-flag.flagged {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.token-reference {
+  display: block;
+  margin: 4px 0 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--accent);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.token-provenance {
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.token-provenance a {
+  color: var(--text-muted);
+}

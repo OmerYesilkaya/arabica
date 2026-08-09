@@ -14,15 +14,11 @@ import {
 import { buildQueue, type QueueItem } from '../srs/queue'
 import { VocabSheet } from '../components/VocabSheet'
 import { locateHarf, stripTashkeel } from '../text/arabic'
+import { referenceLink } from '../text/morphology'
 import { setHideTashkeel, useHideTashkeel } from '../settings/useHideTashkeel'
 
 /** Learning cards answered moments ago come back within this window. */
 const LEARN_AHEAD_MS = 20 * 60 * 1000
-
-function referenceLink(referenceId: string): string {
-  const [entry, anchor] = referenceId.split('#')
-  return anchor ? `/reference/${entry}?h=${anchor}` : `/reference/${entry}`
-}
 
 /** Renders a Meaning as its two language lines. */
 function MeaningLines({ meaning }: { meaning: Meaning }) {

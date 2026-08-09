@@ -3,6 +3,8 @@ import { TabBar } from './components/TabBar'
 import { DecksPage } from './pages/DecksPage'
 import { StudySessionPage } from './pages/StudySessionPage'
 import { DrillsPage } from './pages/DrillsPage'
+import { ReadingPage } from './pages/ReadingPage'
+import { ReadingSurahPage } from './pages/ReadingSurahPage'
 import { ReferencePage } from './pages/ReferencePage'
 import { ReferenceEntryPage } from './pages/ReferenceEntryPage'
 import { StatsPage } from './pages/StatsPage'
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/" element={<DecksPage />} />
         <Route path="/study/:deckId" element={<StudySessionPage />} />
         <Route path="/drills" element={<DrillsPage />} />
+        <Route path="/reading" element={<ReadingPage />} />
+        <Route path="/reading/:surah" element={<ReadingSurahPage />} />
         <Route path="/reference" element={<ReferencePage />} />
         <Route path="/reference/:entryId" element={<ReferenceEntryPage />} />
         <Route path="/stats" element={<StatsPage />} />

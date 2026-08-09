@@ -7,6 +7,7 @@ import {
   OCCURRENCES_OUTSIDE_TRACK,
   TOTAL_WORD_OCCURRENCES,
 } from '../content/quranCoverage'
+import { knownNoteIds } from './known'
 
 /** Reviews within this window count towards "gained recently". */
 const RECENT_MS = 30 * 24 * 60 * 60 * 1000
@@ -53,10 +54,9 @@ export async function computeCoverage(
   now: Date = new Date(),
 ): Promise<Coverage> {
   const notes = notesById()
-  const graduated = await db.cardState.where('state').equals(State.Review).toArray()
-
-  const knownNotes = new Set<string>()
-  for (const row of graduated) knownNotes.add(noteIdOf(row.cardId))
+  // Shared with the reader's known-word marking, so the number on Stats and
+  // the words lit up on the page can never disagree.
+  const knownNotes = await knownNoteIds(db)
 
   let known = 0
   let words = 0

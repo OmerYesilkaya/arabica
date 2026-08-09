@@ -1,0 +1,424 @@
+{
+  "surah": 112,
+  "basmala": {
+    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+    "tokens": [
+      {
+        "start": 0,
+        "end": 6,
+        "head": 1,
+        "segments": [
+          {
+            "form": "بِ",
+            "tag": "P",
+            "features": [
+              "P",
+              "PREF"
+            ],
+            "lemma": "ب"
+          },
+          {
+            "form": "سْمِ",
+            "tag": "N",
+            "features": [
+              "M",
+              "GEN"
+            ],
+            "lemma": "اسْم",
+            "root": "سمو"
+          }
+        ]
+      },
+      {
+        "start": 7,
+        "end": 14,
+        "head": 0,
+        "segments": [
+          {
+            "form": "ٱللَّهِ",
+            "tag": "N",
+            "features": [
+              "PN",
+              "GEN"
+            ],
+            "lemma": "اللَّه",
+            "root": "أله"
+          }
+        ]
+      },
+      {
+        "start": 15,
+        "end": 27,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحْمَٰنِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحْمٰن",
+            "root": "رحم"
+          }
+        ]
+      },
+      {
+        "start": 28,
+        "end": 38,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحِيمِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحِيم",
+            "root": "رحم"
+          }
+        ]
+      }
+    ]
+  },
+  "ayat": [
+    {
+      "ayah": 1,
+      "text": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 4,
+          "head": 0,
+          "segments": [
+            {
+              "form": "قُلْ",
+              "tag": "V",
+              "features": [
+                "IMPV",
+                "VF:1",
+                "2MS"
+              ],
+              "lemma": "قالَ",
+              "root": "قول"
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "head": 0,
+          "segments": [
+            {
+              "form": "هُوَ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "3MS"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 10,
+          "end": 17,
+          "head": 0,
+          "segments": [
+            {
+              "form": "ٱللَّهُ",
+              "tag": "N",
+              "features": [
+                "PN",
+                "NOM"
+              ],
+              "lemma": "اللَّه",
+              "root": "أله"
+            }
+          ]
+        },
+        {
+          "start": 18,
+          "end": 24,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَحَدٌ",
+              "tag": "N",
+              "features": [
+                "M",
+                "INDEF",
+                "NOM"
+              ],
+              "lemma": "أَحَد",
+              "root": "أحد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 2,
+      "text": "ٱللَّهُ ٱلصَّمَدُ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 7,
+          "head": 0,
+          "segments": [
+            {
+              "form": "ٱللَّهُ",
+              "tag": "N",
+              "features": [
+                "PN",
+                "NOM"
+              ],
+              "lemma": "اللَّه",
+              "root": "أله"
+            }
+          ]
+        },
+        {
+          "start": 8,
+          "end": 17,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱل",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "صَّمَدُ",
+              "tag": "N",
+              "features": [
+                "MS",
+                "NOM"
+              ],
+              "lemma": "صَمَد",
+              "root": "صمد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 3,
+      "text": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 4,
+          "head": 0,
+          "segments": [
+            {
+              "form": "لَمْ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لَم"
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "head": 0,
+          "segments": [
+            {
+              "form": "يَلِدْ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "3MS",
+                "MOOD:JUS"
+              ],
+              "lemma": "وَلَدَ",
+              "root": "ولد"
+            }
+          ]
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "لَمْ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لَم"
+            }
+          ]
+        },
+        {
+          "start": 19,
+          "end": 26,
+          "head": 0,
+          "segments": [
+            {
+              "form": "يُولَدْ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "PASS",
+                "3MS",
+                "MOOD:JUS"
+              ],
+              "lemma": "وَلَدَ",
+              "root": "ولد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 4,
+      "text": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "لَمْ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لَم"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 12,
+          "head": 0,
+          "segments": [
+            {
+              "form": "يَكُن",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "FAM:كَان",
+                "3MS",
+                "MOOD:JUS"
+              ],
+              "lemma": "كانَ",
+              "root": "كون"
+            }
+          ]
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "head": 0,
+          "segments": [
+            {
+              "form": "لَّ",
+              "tag": "P",
+              "features": [
+                "P",
+                "PREF"
+              ],
+              "lemma": "ل"
+            },
+            {
+              "form": "هُۥ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "3MS"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 20,
+          "end": 27,
+          "head": 0,
+          "segments": [
+            {
+              "form": "كُفُوًا",
+              "tag": "N",
+              "features": [
+                "M",
+                "INDEF",
+                "ACC"
+              ],
+              "lemma": "كُفُو",
+              "root": "كفأ"
+            }
+          ]
+        },
+        {
+          "start": 28,
+          "end": 35,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَحَدٌۢ",
+              "tag": "N",
+              "features": [
+                "M",
+                "INDEF",
+                "NOM"
+              ],
+              "lemma": "أَحَد",
+              "root": "أحد"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

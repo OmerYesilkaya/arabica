@@ -1,0 +1,572 @@
+{
+  "surah": 114,
+  "basmala": {
+    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+    "tokens": [
+      {
+        "start": 0,
+        "end": 6,
+        "head": 1,
+        "segments": [
+          {
+            "form": "بِ",
+            "tag": "P",
+            "features": [
+              "P",
+              "PREF"
+            ],
+            "lemma": "ب"
+          },
+          {
+            "form": "سْمِ",
+            "tag": "N",
+            "features": [
+              "M",
+              "GEN"
+            ],
+            "lemma": "اسْم",
+            "root": "سمو"
+          }
+        ]
+      },
+      {
+        "start": 7,
+        "end": 14,
+        "head": 0,
+        "segments": [
+          {
+            "form": "ٱللَّهِ",
+            "tag": "N",
+            "features": [
+              "PN",
+              "GEN"
+            ],
+            "lemma": "اللَّه",
+            "root": "أله"
+          }
+        ]
+      },
+      {
+        "start": 15,
+        "end": 27,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحْمَٰنِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحْمٰن",
+            "root": "رحم"
+          }
+        ]
+      },
+      {
+        "start": 28,
+        "end": 38,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحِيمِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحِيم",
+            "root": "رحم"
+          }
+        ]
+      }
+    ]
+  },
+  "ayat": [
+    {
+      "ayah": 1,
+      "text": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 4,
+          "head": 0,
+          "segments": [
+            {
+              "form": "قُلْ",
+              "tag": "V",
+              "features": [
+                "IMPV",
+                "VF:1",
+                "2MS"
+              ],
+              "lemma": "قالَ",
+              "root": "قول"
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "end": 12,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَعُوذُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "1S",
+                "MOOD:IND"
+              ],
+              "lemma": "عُذْ",
+              "root": "عوذ"
+            }
+          ]
+        },
+        {
+          "start": 13,
+          "end": 20,
+          "head": 1,
+          "segments": [
+            {
+              "form": "بِ",
+              "tag": "P",
+              "features": [
+                "P",
+                "PREF"
+              ],
+              "lemma": "ب"
+            },
+            {
+              "form": "رَبِّ",
+              "tag": "N",
+              "features": [
+                "M",
+                "GEN"
+              ],
+              "lemma": "رَبّ",
+              "root": "ربب"
+            }
+          ]
+        },
+        {
+          "start": 21,
+          "end": 29,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱل",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "نَّاسِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "ناس",
+              "root": "أنس"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 2,
+      "text": "مَلِكِ ٱلنَّاسِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَلِكِ",
+              "tag": "N",
+              "features": [
+                "MS",
+                "GEN"
+              ],
+              "lemma": "مَلِك",
+              "root": "ملك"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 15,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱل",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "نَّاسِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "ناس",
+              "root": "أنس"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 3,
+      "text": "إِلَٰهِ ٱلنَّاسِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 7,
+          "head": 0,
+          "segments": [
+            {
+              "form": "إِلَٰهِ",
+              "tag": "N",
+              "features": [
+                "MS",
+                "GEN"
+              ],
+              "lemma": "إِلٰه",
+              "root": "أله"
+            }
+          ]
+        },
+        {
+          "start": 8,
+          "end": 16,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱل",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "نَّاسِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "ناس",
+              "root": "أنس"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 4,
+      "text": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 3,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مِن",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "مِن"
+            }
+          ]
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "head": 0,
+          "segments": [
+            {
+              "form": "شَرِّ",
+              "tag": "N",
+              "features": [
+                "MS",
+                "GEN"
+              ],
+              "lemma": "شَرّ",
+              "root": "شرر"
+            }
+          ]
+        },
+        {
+          "start": 10,
+          "end": 22,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "وَسْوَاسِ",
+              "tag": "N",
+              "features": [
+                "MS",
+                "GEN"
+              ],
+              "lemma": "وَسْواس",
+              "root": "وسوس"
+            }
+          ]
+        },
+        {
+          "start": 23,
+          "end": 34,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "خَنَّاسِ",
+              "tag": "N",
+              "features": [
+                "MS",
+                "GEN",
+                "ADJ"
+              ],
+              "lemma": "خَنّاس",
+              "root": "خنس"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 5,
+      "text": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 7,
+          "head": 0,
+          "segments": [
+            {
+              "form": "ٱلَّذِى",
+              "tag": "N",
+              "features": [
+                "REL",
+                "MS"
+              ],
+              "lemma": "الَّذِي"
+            }
+          ]
+        },
+        {
+          "start": 8,
+          "end": 18,
+          "head": 0,
+          "segments": [
+            {
+              "form": "يُوَسْوِسُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "3MS",
+                "MOOD:IND"
+              ],
+              "lemma": "وَسْوَسَ",
+              "root": "وسوس"
+            }
+          ]
+        },
+        {
+          "start": 19,
+          "end": 22,
+          "head": 0,
+          "segments": [
+            {
+              "form": "فِى",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "فِي"
+            }
+          ]
+        },
+        {
+          "start": 23,
+          "end": 30,
+          "head": 0,
+          "segments": [
+            {
+              "form": "صُدُورِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "صَدْر",
+              "root": "صدر"
+            }
+          ]
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱل",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "نَّاسِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "ناس",
+              "root": "أنس"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 6,
+      "text": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 4,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مِنَ",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "مِن"
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "end": 15,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "جِنَّةِ",
+              "tag": "N",
+              "features": [
+                "F",
+                "GEN"
+              ],
+              "lemma": "جِنَّة",
+              "root": "جنن"
+            }
+          ]
+        },
+        {
+          "start": 16,
+          "end": 26,
+          "head": 2,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "ٱل",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "نَّاسِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "ناس",
+              "root": "أنس"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

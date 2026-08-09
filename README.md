@@ -12,6 +12,11 @@ it works offline, and each device keeps its own progress.
   sibling burying.
 - **Drills** - unscheduled typing practice: a meaning is shown, you type the
   Arabic. Reads content only; never touches progress.
+- **Reading** - whole surahs of real Qurʾānic text, Arabic only, with no
+  translation on the page. Tap a word for its meaning; tap again for its root,
+  its morphology, its case or mood *with the sign named*, and a link into the
+  Reference entry that teaches that feature. Words you have already learned are
+  marked. Reading is stateless: it records nothing about what you read.
 - **Reference** - grammar tables and charts, ordered by the Ājurrūmiyya.
   Locked entries are planned and open as the course reaches them.
 - **Stats** - reviews per day, streak, retention, built from the review log.
@@ -43,6 +48,38 @@ Read it before naming anything new.
   Re-run it after any content change.
 - Progress (FSRS card state + append-only review log) lives in IndexedDB
   on the device, never in this repo.
+
+## The reading corpus
+
+The Reading tab is built from third-party linguistic data, not from authored
+content. See
+[docs/adr/0002](./docs/adr/0002-corpus-is-neither-content-nor-progress.md) for
+why that is a third class rather than more Content.
+
+- **Qurʾānic text** — the [Tanzil Project](https://tanzil.net) Uthmani text,
+  used verbatim under CC BY 3.0. Its licence forbids modification, and every
+  stored ayah is checked byte-for-byte against it.
+- **Morphology, roots and part of speech** — the
+  [Quranic Arabic Corpus](https://corpus.quran.com) v0.4 (© Kais Dukes, GPL).
+- **Meanings** — taken from this repo's own vocabulary decks wherever a deck
+  teaches the word, and machine-generated otherwise. Generated glosses are
+  permanently unverified, marked as such in the app, and can be reported from
+  the word detail; the reports ride in the JSON backup.
+- **No word in the reader can ever become a flashcard.** Vocabulary reaches the
+  scheduler only through the authored decks.
+
+Both corpus files are vendored under `scripts/data` and never shipped. Two
+generators read them, and neither is part of `pnpm build`:
+
+```bash
+# emits src/content/corpus/*.json for the reader; rerunning it on unchanged
+# sources produces no diff
+pnpm exec vitest run --config scripts/vitest.generate.config.ts
+
+# checks that every stored ayah is verbatim Tanzil, and matches the canonical
+# text independently (needs network)
+pnpm exec vitest run --config scripts/vitest.citations.config.ts
+```
 
 ## Planned work
 

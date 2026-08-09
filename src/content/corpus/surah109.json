@@ -1,0 +1,694 @@
+{
+  "surah": 109,
+  "basmala": {
+    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+    "tokens": [
+      {
+        "start": 0,
+        "end": 6,
+        "head": 1,
+        "segments": [
+          {
+            "form": "بِ",
+            "tag": "P",
+            "features": [
+              "P",
+              "PREF"
+            ],
+            "lemma": "ب"
+          },
+          {
+            "form": "سْمِ",
+            "tag": "N",
+            "features": [
+              "M",
+              "GEN"
+            ],
+            "lemma": "اسْم",
+            "root": "سمو"
+          }
+        ]
+      },
+      {
+        "start": 7,
+        "end": 14,
+        "head": 0,
+        "segments": [
+          {
+            "form": "ٱللَّهِ",
+            "tag": "N",
+            "features": [
+              "PN",
+              "GEN"
+            ],
+            "lemma": "اللَّه",
+            "root": "أله"
+          }
+        ]
+      },
+      {
+        "start": 15,
+        "end": 27,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحْمَٰنِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحْمٰن",
+            "root": "رحم"
+          }
+        ]
+      },
+      {
+        "start": 28,
+        "end": 38,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحِيمِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحِيم",
+            "root": "رحم"
+          }
+        ]
+      }
+    ]
+  },
+  "ayat": [
+    {
+      "ayah": 1,
+      "text": "قُلْ يَٰٓأَيُّهَا ٱلْكَٰفِرُونَ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 4,
+          "head": 0,
+          "segments": [
+            {
+              "form": "قُلْ",
+              "tag": "V",
+              "features": [
+                "IMPV",
+                "VF:1",
+                "2MS"
+              ],
+              "lemma": "قالَ",
+              "root": "قول"
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "end": 17,
+          "head": 1,
+          "segments": [
+            {
+              "form": "يَٰٓ",
+              "tag": "P",
+              "features": [
+                "VOC",
+                "PREF"
+              ],
+              "lemma": "ي"
+            },
+            {
+              "form": "أَيُّ",
+              "tag": "N",
+              "features": [
+                "ACC"
+              ],
+              "lemma": "أَيّ",
+              "root": "أيي"
+            },
+            {
+              "form": "هَا",
+              "tag": "P",
+              "features": [
+                "ATT",
+                "SUFF"
+              ],
+              "lemma": "ه"
+            }
+          ]
+        },
+        {
+          "start": 18,
+          "end": 31,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "كَٰفِرُونَ",
+              "tag": "N",
+              "features": [
+                "ACT_PCPL",
+                "VF:1",
+                "MP",
+                "NOM"
+              ],
+              "lemma": "كافِر",
+              "root": "كفر"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 2,
+      "text": "لَآ أَعْبُدُ مَا تَعْبُدُونَ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 4,
+          "head": 0,
+          "segments": [
+            {
+              "form": "لَآ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لا"
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "end": 13,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَعْبُدُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "1S",
+                "MOOD:IND"
+              ],
+              "lemma": "عَبَدَ",
+              "root": "عبد"
+            }
+          ]
+        },
+        {
+          "start": 14,
+          "end": 17,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَا",
+              "tag": "N",
+              "features": [
+                "REL"
+              ],
+              "lemma": "ما"
+            }
+          ]
+        },
+        {
+          "start": 18,
+          "end": 29,
+          "head": 0,
+          "segments": [
+            {
+              "form": "تَعْبُدُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "2MP",
+                "MOOD:IND"
+              ],
+              "lemma": "عَبَدَ",
+              "root": "عبد"
+            },
+            {
+              "form": "ونَ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "2MP"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 3,
+      "text": "وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "لَآ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لا"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 14,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَنتُمْ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "2MP"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 15,
+          "end": 25,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَٰبِدُونَ",
+              "tag": "N",
+              "features": [
+                "ACT_PCPL",
+                "VF:1",
+                "MP",
+                "NOM"
+              ],
+              "lemma": "عابِد",
+              "root": "عبد"
+            }
+          ]
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَآ",
+              "tag": "N",
+              "features": [
+                "REL"
+              ],
+              "lemma": "ما"
+            }
+          ]
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَعْبُدُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "1S",
+                "MOOD:IND"
+              ],
+              "lemma": "عَبَدَ",
+              "root": "عبد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 4,
+      "text": "وَلَآ أَنَا۠ عَابِدٌ مَّا عَبَدتُّمْ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "لَآ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لا"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 13,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَنَا۠",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "1S"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 14,
+          "end": 21,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَابِدٌ",
+              "tag": "N",
+              "features": [
+                "ACT_PCPL",
+                "VF:1",
+                "M",
+                "INDEF",
+                "NOM"
+              ],
+              "lemma": "عابِد",
+              "root": "عبد"
+            }
+          ]
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَّا",
+              "tag": "N",
+              "features": [
+                "REL"
+              ],
+              "lemma": "ما"
+            }
+          ]
+        },
+        {
+          "start": 27,
+          "end": 37,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَبَد",
+              "tag": "V",
+              "features": [
+                "PERF",
+                "VF:1",
+                "2MP"
+              ],
+              "lemma": "عَبَدَ",
+              "root": "عبد"
+            },
+            {
+              "form": "تُّمْ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "2MP"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 5,
+      "text": "وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "لَآ",
+              "tag": "P",
+              "features": [
+                "NEG"
+              ],
+              "lemma": "لا"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 14,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَنتُمْ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "2MP"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 15,
+          "end": 25,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَٰبِدُونَ",
+              "tag": "N",
+              "features": [
+                "ACT_PCPL",
+                "VF:1",
+                "MP",
+                "NOM"
+              ],
+              "lemma": "عابِد",
+              "root": "عبد"
+            }
+          ]
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَآ",
+              "tag": "N",
+              "features": [
+                "REL"
+              ],
+              "lemma": "ما"
+            }
+          ]
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَعْبُدُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "1S",
+                "MOOD:IND"
+              ],
+              "lemma": "عَبَدَ",
+              "root": "عبد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 6,
+      "text": "لَكُمْ دِينُكُمْ وَلِىَ دِينِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 0,
+          "segments": [
+            {
+              "form": "لَ",
+              "tag": "P",
+              "features": [
+                "P",
+                "PREF"
+              ],
+              "lemma": "ل"
+            },
+            {
+              "form": "كُمْ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "2MP"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 16,
+          "head": 0,
+          "segments": [
+            {
+              "form": "دِينُ",
+              "tag": "N",
+              "features": [
+                "M",
+                "NOM"
+              ],
+              "lemma": "دِين",
+              "root": "دين"
+            },
+            {
+              "form": "كُمْ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "2MP"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 17,
+          "end": 23,
+          "head": 0,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "لِ",
+              "tag": "P",
+              "features": [
+                "P",
+                "PREF"
+              ],
+              "lemma": "ل"
+            },
+            {
+              "form": "ىَ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "1S"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 24,
+          "end": 29,
+          "head": 0,
+          "segments": [
+            {
+              "form": "دِينِ",
+              "tag": "N",
+              "features": [
+                "M",
+                "NOM"
+              ],
+              "lemma": "دِين",
+              "root": "دين"
+            },
+            {
+              "form": "",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "1S"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

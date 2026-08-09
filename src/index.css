@@ -1260,11 +1260,16 @@ button.tok:active {
 /*
  * Known words. Quiet on purpose: the point of the reader is to meet the
  * grammar unprepared, so this marks progress without turning a reading session
- * into a dashboard. An underline sits below the letters, clear of the tashkeel
- * above them, and survives with the vowels hidden.
+ * into a dashboard.
+ *
+ * The letters themselves carry the mark rather than a rule under them. An
+ * underline is a second object on an already dense line — it collides with the
+ * kasra below the baseline and it reads as a link — where colouring the word
+ * says the same thing with nothing added. It also survives hide-tashkeel
+ * unchanged, which a mark positioned against the vowels does not.
  */
 button.tok.known {
-  box-shadow: inset 0 -2px 0 0 color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
 }
 
 button.tok.flagged {

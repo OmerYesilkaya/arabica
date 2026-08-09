@@ -40,10 +40,33 @@ export interface MetaRow {
   value: unknown
 }
 
+/**
+ * A Token in the reading corpus the learner has marked as wrong.
+ *
+ * Corpus is unverified by design and there is far too much of it to check by
+ * hand, so the app has to make reporting an error cheap enough to do the
+ * moment it is noticed — an error spotted on the bus and remembered until
+ * evening is an error nobody reports.
+ *
+ * Flags do not break the reader's statelessness (see docs/adr/0002): nothing
+ * here records what was read. A flag is a deliberate act, not an observation.
+ */
+export interface CorpusFlagRow {
+  /** `surah:ayah:word`, all 1-indexed; ayah 0 is the basmala heading a surah. */
+  ref: string
+  /**
+   * The Lemma whose gloss or morphology is being reported, or the word as
+   * written when the corpus gives it none, as it does for every pronoun.
+   */
+  lemma: string
+  flaggedAt: number
+}
+
 export class ArabicaDB extends Dexie {
   cardState!: EntityTable<CardStateRow, 'cardId'>
   reviewLog!: EntityTable<ReviewLogRow, 'id'>
   meta!: EntityTable<MetaRow, 'key'>
+  corpusFlags!: EntityTable<CorpusFlagRow, 'ref'>
 
   constructor(name = 'arabica') {
     super(name)
@@ -51,6 +74,11 @@ export class ArabicaDB extends Dexie {
       cardState: 'cardId, deckId, due, state',
       reviewLog: '++id, cardId, deckId, review',
       meta: 'key',
+    })
+    // Version 2 adds corpusFlags. Dexie leaves the existing stores alone, so
+    // a device that upgrades keeps every card and every review it had.
+    this.version(2).stores({
+      corpusFlags: 'ref, lemma',
     })
   }
 }

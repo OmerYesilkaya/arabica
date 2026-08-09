@@ -1,19 +1,26 @@
-import type { ArabicaDB, CardStateRow, MetaRow, ReviewLogRow } from './db'
+import type { ArabicaDB, CardStateRow, CorpusFlagRow, MetaRow, ReviewLogRow } from './db'
 import { setMeta } from './db'
 
 // schemaVersion history:
 //   1 - cardState, reviewLog, meta.
 //   2 - unchanged tables; meta now may carry personalized FSRS weights
 //       (key `fsrsParams`). Version-1 files import unchanged.
-export const CURRENT_SCHEMA_VERSION = 2
+//   3 - adds corpusFlags, the reading corpus errors the learner has reported.
+//       Older files import unchanged and arrive with no flags.
+export const CURRENT_SCHEMA_VERSION = 3
+
+const KNOWN_VERSIONS = [1, 2, 3] as const
+export type SchemaVersion = (typeof KNOWN_VERSIONS)[number]
 
 export interface BackupFile {
   app: 'arabica'
-  schemaVersion: 1 | 2
+  schemaVersion: SchemaVersion
   exportedAt: string
   cardState: CardStateRow[]
   reviewLog: ReviewLogRow[]
   meta: MetaRow[]
+  /** Absent in files written before version 3. */
+  corpusFlags?: CorpusFlagRow[]
 }
 
 export const LAST_EXPORT_KEY = 'lastExportAt'
@@ -27,6 +34,9 @@ export async function buildBackup(db: ArabicaDB, now: Date): Promise<BackupFile>
     cardState: await db.cardState.toArray(),
     reviewLog: await db.reviewLog.toArray(),
     meta: await db.meta.toArray(),
+    // Reported corpus errors ride in the same file: they are local, and a
+    // learner who restores a backup should not have to find them all again.
+    corpusFlags: await db.corpusFlags.toArray(),
   }
 }
 
@@ -48,7 +58,7 @@ export function parseBackup(text: string): BackupFile {
   const data = JSON.parse(text) as Partial<BackupFile>
   if (
     data.app !== 'arabica' ||
-    (data.schemaVersion !== 1 && data.schemaVersion !== 2)
+    !KNOWN_VERSIONS.includes(data.schemaVersion as SchemaVersion)
   ) {
     throw new Error('Not a valid arabica backup file')
   }
@@ -64,13 +74,24 @@ export function parseBackup(text: string): BackupFile {
 
 /** Replaces ALL current progress with the backup's contents. */
 export async function importBackup(db: ArabicaDB, backup: BackupFile): Promise<void> {
-  await db.transaction('rw', db.cardState, db.reviewLog, db.meta, async () => {
-    await db.cardState.clear()
-    await db.reviewLog.clear()
-    await db.meta.clear()
-    await db.cardState.bulkPut(backup.cardState)
-    // Strip ids so the autoincrement counter stays consistent.
-    await db.reviewLog.bulkAdd(backup.reviewLog.map(({ id: _id, ...r }) => r))
-    await db.meta.bulkPut(backup.meta)
-  })
+  await db.transaction(
+    'rw',
+    db.cardState,
+    db.reviewLog,
+    db.meta,
+    db.corpusFlags,
+    async () => {
+      await db.cardState.clear()
+      await db.reviewLog.clear()
+      await db.meta.clear()
+      await db.corpusFlags.clear()
+      await db.cardState.bulkPut(backup.cardState)
+      // Strip ids so the autoincrement counter stays consistent.
+      await db.reviewLog.bulkAdd(backup.reviewLog.map(({ id: _id, ...r }) => r))
+      await db.meta.bulkPut(backup.meta)
+      // Older files carry no flags, and clearing above is what makes an import
+      // of one leave none behind rather than keeping this device's.
+      await db.corpusFlags.bulkPut(backup.corpusFlags ?? [])
+    },
+  )
 }

@@ -36,6 +36,19 @@ export function deckById(deckId: string): DeckDef | undefined {
   return decks.find((d) => d.id === deckId)
 }
 
+/**
+ * The Note with this id, whichever deck holds it. Note ids are unique across
+ * decks by construction — card ids are `noteId|direction` and the card-state
+ * table is keyed on that with no deck in the key.
+ */
+export function noteById(noteId: string): Note | undefined {
+  for (const deck of decks) {
+    const note = deck.notes.find((n) => n.id === noteId)
+    if (note) return note
+  }
+  return undefined
+}
+
 /** All scheduled cards of a deck, in content order (the new-card order). */
 export function cardsOfDeck(deck: DeckDef): ContentCard[] {
   const cards: ContentCard[] = []

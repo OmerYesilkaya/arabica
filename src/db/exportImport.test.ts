@@ -1,7 +1,12 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { Rating } from 'ts-fsrs'
 import { ArabicaDB } from './db'
-import { buildBackup, importBackup, parseBackup } from './exportImport'
+import {
+  CURRENT_SCHEMA_VERSION,
+  buildBackup,
+  importBackup,
+  parseBackup,
+} from './exportImport'
 import { hurufAlKhafd } from '../content/decks/hurufAlKhafd'
 import { cardsOfDeck } from '../content/decks'
 import { answerCard } from '../srs/engine'
@@ -58,19 +63,52 @@ describe('backup roundtrip', () => {
 })
 
 describe('parameter backup', () => {
-  it('round-trips personalized FSRS weights as schemaVersion 2', async () => {
+  it('round-trips personalized FSRS weights at the current schema version', async () => {
     const db = freshDb()
     const weights = Array.from({ length: 21 }, (_, i) => i / 10)
     await db.meta.put({ key: 'fsrsParams', value: weights })
 
     const backup = await buildBackup(db, new Date())
-    expect(backup.schemaVersion).toBe(2)
+    expect(backup.schemaVersion).toBe(CURRENT_SCHEMA_VERSION)
 
     const restored = parseBackup(JSON.stringify(backup))
     const target = freshDb()
     await importBackup(target, restored)
 
     expect((await target.meta.get('fsrsParams'))?.value).toEqual(weights)
+  })
+
+  it('carries reported corpus errors across a restore', async () => {
+    const db = freshDb()
+    await db.corpusFlags.put({ ref: '105:3:4', lemma: 'x', flaggedAt: 1 })
+
+    const backup = parseBackup(JSON.stringify(await buildBackup(db, new Date())))
+    const target = freshDb()
+    await importBackup(target, backup)
+
+    expect(await target.corpusFlags.toArray()).toEqual([
+      { ref: '105:3:4', lemma: 'x', flaggedAt: 1 },
+    ])
+  })
+
+  it('leaves no flags behind when a file written before them is imported', async () => {
+    const target = freshDb()
+    await target.corpusFlags.put({ ref: '114:1:1', lemma: 'y', flaggedAt: 2 })
+
+    await importBackup(
+      target,
+      parseBackup(
+        JSON.stringify({
+          app: 'arabica',
+          schemaVersion: 2,
+          exportedAt: '2025-01-01T00:00:00.000Z',
+          cardState: [],
+          reviewLog: [],
+          meta: [],
+        }),
+      ),
+    )
+    expect(await target.corpusFlags.count()).toBe(0)
   })
 
   it('still imports a schemaVersion 1 backup', async () => {

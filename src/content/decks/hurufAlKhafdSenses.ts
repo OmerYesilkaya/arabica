@@ -9,8 +9,9 @@ import { hurufAlKhafdRef } from '../reference/hurufAlKhafd'
 // The card is ar-to-meaning only: the front is the sense example with the harf
 // highlighted, the back is the grammatical sense and the meanings.
 //
-// Locked until Omer confirms he moved past first meanings. Sense content stays
-// DRAFT until verified against the textbook.
+// Unlocked: the first meanings are solid, so the senses are in study now.
+// Sense content stays DRAFT until verified against the textbook - correct it
+// on sight while studying.
 
 /** Build one note per sense that carries an example, from the reference entry. */
 function sensesToNotes(): Note[] {
@@ -45,10 +46,9 @@ export const hurufAlKhafdSenses: DeckDef = {
   name: 'Ḥurūf al-Khafḍ — Senses',
   nameArabic: 'مَعَانِي حُرُوفِ الْخَفْضِ',
   description:
-    'Each harf’s senses: read the example, recall which sense the harf carries. Unlocks after the first meanings are solid.',
+    'Each harf’s senses: read the example, recall which sense the harf carries.',
   directions: ['ar-to-meaning'],
   newPerDay: 20,
   burySiblings: true,
-  locked: true,
   notes: sensesToNotes(),
 }

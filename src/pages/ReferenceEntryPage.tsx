@@ -2,6 +2,11 @@ import { useEffect } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { referenceById } from '../content/reference'
 import type { RefHarf, RefProse, RefTable, RefText } from '../content/types'
+import {
+  setMeaningLang,
+  useMeaningLang,
+  type MeaningLang,
+} from '../settings/useMeaningLang'
 
 function TextCell({ value }: { value: RefText }) {
   if (typeof value === 'string') return <>{value}</>
@@ -59,14 +64,12 @@ function TableSection({ section }: { section: RefTable }) {
   )
 }
 
-function HarfSection({ section }: { section: RefHarf }) {
+function HarfSection({ section, lang }: { section: RefHarf; lang: MeaningLang }) {
   return (
     <section className="ref-section harf-detail card" id={section.id}>
       <div className="harf-head">
         <span className="arabic">{section.arabic}</span>
-        <span className="meaning">
-          {section.english} · {section.turkish}
-        </span>
+        <span className="meaning">{section[lang]}</span>
       </div>
       {section.senses.map((sense, i) => (
         <div className="sense" key={i}>
@@ -74,12 +77,11 @@ function HarfSection({ section }: { section: RefHarf }) {
             {sense.term}
             <span className="arabic">{sense.termArabic}</span>
           </div>
-          <p>EN: {sense.english}</p>
-          <p>TR: {sense.turkish}</p>
+          <p>{sense[lang]}</p>
           {sense.example && (
             <div className="example">
               <span className="arabic">{sense.example.arabic}</span>
-              {sense.example.english} · {sense.example.turkish}
+              {sense.example[lang]}
               {sense.example.source && (
                 <span className="source">{sense.example.source}</span>
               )}
@@ -91,11 +93,35 @@ function HarfSection({ section }: { section: RefHarf }) {
   )
 }
 
+const LANGS: { value: MeaningLang; label: string }[] = [
+  { value: 'english', label: 'English' },
+  { value: 'turkish', label: 'Türkçe' },
+]
+
+function LangSwitch({ lang }: { lang: MeaningLang }) {
+  return (
+    <div className="ref-toolbar">
+      {LANGS.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          className={option.value === lang ? 'toggle on' : 'toggle'}
+          aria-pressed={option.value === lang}
+          onClick={() => void setMeaningLang(option.value)}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export function ReferenceEntryPage() {
   const { entryId } = useParams()
   const [searchParams] = useSearchParams()
   const entry = entryId ? referenceById(entryId) : undefined
   const anchor = searchParams.get('h')
+  const lang = useMeaningLang()
 
   useEffect(() => {
     if (!anchor) return
@@ -126,6 +152,10 @@ export function ReferenceEntryPage() {
       <h1 className="page-title">
         {entry.title} · <span className="arabic">{entry.titleArabic}</span>
       </h1>
+      {/* Only harf sections carry a Meaning; on the others the switch is dead UI. */}
+      {entry.sections.some((section) => section.kind === 'harf') && (
+        <LangSwitch lang={lang} />
+      )}
       {entry.sections.map((section, i) => {
         switch (section.kind) {
           case 'prose':
@@ -133,7 +163,7 @@ export function ReferenceEntryPage() {
           case 'table':
             return <TableSection key={i} section={section} />
           case 'harf':
-            return <HarfSection key={section.id} section={section} />
+            return <HarfSection key={section.id} section={section} lang={lang} />
         }
       })}
     </main>

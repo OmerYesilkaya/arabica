@@ -125,7 +125,7 @@ describe('vocabulary selection', () => {
       for (const note of deck.notes) {
         // Per-sense cards teach a harf already counted by its main note.
         if (note.sense) continue
-        const count = byNormalized.get(normalizeArabic(note.drillAnswer ?? note.arabic))
+        const count = byNormalized.get(normalizeArabic(note.bareForm ?? note.arabic))
         if (count) outside[note.id] = count
       }
     }

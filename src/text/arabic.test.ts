@@ -1,10 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import {
-  arabicAnswersMatch,
-  locateHarf,
-  normalizeArabic,
-  stripTashkeel,
-} from './arabic'
+import { locateHarf, normalizeArabic, stripTashkeel } from './arabic'
 
 describe('stripTashkeel', () => {
   it('removes harakat', () => {
@@ -96,15 +91,8 @@ describe('normalizeArabic', () => {
   it('handles mixed Arabic and Latin text', () => {
     expect(normalizeArabic('  al إِلَى  x ')).toBe('al الي x')
   })
-})
 
-describe('arabicAnswersMatch', () => {
-  it('matches the required drill cases', () => {
-    expect(arabicAnswersMatch('من', 'مِنْ')).toBe(true)
-    expect(arabicAnswersMatch('الي', 'إِلَى')).toBe(true)
-  })
-
-  it('rejects a genuinely different word', () => {
-    expect(arabicAnswersMatch('على', 'عَنْ')).toBe(false)
+  it('keeps genuinely different words apart', () => {
+    expect(normalizeArabic('على')).not.toBe(normalizeArabic('عَنْ'))
   })
 })

@@ -369,61 +369,6 @@ button:disabled {
   font-size: 1rem;
 }
 
-/* ---------- drills ---------- */
-
-.drill-input {
-  width: 100%;
-  /* 16px+ keeps iOS Safari from zooming the viewport on focus. */
-  font-size: 1.6rem;
-  text-align: center;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--surface-2);
-  color: var(--text);
-}
-
-.drill-input:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-}
-
-.drill-input[readonly] {
-  opacity: 0.8;
-}
-
-.drill-verdict {
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.drill-verdict.ok {
-  color: var(--due);
-}
-
-.drill-verdict.no {
-  color: var(--danger);
-}
-
-.drill-diff {
-  font-size: 1.8rem;
-  letter-spacing: 0.02em;
-}
-
-.drill-diff .diff-equal {
-  color: var(--text);
-}
-
-.drill-diff .diff-delete {
-  color: var(--danger);
-  text-decoration: line-through;
-}
-
-.drill-diff .diff-insert {
-  color: var(--new);
-  text-decoration: underline;
-}
-
 /* ---------- reference ---------- */
 
 .ref-list a.ref-row {
@@ -472,6 +417,13 @@ div.ref-row {
   gap: 12px;
   padding: 14px 16px;
   margin-bottom: 10px;
+}
+
+/* Meaning language switch, above the sections it re-renders. */
+.ref-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .ref-section {

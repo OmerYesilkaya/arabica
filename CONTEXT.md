@@ -180,22 +180,6 @@ Today's ordered list of Cards to Study in one Deck: learning first, then due,
 then new up to the daily limit.
 _Avoid_: stack, list, backlog
 
-**Drill**:
-Unscheduled typing practice: the learner is shown a Meaning and types the
-Arabic. Drills read Content only — they never touch Progress and never produce
-a Review.
-_Avoid_: quiz, test, exercise, practice
-
-**Drill Item**:
-One prompt in a Drill. Deliberately not a Card: Drill Items are not scheduled
-and have no state.
-_Avoid_: drill card, question
-
-**Verdict**:
-The correct/incorrect outcome of one Drill Item. Distinct from a Rating, which
-is a self-assessment the learner chooses.
-_Avoid_: rating, grade, result
-
 **Read**:
 The act of moving through a Text with no translation on the page, tapping a
 Token to check it. Reading is stateless: it produces nothing, records nothing,

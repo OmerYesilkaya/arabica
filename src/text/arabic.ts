@@ -26,22 +26,24 @@ export function stripTashkeel(text: string): string {
 }
 
 /**
- * Normalize an Arabic string for lenient answer comparison in drills.
+ * Normalize an Arabic string to a comparison skeleton: two spellings of the
+ * same word fold to the same string. Used to match a corpus lemma against the
+ * words a deck already teaches, where the two are written with different
+ * vowelling and different hamza carriers.
  *
  * Steps, in order:
- *  1. strip tashkeel and tatweel (vowels are not required when typing),
+ *  1. strip tashkeel and tatweel (vowelling is not part of the identity),
  *  2. fold the hamza carriers to their bare letter: hamza on alef, on waw and
  *     on ya become plain alef, waw and ya,
- *  3. fold alef maqsura to ya, so a typed "ila" matches the written one,
- *  4. fold ta marbuta to ha (see the decision below),
+ *  3. fold alef maqsura to ya, so a bare "ila" matches the written one,
+ *  4. fold ta marbuta to ha, which the two are often written for each other,
  *  5. collapse runs of whitespace to a single space and trim the ends.
  *
- * Ta marbuta vs ha: we fold ta marbuta to ha. On a phone keyboard the learner
- * reaches ta marbuta with a long-press and often types the plain ha instead,
- * and the two look and sound close once vowels are dropped. Folding them keeps
- * the drill forgiving, which matches its goal: recall of the word, not of
- * orthographic detail. The fully voweled correct form is shown after every
- * submit, so the exact spelling is still taught.
+ * The folding is deliberately coarse, so distinct words can share a skeleton
+ * (min and man both reduce to one). That is the safe direction to err in for
+ * the only caller: an over-eager match treats a word as already taught and
+ * leaves it out of the generated vocabulary, where a missed match would teach
+ * the same word twice.
  */
 export function normalizeArabic(text: string): string {
   return stripTashkeel(text)
@@ -52,11 +54,6 @@ export function normalizeArabic(text: string): string {
     .replace(/ة/g, 'ه') // ta marbuta -> ha
     .replace(/\s+/g, ' ')
     .trim()
-}
-
-/** True when two Arabic strings match after normalization. */
-export function arabicAnswersMatch(a: string, b: string): boolean {
-  return normalizeArabic(a) === normalizeArabic(b)
 }
 
 export interface HighlightParts {

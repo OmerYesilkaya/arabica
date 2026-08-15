@@ -10,8 +10,6 @@ it works offline, and each device keeps its own progress.
   [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs), with Anki
   defaults: retention 0.9, learning steps 1m/10m, 20 new cards per day,
   sibling burying.
-- **Drills** - unscheduled typing practice: a meaning is shown, you type the
-  Arabic. Reads content only; never touches progress.
 - **Reading** - whole surahs of real Qurʾānic text, Arabic only, with no
   translation on the page. Tap a word for its meaning; tap again for its root,
   its morphology, its case or mood *with the sign named*, and a link into the

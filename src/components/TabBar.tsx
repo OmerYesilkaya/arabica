@@ -12,16 +12,6 @@ const tabs = [
     ),
   },
   {
-    to: '/drills',
-    label: 'Drills',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <path d="M4 20h16" />
-        <path d="M14.5 4.5 19 9 9 19l-4.5.5.5-4.5 9.5-10.5Z" />
-      </svg>
-    ),
-  },
-  {
     to: '/reading',
     label: 'Reading',
     icon: (

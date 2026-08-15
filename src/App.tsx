@@ -2,7 +2,6 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { TabBar } from './components/TabBar'
 import { DecksPage } from './pages/DecksPage'
 import { StudySessionPage } from './pages/StudySessionPage'
-import { DrillsPage } from './pages/DrillsPage'
 import { ReadingPage } from './pages/ReadingPage'
 import { ReadingSurahPage } from './pages/ReadingSurahPage'
 import { ReferencePage } from './pages/ReferencePage'
@@ -19,7 +18,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<DecksPage />} />
         <Route path="/study/:deckId" element={<StudySessionPage />} />
-        <Route path="/drills" element={<DrillsPage />} />
         <Route path="/reading" element={<ReadingPage />} />
         <Route path="/reading/:surah" element={<ReadingSurahPage />} />
         <Route path="/reference" element={<ReferencePage />} />

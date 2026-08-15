@@ -134,7 +134,7 @@ export function isStandaloneWord(lemma: Lemma): boolean {
 
 /**
  * Words already taught by a deck *outside* the vocabulary track, as normalized
- * Arabic. Matching is on `drillAnswer ?? arabic` so the prefix particles, whose
+ * Arabic. Matching is on `bareForm ?? arabic` so the prefix particles, whose
  * display form names the letter ("al-ba'u"), are matched by their bare particle.
  *
  * The track's own decks are deliberately excluded. They are slices of the very
@@ -148,7 +148,7 @@ export function taughtAlready(): Set<string> {
   for (const deck of decks) {
     if (isVocabTrackDeck(deck.id)) continue
     for (const note of deck.notes) {
-      taught.add(normalizeArabic(note.drillAnswer ?? note.arabic))
+      taught.add(normalizeArabic(note.bareForm ?? note.arabic))
     }
   }
   return taught

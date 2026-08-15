@@ -6,7 +6,7 @@ export type Direction = 'ar-to-meaning' | 'meaning-to-ar'
 /**
  * The English and Turkish rendering of an Arabic form. Both languages together
  * are one Meaning; neither alone is. Carried by everything the learner reads:
- * Notes, Examples, Harf senses, drill items, leeches.
+ * Notes, Examples, Harf senses, leeches.
  */
 export interface Meaning {
   english: string
@@ -73,12 +73,14 @@ export interface Note extends Meaning {
   arabic: string
   example?: Example
   /**
-   * Voweled Arabic the learner should type in a typed drill, used when
-   * `arabic` is a display label rather than the bare word (for example the
-   * prefix particles, whose `arabic` names the letter, as "al-ba'u" does).
+   * The bare word, set when `arabic` is a display label rather than the word
+   * itself (the prefix particles, whose `arabic` names the letter, as
+   * "al-ba'u" does). Named as on RefHarf, which draws the same distinction.
+   * Read where a Note has to be matched against a plain occurrence of its
+   * word, as the vocabulary generator does against the corpus lemmas.
    * Defaults to `arabic` when omitted.
    */
-  drillAnswer?: string
+  bareForm?: string
   /** Overrides the deck-level directions for this note. */
   directions?: Direction[]
   /** Reference entry id (+ optional #anchor) opened by the (i) button. */

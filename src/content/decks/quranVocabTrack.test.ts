@@ -19,7 +19,7 @@ describe.each(quranVocabTrack.map((deck) => [deck.name, deck] as const))(
       expect(cardsOfDeck(deck)).toHaveLength(deck.notes.length)
     })
 
-    it('stays out of the drill pool, which needs a meaning-to-ar direction', () => {
+    it('has no note overriding the direction back to production', () => {
       for (const note of deck.notes) {
         expect(note.directions ?? deck.directions).not.toContain('meaning-to-ar')
       }

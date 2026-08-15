@@ -12,8 +12,8 @@ const sensesWithExample = harfs.flatMap((h) =>
 )
 
 describe('hurufAlKhafdSenses deck', () => {
-  it('ships locked and ar-to-meaning only', () => {
-    expect(hurufAlKhafdSenses.locked).toBe(true)
+  it('ships unlocked and ar-to-meaning only', () => {
+    expect(hurufAlKhafdSenses.locked).toBeUndefined()
     expect(hurufAlKhafdSenses.directions).toEqual(['ar-to-meaning'])
     expect(hurufAlKhafdSenses.id).not.toBe(hurufAlKhafdRef.id)
   })

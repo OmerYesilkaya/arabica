@@ -15,53 +15,151 @@ export const partsOfSpeech: ReferenceEntry = {
       title: 'Kalām',
       arabic: 'اَلْكَلَامُ هُوَ اللَّفْظُ الْمُرَكَّبُ الْمُفِيدُ بِالْوَضْعِ',
       paragraphs: [
-        'EN: Speech (kalām) is the utterance (lafẓ) that is compound (murakkab), gives a complete meaning (mufīd), and is set by convention in Arabic (bil-waḍʿ).',
-        'TR: Kelâm; lafız olan, mürekkeb (birleşik), müfîd (tam anlam veren) ve Arap dili kurallarına göre konulmuş sözdür.',
+        {
+          english:
+            'Speech (kalām) is the utterance (lafẓ) that is compound (murakkab), gives a complete meaning (mufīd), and is set by convention in Arabic (bil-waḍʿ).',
+          turkish:
+            'Kelâm; lafız olan, mürekkeb (birleşik), müfîd (tam anlam veren) ve Arap dili kurallarına göre konulmuş sözdür.',
+        },
       ],
     },
     {
       kind: 'table',
-      title: 'The three parts',
-      columns: ['Part', 'Arabic', 'English', 'Türkçe'],
+      title: { english: 'The three parts', turkish: 'Üç kısım' },
+      columns: [
+        { english: 'Part', turkish: 'Tür' },
+        { english: 'Arabic', turkish: 'Arapça' },
+        { english: 'Meaning', turkish: 'Anlam' },
+      ],
       rows: [
-        ['Ism', { ar: 'اِسْمٌ' }, 'noun (names a thing, person, meaning)', 'isim (varlık veya kavram adı)'],
-        ['Fiʿl', { ar: 'فِعْلٌ' }, 'verb (action tied to time)', 'fiil (zamana bağlı eylem)'],
-        ['Ḥarf', { ar: 'حَرْفٌ' }, 'particle (has meaning only with others)', 'harf (tek başına anlamı olmayan edat)'],
+        [
+          'Ism',
+          { ar: 'اِسْمٌ' },
+          {
+            english: 'noun (names a thing, person, meaning)',
+            turkish: 'isim (varlık veya kavram adı)',
+          },
+        ],
+        [
+          'Fiʿl',
+          { ar: 'فِعْلٌ' },
+          { english: 'verb (action tied to time)', turkish: 'fiil (zamana bağlı eylem)' },
+        ],
+        [
+          'Ḥarf',
+          { ar: 'حَرْفٌ' },
+          {
+            english: 'particle (has meaning only with others)',
+            turkish: 'harf (tek başına anlamı olmayan edat)',
+          },
+        ],
       ],
     },
     {
       kind: 'table',
-      title: 'Signs of the ism',
-      caption:
-        'EN: A word is an ism if it accepts any of these. / TR: Bir kelime bunlardan birini kabul ediyorsa isimdir.',
-      columns: ['Sign', 'Arabic', 'English', 'Türkçe', 'Example'],
+      title: { english: 'Signs of the ism', turkish: 'İsmin alâmetleri' },
+      caption: {
+        english: 'A word is an ism if it accepts any of these.',
+        turkish: 'Bir kelime bunlardan birini kabul ediyorsa isimdir.',
+      },
+      columns: [
+        { english: 'Sign', turkish: 'Alâmet' },
+        { english: 'Arabic', turkish: 'Arapça' },
+        { english: 'Meaning', turkish: 'Anlam' },
+        { english: 'Example', turkish: 'Örnek' },
+      ],
       rows: [
-        ['Khafḍ', { ar: 'اَلْخَفْضُ' }, 'takes the khafḍ ending (kasra)', 'kesra (esre) alması', { ar: 'بِزَيْدٍ' }],
-        ['Tanwīn', { ar: 'اَلتَّنْوِينُ' }, 'takes nunation', 'tenvin alması', { ar: 'رَجُلٌ' }],
-        ['Alif-lām', { ar: 'دُخُولُ الْأَلِفِ وَاللَّامِ' }, 'accepts the definite article al-', 'başına el- takısı gelmesi', { ar: 'اَلرَّجُلُ' }],
-        ['Ḥurūf al-khafḍ', { ar: 'حُرُوفُ الْخَفْضِ' }, 'follows a particle of khafḍ', 'harf-i cerden sonra gelmesi', { ar: 'فِي الْبَيْتِ' }],
+        [
+          'Khafḍ',
+          { ar: 'اَلْخَفْضُ' },
+          { english: 'takes the khafḍ ending (kasra)', turkish: 'kesra (esre) alması' },
+          { ar: 'بِزَيْدٍ' },
+        ],
+        [
+          'Tanwīn',
+          { ar: 'اَلتَّنْوِينُ' },
+          { english: 'takes nunation', turkish: 'tenvin alması' },
+          { ar: 'رَجُلٌ' },
+        ],
+        [
+          'Alif-lām',
+          { ar: 'دُخُولُ الْأَلِفِ وَاللَّامِ' },
+          {
+            english: 'accepts the definite article al-',
+            turkish: 'başına el- takısı gelmesi',
+          },
+          { ar: 'اَلرَّجُلُ' },
+        ],
+        [
+          'Ḥurūf al-khafḍ',
+          { ar: 'حُرُوفُ الْخَفْضِ' },
+          {
+            english: 'follows a particle of khafḍ',
+            turkish: 'harf-i cerden sonra gelmesi',
+          },
+          { ar: 'فِي الْبَيْتِ' },
+        ],
       ],
     },
     {
       kind: 'table',
-      title: 'Signs of the fiʿl',
-      caption:
-        'EN: A word is a fiʿl if it accepts any of these. / TR: Bir kelime bunlardan birini kabul ediyorsa fiildir.',
-      columns: ['Sign', 'Arabic', 'English', 'Türkçe', 'Example'],
+      title: { english: 'Signs of the fiʿl', turkish: 'Fiilin alâmetleri' },
+      caption: {
+        english: 'A word is a fiʿl if it accepts any of these.',
+        turkish: 'Bir kelime bunlardan birini kabul ediyorsa fiildir.',
+      },
+      columns: [
+        { english: 'Sign', turkish: 'Alâmet' },
+        { english: 'Arabic', turkish: 'Arapça' },
+        { english: 'Meaning', turkish: 'Anlam' },
+        { english: 'Example', turkish: 'Örnek' },
+      ],
       rows: [
-        ['Qad', { ar: 'قَدْ' }, 'preceded by qad', 'başına kad gelmesi', { ar: 'قَدْ قَامَ' }],
-        ['Sīn', { ar: 'اَلسِّينُ' }, 'preceded by sa- (near future)', 'başına sin gelmesi (yakın gelecek)', { ar: 'سَيَقُومُ' }],
-        ['Sawfa', { ar: 'سَوْفَ' }, 'preceded by sawfa (future)', 'başına sevfe gelmesi (gelecek)', { ar: 'سَوْفَ يَقُومُ' }],
-        ['Tāʾ of femininity', { ar: 'تَاءُ التَّأْنِيثِ السَّاكِنَةُ' }, 'ends with the still tāʾ of femininity', 'sonuna sakin te gelmesi', { ar: 'قَامَتْ' }],
+        [
+          'Qad',
+          { ar: 'قَدْ' },
+          { english: 'preceded by qad', turkish: 'başına kad gelmesi' },
+          { ar: 'قَدْ قَامَ' },
+        ],
+        [
+          'Sīn',
+          { ar: 'اَلسِّينُ' },
+          {
+            english: 'preceded by sa- (near future)',
+            turkish: 'başına sin gelmesi (yakın gelecek)',
+          },
+          { ar: 'سَيَقُومُ' },
+        ],
+        [
+          'Sawfa',
+          { ar: 'سَوْفَ' },
+          {
+            english: 'preceded by sawfa (future)',
+            turkish: 'başına sevfe gelmesi (gelecek)',
+          },
+          { ar: 'سَوْفَ يَقُومُ' },
+        ],
+        [
+          'Tāʾ of femininity',
+          { ar: 'تَاءُ التَّأْنِيثِ السَّاكِنَةُ' },
+          {
+            english: 'ends with the still tāʾ of femininity',
+            turkish: 'sonuna sakin te gelmesi',
+          },
+          { ar: 'قَامَتْ' },
+        ],
       ],
     },
     {
       kind: 'prose',
-      title: 'Sign of the ḥarf',
+      title: { english: 'Sign of the ḥarf', turkish: 'Harfin alâmeti' },
       arabic: 'وَالْحَرْفُ مَا لَا يَصْلُحُ مَعَهُ دَلِيلُ الْاِسْمِ وَلَا دَلِيلُ الْفِعْلِ',
       paragraphs: [
-        'EN: The ḥarf is what accepts neither the signs of the ism nor the signs of the fiʿl.',
-        'TR: Harf; ne isim alâmetlerini ne de fiil alâmetlerini kabul eden kelimedir.',
+        {
+          english:
+            'The ḥarf is what accepts neither the signs of the ism nor the signs of the fiʿl.',
+          turkish: 'Harf; ne isim alâmetlerini ne de fiil alâmetlerini kabul eden kelimedir.',
+        },
       ],
     },
   ],

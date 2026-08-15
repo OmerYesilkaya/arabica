@@ -43,8 +43,10 @@ function fromExample(where: string, ex: Example | undefined): Quote[] {
   return q ? [q] : []
 }
 
+// Only an Arabic cell can carry a Source; a Meaning cell is prose in two
+// languages and quotes nothing.
 function fromCell(where: string, cell: RefText): Quote[] {
-  if (typeof cell === 'string' || !cell.source) return []
+  if (typeof cell === 'string' || !('ar' in cell) || !cell.source) return []
   const q = quoteOf(where, cell.ar, cell.source)
   return q ? [q] : []
 }

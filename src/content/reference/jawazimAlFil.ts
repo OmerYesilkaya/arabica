@@ -31,255 +31,411 @@ export const jawazimAlFil: ReferenceEntry = {
   sections: [
     {
       kind: 'prose',
-      title: 'Overview',
+      title: { english: 'Overview', turkish: 'Genel bakış' },
       arabic:
         'وَالْمُضَارِعُ مَرْفُوعٌ أَبَدًا حَتَّى يَدْخُلَ عَلَيْهِ نَاصِبٌ أَوْ جَازِمٌ. وَالْجَوَازِمُ ثَمَانِيَةَ عَشَرَ، وَهِيَ: لَمْ، وَلَمَّا، وَأَلَمْ، وَأَلَمَّا، وَلَامُ الْأَمْرِ وَالدُّعَاءِ، وَلَا فِي النَّهْيِ وَالدُّعَاءِ، وَإِنْ، وَمَا، وَمَنْ، وَمَهْمَا، وَإِذْمَا، وَأَيٌّ، وَمَتَى، وَأَيَّانَ، وَأَيْنَ، وَأَنَّى، وَحَيْثُمَا، وَكَيْفَمَا، وَإِذَا فِي الشِّعْرِ',
       paragraphs: [
-        'EN: The present verb (muḍāriʿ) stays in rafʿ until a naṣb agent or a jazm agent enters on it. A jazm particle puts it into jazm: its ending becomes sukūn, or the substitute sign of its form. The first six particles govern one verb only. The remaining thirteen are conditional particles (adawāt al-sharṭ): they govern two verbs, the condition verb (fiʿl al-sharṭ) and its answer (jawāb al-sharṭ).',
-        'TR: Muzari fiil, başına bir nasb veya cezm edatı gelmedikçe daima merfûdur. Cezm edatı fiili cezm eder: sonu sükûn olur veya o kalıbın vekil alâmetini alır. İlk altı edat yalnız bir fiili cezm eder. Kalan on üçü şart edatlarıdır (edevât-ı şart): iki fiili cezm ederler, şart fiili (fiil-i şart) ve cevabı (cevâb-ı şart).',
-        'EN: The matn gives the count as eighteen and its list has nineteen items. This entry follows the list exactly as the matn gives it. The usual reconciliation: alam and alammā are lam and lammā with the question hamza in front, so they are not counted separately.',
-        'TR: Metin sayıyı "on sekiz" verir, listesinde ise on dokuz madde vardır. Bu giriş, listeyi metnin verdiği hâliyle aynen izler. Yaygın izah şudur: elem ve elemmâ, başına soru hemzesi gelmiş lem ve lemmâdır; bu yüzden ayrıca sayılmazlar.',
+        {
+          english:
+            'The present verb (muḍāriʿ) stays in rafʿ until a naṣb agent or a jazm agent enters on it. A jazm particle puts it into jazm: its ending becomes sukūn, or the substitute sign of its form. The first six particles govern one verb only. The remaining thirteen are conditional particles (adawāt al-sharṭ): they govern two verbs, the condition verb (fiʿl al-sharṭ) and its answer (jawāb al-sharṭ).',
+          turkish:
+            'Muzari fiil, başına bir nasb veya cezm edatı gelmedikçe daima merfûdur. Cezm edatı fiili cezm eder: sonu sükûn olur veya o kalıbın vekil alâmetini alır. İlk altı edat yalnız bir fiili cezm eder. Kalan on üçü şart edatlarıdır (edevât-ı şart): iki fiili cezm ederler, şart fiili (fiil-i şart) ve cevabı (cevâb-ı şart).',
+        },
+        {
+          english:
+            'The matn gives the count as eighteen and its list has nineteen items. This entry follows the list exactly as the matn gives it. The usual reconciliation: alam and alammā are lam and lammā with the question hamza in front, so they are not counted separately.',
+          turkish:
+            'Metin sayıyı "on sekiz" verir, listesinde ise on dokuz madde vardır. Bu giriş, listeyi metnin verdiği hâliyle aynen izler. Yaygın izah şudur: elem ve elemmâ, başına soru hemzesi gelmiş lem ve lemmâdır; bu yüzden ayrıca sayılmazlar.',
+        },
       ],
     },
     {
       kind: 'table',
-      title: 'Particles that jazm one verb',
-      caption:
-        'EN: These six enter on a single present verb and put it into jazm. / TR: Bu altı edat tek bir muzari fiilin başına gelir ve onu cezm eder.',
-      columns: ['Particle', 'English', 'Türkçe', 'Example', 'Meaning of the example', 'Source'],
+      title: {
+        english: 'Particles that jazm one verb',
+        turkish: 'Tek fiili cezm eden edatlar',
+      },
+      caption: {
+        english: 'These six enter on a single present verb and put it into jazm.',
+        turkish: 'Bu altı edat tek bir muzari fiilin başına gelir ve onu cezm eder.',
+      },
+      columns: [
+        { english: 'Particle', turkish: 'Edat' },
+        { english: 'Meaning', turkish: 'Anlam' },
+        { english: 'Example', turkish: 'Örnek' },
+        { english: 'Meaning of the example', turkish: 'Örneğin anlamı' },
+      ],
       rows: [
         [
           { ar: 'لَمْ' },
-          'did not (negates the past)',
-          '-medi / -madı (geçmişi olumsuzlar)',
-          { ar: 'لَمْ يَلِدْ وَلَمْ يُولَدْ' },
-          'EN: He has not begotten, nor was He begotten · TR: O doğurmadı, doğurulmadı da',
-          'Qur’an 112:3',
+          {
+            english: 'did not (negates the past)',
+            turkish: '-medi / -madı (geçmişi olumsuzlar)',
+          },
+          { ar: 'لَمْ يَلِدْ وَلَمْ يُولَدْ', source: 'Qur’an 112:3' },
+          {
+            english: 'He has not begotten, nor was He begotten',
+            turkish: 'O doğurmadı, doğurulmadı da',
+          },
         ],
         [
           { ar: 'لَمَّا' },
-          'has not yet (negation still open)',
-          'henüz -memiş / -mamış',
-          { ar: 'وَلَمَّا يَدْخُلِ الْإِيمَانُ فِي قُلُوبِكُمْ' },
-          'EN: while faith has not yet entered your hearts · TR: hâlbuki iman henüz kalplerinize girmedi',
-          'Qur’an 49:14',
+          {
+            english: 'has not yet (negation still open)',
+            turkish: 'henüz -memiş / -mamış',
+          },
+          { ar: 'وَلَمَّا يَدْخُلِ الْإِيمَانُ فِي قُلُوبِكُمْ', source: 'Qur’an 49:14' },
+          {
+            english: 'while faith has not yet entered your hearts',
+            turkish: 'hâlbuki iman henüz kalplerinize girmedi',
+          },
         ],
         [
           { ar: 'أَلَمْ' },
-          'did not ...? (lam with the interrogative hamza)',
-          '-medi mi? (soru hemzesi + lem)',
-          { ar: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ' },
-          'EN: Did We not expand your breast for you? · TR: Senin göğsünü açıp genişletmedik mi?',
-          'Qur’an 94:1',
+          {
+            english: 'did not ...? (lam with the interrogative hamza)',
+            turkish: '-medi mi? (soru hemzesi + lem)',
+          },
+          { ar: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ', source: 'Qur’an 94:1' },
+          {
+            english: 'Did We not expand your breast for you?',
+            turkish: 'Senin göğsünü açıp genişletmedik mi?',
+          },
         ],
         [
           { ar: 'أَلَمَّا' },
-          'has not yet ...? (lammā with the interrogative hamza)',
-          'henüz -memiş mi? (soru hemzesi + lemmâ)',
+          {
+            english: 'has not yet ...? (lammā with the interrogative hamza)',
+            turkish: 'henüz -memiş mi? (soru hemzesi + lemmâ)',
+          },
           // DRAFT (fusha fallback): alamma has no Quranic or Hadith occurrence.
-          { ar: 'أَلَمَّا يَرْجِعْ أَخُوكَ؟' },
-          'EN: Has your brother not returned yet? · TR: Kardeşin henüz dönmedi mi?',
-          'Fusha (no Quranic occurrence)',
+          { ar: 'أَلَمَّا يَرْجِعْ أَخُوكَ؟', source: 'Fusha (no Quranic occurrence)' },
+          {
+            english: 'Has your brother not returned yet?',
+            turkish: 'Kardeşin henüz dönmedi mi?',
+          },
         ],
         [
           { ar: 'لَامُ الْأَمْرِ وَالدُّعَاءِ', footnote: 'لِـ' },
-          'let him / let it be (command, or supplication when said upward)',
-          'emir lâmı: -sin, -meli; duada: -sin diye dilemek',
-          { ar: 'فَلْيَعْبُدُوا رَبَّ هَذَا الْبَيْتِ' },
-          'EN: So let them worship the Lord of this House · TR: Öyleyse bu Ev’in Rabbine kulluk etsinler',
-          'Qur’an 106:3',
+          {
+            english: 'let him / let it be (command, or supplication when said upward)',
+            turkish: 'emir lâmı: -sin, -meli; duada: -sin diye dilemek',
+          },
+          { ar: 'فَلْيَعْبُدُوا رَبَّ هَذَا الْبَيْتِ', source: 'Qur’an 106:3' },
+          {
+            english: 'So let them worship the Lord of this House',
+            turkish: 'Öyleyse bu Ev’in Rabbine kulluk etsinler',
+          },
         ],
         [
           { ar: 'لَا النَّاهِيَةُ', footnote: 'لَا' },
-          'do not (prohibition, or supplication when said upward)',
-          'yasaklama lâsı: -me / -ma; duada: -mesin',
-          { ar: 'لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا' },
-          'EN: Do not grieve; indeed Allah is with us · TR: Üzülme, Allah bizimledir',
-          'Qur’an 9:40',
+          {
+            english: 'do not (prohibition, or supplication when said upward)',
+            turkish: 'yasaklama lâsı: -me / -ma; duada: -mesin',
+          },
+          { ar: 'لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا', source: 'Qur’an 9:40' },
+          {
+            english: 'Do not grieve; indeed Allah is with us',
+            turkish: 'Üzülme, Allah bizimledir',
+          },
         ],
       ],
     },
     {
       kind: 'prose',
-      title: 'How the conditional pair works',
+      title: {
+        english: 'How the conditional pair works',
+        turkish: 'Şart ikilisi nasıl çalışır',
+      },
       paragraphs: [
-        'EN: A conditional particle governs two verbs. The first is the condition (fiʿl al-sharṭ), the second is its answer (jawāb al-sharṭ); both are majzūm. If the answer cannot take jazm (it is a māḍī with qad, an amr, a nominal sentence, and so on), it is joined with fāʾ and keeps its own form. A māḍī may stand in either slot: its jazm is then a position only (maḥall jazm), with no visible sign.',
-        'TR: Şart edatı iki fiili cezm eder. Birincisi şart fiili, ikincisi cevabıdır; her ikisi de meczûmdur. Cevap cezm alamıyorsa (kad’lı mâzî, emir, isim cümlesi gibi) başına fâ gelir ve kendi kalıbını korur. Mâzî her iki yerde de gelebilir: o zaman cezm mahallendir (mahallen meczûm), görünen bir alâmet yoktur.',
+        {
+          english:
+            'A conditional particle governs two verbs. The first is the condition (fiʿl al-sharṭ), the second is its answer (jawāb al-sharṭ); both are majzūm. If the answer cannot take jazm (it is a māḍī with qad, an amr, a nominal sentence, and so on), it is joined with fāʾ and keeps its own form. A māḍī may stand in either slot: its jazm is then a position only (maḥall jazm), with no visible sign.',
+          turkish:
+            'Şart edatı iki fiili cezm eder. Birincisi şart fiili, ikincisi cevabıdır; her ikisi de meczûmdur. Cevap cezm alamıyorsa (kad’lı mâzî, emir, isim cümlesi gibi) başına fâ gelir ve kendi kalıbını korur. Mâzî her iki yerde de gelebilir: o zaman cezm mahallendir (mahallen meczûm), görünen bir alâmet yoktur.',
+        },
       ],
     },
     {
       kind: 'table',
-      title: 'Conditional particles that jazm two verbs',
-      caption:
-        'EN: Each governs the condition verb and the answer verb. Where the Qur’an uses the particle with an added mā (أَيْنَمَا for أَيْنَ), the added form is shown. / TR: Her biri şart fiilini ve cevap fiilini cezm eder. Kur’an edatı zâid mâ ile kullanıyorsa (أَيْنَ yerine أَيْنَمَا) o şekil verilmiştir.',
-      columns: ['Particle', 'English', 'Türkçe', 'Example', 'Meaning of the example', 'Source'],
+      title: {
+        english: 'Conditional particles that jazm two verbs',
+        turkish: 'İki fiili cezm eden şart edatları',
+      },
+      caption: {
+        english:
+          'Each governs the condition verb and the answer verb. Where the Qur’an uses the particle with an added mā (أَيْنَمَا for أَيْنَ), the added form is shown.',
+        turkish:
+          'Her biri şart fiilini ve cevap fiilini cezm eder. Kur’an edatı zâid mâ ile kullanıyorsa (أَيْنَ yerine أَيْنَمَا) o şekil verilmiştir.',
+      },
+      columns: [
+        { english: 'Particle', turkish: 'Edat' },
+        { english: 'Meaning', turkish: 'Anlam' },
+        { english: 'Example', turkish: 'Örnek' },
+        { english: 'Meaning of the example', turkish: 'Örneğin anlamı' },
+      ],
       rows: [
         [
           { ar: 'إِنْ' },
-          'if (the plain conditional)',
-          'eğer, şayet',
-          { ar: 'إِنْ تَنْصُرُوا اللَّهَ يَنْصُرْكُمْ' },
-          'EN: If you support Allah, He will support you · TR: Eğer Allah’a yardım ederseniz, O da size yardım eder',
-          'Qur’an 47:7',
+          { english: 'if (the plain conditional)', turkish: 'eğer, şayet' },
+          { ar: 'إِنْ تَنْصُرُوا اللَّهَ يَنْصُرْكُمْ', source: 'Qur’an 47:7' },
+          {
+            english: 'If you support Allah, He will support you',
+            turkish: 'Eğer Allah’a yardım ederseniz, O da size yardım eder',
+          },
         ],
         [
           { ar: 'مَا' },
-          'whatever',
-          'ne / her ne (yaparsan)',
-          { ar: 'وَمَا تَفْعَلُوا مِنْ خَيْرٍ يَعْلَمْهُ اللَّهُ' },
-          'EN: Whatever good you do, Allah knows it · TR: Hayır olarak ne yaparsanız Allah onu bilir',
-          'Qur’an 2:197',
+          { english: 'whatever', turkish: 'ne / her ne (yaparsan)' },
+          { ar: 'وَمَا تَفْعَلُوا مِنْ خَيْرٍ يَعْلَمْهُ اللَّهُ', source: 'Qur’an 2:197' },
+          {
+            english: 'Whatever good you do, Allah knows it',
+            turkish: 'Hayır olarak ne yaparsanız Allah onu bilir',
+          },
         ],
         [
           { ar: 'مَنْ' },
-          'whoever',
-          'kim, her kim',
-          { ar: 'فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ' },
-          'EN: So whoever does an atom’s weight of good will see it · TR: Kim zerre kadar bir hayır işlerse onu görür',
-          'Qur’an 99:7',
+          { english: 'whoever', turkish: 'kim, her kim' },
+          { ar: 'فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ', source: 'Qur’an 99:7' },
+          {
+            english: 'So whoever does an atom’s weight of good will see it',
+            turkish: 'Kim zerre kadar bir hayır işlerse onu görür',
+          },
         ],
         [
           { ar: 'مَهْمَا' },
-          'whatever, no matter what',
-          'her ne (yaparsan), ne yaparsan yap',
-          { ar: 'مَهْمَا تَأْتِنَا بِهِ مِنْ آيَةٍ' },
-          'EN: Whatever sign you bring us · TR: Bize hangi âyeti getirirsen getir',
-          'Qur’an 7:132',
+          {
+            english: 'whatever, no matter what',
+            turkish: 'her ne (yaparsan), ne yaparsan yap',
+          },
+          { ar: 'مَهْمَا تَأْتِنَا بِهِ مِنْ آيَةٍ', source: 'Qur’an 7:132' },
+          {
+            english: 'Whatever sign you bring us',
+            turkish: 'Bize hangi âyeti getirirsen getir',
+          },
         ],
         [
           { ar: 'إِذْمَا' },
-          'whenever',
-          'her ne zaman',
+          { english: 'whenever', turkish: 'her ne zaman' },
           // DRAFT (fusha fallback): idhma has no Quranic or Hadith occurrence.
-          { ar: 'إِذْمَا تَجْتَهِدْ تَنْجَحْ' },
-          'EN: Whenever you strive, you succeed · TR: Ne zaman gayret edersen başarırsın',
-          'Fusha (no Quranic occurrence)',
+          { ar: 'إِذْمَا تَجْتَهِدْ تَنْجَحْ', source: 'Fusha (no Quranic occurrence)' },
+          {
+            english: 'Whenever you strive, you succeed',
+            turkish: 'Ne zaman gayret edersen başarırsın',
+          },
         ],
         [
           { ar: 'أَيٌّ' },
-          'whichever, whoever',
-          'hangi(si), hangisini',
-          { ar: 'أَيًّا مَا تَدْعُوا فَلَهُ الْأَسْمَاءُ الْحُسْنَى' },
-          'EN: Whichever you call upon, to Him belong the best names · TR: Hangisiyle dua ederseniz, en güzel isimler O’nundur',
-          'Qur’an 17:110',
+          { english: 'whichever, whoever', turkish: 'hangi(si), hangisini' },
+          { ar: 'أَيًّا مَا تَدْعُوا فَلَهُ الْأَسْمَاءُ الْحُسْنَى', source: 'Qur’an 17:110' },
+          {
+            english: 'Whichever you call upon, to Him belong the best names',
+            turkish: 'Hangisiyle dua ederseniz, en güzel isimler O’nundur',
+          },
         ],
         [
           { ar: 'مَتَى' },
-          'whenever, when',
-          'ne zaman (olursa)',
+          { english: 'whenever, when', turkish: 'ne zaman (olursa)' },
           // DRAFT (fusha fallback): mata occurs in the Quran only as a question
           // (e.g. "mata nasru llah", 2:214), never as a jāzim of two verbs.
-          { ar: 'مَتَى تَذْهَبْ أَذْهَبْ مَعَكَ' },
-          'EN: Whenever you go, I go with you · TR: Ne zaman gidersen seninle giderim',
-          'Fusha (Quranic uses are interrogative only)',
+          {
+            ar: 'مَتَى تَذْهَبْ أَذْهَبْ مَعَكَ',
+            source: 'Fusha (Quranic uses are interrogative only)',
+          },
+          {
+            english: 'Whenever you go, I go with you',
+            turkish: 'Ne zaman gidersen seninle giderim',
+          },
         ],
         [
           { ar: 'أَيَّانَ' },
-          'whenever (emphatic)',
-          'her ne zaman (tekitli)',
+          { english: 'whenever (emphatic)', turkish: 'her ne zaman (tekitli)' },
           // DRAFT (fusha fallback): ayyana occurs in the Quran only as a
           // question (e.g. "ayyana yawmu d-din", 51:12), never as a jāzim.
-          { ar: 'أَيَّانَ تَرْحَلْ أَرْحَلْ مَعَكَ' },
-          'EN: Whenever you set out, I set out with you · TR: Her ne zaman yola çıkarsan seninle çıkarım',
-          'Fusha (Quranic uses are interrogative only)',
+          {
+            ar: 'أَيَّانَ تَرْحَلْ أَرْحَلْ مَعَكَ',
+            source: 'Fusha (Quranic uses are interrogative only)',
+          },
+          {
+            english: 'Whenever you set out, I set out with you',
+            turkish: 'Her ne zaman yola çıkarsan seninle çıkarım',
+          },
         ],
         [
           { ar: 'أَيْنَ', footnote: 'أَيْنَمَا' },
-          'wherever',
-          'nerede, nereye (olursa)',
-          { ar: 'أَيْنَمَا تَكُونُوا يُدْرِكْكُمُ الْمَوْتُ' },
-          'EN: Wherever you may be, death will overtake you · TR: Nerede olsanız ölüm size ulaşır',
-          'Qur’an 4:78',
+          { english: 'wherever', turkish: 'nerede, nereye (olursa)' },
+          { ar: 'أَيْنَمَا تَكُونُوا يُدْرِكْكُمُ الْمَوْتُ', source: 'Qur’an 4:78' },
+          {
+            english: 'Wherever you may be, death will overtake you',
+            turkish: 'Nerede olsanız ölüm size ulaşır',
+          },
         ],
         [
           { ar: 'أَنَّى' },
-          'wherever, however',
-          'nerede, nasıl olursa',
+          { english: 'wherever, however', turkish: 'nerede, nasıl olursa' },
           // DRAFT (fusha fallback): the Quranic anna (e.g. 2:223) is followed
           // by a māḍī or is interrogative, so no visible jazm is shown.
-          { ar: 'أَنَّى تَجْلِسْ أَجْلِسْ' },
-          'EN: Wherever you sit, I sit · TR: Nereye oturursan otururum',
-          'Fusha (no Quranic jazm example)',
+          { ar: 'أَنَّى تَجْلِسْ أَجْلِسْ', source: 'Fusha (no Quranic jazm example)' },
+          { english: 'Wherever you sit, I sit', turkish: 'Nereye oturursan otururum' },
         ],
         [
           { ar: 'حَيْثُمَا' },
-          'wherever',
-          'her nerede',
-          { ar: 'وَحَيْثُ مَا كُنْتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ' },
-          'EN: And wherever you are, turn your faces towards it · TR: Nerede olursanız yüzlerinizi ona doğru çevirin',
-          'Qur’an 2:150 (māḍī: jazm by position only)',
+          { english: 'wherever', turkish: 'her nerede' },
+          {
+            ar: 'وَحَيْثُ مَا كُنْتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ',
+            footnote: {
+              english: 'māḍī: jazm by position only',
+              turkish: 'mâzî: yalnız mahallen cezm',
+            },
+            source: 'Qur’an 2:150',
+          },
+          {
+            english: 'And wherever you are, turn your faces towards it',
+            turkish: 'Nerede olursanız yüzlerinizi ona doğru çevirin',
+          },
         ],
         [
           { ar: 'كَيْفَمَا' },
-          'however, in whatever way',
-          'nasıl olursa, nasıl yaparsan',
+          {
+            english: 'however, in whatever way',
+            turkish: 'nasıl olursa, nasıl yaparsan',
+          },
           // DRAFT (fusha fallback): kayfama has no Quranic occurrence, and the
           // Basran grammarians deny that it jazms at all.
-          { ar: 'كَيْفَمَا تَفْعَلْ أَفْعَلْ' },
-          'EN: However you act, I act · TR: Nasıl davranırsan öyle davranırım',
-          'Fusha (no Quranic occurrence; disputed particle)',
+          {
+            ar: 'كَيْفَمَا تَفْعَلْ أَفْعَلْ',
+            source: 'Fusha (no Quranic occurrence; disputed particle)',
+          },
+          {
+            english: 'However you act, I act',
+            turkish: 'Nasıl davranırsan öyle davranırım',
+          },
         ],
         [
-          { ar: 'إِذَا', footnote: 'in poetry only' },
-          'when (jazms only in poetry; in prose it takes the māḍī)',
-          '-dığı zaman (yalnız şiirde cezm eder)',
+          {
+            ar: 'إِذَا',
+            footnote: { english: 'in poetry only', turkish: 'yalnız şiirde' },
+          },
+          {
+            english: 'when (jazms only in poetry; in prose it takes the māḍī)',
+            turkish: '-dığı zaman (yalnız şiirde cezm eder)',
+          },
           // DRAFT (fusha fallback): the matn allows idha as a jāzim only in
           // poetry, and the commentaries' proof is a line of verse. That line is
           // not quoted here because its exact wording could not be confirmed;
           // a plain constructed example stands in its place.
-          { ar: 'إِذَا تَقُمْ أَقُمْ' },
-          'EN: When you stand, I stand · TR: Sen kalkınca ben de kalkarım',
-          'Fusha (poetry-only usage)',
+          { ar: 'إِذَا تَقُمْ أَقُمْ', source: 'Fusha (poetry-only usage)' },
+          {
+            english: 'When you stand, I stand',
+            turkish: 'Sen kalkınca ben de kalkarım',
+          },
         ],
       ],
     },
     {
       kind: 'table',
-      title: 'The signs of jazm',
-      caption:
-        'EN: The same three signs as in the iʿrāb-signs entry: sukūn for the sound present verb, dropping the nūn in the five verbs, dropping the weak final letter. / TR: İʿrâb alâmetleri sayfasındaki üç alâmetin aynısı: sahih muzaride sükûn, beş fiilde nûnun düşmesi, illetli sonda harf-i illetin düşmesi.',
-      columns: ['Verb form', 'Sign of jazm', 'Example', 'Source'],
+      title: { english: 'The signs of jazm', turkish: 'Cezm alâmetleri' },
+      caption: {
+        english:
+          'The same three signs as in the iʿrāb-signs entry: sukūn for the sound present verb, dropping the nūn in the five verbs, dropping the weak final letter.',
+        turkish:
+          'İʿrâb alâmetleri sayfasındaki üç alâmetin aynısı: sahih muzaride sükûn, beş fiilde nûnun düşmesi, illetli sonda harf-i illetin düşmesi.',
+      },
+      columns: [
+        { english: 'Verb form', turkish: 'Fiil şekli' },
+        { english: 'Sign of jazm', turkish: 'Cezm alâmeti' },
+        { english: 'Example', turkish: 'Örnek' },
+      ],
       rows: [
         [
-          { ar: 'اَلْمُضَارِعُ الصَّحِيحُ الْآخِرِ', footnote: 'sound present verb / sahih muzari' },
-          { ar: 'ـْ', footnote: 'sukūn / sükûn' },
-          { ar: 'لَمْ يَلِدْ وَلَمْ يُولَدْ', footnote: 'يَلِدُ → يَلِدْ' },
-          'Qur’an 112:3',
+          {
+            ar: 'اَلْمُضَارِعُ الصَّحِيحُ الْآخِرِ',
+            footnote: { english: 'sound present verb', turkish: 'sahih muzari' },
+          },
+          { ar: 'ـْ', footnote: { english: 'sukūn', turkish: 'sükûn' } },
+          { ar: 'لَمْ يَلِدْ وَلَمْ يُولَدْ', footnote: 'يَلِدُ → يَلِدْ', source: 'Qur’an 112:3' },
         ],
         [
-          { ar: 'اَلْأَفْعَالُ الْخَمْسَةُ', footnote: 'the five verbs / beş fiil' },
-          { ar: 'حَذْفُ النُّونِ', footnote: 'the nūn drops / nûnun düşmesi' },
-          { ar: 'فَلْيَعْبُدُوا رَبَّ هَذَا الْبَيْتِ', footnote: 'يَعْبُدُونَ → يَعْبُدُوا' },
-          'Qur’an 106:3',
+          {
+            ar: 'اَلْأَفْعَالُ الْخَمْسَةُ',
+            footnote: { english: 'the five verbs', turkish: 'beş fiil' },
+          },
+          {
+            ar: 'حَذْفُ النُّونِ',
+            footnote: { english: 'the nūn drops', turkish: 'nûnun düşmesi' },
+          },
+          {
+            ar: 'فَلْيَعْبُدُوا رَبَّ هَذَا الْبَيْتِ',
+            footnote: 'يَعْبُدُونَ → يَعْبُدُوا',
+            source: 'Qur’an 106:3',
+          },
         ],
         [
-          { ar: 'اَلْمُعْتَلُّ بِالْأَلِفِ', footnote: 'weak in alif / elif ile illetli' },
-          { ar: 'حَذْفُ الْأَلِفِ', footnote: 'the alif drops / elifin düşmesi' },
-          { ar: 'وَلَا تَنْسَ نَصِيبَكَ مِنَ الدُّنْيَا', footnote: 'تَنْسَى → تَنْسَ' },
-          'Qur’an 28:77',
+          {
+            ar: 'اَلْمُعْتَلُّ بِالْأَلِفِ',
+            footnote: { english: 'weak in alif', turkish: 'elif ile illetli' },
+          },
+          {
+            ar: 'حَذْفُ الْأَلِفِ',
+            footnote: { english: 'the alif drops', turkish: 'elifin düşmesi' },
+          },
+          {
+            ar: 'وَلَا تَنْسَ نَصِيبَكَ مِنَ الدُّنْيَا',
+            footnote: 'تَنْسَى → تَنْسَ',
+            source: 'Qur’an 28:77',
+          },
         ],
         [
-          { ar: 'اَلْمُعْتَلُّ بِالْوَاوِ', footnote: 'weak in wāw / vav ile illetli' },
-          { ar: 'حَذْفُ الْوَاوِ', footnote: 'the wāw drops / vavın düşmesi' },
-          { ar: 'فَلَا تَدْعُ مَعَ اللَّهِ إِلَهًا آخَرَ', footnote: 'تَدْعُو → تَدْعُ' },
-          'Qur’an 26:213',
+          {
+            ar: 'اَلْمُعْتَلُّ بِالْوَاوِ',
+            footnote: { english: 'weak in wāw', turkish: 'vav ile illetli' },
+          },
+          {
+            ar: 'حَذْفُ الْوَاوِ',
+            footnote: { english: 'the wāw drops', turkish: 'vavın düşmesi' },
+          },
+          {
+            ar: 'فَلَا تَدْعُ مَعَ اللَّهِ إِلَهًا آخَرَ',
+            footnote: 'تَدْعُو → تَدْعُ',
+            source: 'Qur’an 26:213',
+          },
         ],
         [
-          { ar: 'اَلْمُعْتَلُّ بِالْيَاءِ', footnote: 'weak in yāʾ / ya ile illetli' },
-          { ar: 'حَذْفُ الْيَاءِ', footnote: 'the yāʾ drops / yanın düşmesi' },
-          { ar: 'مَهْمَا تَأْتِنَا بِهِ مِنْ آيَةٍ', footnote: 'تَأْتِينَا → تَأْتِنَا' },
-          'Qur’an 7:132',
+          {
+            ar: 'اَلْمُعْتَلُّ بِالْيَاءِ',
+            footnote: { english: 'weak in yāʾ', turkish: 'ya ile illetli' },
+          },
+          {
+            ar: 'حَذْفُ الْيَاءِ',
+            footnote: { english: 'the yāʾ drops', turkish: 'yanın düşmesi' },
+          },
+          {
+            ar: 'مَهْمَا تَأْتِنَا بِهِ مِنْ آيَةٍ',
+            footnote: 'تَأْتِينَا → تَأْتِنَا',
+            source: 'Qur’an 7:132',
+          },
         ],
       ],
     },
     {
       kind: 'prose',
-      title: 'Two notes on the signs',
+      title: {
+        english: 'Two notes on the signs',
+        turkish: 'Alâmetler üzerine iki not',
+      },
       paragraphs: [
-        'EN: When the sukūn of jazm meets a following sākin letter, it is voiced as kasra to break the meeting of two sākins: وَلَمَّا يَدْخُلِ الْإِيمَانُ (Qur’an 49:14), where يَدْخُلْ becomes يَدْخُلِ before the article. The verb is still majzūm; only the pronunciation moves.',
-        'TR: Cezm sükûnu, kendisinden sonra gelen sâkin bir harfle karşılaşınca iki sâkinin buluşmasını önlemek için kesra okunur: وَلَمَّا يَدْخُلِ الْإِيمَانُ (Kur’an 49:14); burada يَدْخُلْ, harf-i tarif önünde يَدْخُلِ olur. Fiil hâlâ meczûmdur, yalnız okunuş değişir.',
-        'EN: The matn also states that the imperative is majzūm always (wal-amru majzūmun abadan), so the same three signs describe the amr as well: اِضْرِبْ with sukūn, اِضْرِبُوا with the nūn dropped, اُدْعُ with the wāw dropped.',
-        'TR: Metin ayrıca emir fiilin daima meczûm olduğunu söyler (ve’l-emru meczûmun ebeden); dolayısıyla aynı üç alâmet emir için de geçerlidir: اِضْرِبْ sükûnla, اِضْرِبُوا nûnu düşmüş olarak, اُدْعُ vavı düşmüş olarak.',
+        {
+          english:
+            'When the sukūn of jazm meets a following sākin letter, it is voiced as kasra to break the meeting of two sākins: وَلَمَّا يَدْخُلِ الْإِيمَانُ (Qur’an 49:14), where يَدْخُلْ becomes يَدْخُلِ before the article. The verb is still majzūm; only the pronunciation moves.',
+          turkish:
+            'Cezm sükûnu, kendisinden sonra gelen sâkin bir harfle karşılaşınca iki sâkinin buluşmasını önlemek için kesra okunur: وَلَمَّا يَدْخُلِ الْإِيمَانُ (Kur’an 49:14); burada يَدْخُلْ, harf-i tarif önünde يَدْخُلِ olur. Fiil hâlâ meczûmdur, yalnız okunuş değişir.',
+        },
+        {
+          english:
+            'The matn also states that the imperative is majzūm always (wal-amru majzūmun abadan), so the same three signs describe the amr as well: اِضْرِبْ with sukūn, اِضْرِبُوا with the nūn dropped, اُدْعُ with the wāw dropped.',
+          turkish:
+            'Metin ayrıca emir fiilin daima meczûm olduğunu söyler (ve’l-emru meczûmun ebeden); dolayısıyla aynı üç alâmet emir için de geçerlidir: اِضْرِبْ sükûnla, اِضْرِبُوا nûnu düşmüş olarak, اُدْعُ vavı düşmüş olarak.',
+        },
       ],
     },
     {

@@ -31,76 +31,103 @@ export const innaWaAkhawatuha: ReferenceEntry = {
   sections: [
     {
       kind: 'prose',
-      title: 'Overview',
+      title: { english: 'Overview', turkish: 'Genel bakış' },
       arabic:
         'وَأَمَّا إِنَّ وَأَخَوَاتُهَا فَإِنَّهَا تَنْصِبُ الْاِسْمَ وَتَرْفَعُ الْخَبَرَ، وَهِيَ: إِنَّ، وَأَنَّ، وَلَكِنَّ، وَكَأَنَّ، وَلَيْتَ، وَلَعَلَّ',
       paragraphs: [
-        'EN: These six particles enter a nominal sentence and reverse its two endings: the subject after them (called the ism of inna) goes into naṣb, and the predicate (the khabar of inna) stays or goes into rafʿ. So the order is: particle, then ism manṣūb, then khabar marfūʿ.',
-        'TR: Bu altı harf isim cümlesinin başına gelir ve iki tarafın harekesini değiştirir: kendilerinden sonraki özne (inne’nin ismi) nasb olur, yüklem (inne’nin haberi) ref halinde kalır. Sıralama şöyledir: harf, sonra mansub isim, sonra merfû haber.',
-        'EN: They are called ḥurūf mushabbaha bil-fiʿl (particles resembling the verb) because, like a verb, each one governs what follows it. The ism may also be an attached pronoun; then the pronoun sits in the place of naṣb (maḥall naṣb) and shows no fatḥa.',
-        'TR: Fiile benzedikleri için "hurûf-i müşebbehe bi’l-fiil" denir; çünkü fiil gibi kendilerinden sonrasını amel ederler. İsim, muttasıl zamir de olabilir; o zaman zamir mahallen mansubdur ve fetha görünmez.',
+        {
+          english:
+            'These six particles enter a nominal sentence and reverse its two endings: the subject after them (called the ism of inna) goes into naṣb, and the predicate (the khabar of inna) stays or goes into rafʿ. So the order is: particle, then ism manṣūb, then khabar marfūʿ.',
+          turkish:
+            'Bu altı harf isim cümlesinin başına gelir ve iki tarafın harekesini değiştirir: kendilerinden sonraki özne (inne’nin ismi) nasb olur, yüklem (inne’nin haberi) ref halinde kalır. Sıralama şöyledir: harf, sonra mansub isim, sonra merfû haber.',
+        },
+        {
+          english:
+            'They are called ḥurūf mushabbaha bil-fiʿl (particles resembling the verb) because, like a verb, each one governs what follows it. The ism may also be an attached pronoun; then the pronoun sits in the place of naṣb (maḥall naṣb) and shows no fatḥa.',
+          turkish:
+            'Fiile benzedikleri için "hurûf-i müşebbehe bi’l-fiil" denir; çünkü fiil gibi kendilerinden sonrasını amel ederler. İsim, muttasıl zamir de olabilir; o zaman zamir mahallen mansubdur ve fetha görünmez.',
+        },
       ],
     },
     {
       kind: 'prose',
-      title: 'The meanings the matn assigns',
+      title: {
+        english: 'The meanings the matn assigns',
+        turkish: 'Metnin verdiği anlamlar',
+      },
       arabic:
         'وَمَعْنَى إِنَّ وَأَنَّ لِلتَّوْكِيدِ، وَلَكِنَّ لِلاِسْتِدْرَاكِ، وَكَأَنَّ لِلتَّشْبِيهِ، وَلَيْتَ لِلتَّمَنِّي، وَلَعَلَّ لِلتَّرَجِّي وَالتَّوَقُّعِ',
       paragraphs: [
-        'EN: Inna and anna are for emphasis (tawkīd), lākinna for rectification (istidrāk), kaʾanna for comparison (tashbīh), layta for wishing (tamannī), and laʿalla for hope and expectation (tarajjī and tawaqquʿ).',
-        'TR: İnne ve enne tekid, lâkinne istidrâk, keenne teşbih, leyte temenni, lealle ise terecci ve tevakku (umut ve beklenti) içindir.',
-        'EN: Inna and anna carry the same emphasis; the difference is position. Inna opens an independent sentence ("Indeed ..."), while anna and its two words are read as one noun phrase inside a bigger sentence ("that ...", after verbs like "know", "witness", "reach").',
-        'TR: İnne ile enne aynı tekid anlamını taşır; fark yerindedir. İnne bağımsız cümlenin başında gelir ("şüphesiz ..."), enne ise kendisinden sonraki iki kelimeyle birlikte daha büyük bir cümlenin içinde tek bir isim gibi okunur ("... olduğunu"; bilmek, şahit olmak gibi fiillerden sonra).',
+        {
+          english:
+            'Inna and anna are for emphasis (tawkīd), lākinna for rectification (istidrāk), kaʾanna for comparison (tashbīh), layta for wishing (tamannī), and laʿalla for hope and expectation (tarajjī and tawaqquʿ).',
+          turkish:
+            'İnne ve enne tekid, lâkinne istidrâk, keenne teşbih, leyte temenni, lealle ise terecci ve tevakku (umut ve beklenti) içindir.',
+        },
+        {
+          english:
+            'Inna and anna carry the same emphasis; the difference is position. Inna opens an independent sentence ("Indeed ..."), while anna and its two words are read as one noun phrase inside a bigger sentence ("that ...", after verbs like "know", "witness", "reach").',
+          turkish:
+            'İnne ile enne aynı tekid anlamını taşır; fark yerindedir. İnne bağımsız cümlenin başında gelir ("şüphesiz ..."), enne ise kendisinden sonraki iki kelimeyle birlikte daha büyük bir cümlenin içinde tek bir isim gibi okunur ("... olduğunu"; bilmek, şahit olmak gibi fiillerden sonra).',
+        },
       ],
     },
     {
       kind: 'table',
-      title: 'Quick table',
-      caption:
-        'EN: One Quranic example per sister; the ism and the khabar of each are named in the detail sections below. / TR: Her kardeş için bir Kur’an örneği; her birinin ismi ve haberi aşağıdaki bölümlerde adlandırılmıştır.',
-      columns: ['Sister', 'Meaning', 'Türkçe', 'Example', 'Source'],
+      title: { english: 'Quick table', turkish: 'Kısa tablo' },
+      caption: {
+        english:
+          'One Quranic example per sister; the ism and the khabar of each are named in the detail sections below.',
+        turkish:
+          'Her kardeş için bir Kur’an örneği; her birinin ismi ve haberi aşağıdaki bölümlerde adlandırılmıştır.',
+      },
+      columns: [
+        { english: 'Sister', turkish: 'Kardeş' },
+        { english: 'Meaning', turkish: 'Anlam' },
+        { english: 'Example', turkish: 'Örnek' },
+      ],
       rows: [
         [
           { ar: 'إِنَّ' },
-          'indeed, truly (emphasis)',
-          'şüphesiz, muhakkak (tekid)',
-          { ar: 'إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ' },
-          'Qur’an 2:173',
+          {
+            english: 'indeed, truly (emphasis)',
+            turkish: 'şüphesiz, muhakkak (tekid)',
+          },
+          { ar: 'إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ', source: 'Qur’an 2:173' },
         ],
         [
           { ar: 'أَنَّ' },
-          'that ... (emphasis inside a clause)',
-          '... olduğunu (cümle içinde tekid)',
-          { ar: 'أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ' },
-          'Qur’an 2:106',
+          {
+            english: 'that ... (emphasis inside a clause)',
+            turkish: '... olduğunu (cümle içinde tekid)',
+          },
+          { ar: 'أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ', source: 'Qur’an 2:106' },
         ],
         [
           { ar: 'لَكِنَّ' },
-          'but, however (rectification)',
-          'fakat, lâkin (istidrâk)',
-          { ar: 'وَلَكِنَّ اللَّهَ ذُو فَضْلٍ' },
-          'Qur’an 2:251',
+          {
+            english: 'but, however (rectification)',
+            turkish: 'fakat, lâkin (istidrâk)',
+          },
+          { ar: 'وَلَكِنَّ اللَّهَ ذُو فَضْلٍ', source: 'Qur’an 2:251' },
         ],
         [
           { ar: 'كَأَنَّ' },
-          'as if, as though (comparison)',
-          'sanki, gibi (teşbih)',
-          { ar: 'كَأَنَّهُنَّ الْيَاقُوتُ' },
-          'Qur’an 55:58',
+          { english: 'as if, as though (comparison)', turkish: 'sanki, gibi (teşbih)' },
+          { ar: 'كَأَنَّهُنَّ الْيَاقُوتُ', source: 'Qur’an 55:58' },
         ],
         [
           { ar: 'لَيْتَ' },
-          'would that, if only (wishing)',
-          'keşke (temenni)',
-          { ar: 'يَا لَيْتَ قَوْمِي يَعْلَمُونَ' },
-          'Qur’an 36:26',
+          { english: 'would that, if only (wishing)', turkish: 'keşke (temenni)' },
+          { ar: 'يَا لَيْتَ قَوْمِي يَعْلَمُونَ', source: 'Qur’an 36:26' },
         ],
         [
           { ar: 'لَعَلَّ' },
-          'perhaps, it may be that (hope)',
-          'belki, umulur ki (terecci)',
-          { ar: 'لَعَلَّ السَّاعَةَ قَرِيبٌ' },
-          'Qur’an 42:17',
+          {
+            english: 'perhaps, it may be that (hope)',
+            turkish: 'belki, umulur ki (terecci)',
+          },
+          { ar: 'لَعَلَّ السَّاعَةَ قَرِيبٌ', source: 'Qur’an 42:17' },
         ],
       ],
     },
@@ -244,54 +271,134 @@ export const innaWaAkhawatuha: ReferenceEntry = {
     },
     {
       kind: 'prose',
-      title: 'Worked example',
+      title: { english: 'Worked example', turkish: 'Çözümlü örnek' },
       arabic: 'تَقُولُ: إِنَّ زَيْدًا قَائِمٌ، وَلَيْتَ عَمْرًا شَاخِصٌ، وَمَا أَشْبَهَ ذَلِكَ',
       paragraphs: [
-        'EN: Start from the plain nominal sentence in the matn: Zayd is standing. Both words are in rafʿ with a ḍamma, because the first is the mubtadaʾ and the second is its khabar.',
-        'TR: Metnin sade isim cümlesinden başla: Zeyd ayaktadır. Her iki kelime de ötre ile ref halindedir; çünkü birincisi mübteda, ikincisi onun haberidir.',
-        'EN: Now inna enters. The first word becomes the ism of inna and takes naṣb, so its ending changes from ḍamma to fatḥa. The second word is the khabar of inna and keeps its rafʿ, so nothing changes on it. Only one ending moves.',
-        'TR: Şimdi inne gelir. Birinci kelime inne’nin ismi olur ve nasb alır; sonu ötreden fethaya döner. İkinci kelime inne’nin haberidir ve refini korur, yani hiç değişmez. Sadece bir hareke değişir.',
-        'EN: Kāna does the mirror image: it leaves the first word in rafʿ and puts the second into naṣb. The table below sets the three sentences side by side, so the two chapters can be compared in one look.',
-        'TR: Kâne bunun aynadaki görüntüsünü yapar: birinci kelimeyi ref halinde bırakır, ikinciyi nasba çevirir. Aşağıdaki tablo üç cümleyi yan yana koyar; böylece iki bab tek bakışta karşılaştırılabilir.',
+        {
+          english:
+            'Start from the plain nominal sentence in the matn: Zayd is standing. Both words are in rafʿ with a ḍamma, because the first is the mubtadaʾ and the second is its khabar.',
+          turkish:
+            'Metnin sade isim cümlesinden başla: Zeyd ayaktadır. Her iki kelime de ötre ile ref halindedir; çünkü birincisi mübteda, ikincisi onun haberidir.',
+        },
+        {
+          english:
+            'Now inna enters. The first word becomes the ism of inna and takes naṣb, so its ending changes from ḍamma to fatḥa. The second word is the khabar of inna and keeps its rafʿ, so nothing changes on it. Only one ending moves.',
+          turkish:
+            'Şimdi inne gelir. Birinci kelime inne’nin ismi olur ve nasb alır; sonu ötreden fethaya döner. İkinci kelime inne’nin haberidir ve refini korur, yani hiç değişmez. Sadece bir hareke değişir.',
+        },
+        {
+          english:
+            'Kāna does the mirror image: it leaves the first word in rafʿ and puts the second into naṣb. The table below sets the three sentences side by side, so the two chapters can be compared in one look.',
+          turkish:
+            'Kâne bunun aynadaki görüntüsünü yapar: birinci kelimeyi ref halinde bırakır, ikinciyi nasba çevirir. Aşağıdaki tablo üç cümleyi yan yana koyar; böylece iki bab tek bakışta karşılaştırılabilir.',
+        },
       ],
     },
     {
       kind: 'table',
-      title: 'Worked example: the endings side by side',
-      caption:
-        'EN: The sentence is the matn’s own teaching example, not a quotation from a source. / TR: Cümle, metnin kendi öğretici örneğidir; bir kaynaktan alıntı değildir.',
-      columns: ['Stage', 'Sentence', 'Subject (ism)', 'Predicate (khabar)'],
+      title: {
+        english: 'Worked example: the endings side by side',
+        turkish: 'Çözümlü örnek: harekeler yan yana',
+      },
+      caption: {
+        english:
+          'The sentence is the matn’s own teaching example, not a quotation from a source.',
+        turkish: 'Cümle, metnin kendi öğretici örneğidir; bir kaynaktan alıntı değildir.',
+      },
+      columns: [
+        { english: 'Stage', turkish: 'Aşama' },
+        { english: 'Sentence', turkish: 'Cümle' },
+        { english: 'Subject (ism)', turkish: 'Özne (isim)' },
+        { english: 'Predicate (khabar)', turkish: 'Yüklem (haber)' },
+      ],
       rows: [
         [
-          'Plain nominal sentence',
-          { ar: 'زَيْدٌ قَائِمٌ', footnote: 'Zayd is standing / Zeyd ayaktadır' },
-          { ar: 'زَيْدٌ', footnote: 'mubtadaʾ · rafʿ, ḍamma' },
-          { ar: 'قَائِمٌ', footnote: 'khabar · rafʿ, ḍamma' },
+          { english: 'Plain nominal sentence', turkish: 'Düz isim cümlesi' },
+          {
+            ar: 'زَيْدٌ قَائِمٌ',
+            footnote: { english: 'Zayd is standing', turkish: 'Zeyd ayaktadır' },
+          },
+          {
+            ar: 'زَيْدٌ',
+            footnote: {
+              english: 'mubtadaʾ · rafʿ, ḍamma',
+              turkish: 'mübteda · ref, damme',
+            },
+          },
+          {
+            ar: 'قَائِمٌ',
+            footnote: { english: 'khabar · rafʿ, ḍamma', turkish: 'haber · ref, damme' },
+          },
         ],
         [
-          'After inna',
-          { ar: 'إِنَّ زَيْدًا قَائِمٌ', footnote: 'Indeed Zayd is standing / Şüphesiz Zeyd ayaktadır' },
-          { ar: 'زَيْدًا', footnote: 'ism inna · naṣb, fatḥa' },
-          { ar: 'قَائِمٌ', footnote: 'khabar inna · rafʿ, ḍamma' },
+          { english: 'After inna', turkish: 'İnne’den sonra' },
+          {
+            ar: 'إِنَّ زَيْدًا قَائِمٌ',
+            footnote: {
+              english: 'Indeed Zayd is standing',
+              turkish: 'Şüphesiz Zeyd ayaktadır',
+            },
+          },
+          {
+            ar: 'زَيْدًا',
+            footnote: {
+              english: 'ism inna · naṣb, fatḥa',
+              turkish: 'inne’nin ismi · nasb, fetha',
+            },
+          },
+          {
+            ar: 'قَائِمٌ',
+            footnote: {
+              english: 'khabar inna · rafʿ, ḍamma',
+              turkish: 'inne’nin haberi · ref, damme',
+            },
+          },
         ],
         [
-          'Compare: after kāna',
-          { ar: 'كَانَ زَيْدٌ قَائِمًا', footnote: 'Zayd was standing / Zeyd ayakta idi' },
-          { ar: 'زَيْدٌ', footnote: 'ism kāna · rafʿ, ḍamma' },
-          { ar: 'قَائِمًا', footnote: 'khabar kāna · naṣb, fatḥa' },
+          { english: 'Compare: after kāna', turkish: 'Karşılaştır: kâne’den sonra' },
+          {
+            ar: 'كَانَ زَيْدٌ قَائِمًا',
+            footnote: { english: 'Zayd was standing', turkish: 'Zeyd ayakta idi' },
+          },
+          {
+            ar: 'زَيْدٌ',
+            footnote: {
+              english: 'ism kāna · rafʿ, ḍamma',
+              turkish: 'kâne’nin ismi · ref, damme',
+            },
+          },
+          {
+            ar: 'قَائِمًا',
+            footnote: {
+              english: 'khabar kāna · naṣb, fatḥa',
+              turkish: 'kâne’nin haberi · nasb, fetha',
+            },
+          },
         ],
       ],
     },
     {
       kind: 'prose',
-      title: 'Points to watch',
+      title: { english: 'Points to watch', turkish: 'Dikkat edilecek noktalar' },
       paragraphs: [
-        'EN: The khabar is not always a single word in rafʿ. It may be a whole verbal sentence (as with layta above) or a prepositional phrase; then it holds the place of rafʿ without showing a ḍamma. The rule "khabar marfūʿ" describes the position first, the ending second.',
-        'TR: Haber her zaman tek bir merfû kelime değildir. Bir fiil cümlesi (yukarıdaki leyte örneğinde olduğu gibi) veya bir câr-mecrûr da olabilir; o zaman mahallen merfûdur, ötre görünmez. "Haber merfûdur" kuralı önce yeri, sonra hareke ile ilgilidir.',
-        'EN: When the khabar of inna comes first as a prepositional phrase, the ism follows it and still takes naṣb, as in "Indeed, with hardship comes ease" (Qur’an 94:6), where the ism carries a fatḥa at the end of the ayah. Word order moves, the endings do not.',
-        'TR: İnne’nin haberi câr-mecrûr olarak öne geçtiğinde, isim ondan sonra gelir ve yine nasb alır; "muhakkak zorlukla birlikte bir kolaylık vardır" (Kur’an 94:6) ayetinde olduğu gibi; orada isim, ayetin sonunda fetha taşır. Kelime sırası değişir, harekeler değişmez.',
-        'EN: The lightened forms (inna and anna written without the shadda, and kaʾan) belong to a later chapter; the matn deals here with the six heavy particles only.',
-        'TR: Şeddesiz yazılan hafifletilmiş biçimler (in, en, keen) daha sonraki bir babın konusudur; metin burada yalnız şeddeli altı harfi işler.',
+        {
+          english:
+            'The khabar is not always a single word in rafʿ. It may be a whole verbal sentence (as with layta above) or a prepositional phrase; then it holds the place of rafʿ without showing a ḍamma. The rule "khabar marfūʿ" describes the position first, the ending second.',
+          turkish:
+            'Haber her zaman tek bir merfû kelime değildir. Bir fiil cümlesi (yukarıdaki leyte örneğinde olduğu gibi) veya bir câr-mecrûr da olabilir; o zaman mahallen merfûdur, ötre görünmez. "Haber merfûdur" kuralı önce yeri, sonra hareke ile ilgilidir.',
+        },
+        {
+          english:
+            'When the khabar of inna comes first as a prepositional phrase, the ism follows it and still takes naṣb, as in "Indeed, with hardship comes ease" (Qur’an 94:6), where the ism carries a fatḥa at the end of the ayah. Word order moves, the endings do not.',
+          turkish:
+            'İnne’nin haberi câr-mecrûr olarak öne geçtiğinde, isim ondan sonra gelir ve yine nasb alır; "muhakkak zorlukla birlikte bir kolaylık vardır" (Kur’an 94:6) ayetinde olduğu gibi; orada isim, ayetin sonunda fetha taşır. Kelime sırası değişir, harekeler değişmez.',
+        },
+        {
+          english:
+            'The lightened forms (inna and anna written without the shadda, and kaʾan) belong to a later chapter; the matn deals here with the six heavy particles only.',
+          turkish:
+            'Şeddesiz yazılan hafifletilmiş biçimler (in, en, keen) daha sonraki bir babın konusudur; metin burada yalnız şeddeli altı harfi işler.',
+        },
       ],
     },
   ],

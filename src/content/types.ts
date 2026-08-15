@@ -20,6 +20,24 @@ export interface Example extends Meaning {
    * Rendered subtly on the card back and in Reference.
    */
   source?: string
+  /**
+   * The part of each translation that renders the highlighted Arabic word, as
+   * a substring of `english` and of `turkish`. The card back marks it, so the
+   * learner reads the Arabic highlight and its counterpart as one pair rather
+   * than searching an eight-word sentence for the word the card is about.
+   *
+   * Authored, not derived: no rule takes a headword to its rendering here. The
+   * English is inflected by the sentence (daraba is taught bare and read as
+   * "struck"), and the Turkish counterpart is usually a suffix inside a word,
+   * where the span is a reading of the sentence rather than a match on it.
+   *
+   * A Meaning, so both languages are marked or neither is: a highlight in one
+   * language beside plain prose in the other reads as the other language
+   * having no counterpart, which is a claim about the translation. Omit the
+   * field where a counterpart is genuinely missing — the article of "al-kitab"
+   * has none in Turkish, and marking "the" alone would teach that it does.
+   */
+  highlight?: Meaning
 }
 
 /**
@@ -57,7 +75,12 @@ export interface VocabDetail {
   /** Triliteral root. Absent for words that have none (particles, some nouns). */
   root?: string
   forms?: VocabForm[]
-  /** Occurrences in the Qurʾān, counting every inflected form of the lemma. */
+  /**
+   * Occurrences in the Qurʾān, counting every inflected form of the lemma.
+   * Read by coverage (src/srs/coverage.ts), which is the whole of its use: a
+   * count beside a word the learner is trying to recall says nothing about
+   * that word, so the detail sheet does not show it.
+   */
   occurrences: number
   /**
    * The inflected form as it occurs in `example`, which is the token
@@ -137,32 +160,44 @@ export function noteIdOf(cardId: string): string {
 // ---------- Reference section ----------
 
 /**
- * Table cell / heading text. Strings render as UI text, { ar } renders as
- * Arabic.
+ * A heading, column header or footnote in Reference. A bare string reads the
+ * same to both readers, which is what a transliterated grammar term wants —
+ * "Rafʿ" is "Rafʿ" either way. Anything said in prose is a Meaning, and the
+ * reader sees the half they chose.
+ */
+export type RefLabel = string | Meaning
+
+/**
+ * Table cell text: a RefLabel, or Arabic.
+ *
+ * A prose column is one column of Meanings rather than an English column
+ * beside a Turkish one. That is not only narrower — it is what CONTEXT.md
+ * already says a Meaning is, so a table that split the two was describing one
+ * thing as two.
  *
  * `footnote` is the small annotation beside the Arabic — a grammatical remark
  * or a variant form. Deliberately not `note`, which is the flashcard unit.
  *
  * `source` is a citation, in the same form as `Example.source`. It is kept
  * apart from `footnote` because the citation checker in `scripts/` reads it:
- * a citation hidden inside a footnote is a citation nobody verifies.
+ * a citation hidden inside a footnote is a citation nobody verifies. It is a
+ * string, not a RefLabel: a citation is the same in every language.
  */
-export type RefText =
-  | string
-  | { ar: string; footnote?: string; source?: string }
+export type RefText = RefLabel | { ar: string; footnote?: RefLabel; source?: string }
 
 export interface RefProse {
   kind: 'prose'
-  title?: string
+  title?: RefLabel
   /** Optional Arabic source text shown above the paragraphs. */
   arabic?: string
-  paragraphs: string[]
+  /** One Meaning per paragraph: the same paragraph said in either language. */
+  paragraphs: Meaning[]
 }
 
 export interface RefTable {
   kind: 'table'
-  title?: string
-  caption?: string
+  title?: RefLabel
+  caption?: Meaning
   columns: RefText[]
   rows: RefText[][]
 }

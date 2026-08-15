@@ -40,12 +40,6 @@ export function VocabSheet({ note, onClose }: { note: Note; onClose: () => void 
           </div>
         ))}
         <div className="sheet-row">
-          <dt>In the Qur'an</dt>
-          <dd>
-            {vocab.occurrences} time{vocab.occurrences === 1 ? '' : 's'}
-          </dd>
-        </div>
-        <div className="sheet-row">
           <dt>Here as</dt>
           <dd className="arabic">{vocab.occurringForm}</dd>
         </div>

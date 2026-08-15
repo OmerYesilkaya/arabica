@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { State } from 'ts-fsrs'
 import { deckById, siblingCardsOf } from '../content/decks'
-import type { Direction, Meaning, Note } from '../content/types'
+import type { Direction, Example, Meaning, Note } from '../content/types'
 import { db, type CardStateRow } from '../db/db'
 import {
   answerCard,
@@ -55,6 +55,39 @@ function Highlighted({ text, harf }: { text: string; harf: string }) {
       {parts.before}
       <mark className="harf-mark">{parts.match}</mark>
       {parts.after}
+    </>
+  )
+}
+
+/**
+ * One translation line with the authored `span` marked inside it — the words
+ * that render the Arabic `Highlighted` above marks.
+ *
+ * An exact substring, not a search: `span` is written to match the line it is
+ * cut from, and a Turkish one is often a suffix rather than a whole word.
+ * Content tests hold every span to occurring in its line, so a miss here is a
+ * deck drifting from its highlights, and the line still reads plainly.
+ */
+function Marked({ text, span }: { text: string; span?: string }) {
+  const at = span ? text.indexOf(span) : -1
+  if (!span || at < 0) return <>{text}</>
+  return (
+    <>
+      {text.slice(0, at)}
+      <mark className="meaning-mark">{span}</mark>
+      {text.slice(at + span.length)}
+    </>
+  )
+}
+
+/** Both translation lines of an Example, each with its highlight marked. */
+function ExampleTranslation({ example }: { example: Example }) {
+  return (
+    <>
+      <Marked text={example.english} span={example.highlight?.english} />
+      {' · '}
+      <Marked text={example.turkish} span={example.highlight?.turkish} />
+      {example.source && <span className="source">{example.source}</span>}
     </>
   )
 }
@@ -222,10 +255,7 @@ export function StudySessionPage() {
             <MeaningLines meaning={note} />
             {note.example && (
               <div className="example example-translation">
-                {note.example.english} · {note.example.turkish}
-                {note.example.source && (
-                  <span className="source">{note.example.source}</span>
-                )}
+                <ExampleTranslation example={note.example} />
               </div>
             )}
             {note.referenceId && (
@@ -256,10 +286,7 @@ export function StudySessionPage() {
                     showArabic(note.example.arabic)
                   )}
                 </span>
-                {note.example.english} · {note.example.turkish}
-                {note.example.source && (
-                  <span className="source">{note.example.source}</span>
-                )}
+                <ExampleTranslation example={note.example} />
               </div>
             )}
             {isVocab && (

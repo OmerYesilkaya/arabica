@@ -35,6 +35,7 @@ export const quranVocab8: DeckDef = {
         english: 'She said: O chiefs, indeed a noble letter has been delivered to me.',
         turkish: 'Dedi ki: Ey ileri gelenler! Bana değerli bir mektup bırakıldı.',
         source: 'Qur\'an 27:29',
+        highlight: { english: 'chiefs', turkish: 'ileri gelenler' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -53,6 +54,7 @@ export const quranVocab8: DeckDef = {
         english: 'Do not call this Day for one destruction, but call for many destructions.',
         turkish: 'Bugün bir tek yok oluşu çağırmayın, birçok yok oluşu çağırın.',
         source: 'Qur\'an 25:14',
+        highlight: { english: 'one', turkish: 'bir tek' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -71,6 +73,7 @@ export const quranVocab8: DeckDef = {
         english: 'And thus We make some of the wrongdoers allies of others for what they used to earn.',
         turkish: 'İşte böylece, kazanmakta olduklarından dolayı zalimlerin bir kısmını diğerlerine dost kılarız.',
         source: 'Qur\'an 6:129',
+        highlight: { english: 'allies', turkish: 'dost kılarız' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -93,6 +96,7 @@ export const quranVocab8: DeckDef = {
         english: 'And watch them, for they are going to see.',
         turkish: 'Onları gözetle; onlar da yakında görecekler.',
         source: 'Qur\'an 37:175',
+        highlight: { english: 'see', turkish: 'görecekler' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -115,6 +119,7 @@ export const quranVocab8: DeckDef = {
         english: 'A host there, from among the confederates, will be defeated.',
         turkish: 'Orada, o topluluklardan derlenmiş bir ordu bozguna uğratılacaktır.',
         source: 'Qur\'an 38:11',
+        highlight: { english: 'A host', turkish: 'ordu' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -136,6 +141,7 @@ export const quranVocab8: DeckDef = {
         english: 'And if We had made him an angel, We would have made him a man, and We would have confused them just as they are confused.',
         turkish: 'Onu bir melek yapsaydık, yine onu bir adam kılardık ve düştükleri şüpheye yine düşürürdük.',
         source: 'Qur\'an 6:9',
+        highlight: { english: 'a man', turkish: 'adam' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -157,6 +163,7 @@ export const quranVocab8: DeckDef = {
         english: 'And if We sent a wind and they saw it turn yellow, they would after that remain ungrateful.',
         turkish: 'Andolsun, bir rüzgâr göndersek de onu sararmış görseler, ardından mutlaka nankörlük ederler.',
         source: 'Qur\'an 30:51',
+        highlight: { english: 'a wind', turkish: 'rüzgâr' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -178,6 +185,7 @@ export const quranVocab8: DeckDef = {
         english: 'And the angels are at its edges, and eight will bear the Throne of your Lord above them that Day.',
         turkish: 'Melekler onun çevresindedir; o gün Rabbinin arşını, üstlerinde sekizi taşır.',
         source: 'Qur\'an 69:17',
+        highlight: { english: 'Throne', turkish: 'arşını' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -199,6 +207,7 @@ export const quranVocab8: DeckDef = {
         english: 'Has he looked into the unseen, or has he taken a covenant with the Most Merciful?',
         turkish: 'Gaybı mı gördü, yoksa Rahmân’ın katından bir söz mü aldı?',
         source: 'Qur\'an 19:78',
+        highlight: { english: 'covenant', turkish: 'söz' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -220,6 +229,7 @@ export const quranVocab8: DeckDef = {
         english: 'And recite to them the news of Abraham,',
         turkish: 'Onlara İbrahim’in haberini de oku,',
         source: 'Qur\'an 26:69',
+        highlight: { english: 'news', turkish: 'haberini' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -241,6 +251,7 @@ export const quranVocab8: DeckDef = {
         english: 'remaining therein forever,',
         turkish: 'Orada ebediyen kalacak olarak,',
         source: 'Qur\'an 18:3',
+        highlight: { english: 'forever', turkish: 'ebediyen' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -259,6 +270,7 @@ export const quranVocab8: DeckDef = {
         english: 'Or its water may become sunken into the ground, so that you would never be able to seek it out.',
         turkish: 'Yahut suyu yerin dibine çekilir de bir daha onu aramaya güç yetiremezsin.',
         source: 'Qur\'an 18:41',
+        highlight: { english: 'become', turkish: 'çekilir' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -281,6 +293,7 @@ export const quranVocab8: DeckDef = {
         english: 'He will guide them and set right their condition.',
         turkish: 'Onları doğru yola iletecek ve durumlarını düzeltecektir.',
         source: 'Qur\'an 47:5',
+        highlight: { english: 'set right', turkish: 'düzeltecektir' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -303,6 +316,7 @@ export const quranVocab8: DeckDef = {
         english: 'Far-reaching wisdom, but the warnings do not avail.',
         turkish: 'Üstün bir hikmettir; fakat uyarılar fayda vermiyor.',
         source: 'Qur\'an 54:5',
+        highlight: { english: 'do not avail', turkish: 'fayda vermiyor' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -325,6 +339,7 @@ export const quranVocab8: DeckDef = {
         english: 'How can the reminder be for them, when a clear messenger had already come to them?',
         turkish: 'Onlar nerede, öğüt almak nerede! Oysa kendilerine apaçık bir elçi gelmişti.',
         source: 'Qur\'an 44:13',
+        highlight: { english: 'How', turkish: 'Onlar nerede' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -342,6 +357,7 @@ export const quranVocab8: DeckDef = {
         english: 'Only those who hear will respond. And the dead — Allah will raise them, then to Him they will be returned.',
         turkish: 'Ancak işitenler cevap verir. Ölüleri ise Allah diriltir; sonra O’na döndürülürler.',
         source: 'Qur\'an 6:36',
+        highlight: { english: 'respond', turkish: 'cevap verir' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -364,6 +380,7 @@ export const quranVocab8: DeckDef = {
         english: 'Has the story of Moses reached you?',
         turkish: 'Musa’nın haberi sana geldi mi?',
         source: 'Qur\'an 79:15',
+        highlight: { english: 'story', turkish: 'haberi' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -385,6 +402,7 @@ export const quranVocab8: DeckDef = {
         english: 'And they will say: What is with us that we do not see men whom we used to count among the worst?',
         turkish: 'Derler ki: Bize ne oldu ki, kötülerden saydığımız adamları görmüyoruz?',
         source: 'Qur\'an 38:62',
+        highlight: { english: 'men', turkish: 'adamları' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -403,6 +421,7 @@ export const quranVocab8: DeckDef = {
         english: 'except him on whom Allah has mercy. Indeed, He is the Exalted in Might, the Merciful.',
         turkish: 'Ancak Allah’ın merhamet ettiği kimse başka. Şüphesiz O, Azîz’dir, Rahîm’dir.',
         source: 'Qur\'an 44:42',
+        highlight: { english: 'has mercy', turkish: 'merhamet ettiği' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -425,6 +444,7 @@ export const quranVocab8: DeckDef = {
         english: 'And they say: This is nothing but clear magic.',
         turkish: 'Ve derler ki: Bu, apaçık bir büyüden başka bir şey değildir.',
         source: 'Qur\'an 37:15',
+        highlight: { english: 'magic', turkish: 'büyüden' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -443,6 +463,7 @@ export const quranVocab8: DeckDef = {
         english: 'Why, when you heard it, did the believing men and believing women not think well of themselves and say: This is an obvious falsehood?',
         turkish: 'Onu işittiğinizde, mümin erkeklerle mümin kadınların kendi haklarında iyi bir zan besleyip: Bu apaçık bir iftiradır, demeleri gerekmez miydi?',
         source: 'Qur\'an 24:12',
+        highlight: { english: 'believing women', turkish: 'mümin kadınların' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -464,6 +485,7 @@ export const quranVocab8: DeckDef = {
         english: 'And that the places of worship are for Allah, so do not invoke anyone along with Allah.',
         turkish: 'Mescitler Allah’ındır; öyleyse Allah ile birlikte hiç kimseye yalvarmayın.',
         source: 'Qur\'an 72:18',
+        highlight: { english: 'places of worship', turkish: 'Mescitler' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -485,6 +507,7 @@ export const quranVocab8: DeckDef = {
         english: 'Indeed, it is We who give life and cause death, and to Us is the destination.',
         turkish: 'Şüphesiz biz diriltir ve öldürürüz; dönüş de bizedir.',
         source: 'Qur\'an 50:43',
+        highlight: { english: 'destination', turkish: 'dönüş' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -506,6 +529,7 @@ export const quranVocab8: DeckDef = {
         english: 'So those who believe and do righteous deeds — for them is forgiveness and noble provision.',
         turkish: 'İman edip salih ameller işleyenlere bağışlanma ve değerli bir rızık vardır.',
         source: 'Qur\'an 22:50',
+        highlight: { english: 'forgiveness', turkish: 'bağışlanma' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -524,6 +548,7 @@ export const quranVocab8: DeckDef = {
         english: 'Certainly the believers have succeeded.',
         turkish: 'Müminler gerçekten kurtuluşa ermiştir.',
         source: 'Qur\'an 23:1',
+        highlight: { english: 'have succeeded', turkish: 'kurtuluşa ermiştir' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -546,6 +571,7 @@ export const quranVocab8: DeckDef = {
         english: 'And the sky is opened and becomes gateways,',
         turkish: 'Gök açılmış, kapı kapı olmuştur,',
         source: 'Qur\'an 78:19',
+        highlight: { english: 'gateways', turkish: 'kapı kapı' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -567,6 +593,7 @@ export const quranVocab8: DeckDef = {
         english: 'And whoever strives only strives for himself. Indeed, Allah is free of need of the worlds.',
         turkish: 'Kim cihat ederse, ancak kendisi için cihat etmiş olur. Şüphesiz Allah, âlemlerden müstağnidir.',
         source: 'Qur\'an 29:6',
+        highlight: { english: 'whoever strives', turkish: 'cihat ederse' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -589,6 +616,7 @@ export const quranVocab8: DeckDef = {
         english: 'Then he looked and saw him in the midst of the Hellfire.',
         turkish: 'Bakınca onu cehennemin ortasında gördü.',
         source: 'Qur\'an 37:55',
+        highlight: { english: 'the midst', turkish: 'ortasında' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -607,6 +635,7 @@ export const quranVocab8: DeckDef = {
         english: 'For those, perhaps Allah will pardon them; and Allah is ever Pardoning and Forgiving.',
         turkish: 'İşte onları Allah’ın affetmesi umulur; Allah çok affedicidir, çok bağışlayıcıdır.',
         source: 'Qur\'an 4:99',
+        highlight: { english: 'pardon', turkish: 'affetmesi' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -629,6 +658,7 @@ export const quranVocab8: DeckDef = {
         english: 'that you may warn a people whose fathers were not warned, so they are heedless.',
         turkish: 'Ataları uyarılmamış, bu yüzden kendileri gafil olan bir kavmi uyarasın diye.',
         source: 'Qur\'an 36:6',
+        highlight: { english: 'heedless', turkish: 'gafil' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -650,6 +680,7 @@ export const quranVocab8: DeckDef = {
         english: 'A soul will know what it sent forward and what it left behind.',
         turkish: 'Her nefis, önden gönderdiğini ve geri bıraktığını bilecektir.',
         source: 'Qur\'an 82:5',
+        highlight: { english: 'sent forward', turkish: 'önden gönderdiğini' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -672,6 +703,7 @@ export const quranVocab8: DeckDef = {
         english: 'and the moon is eclipsed,',
         turkish: 've ay tutulduğunda,',
         source: 'Qur\'an 75:8',
+        highlight: { english: 'moon', turkish: 'ay' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -693,6 +725,7 @@ export const quranVocab8: DeckDef = {
         english: 'and the people of Abraham and the people of Lot,',
         turkish: 'İbrahim’in kavmi ve Lût’un kavmi de,',
         source: 'Qur\'an 22:43',
+        highlight: { english: 'Lot', turkish: 'Lût' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -710,6 +743,7 @@ export const quranVocab8: DeckDef = {
         english: 'And We raised him to a high station.',
         turkish: 'Onu yüce bir mekâna yükselttik.',
         source: 'Qur\'an 19:57',
+        highlight: { english: 'station', turkish: 'mekâna' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -731,6 +765,7 @@ export const quranVocab8: DeckDef = {
         english: 'Give tidings to the hypocrites that for them is a painful punishment,',
         turkish: 'Münafıklara, kendileri için acı bir azap olduğunu müjdele,',
         source: 'Qur\'an 4:138',
+        highlight: { english: 'hypocrites', turkish: 'Münafıklara' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -752,6 +787,7 @@ export const quranVocab8: DeckDef = {
         english: 'Certainly in Joseph and his brothers were signs for those who ask.',
         turkish: 'Andolsun, Yusuf ve kardeşlerinde soranlar için ibretler vardır.',
         source: 'Qur\'an 12:7',
+        highlight: { english: 'Joseph', turkish: 'Yusuf' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -769,6 +805,7 @@ export const quranVocab8: DeckDef = {
         english: 'So when the messengers came to the family of Lot,',
         turkish: 'Elçiler Lût ailesine geldiklerinde,',
         source: 'Qur\'an 15:61',
+        highlight: { english: 'family of', turkish: 'ailesine' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -787,6 +824,7 @@ export const quranVocab8: DeckDef = {
         english: 'So by your Lord, We will surely question them all,',
         turkish: 'Rabbine andolsun ki, onların hepsini mutlaka sorguya çekeceğiz,',
         source: 'Qur\'an 15:92',
+        highlight: { english: 'them all', turkish: 'hepsini' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -808,6 +846,7 @@ export const quranVocab8: DeckDef = {
         english: 'Indeed, I found a woman ruling them, and she has been given of all things, and she has a great throne.',
         turkish: 'Ben, onlara hükmeden bir kadın buldum; kendisine her şeyden verilmiş ve onun büyük bir tahtı var.',
         source: 'Qur\'an 27:23',
+        highlight: { english: 'a woman', turkish: 'kadın' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -829,6 +868,7 @@ export const quranVocab8: DeckDef = {
         english: 'that He might establish the truth and bring falsehood to nothing, even though the criminals disliked it.',
         turkish: 'Hakkı ortaya çıkarmak ve batılı yok etmek için; suçlular hoşlanmasa da.',
         source: 'Qur\'an 8:8',
+        highlight: { english: 'falsehood', turkish: 'batılı' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -847,6 +887,7 @@ export const quranVocab8: DeckDef = {
         english: 'Thamud denied through their transgression,',
         turkish: 'Semûd, azgınlığı yüzünden yalanladı,',
         source: 'Qur\'an 91:11',
+        highlight: { english: 'Thamud', turkish: 'Semûd' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -864,6 +905,7 @@ export const quranVocab8: DeckDef = {
         english: 'and a burning in a Hellfire.',
         turkish: 've alevli ateşte yanmak vardır.',
         source: 'Qur\'an 56:94',
+        highlight: { english: 'Hellfire', turkish: 'alevli ateşte' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -882,6 +924,7 @@ export const quranVocab8: DeckDef = {
         english: 'who fed them against hunger and made them safe from fear.',
         turkish: 'O ki onları açlıktan doyurdu ve korkudan emin kıldı.',
         source: 'Qur\'an 106:4',
+        highlight: { english: 'fear', turkish: 'korkudan' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -900,6 +943,7 @@ export const quranVocab8: DeckDef = {
         english: 'Indeed, We adorned the nearest heaven with an adornment, the stars.',
         turkish: 'Biz en yakın göğü bir süsle, yıldızlarla süsledik.',
         source: 'Qur\'an 37:6',
+        highlight: { english: 'adorned', turkish: 'süsledik' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -922,6 +966,7 @@ export const quranVocab8: DeckDef = {
         english: 'And it averts the punishment from her that she testify four testimonies by Allah that he is surely of the liars.',
         turkish: 'Kadının, onun kesinlikle yalancılardan olduğuna dair Allah adına dört kez şahitlik etmesi, kendisinden azabı savar.',
         source: 'Qur\'an 24:8',
+        highlight: { english: 'testimonies', turkish: 'şahitlik' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -943,6 +988,7 @@ export const quranVocab8: DeckDef = {
         english: 'while We see it as near.',
         turkish: 'Biz ise onu yakın görüyoruz.',
         source: 'Qur\'an 70:7',
+        highlight: { english: 'near', turkish: 'yakın' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -961,6 +1007,7 @@ export const quranVocab8: DeckDef = {
         english: 'and I am devising a plan.',
         turkish: 'Ben de bir tuzak kurarım.',
         source: 'Qur\'an 86:16',
+        highlight: { english: 'a plan', turkish: 'tuzak' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -979,6 +1026,7 @@ export const quranVocab8: DeckDef = {
         english: 'They said, turning toward them: What is it that you are missing?',
         turkish: 'Onlara dönerek dediler ki: Ne kaybettiniz?',
         source: 'Qur\'an 12:71',
+        highlight: { english: 'What', turkish: 'Ne' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -996,6 +1044,7 @@ export const quranVocab8: DeckDef = {
         english: 'Then Adam received words from his Lord, and He accepted his repentance. Indeed, He is the Accepting of repentance, the Merciful.',
         turkish: 'Âdem, Rabbinden birtakım kelimeler aldı; böylece Allah onun tövbesini kabul etti. Şüphesiz O, tövbeleri çok kabul edendir, çok merhametlidir.',
         source: 'Qur\'an 2:37',
+        highlight: { english: 'Adam', turkish: 'Âdem' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1014,6 +1063,7 @@ export const quranVocab8: DeckDef = {
         english: 'They said: We are men of strength and men of great might, but the command is yours, so see what you will command.',
         turkish: 'Dediler ki: Biz güç sahibiyiz ve çetin savaş gücüne sahibiz; emir senindir, artık ne buyuracağına bak.',
         source: 'Qur\'an 27:33',
+        highlight: { english: 'great might', turkish: 'çetin savaş gücüne' },
       },
       vocab: {
         partOfSpeech: 'ism',

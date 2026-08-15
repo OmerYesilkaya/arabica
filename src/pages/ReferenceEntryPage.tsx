@@ -1,47 +1,54 @@
 import { useEffect } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { referenceById } from '../content/reference'
-import type { RefHarf, RefProse, RefTable, RefText } from '../content/types'
+import type { RefHarf, RefLabel, RefProse, RefTable, RefText } from '../content/types'
 import {
   setMeaningLang,
   useMeaningLang,
   type MeaningLang,
 } from '../settings/useMeaningLang'
 
-function TextCell({ value }: { value: RefText }) {
-  if (typeof value === 'string') return <>{value}</>
+/** A RefLabel in the reader's language. */
+function label(value: RefLabel, lang: MeaningLang): string {
+  return typeof value === 'string' ? value : value[lang]
+}
+
+function TextCell({ value, lang }: { value: RefText; lang: MeaningLang }) {
+  if (typeof value === 'string' || !('ar' in value)) return <>{label(value, lang)}</>
   return (
     <>
       <span className="arabic">{value.ar}</span>
-      {value.footnote && <span className="cell-footnote">{value.footnote}</span>}
+      {value.footnote && (
+        <span className="cell-footnote">{label(value.footnote, lang)}</span>
+      )}
       {value.source && <span className="cell-source">{value.source}</span>}
     </>
   )
 }
 
-function ProseSection({ section }: { section: RefProse }) {
+function ProseSection({ section, lang }: { section: RefProse; lang: MeaningLang }) {
   return (
     <section className="ref-section">
-      {section.title && <h2>{section.title}</h2>}
+      {section.title && <h2>{label(section.title, lang)}</h2>}
       {section.arabic && <div className="source-arabic arabic">{section.arabic}</div>}
       {section.paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
+        <p key={i}>{p[lang]}</p>
       ))}
     </section>
   )
 }
 
-function TableSection({ section }: { section: RefTable }) {
+function TableSection({ section, lang }: { section: RefTable; lang: MeaningLang }) {
   return (
     <section className="ref-section">
-      {section.title && <h2>{section.title}</h2>}
+      {section.title && <h2>{label(section.title, lang)}</h2>}
       <div className="table-scroll">
         <table className="ref-table">
           <thead>
             <tr>
               {section.columns.map((col, i) => (
                 <th key={i}>
-                  <TextCell value={col} />
+                  <TextCell value={col} lang={lang} />
                 </th>
               ))}
             </tr>
@@ -51,7 +58,7 @@ function TableSection({ section }: { section: RefTable }) {
               <tr key={i}>
                 {row.map((cell, j) => (
                   <td key={j}>
-                    <TextCell value={cell} />
+                    <TextCell value={cell} lang={lang} />
                   </td>
                 ))}
               </tr>
@@ -59,7 +66,7 @@ function TableSection({ section }: { section: RefTable }) {
           </tbody>
         </table>
       </div>
-      {section.caption && <p className="caption">{section.caption}</p>}
+      {section.caption && <p className="caption">{section.caption[lang]}</p>}
     </section>
   )
 }
@@ -152,16 +159,13 @@ export function ReferenceEntryPage() {
       <h1 className="page-title">
         {entry.title} · <span className="arabic">{entry.titleArabic}</span>
       </h1>
-      {/* Only harf sections carry a Meaning; on the others the switch is dead UI. */}
-      {entry.sections.some((section) => section.kind === 'harf') && (
-        <LangSwitch lang={lang} />
-      )}
+      <LangSwitch lang={lang} />
       {entry.sections.map((section, i) => {
         switch (section.kind) {
           case 'prose':
-            return <ProseSection key={i} section={section} />
+            return <ProseSection key={i} section={section} lang={lang} />
           case 'table':
-            return <TableSection key={i} section={section} />
+            return <TableSection key={i} section={section} lang={lang} />
           case 'harf':
             return <HarfSection key={section.id} section={section} lang={lang} />
         }

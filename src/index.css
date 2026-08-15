@@ -306,6 +306,20 @@ button:disabled {
   padding: 0 2px;
 }
 
+/*
+ * The counterpart of .harf-mark in a translation line: the same accent, so the
+ * two read as one pair, but lighter and undersized to sit inside muted prose
+ * — and lifted to full text colour, which is what makes it legible there. It
+ * marks a span, not a word: a Turkish counterpart is often a suffix, so the
+ * padding stays tight enough not to split the word it sits inside.
+ */
+.meaning-mark {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--text);
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
 .session-card .sense-term {
   font-weight: 600;
   font-size: 1.05rem;

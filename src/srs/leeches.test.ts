@@ -3,6 +3,7 @@ import { State } from 'ts-fsrs'
 import { ArabicaDB, type CardStateRow } from '../db/db'
 import { cardIdOf } from '../content/types'
 import { computeLeeches, LEECH_THRESHOLD } from './leeches'
+import { noteById } from '../content/decks'
 
 let db: ArabicaDB
 let counter = 0
@@ -14,7 +15,7 @@ beforeEach(() => {
 function row(cardId: string, lapses: number): CardStateRow {
   return {
     cardId,
-    deckId: 'huruf-al-khafd',
+    deckId: 'huruf-al-khafd-senses',
     due: 0,
     stability: 1,
     difficulty: 1,
@@ -50,7 +51,9 @@ describe('computeLeeches', () => {
     await db.cardState.put(row(min, LEECH_THRESHOLD))
     const [leech] = await computeLeeches(db)
     expect(leech.arabic).toBe('مِنْ')
-    expect(leech.english).toBe('from')
+    // Read from content rather than restated: the meaning is the primary
+    // sense's, and it is DRAFT text that will be corrected in place.
+    expect(leech.english).toBe(noteById('min')!.english)
     expect(leech.lapses).toBe(LEECH_THRESHOLD)
     expect(leech.referenceId).toBe('huruf-al-khafd#min')
   })

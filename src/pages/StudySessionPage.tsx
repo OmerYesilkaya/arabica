@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { State } from 'ts-fsrs'
 import { deckById, siblingCardsOf } from '../content/decks'
-import type { Direction, Example, Meaning, Note } from '../content/types'
+import type { Direction, Example, Meaning, Note, SenseRef } from '../content/types'
+import { exampleOf } from '../content/types'
 import { db, type CardStateRow } from '../db/db'
 import {
   answerCard,
@@ -77,6 +78,28 @@ function Marked({ text, span }: { text: string; span?: string }) {
       <mark className="meaning-mark">{span}</mark>
       {text.slice(at + span.length)}
     </>
+  )
+}
+
+/**
+ * The senses this card's answer was chosen *against*, listed under it.
+ *
+ * Named and not explained: the point is to show what the alternatives were, so
+ * the learner sees the judgement the front asked for. The full entry behind the
+ * ⓘ link is where each one is spelled out.
+ */
+function Contrast({ senses }: { senses: SenseRef[] }) {
+  if (senses.length === 0) return null
+  return (
+    <div className="sense-contrast">
+      <span className="lang">not</span>
+      {senses.map((s) => (
+        <span key={s.term} className="sense-other">
+          {s.term}
+          <span className="arabic">{s.termArabic}</span>
+        </span>
+      ))}
+    </div>
   )
 }
 
@@ -210,6 +233,10 @@ export function StudySessionPage() {
   const arabicFirst = direction === 'ar-to-meaning'
   const isSense = note.sense !== undefined
   const isVocab = note.vocab !== undefined
+  // One read of the review count for the whole card, so the sentence on the
+  // front is the sentence explained on the back. A new card has no state yet
+  // and starts at the head of the pool.
+  const example = exampleOf(note, current.state?.reps ?? 0)
 
   return (
     <main className="page">
@@ -234,10 +261,7 @@ export function StudySessionPage() {
 
         {isSense ? (
           <div className="prompt-arabic arabic sense-prompt">
-            <Highlighted
-              text={showArabic(note.example!.arabic)}
-              harf={note.arabic}
-            />
+            <Highlighted text={showArabic(example!.arabic)} harf={note.arabic} />
           </div>
         ) : arabicFirst ? (
           <div className="prompt-arabic arabic">{showArabic(note.arabic)}</div>
@@ -253,9 +277,10 @@ export function StudySessionPage() {
               <span className="arabic">{note.sense!.termArabic}</span>
             </div>
             <MeaningLines meaning={note} />
-            {note.example && (
+            <Contrast senses={note.sense!.contrast} />
+            {example && (
               <div className="example example-translation">
-                <ExampleTranslation example={note.example} />
+                <ExampleTranslation example={example} />
               </div>
             )}
             {note.referenceId && (
@@ -274,19 +299,19 @@ export function StudySessionPage() {
             ) : (
               <div className="answer-arabic arabic">{showArabic(note.arabic)}</div>
             )}
-            {note.example && (
+            {example && (
               <div className="example">
                 <span className="arabic">
                   {isVocab ? (
                     <Highlighted
-                      text={showArabic(note.example.arabic)}
+                      text={showArabic(example.arabic)}
                       harf={note.vocab!.occurringForm}
                     />
                   ) : (
-                    showArabic(note.example.arabic)
+                    showArabic(example.arabic)
                   )}
                 </span>
-                <ExampleTranslation example={note.example} />
+                <ExampleTranslation example={example} />
               </div>
             )}
             {isVocab && (

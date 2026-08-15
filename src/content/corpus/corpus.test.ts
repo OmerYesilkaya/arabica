@@ -1,8 +1,19 @@
 import { describe, expect, it } from 'vitest'
 import { noteById } from '../decks'
 import { pronounGloss } from '../../text/morphology'
+import { hurufAlKhafdRef } from '../reference/hurufAlKhafd'
 import { PROVENANCE, loadLemmas, loadSurah, readingTexts, textRef } from '.'
 import type { CorpusLine, CorpusSurah } from './types'
+import type { RefHarf } from '../types'
+
+/** The Harf section of the Reference entry with this anchor id. */
+function harfById(id: string): RefHarf {
+  const found = hurufAlKhafdRef.sections.find(
+    (s): s is RefHarf => s.kind === 'harf' && s.id === id,
+  )
+  if (!found) throw new Error(`no harf "${id}"`)
+  return found
+}
 
 /*
  * Machine integrity for the reading corpus.
@@ -149,16 +160,21 @@ describe('the lemma dictionary', () => {
     }
   })
 
-  it('still says what the deck says, wherever it copied a deck', () => {
+  it('still says what content says, wherever it copied content', () => {
     // The generator copies an authored Meaning so the corpus files stand on
-    // their own. This is what stops the copy going stale after a deck is
+    // their own. This is what stops the copy going stale after content is
     // edited: it fails, and the fix is to rerun the generator.
+    //
+    // A sense note is copied from its harf's entry rather than from itself:
+    // the note's Meaning is the sense the card teaches ("Containment in place
+    // or time"), and a reader tapping the word wants the word ("in, inside").
     for (const [lemma, entry] of Object.entries(lemmas)) {
       if (entry.glossSource !== 'deck') continue
       const note = noteById(entry.noteId!)!
+      const source = note.sense ? harfById(note.sense.harfId) : note
       expect({ english: entry.english, turkish: entry.turkish }, lemma).toEqual({
-        english: note.english,
-        turkish: note.turkish,
+        english: source.english,
+        turkish: source.turkish,
       })
     }
   })

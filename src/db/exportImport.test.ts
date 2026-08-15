@@ -7,7 +7,7 @@ import {
   importBackup,
   parseBackup,
 } from './exportImport'
-import { hurufAlKhafd } from '../content/decks/hurufAlKhafd'
+import { hurufAlKhafdSenses } from '../content/decks/hurufAlKhafdSenses'
 import { cardsOfDeck } from '../content/decks'
 import { answerCard } from '../srs/engine'
 
@@ -23,7 +23,7 @@ describe('backup roundtrip', () => {
   beforeEach(async () => {
     db = freshDb()
     const now = new Date()
-    const cards = cardsOfDeck(hurufAlKhafd)
+    const cards = cardsOfDeck(hurufAlKhafdSenses)
     await answerCard(db, cards[0], undefined, Rating.Good, now)
     await answerCard(db, cards[2], undefined, Rating.Again, now)
     await db.meta.put({ key: 'lastExportAt', value: 123 })
@@ -48,7 +48,7 @@ describe('backup roundtrip', () => {
     const backup = parseBackup(JSON.stringify(await buildBackup(db, new Date())))
 
     const target = freshDb()
-    const cards = cardsOfDeck(hurufAlKhafd)
+    const cards = cardsOfDeck(hurufAlKhafdSenses)
     await answerCard(db, cards[4], undefined, Rating.Easy, new Date())
     await answerCard(target, cards[4], undefined, Rating.Easy, new Date())
 

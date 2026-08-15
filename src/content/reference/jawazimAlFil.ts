@@ -452,12 +452,14 @@ export const jawazimAlFil: ReferenceEntry = {
             'Turns the present verb into a negated past: the form stays muḍāriʿ, the meaning becomes past, and the verb is majzūm.',
           turkish:
             'Muzari fiili olumsuz geçmişe çevirir: kalıp muzari kalır, anlam geçmiş olur, fiil meczûm olur.',
-          example: {
-            arabic: 'لَمْ يَلِدْ وَلَمْ يُولَدْ',
-            english: 'He has not begotten, nor was He begotten',
-            turkish: 'O doğurmadı, doğurulmadı da',
-            source: 'Qur’an 112:3',
-          },
+          examples: [
+            {
+              arabic: 'لَمْ يَلِدْ وَلَمْ يُولَدْ',
+              english: 'He has not begotten, nor was He begotten',
+              turkish: 'O doğurmadı, doğurulmadı da',
+              source: 'Qur’an 112:3',
+            },
+          ],
         },
         {
           term: 'Istifhām (a-lam)',
@@ -466,12 +468,14 @@ export const jawazimAlFil: ReferenceEntry = {
             'With the interrogative hamza it asks "did ... not?", most often as a rhetorical reminder. The jazm is unchanged.',
           turkish:
             'Soru hemzesiyle "-medi mi?" anlamını verir; çoğunlukla hatırlatma amaçlı istifhâmdır. Cezm değişmez.',
-          example: {
-            arabic: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ',
-            english: 'Did We not expand your breast for you?',
-            turkish: 'Senin göğsünü açıp genişletmedik mi?',
-            source: 'Qur’an 94:1',
-          },
+          examples: [
+            {
+              arabic: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ',
+              english: 'Did We not expand your breast for you?',
+              turkish: 'Senin göğsünü açıp genişletmedik mi?',
+              source: 'Qur’an 94:1',
+            },
+          ],
         },
       ],
     },
@@ -489,12 +493,14 @@ export const jawazimAlFil: ReferenceEntry = {
             'Negates the past up to the moment of speaking and leaves the act still expected: "not yet". This is what separates it from lam, which simply denies.',
           turkish:
             'Geçmişi konuşma anına kadar olumsuzlar ve fiilin hâlâ beklendiğini gösterir: "henüz değil". Lem’den ayrıldığı nokta budur; lem yalnızca olumsuzlar.',
-          example: {
-            arabic: 'وَلَمَّا يَدْخُلِ الْإِيمَانُ فِي قُلُوبِكُمْ',
-            english: 'while faith has not yet entered your hearts',
-            turkish: 'hâlbuki iman henüz kalplerinize girmedi',
-            source: 'Qur’an 49:14',
-          },
+          examples: [
+            {
+              arabic: 'وَلَمَّا يَدْخُلِ الْإِيمَانُ فِي قُلُوبِكُمْ',
+              english: 'while faith has not yet entered your hearts',
+              turkish: 'hâlbuki iman henüz kalplerinize girmedi',
+              source: 'Qur’an 49:14',
+            },
+          ],
         },
       ],
     },
@@ -512,12 +518,14 @@ export const jawazimAlFil: ReferenceEntry = {
             'The regular case: both the condition verb and the answer verb are muḍāriʿ and both are majzūm.',
           turkish:
             'Kural durum: şart fiili de cevap fiili de muzaridir ve her ikisi meczûmdur.',
-          example: {
-            arabic: 'إِنْ تَنْصُرُوا اللَّهَ يَنْصُرْكُمْ',
-            english: 'If you support Allah, He will support you',
-            turkish: 'Eğer Allah’a yardım ederseniz, O da size yardım eder',
-            source: 'Qur’an 47:7',
-          },
+          examples: [
+            {
+              arabic: 'إِنْ تَنْصُرُوا اللَّهَ يَنْصُرْكُمْ',
+              english: 'If you support Allah, He will support you',
+              turkish: 'Eğer Allah’a yardım ederseniz, O da size yardım eder',
+              source: 'Qur’an 47:7',
+            },
+          ],
         },
         {
           term: 'Answer joined with fāʾ',
@@ -526,12 +534,14 @@ export const jawazimAlFil: ReferenceEntry = {
             'When the answer cannot carry jazm, it is joined with fāʾ and keeps its own form. Here the answer is a māḍī with qad.',
           turkish:
             'Cevap cezm alamadığında başına fâ gelir ve kendi kalıbını korur. Burada cevap kad’lı mâzîdir.',
-          example: {
-            arabic: 'إِنْ يَسْرِقْ فَقَدْ سَرَقَ أَخٌ لَهُ مِنْ قَبْلُ',
-            english: 'If he steals, a brother of his stole before',
-            turkish: 'O çaldıysa, daha önce kardeşi de çalmıştı',
-            source: 'Qur’an 12:77',
-          },
+          examples: [
+            {
+              arabic: 'إِنْ يَسْرِقْ فَقَدْ سَرَقَ أَخٌ لَهُ مِنْ قَبْلُ',
+              english: 'If he steals, a brother of his stole before',
+              turkish: 'O çaldıysa, daha önce kardeşi de çalmıştı',
+              source: 'Qur’an 12:77',
+            },
+          ],
         },
         {
           term: 'Māḍī in the condition',
@@ -540,12 +550,14 @@ export const jawazimAlFil: ReferenceEntry = {
             'A māḍī may fill either slot. It is majzūm by position only (maḥall jazm), so no sign appears on it.',
           turkish:
             'Mâzî her iki yeri de doldurabilir. Mahallen meczûmdur, bu yüzden üzerinde bir alâmet görünmez.',
-          example: {
-            arabic: 'وَإِنْ عُدْتُمْ عُدْنَا',
-            english: 'And if you return ˹to sin˺, We will return ˹to punishment˺',
-            turkish: 'Eğer siz dönerseniz biz de döneriz',
-            source: 'Qur’an 17:8',
-          },
+          examples: [
+            {
+              arabic: 'وَإِنْ عُدْتُمْ عُدْنَا',
+              english: 'And if you return ˹to sin˺, We will return ˹to punishment˺',
+              turkish: 'Eğer siz dönerseniz biz de döneriz',
+              source: 'Qur’an 17:8',
+            },
+          ],
         },
       ],
     },

@@ -43,6 +43,11 @@ function fromExample(where: string, ex: Example | undefined): Quote[] {
   return q ? [q] : []
 }
 
+/** Every cited sentence in a pool, each named by its position. */
+function fromExamples(where: string, pool: Example[] = []): Quote[] {
+  return pool.flatMap((ex, i) => fromExample(`${where}[${i}]`, ex))
+}
+
 // Only an Arabic cell can carry a Source; a Meaning cell is prose in two
 // languages and quotes nothing.
 function fromCell(where: string, cell: RefText): Quote[] {
@@ -61,13 +66,16 @@ function collectQuotes(): Quote[] {
           for (const cell of row) quotes.push(...fromCell(where, cell))
       } else if (section.kind === 'harf') {
         for (const sense of section.senses)
-          quotes.push(...fromExample(`${where} ${sense.term}`, sense.example))
+          quotes.push(...fromExamples(`${where} ${sense.term}`, sense.examples))
       }
     }
   }
   for (const deck of decks) {
-    for (const note of deck.notes)
-      quotes.push(...fromExample(`deck ${deck.id} note ${note.id}`, note.example))
+    for (const note of deck.notes) {
+      const where = `deck ${deck.id} note ${note.id}`
+      quotes.push(...fromExample(where, note.example))
+      quotes.push(...fromExamples(where, note.examples))
+    }
   }
   return quotes
 }

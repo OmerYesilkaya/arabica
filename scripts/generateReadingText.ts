@@ -24,7 +24,8 @@ import type {
   CorpusSurah,
   CorpusToken,
 } from '../src/content/corpus/types'
-import type { Note, PartOfSpeech } from '../src/content/types'
+import type { Meaning, Note, PartOfSpeech } from '../src/content/types'
+import { hurufAlKhafdRef } from '../src/content/reference/hurufAlKhafd'
 import { READING_GLOSSES } from './readingGlosses'
 
 const DATA = join(import.meta.dirname, 'data')
@@ -318,6 +319,24 @@ export function notesById(): Map<string, Note> {
 }
 
 /**
+ * The headline gloss of each harf, by the id `HURUF_LEMMAS` maps a lemma to.
+ *
+ * Not the note's meaning, which is the *sense* the card teaches: the note
+ * behind `min` is its primary sense and reads "Starting point of place or
+ * time", a definition rather than a gloss. A reader tapping a word wants the
+ * word, so the RefHarf's own Meaning is what belongs beside it — and being the
+ * only place that gloss is now written, it cannot drift from anything.
+ */
+export function harfGlosses(): Map<string, Meaning> {
+  const byId = new Map<string, Meaning>()
+  for (const section of hurufAlKhafdRef.sections) {
+    if (section.kind !== 'harf') continue
+    byId.set(section.id, { english: section.english, turkish: section.turkish })
+  }
+  return byId
+}
+
+/**
  * Feature tags that name a particle class and nothing else. A lemma every one
  * of whose occurrences carries one is a harf whatever its coarse tag says: the
  * interrogative hamza is tagged as a noun throughout.
@@ -357,6 +376,7 @@ export function buildLemmas(rows: Row[]): CorpusLemmas {
 
   const byForm = notesByForm()
   const byId = notesById()
+  const glosses = harfGlosses()
   const huruf = new Map(
     Object.entries(HURUF_LEMMAS).map(([lemma, noteId]) => [matchKey(lemma), noteId]),
   )
@@ -366,13 +386,20 @@ export function buildLemmas(rows: Row[]): CorpusLemmas {
     const hurufId = huruf.get(matchKey(lemma))
     const note = hurufId ? byId.get(hurufId) : byForm.get(matchKey(lemma))
     if (hurufId && !note) throw new Error(`no note "${hurufId}" for lemma ${lemma}`)
+    // A sense note is glossed by its harf's entry, everything else by the note
+    // itself. Keyed on the note rather than on HURUF_LEMMAS because most harfs
+    // are matched by form and never go through that table at all.
+    // `noteId` stays the note either way: it is what marks a word known.
+    const harfId = note?.sense?.harfId
+    const gloss = harfId ? glosses.get(harfId) : note
+    if (harfId && !gloss) throw new Error(`no harf gloss for "${harfId}"`)
 
     const root = occurrences.map((r) => r.root).find(Boolean)
     const entry: CorpusLemma = note
       ? {
           pos: partOfSpeech(occurrences),
-          english: note.english,
-          turkish: note.turkish,
+          english: gloss!.english,
+          turkish: gloss!.turkish,
           glossSource: 'deck',
           noteId: note.id,
         }

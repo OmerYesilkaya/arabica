@@ -330,6 +330,22 @@ button:disabled {
   margin-left: 10px;
 }
 
+/* The senses this card's answer was chosen against. Quieter than the answer
+   itself: it is there to be read after the term, not competed with. */
+.session-card .sense-contrast {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+.session-card .sense-contrast .sense-other .arabic {
+  margin-left: 6px;
+}
+
 /* Subtle source citation on card backs and in Reference. */
 .source {
   display: block;

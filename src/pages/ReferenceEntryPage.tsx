@@ -85,15 +85,16 @@ function HarfSection({ section, lang }: { section: RefHarf; lang: MeaningLang })
             <span className="arabic">{sense.termArabic}</span>
           </div>
           <p>{sense[lang]}</p>
-          {sense.example && (
-            <div className="example">
-              <span className="arabic">{sense.example.arabic}</span>
-              {sense.example[lang]}
-              {sense.example.source && (
-                <span className="source">{sense.example.source}</span>
-              )}
+          {/* Every example, not just the one a card happens to be showing:
+              Reference is where the sense is defined, and a sense is easier to
+              see across two sentences than inside one. */}
+          {sense.examples.map((example, j) => (
+            <div className="example" key={j}>
+              <span className="arabic">{example.arabic}</span>
+              {example[lang]}
+              {example.source && <span className="source">{example.source}</span>}
             </div>
-          )}
+          ))}
         </div>
       ))}
     </section>

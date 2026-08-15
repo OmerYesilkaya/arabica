@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { Rating, State } from 'ts-fsrs'
 import { ArabicaDB } from '../db/db'
-import { hurufAlKhafd } from '../content/decks/hurufAlKhafd'
+import { testDeck } from './testDeck'
+import { quranVocab1 } from '../content/decks/quranVocab1'
 import { cardsOfDeck } from '../content/decks'
 import { answerCard } from './engine'
 import { buildQueue, deckCounts } from './queue'
-import { noteIdOf } from '../content/types'
 
 let db: ArabicaDB
 let counter = 0
@@ -14,7 +14,15 @@ beforeEach(() => {
   db = new ArabicaDB(`test-${++counter}`)
 })
 
-const deck = hurufAlKhafd
+// A shipped deck, because answerCard resolves the deck from the content
+// registry by id and a fixture is not in it. Level 1 is the deck whose shape
+// these tests want anyway: 50 cards against a limit of 10, so the daily
+// allowance is exercised rather than merely satisfied.
+//
+// Burying is not tested here - it needs sibling cards, and every shipped deck
+// now asks one direction only. senseBury.test.ts covers it against the sense
+// deck, whose siblings are the senses of one harf.
+const deck = quranVocab1
 const allCards = cardsOfDeck(deck)
 
 describe('buildQueue', () => {
@@ -30,9 +38,14 @@ describe('buildQueue', () => {
     expect(ordinals).toEqual([...ordinals].sort((a, b) => a - b))
   })
 
-  it('oath particles schedule only the ar-to-meaning direction', () => {
-    const oath = allCards.filter((c) => c.note.id === 'waw-qasam')
-    expect(oath.map((c) => c.direction)).toEqual(['ar-to-meaning'])
+  it('a note may narrow the deck directions to one', () => {
+    // On the fixture: no shipped deck asks two directions today, so this rule
+    // would otherwise go untested until one does.
+    const cards = cardsOfDeck(testDeck)
+    expect(cards.filter((c) => c.note.id === 'test-note-1').length).toBe(2)
+    expect(
+      cards.filter((c) => c.note.id === 'test-note-12').map((c) => c.direction),
+    ).toEqual(['ar-to-meaning'])
   })
 
   it('counts new cards introduced today against the limit', async () => {
@@ -44,29 +57,9 @@ describe('buildQueue', () => {
     const newItems = later.filter(
       (i) => !i.state || i.state.state === State.New,
     )
-    // One new card was introduced, so allowance shrinks by one; the answered
-    // card is now in learning and its sibling is buried.
+    // One new card was introduced, so the allowance shrinks by one; the
+    // answered card is now in learning and no longer counts as new.
     expect(newItems.length).toBe(deck.newPerDay - 1)
-  })
-
-  it('buries siblings until the next day', async () => {
-    const now = new Date()
-    const queue = await buildQueue(db, deck, now)
-    const first = queue[0]
-    await answerCard(db, first.content, first.state, Rating.Good, now)
-
-    const noteId = noteIdOf(first.content.cardId)
-    const sameNoteVisible = (await buildQueue(db, deck, now)).filter(
-      (i) => noteIdOf(i.content.cardId) === noteId && i.content.cardId !== first.content.cardId,
-    )
-    expect(sameNoteVisible.length).toBe(0)
-
-    const tomorrow = new Date(now.getTime() + 25 * 60 * 60 * 1000)
-    const tomorrowQueue = await buildQueue(db, deck, tomorrow)
-    const siblingTomorrow = tomorrowQueue.filter(
-      (i) => noteIdOf(i.content.cardId) === noteId && i.content.cardId !== first.content.cardId,
-    )
-    expect(siblingTomorrow.length).toBe(1)
   })
 
   it('puts learning cards before new cards', async () => {

@@ -18,13 +18,18 @@ function allExamples(): [string, Example][] {
   for (const deck of decks) {
     for (const note of deck.notes) {
       if (note.example) found.push([`${deck.id}/${note.id}`, note.example])
+      note.examples?.forEach((example, i) =>
+        found.push([`${deck.id}/${note.id}[${i}]`, example]),
+      )
     }
   }
   for (const entry of referenceEntries) {
     for (const section of entry.sections) {
       if (section.kind !== 'harf') continue
       section.senses.forEach((sense, i) => {
-        if (sense.example) found.push([`${entry.id}/${section.id}-${i}`, sense.example])
+        sense.examples.forEach((example, j) =>
+          found.push([`${entry.id}/${section.id}-${i}[${j}]`, example]),
+        )
       })
     }
   }

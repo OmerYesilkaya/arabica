@@ -145,12 +145,14 @@ export const innaWaAkhawatuha: ReferenceEntry = {
             'Emphasis at the head of an independent sentence. Here the ism is اللَّهَ in naṣb (fatḥa) and the khabar is غَفُورٌ in rafʿ (ḍamma), with رَحِيمٌ a second khabar.',
           turkish:
             'Bağımsız cümlenin başında tekid. Burada isim, nasb halinde (fetha) اللَّهَ; haber ise ref halinde (ötre) غَفُورٌ’dur; رَحِيمٌ ikinci haberdir.',
-          example: {
-            arabic: 'إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ',
-            english: 'Indeed Allah is Forgiving and Merciful',
-            turkish: 'Şüphesiz Allah çok bağışlayandır, çok merhametlidir',
-            source: 'Qur’an 2:173',
-          },
+          examples: [
+            {
+              arabic: 'إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ',
+              english: 'Indeed Allah is Forgiving and Merciful',
+              turkish: 'Şüphesiz Allah çok bağışlayandır, çok merhametlidir',
+              source: 'Qur’an 2:173',
+            },
+          ],
         },
       ],
     },
@@ -168,12 +170,14 @@ export const innaWaAkhawatuha: ReferenceEntry = {
             'The same emphasis, but inside a larger sentence, usually after a verb of knowing or saying. In the full ayah (أَلَمْ تَعْلَمْ ...) the ism is اللَّهَ in naṣb and the khabar is قَدِيرٌ in rafʿ, after the phrase عَلَى كُلِّ شَيْءٍ.',
           turkish:
             'Aynı tekid, fakat daha büyük bir cümlenin içinde; çoğunlukla bilme veya söyleme fiilinden sonra gelir. Tam ayette (أَلَمْ تَعْلَمْ ...) isim nasb halinde اللَّهَ, haber ise عَلَى كُلِّ شَيْءٍ ifadesinden sonra ref halinde قَدِيرٌ’dur.',
-          example: {
-            arabic: 'أَلَمْ تَعْلَمْ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',
-            english: 'Do you not know that Allah is able to do all things?',
-            turkish: 'Allah’ın her şeye gücünün yettiğini bilmez misin?',
-            source: 'Qur’an 2:106',
-          },
+          examples: [
+            {
+              arabic: 'أَلَمْ تَعْلَمْ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',
+              english: 'Do you not know that Allah is able to do all things?',
+              turkish: 'Allah’ın her şeye gücünün yettiğini bilmez misin?',
+              source: 'Qur’an 2:106',
+            },
+          ],
         },
       ],
     },
@@ -191,12 +195,14 @@ export const innaWaAkhawatuha: ReferenceEntry = {
             'Corrects or limits what was said before it, so it always follows another statement. The ism is اللَّهَ in naṣb; the khabar is ذُو in rafʿ, one of the five nouns, so its rafʿ sign is the wāw and not a ḍamma (see the iʿrāb-signs entry).',
           turkish:
             'Kendinden önce söyleneni düzeltir veya sınırlar; bu yüzden her zaman başka bir cümleden sonra gelir. İsim nasb halinde اللَّهَ; haber ise ref halinde ذُو’dur. ذُو beş isimden biridir, bu yüzden ref alâmeti ötre değil vavdır (bkz. iʿrâb alâmetleri girişi).',
-          example: {
-            arabic: 'وَلَكِنَّ اللَّهَ ذُو فَضْلٍ عَلَى الْعَالَمِينَ',
-            english: 'but Allah is the possessor of bounty for the worlds',
-            turkish: 'fakat Allah âlemlere karşı lütuf sahibidir',
-            source: 'Qur’an 2:251',
-          },
+          examples: [
+            {
+              arabic: 'وَلَكِنَّ اللَّهَ ذُو فَضْلٍ عَلَى الْعَالَمِينَ',
+              english: 'but Allah is the possessor of bounty for the worlds',
+              turkish: 'fakat Allah âlemlere karşı lütuf sahibidir',
+              source: 'Qur’an 2:251',
+            },
+          ],
         },
       ],
     },
@@ -214,12 +220,14 @@ export const innaWaAkhawatuha: ReferenceEntry = {
             'Likens the ism to the khabar. Here the ism is the attached pronoun هُنَّ, which sits in the place of naṣb, and the khabar is الْيَاقُوتُ in rafʿ (ḍamma), with وَالْمَرْجَانُ joined to it.',
           turkish:
             'İsmi habere benzetir. Burada isim, mahallen mansub olan muttasıl zamir هُنَّ; haber ise ref halinde (ötre) الْيَاقُوتُ’tur; وَالْمَرْجَانُ ona atfedilmiştir.',
-          example: {
-            arabic: 'كَأَنَّهُنَّ الْيَاقُوتُ وَالْمَرْجَانُ',
-            english: 'as if they were rubies and coral',
-            turkish: 'sanki onlar yakut ve mercandır',
-            source: 'Qur’an 55:58',
-          },
+          examples: [
+            {
+              arabic: 'كَأَنَّهُنَّ الْيَاقُوتُ وَالْمَرْجَانُ',
+              english: 'as if they were rubies and coral',
+              turkish: 'sanki onlar yakut ve mercandır',
+              source: 'Qur’an 55:58',
+            },
+          ],
         },
       ],
     },
@@ -237,12 +245,14 @@ export const innaWaAkhawatuha: ReferenceEntry = {
             'Wishes for something, usually something out of reach. The ism is قَوْمِي in naṣb (its fatḥa is hidden by the attached pronoun ي), and the khabar is the verbal sentence يَعْلَمُونَ, which holds the place of rafʿ.',
           turkish:
             'Genellikle ulaşılamayan bir şeyi dilemek için gelir. İsim nasb halinde قَوْمِي’dir (fethası, muttasıl ي zamiri sebebiyle görünmez); haber ise mahallen merfû olan يَعْلَمُونَ fiil cümlesidir.',
-          example: {
-            arabic: 'يَا لَيْتَ قَوْمِي يَعْلَمُونَ',
-            english: 'Would that my people knew',
-            turkish: 'Ah, kavmim bir bilseydi',
-            source: 'Qur’an 36:26',
-          },
+          examples: [
+            {
+              arabic: 'يَا لَيْتَ قَوْمِي يَعْلَمُونَ',
+              english: 'Would that my people knew',
+              turkish: 'Ah, kavmim bir bilseydi',
+              source: 'Qur’an 36:26',
+            },
+          ],
         },
       ],
     },
@@ -260,12 +270,14 @@ export const innaWaAkhawatuha: ReferenceEntry = {
             'Hope for something liked (tarajjī) or expectation of something feared (tawaqquʿ). The ism is السَّاعَةَ in naṣb (fatḥa) and the khabar is قَرِيبٌ in rafʿ (ḍamma).',
           turkish:
             'Sevilen bir şeyi ummak (terecci) veya korkulan bir şeyi beklemek (tevakku). İsim nasb halinde (fetha) السَّاعَةَ; haber ise ref halinde (ötre) قَرِيبٌ’tur.',
-          example: {
-            arabic: 'لَعَلَّ السَّاعَةَ قَرِيبٌ',
-            english: 'perhaps the Hour is near',
-            turkish: 'belki o saat yakındır',
-            source: 'Qur’an 42:17',
-          },
+          examples: [
+            {
+              arabic: 'لَعَلَّ السَّاعَةَ قَرِيبٌ',
+              english: 'perhaps the Hour is near',
+              turkish: 'belki o saat yakındır',
+              source: 'Qur’an 42:17',
+            },
+          ],
         },
       ],
     },

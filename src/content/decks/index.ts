@@ -1,6 +1,5 @@
 import type { ContentCard, DeckDef, Direction, Note } from '../types'
 import { cardIdOf } from '../types'
-import { hurufAlKhafd } from './hurufAlKhafd'
 import { hurufAlKhafdSenses } from './hurufAlKhafdSenses'
 import { quranVocab1 } from './quranVocab1'
 import { quranVocab2 } from './quranVocab2'
@@ -16,7 +15,6 @@ import { quranVocab11 } from './quranVocab11'
 import { quranVocab12 } from './quranVocab12'
 
 export const decks: DeckDef[] = [
-  hurufAlKhafd,
   hurufAlKhafdSenses,
   quranVocab1,
   quranVocab2,

@@ -284,36 +284,42 @@ export const damair: ReferenceEntry = {
           termArabic: 'نَا الْفَاعِلِينَ',
           english: 'The suffix ـنَا is the fāʿil "we" on a past-tense verb.',
           turkish: 'ـنَا eki, mâzî fiilde “biz” fâilidir.',
-          example: {
-            arabic: 'رَبَّنَا ظَلَمْنَا أَنْفُسَنَا',
-            english: 'Our Lord, we have wronged ourselves',
-            turkish: 'Rabbimiz, kendimize zulmettik',
-            source: 'Qur’an 7:23',
-          },
+          examples: [
+            {
+              arabic: 'رَبَّنَا ظَلَمْنَا أَنْفُسَنَا',
+              english: 'Our Lord, we have wronged ourselves',
+              turkish: 'Rabbimiz, kendimize zulmettik',
+              source: 'Qur’an 7:23',
+            },
+          ],
         },
         {
           term: 'Tāʾ of the doer',
           termArabic: 'تَاءُ الْفَاعِلِ',
           english: 'The suffix ـتَ is the fāʿil "you" (m. sg.) on a past-tense verb.',
           turkish: 'ـتَ eki, mâzî fiilde “sen” (eril tekil) fâilidir.',
-          example: {
-            arabic: 'لَا عِلْمَ لَنَا إِلَّا مَا عَلَّمْتَنَا',
-            english: 'We have no knowledge except what You have taught us',
-            turkish: 'Bize öğrettiğinden başka bir bilgimiz yok',
-            source: 'Qur’an 2:32',
-          },
+          examples: [
+            {
+              arabic: 'لَا عِلْمَ لَنَا إِلَّا مَا عَلَّمْتَنَا',
+              english: 'We have no knowledge except what You have taught us',
+              turkish: 'Bize öğrettiğinden başka bir bilgimiz yok',
+              source: 'Qur’an 2:32',
+            },
+          ],
         },
         {
           term: 'Wāw of the group',
           termArabic: 'وَاوُ الْجَمَاعَةِ',
           english: 'The suffix ـُوا is the fāʿil "they" (m. pl.).',
           turkish: 'ـُوا eki, “onlar” (eril çoğul) fâilidir.',
-          example: {
-            arabic: 'الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ',
-            english: 'those who believed and did righteous deeds',
-            turkish: 'iman edip salih ameller işleyenler',
-            source: 'Qur’an 103:3',
-          },
+          examples: [
+            {
+              arabic: 'الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ',
+              english: 'those who believed and did righteous deeds',
+              turkish: 'iman edip salih ameller işleyenler',
+              source: 'Qur’an 103:3',
+            },
+          ],
         },
       ],
     },
@@ -414,12 +420,14 @@ export const damair: ReferenceEntry = {
             'The object "me" is ـنِي on a verb: the protective nūn (nūn al-wiqāyah) comes before the yāʾ. Compare the object "you" (pl.) ـكُمْ in the same āyah.',
           turkish:
             'Fiilde “beni” mef’ûlü ـنِي şeklindedir: yâdan önce nûn-u vikâye gelir. Aynı âyetteki “sizi” mef’ûlü ـكُمْ ile karşılaştır.',
-          example: {
-            arabic: 'فَاذْكُرُونِي أَذْكُرْكُمْ',
-            english: 'So remember Me, and I will remember you',
-            turkish: 'Beni anın, ben de sizi anayım',
-            source: 'Qur’an 2:152',
-          },
+          examples: [
+            {
+              arabic: 'فَاذْكُرُونِي أَذْكُرْكُمْ',
+              english: 'So remember Me, and I will remember you',
+              turkish: 'Beni anın, ben de sizi anayım',
+              source: 'Qur’an 2:152',
+            },
+          ],
         },
         {
           term: 'Object: second person',
@@ -428,12 +436,14 @@ export const damair: ReferenceEntry = {
             'The suffix ـكَ is the object "you" (m. sg.). Here it follows the attached fāʿil ـنَا, so one verb carries a rafʿ pronoun and a naṣb pronoun.',
           turkish:
             'ـكَ eki “seni” mef’ûlüdür. Burada bitişik fâil ـنَا’dan sonra gelir; böylece bir fiil hem ref hem nasb zamiri taşır.',
-          example: {
-            arabic: 'إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ',
-            english: 'Indeed We have given you al-Kawthar',
-            turkish: 'Şüphesiz biz sana Kevser’i verdik',
-            source: 'Qur’an 108:1',
-          },
+          examples: [
+            {
+              arabic: 'إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ',
+              english: 'Indeed We have given you al-Kawthar',
+              turkish: 'Şüphesiz biz sana Kevser’i verdik',
+              source: 'Qur’an 108:1',
+            },
+          ],
         },
         {
           term: 'Object versus possessive',
@@ -442,12 +452,14 @@ export const damair: ReferenceEntry = {
             'The same kāf is a naṣb pronoun on the verb (waddaʿaka, "forsaken you") and a jarr pronoun on the noun (rabbuka, "your Lord").',
           turkish:
             'Aynı kâf, fiilde nasb zamiridir (وَدَّعَكَ, “seni bıraktı”) ve isimde cer zamiridir (رَبُّكَ, “senin Rabbin”).',
-          example: {
-            arabic: 'مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَى',
-            english: 'Your Lord has not forsaken you, nor has He become displeased',
-            turkish: 'Rabbin seni bırakmadı ve sana darılmadı',
-            source: 'Qur’an 93:3',
-          },
+          examples: [
+            {
+              arabic: 'مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَى',
+              english: 'Your Lord has not forsaken you, nor has He become displeased',
+              turkish: 'Rabbin seni bırakmadı ve sana darılmadı',
+              source: 'Qur’an 93:3',
+            },
+          ],
         },
       ],
     },
@@ -573,12 +585,14 @@ export const damair: ReferenceEntry = {
             'The pronoun after a ḥarf jarr is in jarr. In إِلَيْهِ the هُ takes a kasra because the yāʾ before it carries one.',
           turkish:
             'Cer harfinden sonraki zamir cer hâlindedir. إِلَيْهِ’de هُ kesre alır, çünkü önündeki yâ kesrelidir.',
-          example: {
-            arabic: 'إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ',
-            english: 'Indeed we belong to Allah, and indeed to Him we return',
-            turkish: 'Şüphesiz biz Allah’a aitiz ve şüphesiz O’na döneceğiz',
-            source: 'Qur’an 2:156',
-          },
+          examples: [
+            {
+              arabic: 'إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ',
+              english: 'Indeed we belong to Allah, and indeed to Him we return',
+              turkish: 'Şüphesiz biz Allah’a aitiz ve şüphesiz O’na döneceğiz',
+              source: 'Qur’an 2:156',
+            },
+          ],
         },
         {
           term: 'On a ḥarf jarr and on a noun together',
@@ -587,12 +601,14 @@ export const damair: ReferenceEntry = {
             'One āyah shows both places: لَكَ is the kāf after the ḥarf jarr lām, and صَدْرَكَ is the same kāf as muḍāf ilayh on a noun ("your breast").',
           turkish:
             'Bir âyet her iki yeri gösterir: لَكَ, lâm cer harfinden sonraki kâftır; صَدْرَكَ ise aynı kâfın isimde muzâf ileyh olmasıdır (“senin göğsün”).',
-          example: {
-            arabic: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ',
-            english: 'Did We not expand your breast for you?',
-            turkish: 'Senin göğsünü açıp genişletmedik mi?',
-            source: 'Qur’an 94:1',
-          },
+          examples: [
+            {
+              arabic: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ',
+              english: 'Did We not expand your breast for you?',
+              turkish: 'Senin göğsünü açıp genişletmedik mi?',
+              source: 'Qur’an 94:1',
+            },
+          ],
         },
         {
           term: 'The yāʾ of the speaker on a noun',
@@ -601,12 +617,14 @@ export const damair: ReferenceEntry = {
             'On a noun the first person is ـِي, not ـنِي, and it holds a kasra before the yāʾ whatever the case of the noun.',
           turkish:
             'İsimde birinci şahıs eki ـنِي değil ـِي’dir ve ismin durumu ne olursa olsun yâdan önce kesre bulunur.',
-          example: {
-            arabic: 'إِنَّ رَبِّي غَفُورٌ رَحِيمٌ',
-            english: 'Indeed my Lord is Forgiving and Merciful',
-            turkish: 'Şüphesiz Rabbim çok bağışlayandır, çok merhametlidir',
-            source: 'Qur’an 12:53',
-          },
+          examples: [
+            {
+              arabic: 'إِنَّ رَبِّي غَفُورٌ رَحِيمٌ',
+              english: 'Indeed my Lord is Forgiving and Merciful',
+              turkish: 'Şüphesiz Rabbim çok bağışlayandır, çok merhametlidir',
+              source: 'Qur’an 12:53',
+            },
+          ],
         },
       ],
     },
@@ -622,12 +640,14 @@ export const damair: ReferenceEntry = {
           termArabic: 'اَلْمُنْفَصِلُ مُبْتَدَأً',
           english: 'A detached rafʿ pronoun opens a nominal sentence as its mubtadaʾ.',
           turkish: 'Munfasıl ref zamiri, isim cümlesini mübtedâ olarak başlatır.',
-          example: {
-            arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ',
-            english: 'Say: He is Allah, the One',
-            turkish: 'De ki: O, Allah’tır, birdir',
-            source: 'Qur’an 112:1',
-          },
+          examples: [
+            {
+              arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ',
+              english: 'Say: He is Allah, the One',
+              turkish: 'De ki: O, Allah’tır, birdir',
+              source: 'Qur’an 112:1',
+            },
+          ],
         },
         {
           term: 'Separating pronoun',
@@ -636,12 +656,14 @@ export const damair: ReferenceEntry = {
             'A detached rafʿ pronoun stands between mubtadaʾ and a definite khabar to mark which is which. Here هُمْ reads هُمُ before the definite article.',
           turkish:
             'Munfasıl ref zamiri, mübtedâ ile belirli haber arasında hangisinin hangisi olduğunu göstermek için gelir. Burada هُمْ, harf-i tarîften önce هُمُ okunur.',
-          example: {
-            arabic: 'وَأُولَئِكَ هُمُ الْمُفْلِحُونَ',
-            english: 'and it is they who are the successful',
-            turkish: 've işte kurtuluşa erenler onlardır',
-            source: 'Qur’an 2:5',
-          },
+          examples: [
+            {
+              arabic: 'وَأُولَئِكَ هُمُ الْمُفْلِحُونَ',
+              english: 'and it is they who are the successful',
+              turkish: 've işte kurtuluşa erenler onlardır',
+              source: 'Qur’an 2:5',
+            },
+          ],
         },
         {
           term: 'Detached naṣb before the verb',
@@ -650,12 +672,14 @@ export const damair: ReferenceEntry = {
             'The iyyā series carries the object when it is put before its verb, which also gives the sense "You alone".',
           turkish:
             'إِيَّا serisi, mef’ûl fiilinden önce getirildiğinde onu taşır; bu takdim “yalnız sana” anlamını da verir.',
-          example: {
-            arabic: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',
-            english: 'You alone we worship, and You alone we ask for help',
-            turkish: 'Yalnız sana kulluk ederiz ve yalnız senden yardım isteriz',
-            source: 'Qur’an 1:5',
-          },
+          examples: [
+            {
+              arabic: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',
+              english: 'You alone we worship, and You alone we ask for help',
+              turkish: 'Yalnız sana kulluk ederiz ve yalnız senden yardım isteriz',
+              source: 'Qur’an 1:5',
+            },
+          ],
         },
       ],
     },

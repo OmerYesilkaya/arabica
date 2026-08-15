@@ -3,7 +3,7 @@ import { State } from 'ts-fsrs'
 import { ArabicaDB } from '../db/db'
 import { cardIdOf } from '../content/types'
 import { quranVocab1 } from '../content/decks/quranVocab1'
-import { hurufAlKhafd } from '../content/decks/hurufAlKhafd'
+import { hurufAlKhafdSenses } from '../content/decks/hurufAlKhafdSenses'
 import { decks as allDecks } from '../content/decks'
 import { TOTAL_WORD_OCCURRENCES } from '../content/quranCoverage'
 import { computeCoverage, occurrencesOf } from './coverage'
@@ -90,11 +90,13 @@ describe('computeCoverage', () => {
   })
 
   it('counts a word once however many directions it has', async () => {
-    // Huruf notes are scheduled in both directions; knowing one word twice is
-    // still one word.
-    const note = hurufAlKhafd.notes.find((n) => n.id === 'min')!
-    await graduate(cardIdOf(note.id, 'ar-to-meaning'), hurufAlKhafd.id)
-    await graduate(cardIdOf(note.id, 'meaning-to-ar'), hurufAlKhafd.id)
+    // Knowing one word twice is still one word. No shipped deck asks both
+    // directions today, so the second card id here is synthetic: what is under
+    // test is that knownNoteIds folds directions away, not that some deck
+    // happens to produce both.
+    const note = hurufAlKhafdSenses.notes.find((n) => n.id === 'min')!
+    await graduate(cardIdOf(note.id, 'ar-to-meaning'), hurufAlKhafdSenses.id)
+    await graduate(cardIdOf(note.id, 'meaning-to-ar'), hurufAlKhafdSenses.id)
 
     const coverage = await computeCoverage(db, NOW)
     expect(coverage.words).toBe(1)
@@ -102,14 +104,14 @@ describe('computeCoverage', () => {
   })
 
   it('counts words taught outside the vocabulary track', async () => {
-    const note = hurufAlKhafd.notes.find((n) => n.id === 'min')!
+    const note = hurufAlKhafdSenses.notes.find((n) => n.id === 'min')!
     expect(note.vocab).toBeUndefined()
     expect(occurrencesOf(note)).toBeGreaterThan(3000)
   })
 
   it('contributes nothing for a word with no occurrence count', async () => {
-    const prefix = hurufAlKhafd.notes.find((n) => n.id === 'ba')!
-    await graduate(cardIdOf(prefix.id, 'ar-to-meaning'), hurufAlKhafd.id)
+    const prefix = hurufAlKhafdSenses.notes.find((n) => n.id === 'ba')!
+    await graduate(cardIdOf(prefix.id, 'ar-to-meaning'), hurufAlKhafdSenses.id)
     const coverage = await computeCoverage(db, NOW)
     expect(coverage.words).toBe(0)
     expect(coverage.known).toBe(0)
@@ -160,7 +162,7 @@ describe('computeCoverage', () => {
   })
 
   it('shows what level 1 and the huruf alone are worth', async () => {
-    for (const deck of [quranVocab1, hurufAlKhafd]) {
+    for (const deck of [quranVocab1, hurufAlKhafdSenses]) {
       for (const note of deck.notes) {
         await graduate(cardIdOf(note.id, 'ar-to-meaning'), deck.id)
       }

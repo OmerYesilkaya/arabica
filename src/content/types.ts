@@ -41,13 +41,36 @@ export interface Example extends Meaning {
 }
 
 /**
- * Sense-card metadata: the grammatical sense a per-sense card teaches, named
- * by its term. Derived from HarfSense (declared below, in the Reference
- * section) because the reference entry is where a Sense is defined — the deck
- * only names one. Renaming a field on HarfSense now breaks here rather than
- * letting the two drift apart.
+ * A Sense named by its term, with nothing else about it. Derived from
+ * HarfSense (declared below, in the Reference section) because the reference
+ * entry is where a Sense is defined — the deck only names one. Renaming a
+ * field on HarfSense now breaks here rather than letting the two drift apart.
  */
-export type NoteSense = Pick<HarfSense, 'term' | 'termArabic'>
+export type SenseRef = Pick<HarfSense, 'term' | 'termArabic'>
+
+/** Sense-card metadata: the grammatical sense a per-sense card teaches. */
+export interface NoteSense extends SenseRef {
+  /**
+   * The Harf this Sense belongs to, by its Reference Entry anchor id.
+   *
+   * A Sense is a function *of a word*, and things outside the deck need the
+   * word: the reading corpus glosses a tapped harf from its entry rather than
+   * from whichever sense card happens to teach it, because "Containment in
+   * place or time" is a definition and a reader wants "in, inside".
+   */
+  harfId: string
+  /**
+   * The Harf's other Senses, shown on the card back beneath the answer.
+   *
+   * Sense boundaries are learned by contrast. "This one and not those" is the
+   * judgement the card asks for, and a back that names only the answer never
+   * shows the learner what the alternatives were — so a wrong answer teaches
+   * that the right one exists, and nothing about why it beat the others.
+   *
+   * Empty for a Harf with a single Sense, where there is nothing to contrast.
+   */
+  contrast: SenseRef[]
+}
 
 /** The Ājurrūmiyya's three-way division of the word. */
 export type PartOfSpeech = 'ism' | 'fil' | 'harf'
@@ -95,6 +118,20 @@ export interface Note extends Meaning {
   id: string
   arabic: string
   example?: Example
+  /**
+   * The stimulus pool of a per-sense card: several sentences carrying the same
+   * Sense, one shown per review.
+   *
+   * A single example turns a Sense card into an item card. After a few reps the
+   * learner recognises the sentence and answers from that rather than from the
+   * grammar — the card then teaches the sentence and not the Sense it names.
+   * Rotating the stimulus is what makes it test the skill on its front.
+   *
+   * Separate from `example`, which is one sentence authored for one word: a
+   * vocabulary card quotes the ayah its Note was written from, and rotating
+   * that would mean rewriting the Note. Read both through `exampleOf`.
+   */
+  examples?: Example[]
   /**
    * The bare word, set when `arabic` is a display label rather than the word
    * itself (the prefix particles, whose `arabic` names the letter, as
@@ -157,6 +194,22 @@ export function noteIdOf(cardId: string): string {
   return cardId.slice(0, cardId.lastIndexOf('|'))
 }
 
+/**
+ * The Example to show for a Note on a card answered `reps` times: the pool
+ * rotated by the review count, or the one authored example.
+ *
+ * Deterministic rather than random, for two reasons. The front and the back of
+ * one card must show the same sentence, and they are rendered from separate
+ * reads of the same state. And a learning card that comes back inside a
+ * session should move on to the next sentence rather than repeat the one just
+ * answered, which a review count gives for free.
+ */
+export function exampleOf(note: Note, reps: number): Example | undefined {
+  const pool = note.examples
+  if (pool && pool.length > 0) return pool[reps % pool.length]
+  return note.example
+}
+
 // ---------- Reference section ----------
 
 /**
@@ -210,7 +263,15 @@ export interface HarfSense extends Meaning {
   /** Transliterated grammar term, e.g. "Ibtidāʾ al-ghāyah". */
   term: string
   termArabic: string
-  example?: Example
+  /**
+   * Sentences carrying this Sense, best first. Never empty: a Sense with no
+   * example cannot be shown in Reference and cannot be taught, so an author
+   * who has not found one yet has not finished writing the Sense.
+   *
+   * A list rather than one sentence because the Sense card rotates through it
+   * — see `Note.examples`. Reference shows them all.
+   */
+  examples: Example[]
 }
 
 export interface RefHarf extends Meaning {

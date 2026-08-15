@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { Rating } from 'ts-fsrs'
 import { ArabicaDB } from '../db/db'
-import { hurufAlKhafd } from '../content/decks/hurufAlKhafd'
 import { hurufAlKhafdSenses } from '../content/decks/hurufAlKhafdSenses'
+import { testDeck } from './testDeck'
 import { cardsOfDeck, siblingCardsOf, siblingGroupOf } from '../content/decks'
 import { answerCard } from './engine'
 import { buildQueue } from './queue'
@@ -14,12 +14,12 @@ beforeEach(() => {
   db = new ArabicaDB(`sense-test-${++counter}`)
 })
 
-describe('primary deck siblings (unchanged behavior)', () => {
+describe('default siblings', () => {
   it('are the same note in the other direction', () => {
-    const card = cardsOfDeck(hurufAlKhafd).find((c) => c.note.id === 'min')!
-    const siblings = siblingCardsOf(hurufAlKhafd, card.cardId)
+    const card = cardsOfDeck(testDeck).find((c) => c.note.id === 'test-note-1')!
+    const siblings = siblingCardsOf(testDeck, card.cardId)
     expect(siblings.length).toBe(1)
-    expect(siblings[0].note.id).toBe('min')
+    expect(siblings[0].note.id).toBe('test-note-1')
     expect(siblings[0].direction).not.toBe(card.direction)
   })
 })

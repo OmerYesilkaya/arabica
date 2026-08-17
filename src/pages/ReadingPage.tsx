@@ -6,6 +6,9 @@ import { useStrings } from '../i18n/strings'
  * The Texts the reader can open. Whole surahs in their own order, because the
  * one thing curated Examples cannot give is text nobody arranged for the
  * learner — grammar wherever it happens to fall.
+ *
+ * The same row as a Reference entry, and deliberately so: both are a numbered
+ * sequence the course walks in order, and drawing them alike says that.
  */
 export function ReadingPage() {
   const s = useStrings()
@@ -14,21 +17,22 @@ export function ReadingPage() {
       <h1 className="page-title">{s.reading.title}</h1>
       <p className="page-intro">{s.reading.intro}</p>
 
-      <div className="ref-list">
+      <ol className="card ref-list">
         {readingTexts.map((text) => (
-          <Link key={text.surah} className="card ref-row" to={`/reading/${text.surah}`}>
-            <div>
-              <h2>
-                {text.surah}. {text.name}
-              </h2>
-              <p>
-                {text.english} · {s.reading.ayat(text.ayat)}
-              </p>
-            </div>
-            <span className="ref-arabic arabic">{text.nameArabic}</span>
-          </Link>
+          <li key={text.surah} className="ref-row">
+            <Link className="ref-link" to={`/reading/${text.surah}`}>
+              <span className="ref-num">{text.surah}</span>
+              <span className="ref-titles">
+                <span className="ref-title">{text.name}</span>
+                <span className="ref-arabic arabic">{text.nameArabic}</span>
+                <span className="ref-gloss">
+                  {text.english} · {s.reading.ayat(text.ayat)}
+                </span>
+              </span>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ol>
 
       <p className="corpus-credit">
         {s.reading.creditText}{' '}

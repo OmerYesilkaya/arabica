@@ -753,6 +753,14 @@ ol.ref-list {
   color: var(--muted);
 }
 
+/* A third stacked line, where a row has one: the surah's English name and its
+   length. Under the titles for the same reason the Arabic one is -- nothing in a
+   row competes for the width that the title needs. */
+.ref-row .ref-gloss {
+  font-size: var(--t-caption);
+  color: var(--muted);
+}
+
 .ref-row.locked {
   opacity: 0.55;
 }

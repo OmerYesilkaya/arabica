@@ -5,10 +5,13 @@ import type { ReferenceEntry } from '../types'
 
 export const partsOfSpeech: ReferenceEntry = {
   id: 'parts-of-speech',
-  title: 'Parts of Speech',
+  title: { english: 'Parts of Speech', turkish: 'Kelimenin Kısımları' },
   titleArabic: 'أَقْسَامُ الْكَلَامِ',
   order: 1,
-  summary: 'Kalām and its three parts: ism, fiʿl, ḥarf, with the signs of each.',
+  summary: {
+    english: 'Kalām and its three parts: ism, fiʿl, ḥarf, with the signs of each.',
+    turkish: 'Kelâm ve üç kısmı: isim, fiil, harf; her birinin alâmetleriyle.',
+  },
   sections: [
     {
       kind: 'prose',

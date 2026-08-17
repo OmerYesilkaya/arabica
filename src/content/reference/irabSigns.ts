@@ -5,10 +5,15 @@ import type { ReferenceEntry } from '../types'
 
 export const irabSigns: ReferenceEntry = {
   id: 'irab-signs',
-  title: 'Iʿrāb and its Signs',
+  title: { english: 'Iʿrāb and its Signs', turkish: 'İrab ve Alâmetleri' },
   titleArabic: 'اَلْإِعْرَابُ وَعَلَامَاتُهُ',
   order: 2,
-  summary: 'The four states (rafʿ, naṣb, khafḍ, jazm) and the sign each word class takes.',
+  summary: {
+    english:
+      'The four states (rafʿ, naṣb, khafḍ, jazm) and the sign each word class takes.',
+    turkish:
+      'Dört hâl (ref, nasb, cer, cezm) ve her kelime türünün aldığı alâmet.',
+  },
   sections: [
     {
       kind: 'prose',

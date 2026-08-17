@@ -204,7 +204,7 @@ export function StudySessionPage() {
         <div className="done-screen">
           <div className="big">🎉</div>
           <h1 className="page-title">{s.study.finished}</h1>
-          <p className="muted">{s.study.answersToday(doneCount, deck.name)}</p>
+          <p className="muted">{s.study.answersToday(doneCount, deck.name[lang])}</p>
           <Link className="button-primary" to="/">
             {s.study.backToDecks}
           </Link>
@@ -262,7 +262,7 @@ export function StudySessionPage() {
     <main className="page">
       <div className="session-top">
         <Link className="back" to="/">
-          ← {deck.name}
+          ← {deck.name[lang]}
         </Link>
         <button
           type="button"

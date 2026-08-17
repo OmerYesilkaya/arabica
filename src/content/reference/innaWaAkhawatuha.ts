@@ -24,10 +24,13 @@ import type { ReferenceEntry } from '../types'
 
 export const innaWaAkhawatuha: ReferenceEntry = {
   id: 'inna-wa-akhawatuha',
-  title: 'Inna and its Sisters',
+  title: { english: 'Inna and its Sisters', turkish: 'İnne ve Kardeşleri' },
   titleArabic: 'إِنَّ وَأَخَوَاتُهَا',
   order: 9,
-  summary: 'The particles that put the subject into naṣb and raise the predicate.',
+  summary: {
+    english: 'The particles that put the subject into naṣb and raise the predicate.',
+    turkish: 'Mübtedayı nasb, haberi ref eden harfler.',
+  },
   sections: [
     {
       kind: 'prose',

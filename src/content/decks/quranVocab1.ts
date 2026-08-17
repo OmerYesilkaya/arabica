@@ -20,10 +20,12 @@ import type { DeckDef } from '../types'
 
 export const quranVocab1: DeckDef = {
   id: 'quran-vocab-1',
-  name: 'Quran Vocabulary 1',
+  name: { english: 'Quran Vocabulary 1', turkish: 'Kur’an Kelimeleri 1' },
   nameArabic: 'مُفْرَدَاتُ الْقُرْآنِ ١',
-  description:
-    'The 50 most frequent Quranic words, each with an ayah where it occurs.',
+  description: {
+    english: 'The 50 most frequent Quranic words, each with an ayah where it occurs.',
+    turkish: 'Kur’an’da en çok geçen 50 kelime; her biri geçtiği bir ayetle.',
+  },
   directions: ['ar-to-meaning'],
   newPerDay: 10,
   burySiblings: true,

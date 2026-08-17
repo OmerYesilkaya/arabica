@@ -1,3 +1,4 @@
+import type { Meaning } from '../types'
 import type { CorpusLemmas, CorpusSurah } from './types'
 
 /**
@@ -15,21 +16,22 @@ export interface TextRef {
   nameArabic: string
   /** Transliterated name, the one used in prose about the app. */
   name: string
-  english: string
+  /** What the name means, which is the half that differs by Language. */
+  meaning: Meaning
   ayat: number
 }
 
 export const readingTexts: TextRef[] = [
-  { surah: 105, nameArabic: 'الفِيل', name: 'al-Fīl', english: 'The Elephant', ayat: 5 },
-  { surah: 106, nameArabic: 'قُرَيْش', name: 'Quraysh', english: 'Quraysh', ayat: 4 },
-  { surah: 107, nameArabic: 'المَاعُون', name: 'al-Māʿūn', english: 'Small Kindnesses', ayat: 7 },
-  { surah: 108, nameArabic: 'الكَوْثَر', name: 'al-Kawthar', english: 'Abundance', ayat: 3 },
-  { surah: 109, nameArabic: 'الكَافِرُون', name: 'al-Kāfirūn', english: 'The Disbelievers', ayat: 6 },
-  { surah: 110, nameArabic: 'النَّصْر', name: 'an-Naṣr', english: 'Divine Support', ayat: 3 },
-  { surah: 111, nameArabic: 'المَسَد', name: 'al-Masad', english: 'The Palm Fibre', ayat: 5 },
-  { surah: 112, nameArabic: 'الإِخْلَاص', name: 'al-Ikhlāṣ', english: 'Sincerity', ayat: 4 },
-  { surah: 113, nameArabic: 'الفَلَق', name: 'al-Falaq', english: 'The Daybreak', ayat: 5 },
-  { surah: 114, nameArabic: 'النَّاس', name: 'an-Nās', english: 'Mankind', ayat: 6 },
+  { surah: 105, nameArabic: 'الفِيل', name: 'al-Fīl', meaning: { english: 'The Elephant', turkish: 'Fil' }, ayat: 5 },
+  { surah: 106, nameArabic: 'قُرَيْش', name: 'Quraysh', meaning: { english: 'Quraysh', turkish: 'Kureyş' }, ayat: 4 },
+  { surah: 107, nameArabic: 'المَاعُون', name: 'al-Māʿūn', meaning: { english: 'Small Kindnesses', turkish: 'Küçük İyilikler' }, ayat: 7 },
+  { surah: 108, nameArabic: 'الكَوْثَر', name: 'al-Kawthar', meaning: { english: 'Abundance', turkish: 'Kevser, bolluk' }, ayat: 3 },
+  { surah: 109, nameArabic: 'الكَافِرُون', name: 'al-Kāfirūn', meaning: { english: 'The Disbelievers', turkish: 'Kâfirler' }, ayat: 6 },
+  { surah: 110, nameArabic: 'النَّصْر', name: 'an-Naṣr', meaning: { english: 'Divine Support', turkish: 'İlâhî Yardım' }, ayat: 3 },
+  { surah: 111, nameArabic: 'المَسَد', name: 'al-Masad', meaning: { english: 'The Palm Fibre', turkish: 'Hurma Lifi' }, ayat: 5 },
+  { surah: 112, nameArabic: 'الإِخْلَاص', name: 'al-Ikhlāṣ', meaning: { english: 'Sincerity', turkish: 'İhlâs, samimiyet' }, ayat: 4 },
+  { surah: 113, nameArabic: 'الفَلَق', name: 'al-Falaq', meaning: { english: 'The Daybreak', turkish: 'Şafak' }, ayat: 5 },
+  { surah: 114, nameArabic: 'النَّاس', name: 'an-Nās', meaning: { english: 'Mankind', turkish: 'İnsanlar' }, ayat: 6 },
 ]
 
 export function textRef(surah: number): TextRef | undefined {

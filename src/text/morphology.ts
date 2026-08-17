@@ -37,21 +37,12 @@ export type IrabState = 'raf' | 'nasb' | 'khafd' | 'jazm' | 'mabni'
  * taught nothing. The English keeps khafd, so the Reference entry it links to
  * still agrees with it.
  */
-const STATE_LABEL: Record<Lang, Record<IrabState, string>> = {
-  english: {
-    raf: 'marfūʿ',
-    nasb: 'manṣūb',
-    khafd: 'makhfūḍ',
-    jazm: 'majzūm',
-    mabni: 'mabnī',
-  },
-  turkish: {
-    raf: 'merfû',
-    nasb: 'mansûb',
-    khafd: 'mecrûr',
-    jazm: 'meczûm',
-    mabni: 'mebnî',
-  },
+const STATE_LABEL: Record<IrabState, Record<Lang, string>> = {
+  raf: { english: 'marfūʿ', turkish: 'merfû' },
+  nasb: { english: 'manṣūb', turkish: 'mansûb' },
+  khafd: { english: 'makhfūḍ', turkish: 'mecrûr' },
+  jazm: { english: 'majzūm', turkish: 'meczûm' },
+  mabni: { english: 'mabnī', turkish: 'mebnî' },
 }
 
 /** The sign that shows the state, which is the half every reader gets wrong. */
@@ -68,33 +59,18 @@ export type IrabSign =
   | 'hadhf-illa'
   | 'muqaddara'
 
-const SIGN_LABEL: Record<Lang, Record<IrabSign, string>> = {
-  english: {
-    damma: 'bi-ḍ-ḍamma',
-    fatha: 'bi-l-fatḥa',
-    kasra: 'bi-l-kasra',
-    sukun: 'bi-s-sukūn',
-    waw: 'bi-l-wāw',
-    alif: 'bi-l-alif',
-    ya: 'bi-l-yāʾ',
-    'thubut-nun': 'bi-thubūt an-nūn',
-    'hadhf-nun': 'bi-ḥadhf an-nūn',
-    'hadhf-illa': 'bi-ḥadhf ḥarf al-ʿilla',
-    muqaddara: 'bi-ḍamma muqaddara',
-  },
-  turkish: {
-    damma: 'damme ile',
-    fatha: 'fetha ile',
-    kasra: 'kesra ile',
-    sukun: 'sükûn ile',
-    waw: 'vav ile',
-    alif: 'elif ile',
-    ya: 'ya ile',
-    'thubut-nun': 'nûnun sübûtu ile',
-    'hadhf-nun': 'nûnun hazfi ile',
-    'hadhf-illa': 'illet harfinin hazfi ile',
-    muqaddara: 'mukadder damme ile',
-  },
+const SIGN_LABEL: Record<IrabSign, Record<Lang, string>> = {
+  damma: { english: 'bi-ḍ-ḍamma', turkish: 'damme ile' },
+  fatha: { english: 'bi-l-fatḥa', turkish: 'fetha ile' },
+  kasra: { english: 'bi-l-kasra', turkish: 'kesra ile' },
+  sukun: { english: 'bi-s-sukūn', turkish: 'sükûn ile' },
+  waw: { english: 'bi-l-wāw', turkish: 'vav ile' },
+  alif: { english: 'bi-l-alif', turkish: 'elif ile' },
+  ya: { english: 'bi-l-yāʾ', turkish: 'ya ile' },
+  'thubut-nun': { english: 'bi-thubūt an-nūn', turkish: 'nûnun sübûtu ile' },
+  'hadhf-nun': { english: 'bi-ḥadhf an-nūn', turkish: 'nûnun hazfi ile' },
+  'hadhf-illa': { english: 'bi-ḥadhf ḥarf al-ʿilla', turkish: 'illet harfinin hazfi ile' },
+  muqaddara: { english: 'bi-ḍamma muqaddara', turkish: 'mukadder damme ile' },
 }
 
 /**
@@ -294,15 +270,17 @@ function nounSign(head: CorpusSegment): IrabSign | undefined {
 export function irabOf(token: CorpusToken, lang: Lang = 'english'): Irab {
   const head = token.segments[token.head]
   const state = stateOf(head)
-  const states = STATE_LABEL[lang]
-  if (state === 'mabni') return { state, label: states.mabni }
+  
+  if (state === 'mabni') return { state, label: STATE_LABEL.mabni[lang] }
 
   const raw = head.tag === 'V' ? verbSign(token, head, state) : nounSign(head)
   const sign = raw && ALLOWED[state].includes(raw) ? raw : undefined
   return {
     state,
     sign,
-    label: sign ? joinIrab(states[state], SIGN_LABEL[lang][sign], lang) : states[state],
+    label: sign
+      ? joinIrab(STATE_LABEL[state][lang], SIGN_LABEL[sign][lang], lang)
+      : STATE_LABEL[state][lang],
   }
 }
 
@@ -316,131 +294,69 @@ export function irabOf(token: CorpusToken, lang: Lang = 'english'): Irab {
  * That is the point rather than a side effect: naming a feature after the root
  * it comes from teaches the root while it labels the word.
  */
-const FEATURE_LABEL: Record<Lang, Record<string, string>> = {
-  english: {
-    DET: 'definite article',
-    CONJ: 'conjunction',
-    NEG: 'negation',
-    INTG: 'interrogative',
-    EQ: 'equalizing hamza',
-    FUT: 'future particle',
-    VOC: 'vocative particle',
-    ATT: 'particle of attention',
-    REM: 'resumption',
-    RSLT: 'result',
-    DIST: 'particle of distance',
-    ADDR: 'particle of address',
-    PRON: 'pronoun',
-    REL: 'relative pronoun',
-    DEM: 'demonstrative',
-    T: 'adverb of time',
-    PN: 'proper noun',
-    ADJ: 'adjective',
-    VN: 'maṣdar',
-    ACT_PCPL: 'ism al-fāʿil',
-    PASS_PCPL: 'ism al-mafʿūl',
-    PERF: 'māḍī',
-    IMPF: 'muḍāriʿ',
-    IMPV: 'amr',
-    PASS: 'passive',
-    INDEF: 'indefinite',
-  },
-  turkish: {
-    DET: 'harf-i tarif',
-    CONJ: 'atıf harfi',
-    NEG: 'nefiy harfi',
-    INTG: 'istifham harfi',
-    EQ: 'tesviye hemzesi',
-    FUT: 'istikbal harfi',
-    VOC: 'nida harfi',
-    ATT: 'tenbih harfi',
-    REM: 'istinaf harfi',
-    RSLT: 'cevap harfi',
-    DIST: 'uzaklık lâmı',
-    ADDR: 'hitap kâfı',
-    PRON: 'zamir',
-    REL: 'ism-i mevsûl',
-    DEM: 'ism-i işaret',
-    T: 'zarf-ı zaman',
-    PN: 'ism-i alem',
-    ADJ: 'sıfat',
-    VN: 'masdar',
-    ACT_PCPL: 'ism-i fâil',
-    PASS_PCPL: 'ism-i mef’ûl',
-    PERF: 'mâzî',
-    IMPF: 'muzâri',
-    IMPV: 'emir',
-    PASS: 'meçhul',
-    INDEF: 'nekre',
-  },
+const FEATURE_LABEL: Record<string, Record<Lang, string>> = {
+  DET: { english: 'definite article', turkish: 'harf-i tarif' },
+  CONJ: { english: 'conjunction', turkish: 'atıf harfi' },
+  NEG: { english: 'negation', turkish: 'nefiy harfi' },
+  INTG: { english: 'interrogative', turkish: 'istifham harfi' },
+  EQ: { english: 'equalizing hamza', turkish: 'tesviye hemzesi' },
+  FUT: { english: 'future particle', turkish: 'istikbal harfi' },
+  VOC: { english: 'vocative particle', turkish: 'nida harfi' },
+  ATT: { english: 'particle of attention', turkish: 'tenbih harfi' },
+  REM: { english: 'resumption', turkish: 'istinaf harfi' },
+  RSLT: { english: 'result', turkish: 'cevap harfi' },
+  DIST: { english: 'particle of distance', turkish: 'uzaklık lâmı' },
+  ADDR: { english: 'particle of address', turkish: 'hitap kâfı' },
+  PRON: { english: 'pronoun', turkish: 'zamir' },
+  REL: { english: 'relative pronoun', turkish: 'ism-i mevsûl' },
+  DEM: { english: 'demonstrative', turkish: 'ism-i işaret' },
+  T: { english: 'adverb of time', turkish: 'zarf-ı zaman' },
+  PN: { english: 'proper noun', turkish: 'ism-i alem' },
+  ADJ: { english: 'adjective', turkish: 'sıfat' },
+  VN: { english: 'maṣdar', turkish: 'masdar' },
+  ACT_PCPL: { english: 'ism al-fāʿil', turkish: 'ism-i fâil' },
+  PASS_PCPL: { english: 'ism al-mafʿūl', turkish: 'ism-i mef’ûl' },
+  PERF: { english: 'māḍī', turkish: 'mâzî' },
+  IMPF: { english: 'muḍāriʿ', turkish: 'muzâri' },
+  IMPV: { english: 'amr', turkish: 'emir' },
+  PASS: { english: 'passive', turkish: 'meçhul' },
+  INDEF: { english: 'indefinite', turkish: 'nekre' },
 }
 
 /** Person, gender and number, as the corpus writes them on a verb or pronoun. */
-const PERSON_LABEL: Record<Lang, Record<string, string>> = {
-  english: {
-    '1S': 'I',
-    '1P': 'we',
-    '2MS': 'you (m. sg.)',
-    '2FS': 'you (f. sg.)',
-    '2MP': 'you (m. pl.)',
-    '2FP': 'you (f. pl.)',
-    '2D': 'you (dual)',
-    '3MS': 'he',
-    '3FS': 'she',
-    '3MP': 'they (m.)',
-    '3FP': 'they (f.)',
-    '3D': 'they (dual)',
-  },
-  // Spelled out rather than abbreviated: muzekker, muennes, mufred and cemi
-  // are four of the words a learner most needs, and a parse is read slowly.
-  turkish: {
-    '1S': 'ben',
-    '1P': 'biz',
-    '2MS': 'sen (müzekker müfred)',
-    '2FS': 'sen (müennes müfred)',
-    '2MP': 'siz (müzekker cemi)',
-    '2FP': 'siz (müennes cemi)',
-    '2D': 'siz (tesniye)',
-    '3MS': 'o (müzekker)',
-    '3FS': 'o (müennes)',
-    '3MP': 'onlar (müzekker)',
-    '3FP': 'onlar (müennes)',
-    '3D': 'o ikisi (tesniye)',
-  },
+const PERSON_LABEL: Record<string, Record<Lang, string>> = {
+  '1S': { english: 'I', turkish: 'ben' },
+  '1P': { english: 'we', turkish: 'biz' },
+  '2MS': { english: 'you (m. sg.)', turkish: 'sen (müzekker müfred)' },
+  '2FS': { english: 'you (f. sg.)', turkish: 'sen (müennes müfred)' },
+  '2MP': { english: 'you (m. pl.)', turkish: 'siz (müzekker cemi)' },
+  '2FP': { english: 'you (f. pl.)', turkish: 'siz (müennes cemi)' },
+  '2D': { english: 'you (dual)', turkish: 'siz (tesniye)' },
+  '3MS': { english: 'he', turkish: 'o (müzekker)' },
+  '3FS': { english: 'she', turkish: 'o (müennes)' },
+  '3MP': { english: 'they (m.)', turkish: 'onlar (müzekker)' },
+  '3FP': { english: 'they (f.)', turkish: 'onlar (müennes)' },
+  '3D': { english: 'they (dual)', turkish: 'o ikisi (tesniye)' },
 }
 
 /** Gender and number on a noun. The same letters mean other things on a verb. */
-const NUMBER_LABEL: Record<Lang, Record<string, string>> = {
-  english: {
-    M: 'masculine',
-    F: 'feminine',
-    MS: 'masculine singular',
-    FS: 'feminine singular',
-    MD: 'masculine dual',
-    FD: 'feminine dual',
-    MP: 'masculine plural',
-    FP: 'feminine plural',
-    P: 'plural',
-    D: 'dual',
-  },
-  turkish: {
-    M: 'müzekker',
-    F: 'müennes',
-    MS: 'müzekker müfred',
-    FS: 'müennes müfred',
-    MD: 'müzekker tesniye',
-    FD: 'müennes tesniye',
-    MP: 'müzekker cemi',
-    FP: 'müennes cemi',
-    P: 'cemi',
-    D: 'tesniye',
-  },
+const NUMBER_LABEL: Record<string, Record<Lang, string>> = {
+  M: { english: 'masculine', turkish: 'müzekker' },
+  F: { english: 'feminine', turkish: 'müennes' },
+  MS: { english: 'masculine singular', turkish: 'müzekker müfred' },
+  FS: { english: 'feminine singular', turkish: 'müennes müfred' },
+  MD: { english: 'masculine dual', turkish: 'müzekker tesniye' },
+  FD: { english: 'feminine dual', turkish: 'müennes tesniye' },
+  MP: { english: 'masculine plural', turkish: 'müzekker cemi' },
+  FP: { english: 'feminine plural', turkish: 'müennes cemi' },
+  P: { english: 'plural', turkish: 'cemi' },
+  D: { english: 'dual', turkish: 'tesniye' },
 }
 
 /** `P` names the prepositions on a particle and the plural on a noun. */
-const P_LABEL: Record<Lang, { harf: string; ism: string }> = {
-  english: { harf: 'preposition', ism: 'plural' },
-  turkish: { harf: 'harf-i cer', ism: 'cemi' },
+const P_LABEL: Record<'harf' | 'ism', Record<Lang, string>> = {
+  harf: { english: 'preposition', turkish: 'harf-i cer' },
+  ism: { english: 'plural', turkish: 'cemi' },
 }
 
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
@@ -505,11 +421,12 @@ export function describeSegment(
   for (const feature of segment.features) {
     if (feature === 'PREF' || feature === 'SUFF') continue
     if (feature === 'P') {
-      traits.push(segment.tag === 'P' ? P_LABEL[lang].harf : P_LABEL[lang].ism)
+      traits.push(segment.tag === 'P' ? P_LABEL.harf[lang] : P_LABEL.ism[lang])
       continue
     }
-    const named =
-      FEATURE_LABEL[lang][feature] ?? PERSON_LABEL[lang][feature] ?? NUMBER_LABEL[lang][feature]
+    const named = (FEATURE_LABEL[feature] ?? PERSON_LABEL[feature] ?? NUMBER_LABEL[feature])?.[
+      lang
+    ]
     if (named) {
       traits.push(named)
       continue

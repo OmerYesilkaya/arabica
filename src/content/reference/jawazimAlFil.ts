@@ -23,11 +23,15 @@ import type { ReferenceEntry } from '../types'
 
 export const jawazimAlFil: ReferenceEntry = {
   id: 'jawazim-al-fil',
-  title: 'Jazm Particles of the Verb',
+  title: { english: 'Jazm Particles of the Verb', turkish: 'Cezm Edatları' },
   titleArabic: 'جَوَازِمُ الْفِعْلِ',
   order: 6,
-  summary:
-    'The particles that put the present verb into jazm: the group that governs one verb and the conditionals that govern two.',
+  summary: {
+    english:
+      'The particles that put the present verb into jazm: the group that governs one verb and the conditionals that govern two.',
+    turkish:
+      'Muzâri fiili cezm eden edatlar: bir fiili cezm edenler ve iki fiili cezm eden şart edatları.',
+  },
   sections: [
     {
       kind: 'prose',

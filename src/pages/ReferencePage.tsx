@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { referenceEntries } from '../content/reference'
 import type { ReferenceEntry } from '../content/types'
 import { useStrings } from '../i18n/strings'
+import { useLang } from '../settings/useLang'
 
 /**
  * A row's contents, shared by the linked and the locked row.
@@ -12,11 +13,12 @@ import { useStrings } from '../i18n/strings'
  */
 function RowBody({ entry }: { entry: ReferenceEntry }) {
   const s = useStrings()
+  const lang = useLang()
   return (
     <>
       <span className="ref-num">{String(entry.order).padStart(2, '0')}</span>
       <span className="ref-titles">
-        <span className="ref-title">{entry.title}</span>
+        <span className="ref-title">{entry.title[lang]}</span>
         <span className="ref-arabic arabic">{entry.titleArabic}</span>
       </span>
       {entry.locked && <span className="lock">{s.reference.comingSoon}</span>}

@@ -25,10 +25,13 @@ import type { ReferenceEntry } from '../types'
 
 export const nawasibAlFil: ReferenceEntry = {
   id: 'nawasib-al-fil',
-  title: 'Naṣb Particles of the Verb',
+  title: { english: 'Naṣb Particles of the Verb', turkish: 'Nasb Edatları' },
   titleArabic: 'نَوَاصِبُ الْفِعْلِ',
   order: 5,
-  summary: 'The ten particles that put the present verb into naṣb, with their signs.',
+  summary: {
+    english: 'The ten particles that put the present verb into naṣb, with their signs.',
+    turkish: 'Muzâri fiili nasb eden on edat ve alâmetleri.',
+  },
   sections: [
     {
       kind: 'prose',

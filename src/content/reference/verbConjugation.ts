@@ -15,10 +15,13 @@ import type { ReferenceEntry } from '../types'
 
 export const verbConjugation: ReferenceEntry = {
   id: 'verb-conjugation',
-  title: 'Verb Conjugation Tables',
+  title: { english: 'Verb Conjugation Tables', turkish: 'Fiil Tasrifi Tabloları' },
   titleArabic: 'تَصْرِيفُ الْأَفْعَالِ',
   order: 10,
-  summary: 'Māḍī, muḍāriʿ, and amr tables for the sound triliteral verb.',
+  summary: {
+    english: 'Māḍī, muḍāriʿ, and amr tables for the sound triliteral verb.',
+    turkish: 'Sülâsî sahih fiil için mâzî, muzâri ve emir tabloları.',
+  },
   sections: [
     {
       kind: 'prose',

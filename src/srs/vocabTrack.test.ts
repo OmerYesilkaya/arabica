@@ -21,9 +21,9 @@ beforeEach(() => {
 function level(id: string, size: number): DeckDef {
   return {
     id,
-    name: id,
+    name: { english: id, turkish: id },
     nameArabic: id,
-    description: id,
+    description: { english: id, turkish: id },
     directions: ['ar-to-meaning'],
     newPerDay: 10,
     burySiblings: true,

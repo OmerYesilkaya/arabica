@@ -19,10 +19,13 @@ import type { ReferenceEntry } from '../types'
 
 export const kanaWaAkhawatuha: ReferenceEntry = {
   id: 'kana-wa-akhawatuha',
-  title: 'Kāna and its Sisters',
+  title: { english: 'Kāna and its Sisters', turkish: 'Kâne ve Kardeşleri' },
   titleArabic: 'كَانَ وَأَخَوَاتُهَا',
   order: 8,
-  summary: 'The verbs that raise the subject and put the predicate into naṣb.',
+  summary: {
+    english: 'The verbs that raise the subject and put the predicate into naṣb.',
+    turkish: 'Mübtedayı ref, haberi nasb eden fiiller.',
+  },
   sections: [
     {
       kind: 'prose',

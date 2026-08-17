@@ -12,6 +12,7 @@ import {
 import { trackStatus } from '../srs/vocabTrack'
 import { LAST_EXPORT_KEY } from '../db/exportImport'
 import { useStrings } from '../i18n/strings'
+import { useLang } from '../settings/useLang'
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000
 
@@ -35,13 +36,14 @@ function ExportReminder() {
 
 function LockedDeckRow({ deckId }: { deckId: string }) {
   const s = useStrings()
+  const lang = useLang()
   const deck = decks.find((d) => d.id === deckId)!
   return (
     <div className="card deck-row locked">
       <div className="deck-info">
-        <h2>{deck.name}</h2>
+        <h2>{deck.name[lang]}</h2>
         <div className="deck-arabic arabic">{deck.nameArabic}</div>
-        <p className="deck-locked-note">{deck.description}</p>
+        <p className="deck-locked-note">{deck.description[lang]}</p>
       </div>
       <span className="lock">{s.decks.locked}</span>
     </div>
@@ -50,6 +52,7 @@ function LockedDeckRow({ deckId }: { deckId: string }) {
 
 function DeckRow({ deckId }: { deckId: string }) {
   const s = useStrings()
+  const lang = useLang()
   const deck = decks.find((d) => d.id === deckId)!
   const counts = useLiveQuery(
     () => deckCounts(db, deck, new Date()),
@@ -62,7 +65,7 @@ function DeckRow({ deckId }: { deckId: string }) {
   return (
     <div className="card deck-row">
       <div className="deck-info">
-        <h2>{deck.name}</h2>
+        <h2>{deck.name[lang]}</h2>
         <div className="deck-arabic arabic">{deck.nameArabic}</div>
         <div className="counts">
           <span className="new">{s.decks.countNew(counts?.newCount ?? 0)}</span>

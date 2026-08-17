@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PROVENANCE, readingTexts } from '../content/corpus'
 import { useStrings } from '../i18n/strings'
+import { useLang } from '../settings/useLang'
 
 /**
  * The Texts the reader can open. Whole surahs in their own order, because the
@@ -12,6 +13,7 @@ import { useStrings } from '../i18n/strings'
  */
 export function ReadingPage() {
   const s = useStrings()
+  const lang = useLang()
   return (
     <main className="page">
       <h1 className="page-title">{s.reading.title}</h1>
@@ -26,7 +28,7 @@ export function ReadingPage() {
                 <span className="ref-title">{text.name}</span>
                 <span className="ref-arabic arabic">{text.nameArabic}</span>
                 <span className="ref-gloss">
-                  {text.english} · {s.reading.ayat(text.ayat)}
+                  {text.meaning[lang]} · {s.reading.ayat(text.ayat)}
                 </span>
               </span>
             </Link>

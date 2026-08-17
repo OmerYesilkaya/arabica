@@ -165,9 +165,14 @@ export interface Note extends Meaning {
 
 export interface DeckDef {
   id: string
-  name: string
+  /**
+   * A Meaning, not a string, for the same reason every other learner-facing
+   * text is one: a Deck name is read by the learner, and a field that can hold
+   * only English is a field that silently keeps half the app monolingual.
+   */
+  name: Meaning
   nameArabic: string
-  description: string
+  description: Meaning
   directions: Direction[]
   newPerDay: number
   burySiblings: boolean
@@ -292,7 +297,7 @@ export type RefSection = RefProse | RefTable | RefHarf
 
 export interface ReferenceEntry {
   id: string
-  title: string
+  title: Meaning
   titleArabic: string
   /**
    * Course order: the order the entries are taught in, which follows the
@@ -301,7 +306,7 @@ export interface ReferenceEntry {
    * docs/adr/0003-reference-order-is-course-order.md.
    */
   order: number
-  summary: string
+  summary: Meaning
   /** Locked entries render as "coming soon" and cannot be opened. */
   locked?: boolean
   sections: RefSection[]

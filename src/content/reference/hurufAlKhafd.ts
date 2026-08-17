@@ -10,10 +10,13 @@ import type { ReferenceEntry } from '../types'
 
 export const hurufAlKhafdRef: ReferenceEntry = {
   id: 'huruf-al-khafd',
-  title: 'Ḥurūf al-Khafḍ',
+  title: { english: 'Ḥurūf al-Khafḍ', turkish: 'Cer Harfleri' },
   titleArabic: 'حُرُوفُ الْخَفْضِ',
   order: 3,
-  summary: 'All particles of khafḍ with their senses, examples, and meanings.',
+  summary: {
+    english: 'All particles of khafḍ with their senses, examples, and meanings.',
+    turkish: 'Bütün cer harfleri; vecihleri, misalleri ve manalarıyla.',
+  },
   sections: [
     {
       kind: 'prose',

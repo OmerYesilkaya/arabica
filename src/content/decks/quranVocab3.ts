@@ -17,10 +17,14 @@ import type { DeckDef } from '../types'
 
 export const quranVocab3: DeckDef = {
   id: 'quran-vocab-3',
-  name: 'Quran Vocabulary 3',
+  name: { english: 'Quran Vocabulary 3', turkish: 'Kur’an Kelimeleri 3' },
   nameArabic: 'مُفْرَدَاتُ الْقُرْآنِ ٣',
-  description:
-    'Frequency band 3 of the Quran vocabulary track, each word with an ayah where it occurs.',
+  description: {
+    english:
+      'Frequency band 3 of the Quran vocabulary track, each word with an ayah where it occurs.',
+    turkish:
+      'Kur’an kelime yolunun 3. sıklık kuşağı; her kelime geçtiği bir ayetle.',
+  },
   directions: ['ar-to-meaning'],
   newPerDay: 10,
   burySiblings: true,

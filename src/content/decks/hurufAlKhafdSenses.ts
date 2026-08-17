@@ -94,10 +94,14 @@ function sensesToNotes(): Note[] {
 
 export const hurufAlKhafdSenses: DeckDef = {
   id: 'huruf-al-khafd-senses',
-  name: 'Ḥurūf al-Khafḍ',
+  name: { english: 'Ḥurūf al-Khafḍ', turkish: 'Cer Harfleri' },
   nameArabic: 'حُرُوفُ الْخَفْضِ',
-  description:
-    'Each harf by its senses: read the example, recall which sense the harf carries.',
+  description: {
+    english:
+      'Each harf by its senses: read the example, recall which sense the harf carries.',
+    turkish:
+      'Her harf vecihleriyle: misali okuyun, harfin hangi vechi taşıdığını hatırlayın.',
+  },
   directions: ['ar-to-meaning'],
   newPerDay: 20,
   burySiblings: true,

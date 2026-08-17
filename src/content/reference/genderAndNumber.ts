@@ -22,11 +22,15 @@ import type { ReferenceEntry } from '../types'
 
 export const genderAndNumber: ReferenceEntry = {
   id: 'gender-and-number',
-  title: 'Gender and Number',
+  title: { english: 'Gender and Number', turkish: 'Cinsiyet ve Adet' },
   titleArabic: 'اَلْمُذَكَّرُ وَالْمُؤَنَّثُ وَالْمُفْرَدُ وَالْمُثَنَّى وَالْجَمْعُ',
   order: 4,
-  summary:
-    'Masculine and feminine, and the singular, dual and plural of the ism — the categories the iʿrāb table already assumes.',
+  summary: {
+    english:
+      'Masculine and feminine, and the singular, dual and plural of the ism — the categories the iʿrāb table already assumes.',
+    turkish:
+      'Müzekker ve müennes; ismin müfredi, tesniyesi ve cemisi — irab tablosunun zaten bildiğini varsaydığı kısımlar.',
+  },
   sections: [
     {
       kind: 'prose',

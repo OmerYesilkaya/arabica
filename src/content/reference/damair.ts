@@ -18,10 +18,13 @@ import type { ReferenceEntry } from '../types'
 
 export const damair: ReferenceEntry = {
   id: 'damair',
-  title: 'Pronouns',
+  title: { english: 'Pronouns', turkish: 'Zamirler' },
   titleArabic: 'اَلضَّمَائِرُ',
   order: 7,
-  summary: 'Attached and detached pronoun tables.',
+  summary: {
+    english: 'Attached and detached pronoun tables.',
+    turkish: 'Muttasıl ve munfasıl zamir tabloları.',
+  },
   sections: [
     {
       kind: 'prose',

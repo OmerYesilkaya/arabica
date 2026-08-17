@@ -16,9 +16,9 @@ import type { DeckDef } from '../content/types'
 /** Twelve two-direction notes, one of them single-direction. 23 cards. */
 export const testDeck: DeckDef = {
   id: 'test-deck',
-  name: 'Test Deck',
+  name: { english: 'Test Deck', turkish: 'Test Deck' },
   nameArabic: 'test',
-  description: 'Synthetic deck for scheduling tests.',
+  description: { english: 'Synthetic deck for scheduling tests.', turkish: 'Synthetic deck for scheduling tests.' },
   directions: ['ar-to-meaning', 'meaning-to-ar'],
   newPerDay: 20,
   burySiblings: true,

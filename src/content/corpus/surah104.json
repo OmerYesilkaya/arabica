@@ -1,0 +1,862 @@
+{
+  "surah": 104,
+  "basmala": {
+    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+    "tokens": [
+      {
+        "start": 0,
+        "end": 6,
+        "head": 1,
+        "segments": [
+          {
+            "form": "بِ",
+            "tag": "P",
+            "features": [
+              "P",
+              "PREF"
+            ],
+            "lemma": "ب"
+          },
+          {
+            "form": "سْمِ",
+            "tag": "N",
+            "features": [
+              "M",
+              "GEN"
+            ],
+            "lemma": "اسْم",
+            "root": "سمو"
+          }
+        ]
+      },
+      {
+        "start": 7,
+        "end": 14,
+        "head": 0,
+        "segments": [
+          {
+            "form": "ٱللَّهِ",
+            "tag": "N",
+            "features": [
+              "PN",
+              "GEN"
+            ],
+            "lemma": "اللَّه",
+            "root": "أله"
+          }
+        ]
+      },
+      {
+        "start": 15,
+        "end": 27,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحْمَٰنِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحْمٰن",
+            "root": "رحم"
+          }
+        ]
+      },
+      {
+        "start": 28,
+        "end": 38,
+        "head": 1,
+        "segments": [
+          {
+            "form": "ٱل",
+            "tag": "P",
+            "features": [
+              "DET",
+              "PREF"
+            ],
+            "lemma": "ال"
+          },
+          {
+            "form": "رَّحِيمِ",
+            "tag": "N",
+            "features": [
+              "MS",
+              "GEN",
+              "ADJ"
+            ],
+            "lemma": "رَحِيم",
+            "root": "رحم"
+          }
+        ]
+      }
+    ]
+  },
+  "ayat": [
+    {
+      "ayah": 1,
+      "text": "وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 0,
+          "segments": [
+            {
+              "form": "وَيْلٌ",
+              "tag": "N",
+              "features": [
+                "M",
+                "INDEF",
+                "NOM"
+              ],
+              "lemma": "وَيْل"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 15,
+          "head": 1,
+          "segments": [
+            {
+              "form": "لِّ",
+              "tag": "P",
+              "features": [
+                "P",
+                "PREF"
+              ],
+              "lemma": "ل"
+            },
+            {
+              "form": "كُلِّ",
+              "tag": "N",
+              "features": [
+                "M",
+                "GEN"
+              ],
+              "lemma": "كُلّ",
+              "root": "كلل"
+            }
+          ]
+        },
+        {
+          "start": 16,
+          "end": 24,
+          "head": 0,
+          "segments": [
+            {
+              "form": "هُمَزَةٍ",
+              "tag": "N",
+              "features": [
+                "M",
+                "INDEF",
+                "GEN"
+              ],
+              "lemma": "هُمَزَة",
+              "root": "همز"
+            }
+          ]
+        },
+        {
+          "start": 25,
+          "end": 34,
+          "head": 0,
+          "segments": [
+            {
+              "form": "لُّمَزَةٍ",
+              "tag": "N",
+              "features": [
+                "F",
+                "INDEF",
+                "GEN"
+              ],
+              "lemma": "لُمَزَة",
+              "root": "لمز"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 2,
+      "text": "ٱلَّذِى جَمَعَ مَالًا وَعَدَّدَهُۥ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 7,
+          "head": 0,
+          "segments": [
+            {
+              "form": "ٱلَّذِى",
+              "tag": "N",
+              "features": [
+                "REL",
+                "MS"
+              ],
+              "lemma": "الَّذِي"
+            }
+          ]
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "head": 0,
+          "segments": [
+            {
+              "form": "جَمَعَ",
+              "tag": "V",
+              "features": [
+                "PERF",
+                "VF:1",
+                "3MS"
+              ],
+              "lemma": "جَمَعَ",
+              "root": "جمع"
+            }
+          ]
+        },
+        {
+          "start": 15,
+          "end": 21,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَالًا",
+              "tag": "N",
+              "features": [
+                "M",
+                "INDEF",
+                "ACC"
+              ],
+              "lemma": "مال",
+              "root": "مول"
+            }
+          ]
+        },
+        {
+          "start": 22,
+          "end": 34,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "عَدَّدَ",
+              "tag": "V",
+              "features": [
+                "PERF",
+                "VF:2",
+                "3MS"
+              ],
+              "lemma": "عَدَّدَ",
+              "root": "عدد"
+            },
+            {
+              "form": "هُۥ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "3MS"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 3,
+      "text": "يَحْسَبُ أَنَّ مَالَهُۥٓ أَخْلَدَهُۥ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 8,
+          "head": 0,
+          "segments": [
+            {
+              "form": "يَحْسَبُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "3MS",
+                "MOOD:IND"
+              ],
+              "lemma": "حَسِبَ",
+              "root": "حسب"
+            }
+          ]
+        },
+        {
+          "start": 9,
+          "end": 14,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَنَّ",
+              "tag": "P",
+              "features": [
+                "ACC",
+                "FAM:إِنّ"
+              ],
+              "lemma": "أَنّ"
+            }
+          ]
+        },
+        {
+          "start": 15,
+          "end": 24,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَالَ",
+              "tag": "N",
+              "features": [
+                "M",
+                "ACC"
+              ],
+              "lemma": "مال",
+              "root": "مول"
+            },
+            {
+              "form": "هُۥٓ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "3MS"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 25,
+          "end": 36,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَخْلَدَ",
+              "tag": "V",
+              "features": [
+                "PERF",
+                "VF:4",
+                "3MS"
+              ],
+              "lemma": "أَخْلَدَ",
+              "root": "خلد"
+            },
+            {
+              "form": "هُۥ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "3MS"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 4,
+      "text": "كَلَّا ۖ لَيُنۢبَذَنَّ فِى ٱلْحُطَمَةِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 0,
+          "segments": [
+            {
+              "form": "كَلَّا",
+              "tag": "P",
+              "features": [
+                "AVR"
+              ],
+              "lemma": "كَلّا"
+            }
+          ]
+        },
+        {
+          "start": 9,
+          "end": 22,
+          "head": 1,
+          "segments": [
+            {
+              "form": "لَ",
+              "tag": "P",
+              "features": [
+                "EMPH",
+                "PREF"
+              ],
+              "lemma": "ل"
+            },
+            {
+              "form": "يُنۢبَذَ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:1",
+                "PASS",
+                "3MS",
+                "MOOD:IND"
+              ],
+              "lemma": "نَبَذَ",
+              "root": "نبذ"
+            },
+            {
+              "form": "نَّ",
+              "tag": "P",
+              "features": [
+                "EMPH",
+                "SUFF"
+              ],
+              "lemma": "ن"
+            }
+          ]
+        },
+        {
+          "start": 23,
+          "end": 26,
+          "head": 0,
+          "segments": [
+            {
+              "form": "فِى",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "فِي"
+            }
+          ]
+        },
+        {
+          "start": 27,
+          "end": 38,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "حُطَمَةِ",
+              "tag": "N",
+              "features": [
+                "F",
+                "GEN"
+              ],
+              "lemma": "حُطَمَة",
+              "root": "حطم"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 5,
+      "text": "وَمَآ أَدْرَىٰكَ مَا ٱلْحُطَمَةُ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 6,
+          "head": 1,
+          "segments": [
+            {
+              "form": "وَ",
+              "tag": "P",
+              "features": [
+                "CONJ",
+                "PREF"
+              ],
+              "lemma": "و"
+            },
+            {
+              "form": "مَآ",
+              "tag": "N",
+              "features": [
+                "INTG"
+              ],
+              "lemma": "ما"
+            }
+          ]
+        },
+        {
+          "start": 7,
+          "end": 17,
+          "head": 0,
+          "segments": [
+            {
+              "form": "أَدْرَىٰ",
+              "tag": "V",
+              "features": [
+                "PERF",
+                "VF:4",
+                "3MS"
+              ],
+              "lemma": "أَدْرَى",
+              "root": "دري"
+            },
+            {
+              "form": "كَ",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "2MS"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 18,
+          "end": 21,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مَا",
+              "tag": "N",
+              "features": [
+                "INTG"
+              ],
+              "lemma": "ما"
+            }
+          ]
+        },
+        {
+          "start": 22,
+          "end": 33,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "حُطَمَةُ",
+              "tag": "N",
+              "features": [
+                "F",
+                "NOM"
+              ],
+              "lemma": "حُطَمَة",
+              "root": "حطم"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 6,
+      "text": "نَارُ ٱللَّهِ ٱلْمُوقَدَةُ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 5,
+          "head": 0,
+          "segments": [
+            {
+              "form": "نَارُ",
+              "tag": "N",
+              "features": [
+                "F",
+                "NOM"
+              ],
+              "lemma": "نار",
+              "root": "نور"
+            }
+          ]
+        },
+        {
+          "start": 6,
+          "end": 13,
+          "head": 0,
+          "segments": [
+            {
+              "form": "ٱللَّهِ",
+              "tag": "N",
+              "features": [
+                "PN",
+                "GEN"
+              ],
+              "lemma": "اللَّه",
+              "root": "أله"
+            }
+          ]
+        },
+        {
+          "start": 14,
+          "end": 26,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "مُوقَدَةُ",
+              "tag": "N",
+              "features": [
+                "PASS_PCPL",
+                "VF:4",
+                "F",
+                "NOM",
+                "ADJ"
+              ],
+              "lemma": "مُوقَدَة",
+              "root": "وقد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 7,
+      "text": "ٱلَّتِى تَطَّلِعُ عَلَى ٱلْأَفْـِٔدَةِ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 7,
+          "head": 0,
+          "segments": [
+            {
+              "form": "ٱلَّتِى",
+              "tag": "N",
+              "features": [
+                "REL",
+                "FS"
+              ],
+              "lemma": "الَّذِي"
+            }
+          ]
+        },
+        {
+          "start": 8,
+          "end": 17,
+          "head": 0,
+          "segments": [
+            {
+              "form": "تَطَّلِعُ",
+              "tag": "V",
+              "features": [
+                "IMPF",
+                "VF:8",
+                "3FS",
+                "MOOD:IND"
+              ],
+              "lemma": "طَلَعَ",
+              "root": "طلع"
+            }
+          ]
+        },
+        {
+          "start": 18,
+          "end": 23,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَلَى",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "عَلَى"
+            }
+          ]
+        },
+        {
+          "start": 24,
+          "end": 38,
+          "head": 1,
+          "segments": [
+            {
+              "form": "ٱلْ",
+              "tag": "P",
+              "features": [
+                "DET",
+                "PREF"
+              ],
+              "lemma": "ال"
+            },
+            {
+              "form": "أَفْـِٔدَةِ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "GEN"
+              ],
+              "lemma": "فُؤاد",
+              "root": "فأد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 8,
+      "text": "إِنَّهَا عَلَيْهِم مُّؤْصَدَةٌ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 8,
+          "head": 0,
+          "segments": [
+            {
+              "form": "إِنَّ",
+              "tag": "P",
+              "features": [
+                "ACC",
+                "FAM:إِنّ"
+              ],
+              "lemma": "إِنّ"
+            },
+            {
+              "form": "هَا",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "3FS"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 9,
+          "end": 18,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَلَيْ",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "عَلَى"
+            },
+            {
+              "form": "هِم",
+              "tag": "N",
+              "features": [
+                "PRON",
+                "SUFF",
+                "3MP"
+              ]
+            }
+          ]
+        },
+        {
+          "start": 19,
+          "end": 30,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مُّؤْصَدَةٌ",
+              "tag": "N",
+              "features": [
+                "F",
+                "INDEF",
+                "NOM"
+              ],
+              "lemma": "مُؤْصَدَة",
+              "root": "وصد"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ayah": 9,
+      "text": "فِى عَمَدٍ مُّمَدَّدَةٍۭ",
+      "tokens": [
+        {
+          "start": 0,
+          "end": 3,
+          "head": 0,
+          "segments": [
+            {
+              "form": "فِى",
+              "tag": "P",
+              "features": [
+                "P"
+              ],
+              "lemma": "فِي"
+            }
+          ]
+        },
+        {
+          "start": 4,
+          "end": 10,
+          "head": 0,
+          "segments": [
+            {
+              "form": "عَمَدٍ",
+              "tag": "N",
+              "features": [
+                "MP",
+                "INDEF",
+                "GEN"
+              ],
+              "lemma": "عَمَد",
+              "root": "عمد"
+            }
+          ]
+        },
+        {
+          "start": 11,
+          "end": 24,
+          "head": 0,
+          "segments": [
+            {
+              "form": "مُّمَدَّدَةٍۭ",
+              "tag": "N",
+              "features": [
+                "PASS_PCPL",
+                "VF:2",
+                "F",
+                "INDEF",
+                "GEN",
+                "ADJ"
+              ],
+              "lemma": "مُمَدَّدَة",
+              "root": "مدد"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

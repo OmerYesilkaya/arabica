@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { noteById } from '../decks'
 import { pronounGloss } from '../../text/morphology'
+import { stripTashkeel } from '../../text/arabic'
 import { hurufAlKhafdRef } from '../reference/hurufAlKhafd'
 import { PROVENANCE, loadLemmas, loadSurah, readingTexts, textRef } from '.'
 import type { CorpusLine, CorpusSurah } from './types'
@@ -65,10 +66,23 @@ describe('the catalogue and the files agree', () => {
     await expect(loadSurah(2)).rejects.toThrow()
   })
 
-  it('heads every one of these surahs with the same basmala', () => {
-    const texts = new Set(surahs.map((s) => s.basmala?.text))
-    expect(texts.size).toBe(1)
-    expect([...texts][0]).toBeTruthy()
+  it('heads every one of these surahs with the same basmala, letter for letter', () => {
+    // Letter for letter rather than byte for byte: Tanzil marks a shadda on
+    // the ba of bismi in the headings of at-Tin and al-Qadr and in no other,
+    // and each surah stores the heading as Tanzil writes it, because a stored
+    // ayah rejoined to its heading has to give back the Tanzil line exactly.
+    const letters = new Set(surahs.map((s) => stripTashkeel(s.basmala?.text ?? '')))
+    expect(letters.size).toBe(1)
+    expect([...letters][0]).toBeTruthy()
+
+    const byHeading = new Map<string, number[]>()
+    for (const surah of surahs) {
+      const heading = surah.basmala!.text
+      byHeading.set(heading, [...(byHeading.get(heading) ?? []), surah.surah])
+    }
+    const [plain, marked] = [...byHeading.values()].sort((a, b) => b.length - a.length)
+    expect(marked).toEqual([95, 97])
+    expect(plain.length).toBe(surahs.length - 2)
   })
 })
 

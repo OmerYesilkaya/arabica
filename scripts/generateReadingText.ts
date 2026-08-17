@@ -131,11 +131,83 @@ export function chunks(text: string): Chunk[] {
   return found
 }
 
-function segmentOf(row: Row): CorpusSegment {
-  const segment: CorpusSegment = { form: row.form, tag: row.tag, features: row.features }
+function segmentOf(row: Row, form: string): CorpusSegment {
+  const segment: CorpusSegment = { form, tag: row.tag, features: row.features }
   if (row.lemma) segment.lemma = row.lemma
   if (row.root) segment.root = row.root
   return segment
+}
+
+/*
+ * The two marks the vendored sources write differently, folded away so that a
+ * word can be cut into its segments. Comparison only: what is stored is always
+ * sliced out of the Tanzil line, because verbatim is the whole promise of the
+ * text, and the fold only decides where one segment ends and the next begins.
+ *
+ * Deliberately two narrow rules rather than a general fold, and the test run
+ * pins the words they cover: a fold wide enough to absorb any difference would
+ * absorb a real drift between the sources too, and that cross-check is what
+ * stands in for verification the corpus never gets by hand.
+ *
+ * Written as codepoints for the same reason src/text/arabic.ts does: these are
+ * combining marks, and a mark on a tatweel cannot be read in a literal.
+ */
+
+/**
+ * Where an alif carries a hamza after a prefix, Tanzil prints the hamza above
+ * a tatweel — the joining form the mushaf sets — and the morphology writes a
+ * standalone hamza. Two words of the read surahs are affected: al-akhira at
+ * 92:13 and 93:4.
+ */
+const HAMZA_ON_TATWEEL = /\u0640\u0654/g
+const HAMZA = '\u0621'
+
+/**
+ * Tanzil marks a shadda on the ba of bismi in two of the basmala headings it
+ * prints, at-Tin's and al-Qadr's, and nowhere else in the book. The basmala's
+ * morphology is al-Fatiha 1:1, which has none, so those two headings cannot be
+ * segmented without folding it.
+ */
+const DOUBLED_BA = /\u0628\u0651\u0650/g
+const BA = '\u0628\u0650'
+
+function spelling(text: string): string {
+  return text.replace(HAMZA_ON_TATWEEL, HAMZA).replace(DOUBLED_BA, BA)
+}
+
+/**
+ * Cut a word's span of text into one slice per segment, in order, so that a
+ * Token's stored forms are the text's own letters even where the morphology
+ * spells one of them differently. Each segment takes the shortest run of what
+ * is left that spells the same thing it does.
+ *
+ * This is where the two sources are checked against each other rather than
+ * trusted: a segment that spells nothing the text has, or a span the segments
+ * do not use up, means the two have drifted, and the generator stops rather
+ * than emit offsets that point at the wrong letters.
+ */
+export function sliceSegments(span: string, forms: string[], where: string): string[] {
+  const slices: string[] = []
+  let cursor = 0
+  for (const form of forms) {
+    const wanted = spelling(form)
+    let length = 0
+    while (
+      cursor + length < span.length &&
+      spelling(span.slice(cursor, cursor + length)) !== wanted
+    ) {
+      length++
+    }
+    if (spelling(span.slice(cursor, cursor + length)) !== wanted) {
+      throw new Error(`${where}: text "${span}" does not spell segment "${form}"`)
+    }
+    slices.push(span.slice(cursor, cursor + length))
+    cursor += length
+  }
+  if (cursor !== span.length) {
+    throw new Error(`${where}: text "${span}" has letters past its segments "${forms.join('')}"`)
+  }
+  return slices
 }
 
 /**
@@ -155,10 +227,9 @@ export function headSegment(rows: Row[]): number {
  * at the exact span of the stored text it annotates.
  *
  * Both sides are checked rather than trusted. The corpus segments a word into
- * its clitics and the text writes them joined, so a word's segments must
- * concatenate to exactly the chunk of text they claim — if they ever do not,
- * the two sources have drifted and the generator must stop rather than emit
- * offsets that point at the wrong letters.
+ * its clitics and the text writes them joined, so a word's segments must spell
+ * out exactly the chunk of text they claim — see sliceSegments, which cuts the
+ * chunk between them and stops the generator if they do not.
  */
 export function tokenize(text: string, rows: Row[], where: string): CorpusToken[] {
   const words = new Map<number, Row[]>()
@@ -178,15 +249,16 @@ export function tokenize(text: string, rows: Row[], where: string): CorpusToken[
 
   return spans.map((span, i) => {
     const wordRows = ordered[i]
-    const joined = wordRows.map((r) => r.form).join('')
-    if (joined !== span.text) {
-      throw new Error(`${where} word ${i + 1}: text "${span.text}" vs morphology "${joined}"`)
-    }
+    const forms = sliceSegments(
+      span.text,
+      wordRows.map((r) => r.form),
+      `${where} word ${i + 1}`,
+    )
     return {
       start: span.start,
       end: span.end,
       head: headSegment(wordRows),
-      segments: wordRows.map(segmentOf),
+      segments: wordRows.map((row, s) => segmentOf(row, forms[s])),
     }
   })
 }
@@ -197,11 +269,19 @@ function rowsOf(rows: Row[], surah: number, ayah: number): Row[] {
   return rows.filter((r) => r.surah === surah && r.ayah === ayah)
 }
 
+/** The basmala is four words, which is how much of ayah 1 the heading takes up. */
+const BASMALA_WORDS = 4
+
 /**
  * Split the basmala off ayah 1. Tanzil prefixes it to the first ayah of every
  * surah but al-Fatiha, where it is ayah 1 in its own right, and at-Tawba,
  * which has none; the morphology numbers the ayah's own words from 1 either
  * way. Its Tokens come from al-Fatiha 1:1, whose text is the same string.
+ *
+ * The same string letter for letter, that is: at-Tin and al-Qadr are headed
+ * with a shadda on the ba of bismi (see DOUBLED_BA). What is returned is
+ * therefore the heading as that surah writes it, not al-Fatiha's, so that
+ * rejoining it to the ayah gives back the Tanzil line exactly.
  */
 export function splitBasmala(
   line: string,
@@ -209,11 +289,12 @@ export function splitBasmala(
   surah: number,
 ): { basmala?: string; text: string } {
   if (surah === BASMALA_SURAH || surah === NO_BASMALA) return { text: line }
-  const prefix = `${basmala} `
-  if (!line.startsWith(prefix)) {
+  const words = chunks(line).slice(0, BASMALA_WORDS)
+  const heading = words.length === BASMALA_WORDS ? line.slice(0, words[BASMALA_WORDS - 1].end) : ''
+  if (spelling(heading) !== spelling(basmala) || line[heading.length] !== ' ') {
     throw new Error(`surah ${surah} ayah 1 does not open with the basmala`)
   }
-  return { basmala, text: line.slice(prefix.length) }
+  return { basmala: heading, text: line.slice(heading.length + 1) }
 }
 
 export function buildSurah(surah: number, rows: Row[], ayat: Map<string, string>): CorpusSurah {

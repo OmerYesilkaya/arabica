@@ -1,4 +1,20 @@
 {
+  "آتَى": {
+    "pos": "fil",
+    "english": "to give",
+    "turkish": "vermek",
+    "glossSource": "deck",
+    "noteId": "ataa",
+    "root": "أتي"
+  },
+  "آخِر": {
+    "pos": "ism",
+    "english": "last, final; hereafter",
+    "turkish": "son, sonuncu; ahiret",
+    "glossSource": "deck",
+    "noteId": "akhir",
+    "root": "أخر"
+  },
   "آمَنَ": {
     "pos": "fil",
     "english": "to believe",
@@ -6,6 +22,21 @@
     "glossSource": "deck",
     "noteId": "amana",
     "root": "أمن"
+  },
+  "آوَى": {
+    "pos": "fil",
+    "english": "to give shelter",
+    "turkish": "barındırmak, sığındırmak",
+    "glossSource": "generated",
+    "root": "أوي"
+  },
+  "آيَة": {
+    "pos": "ism",
+    "english": "sign, verse",
+    "turkish": "ayet, işaret",
+    "glossSource": "deck",
+    "noteId": "aya",
+    "root": "أيي"
   },
   "أ": {
     "pos": "harf",
@@ -28,12 +59,50 @@
     "glossSource": "generated",
     "root": "أبل"
   },
+  "أَبَدًا": {
+    "pos": "ism",
+    "english": "forever, ever",
+    "turkish": "ebediyen, sonsuza dek",
+    "glossSource": "deck",
+    "noteId": "abadana",
+    "root": "أبد"
+  },
   "أَبْتَر": {
     "pos": "ism",
     "english": "cut off, without offspring",
     "turkish": "soyu kesik, ebter",
     "glossSource": "generated",
     "root": "بتر"
+  },
+  "أَتَى": {
+    "pos": "fil",
+    "english": "to come",
+    "turkish": "gelmek",
+    "glossSource": "deck",
+    "noteId": "ata",
+    "root": "أتي"
+  },
+  "أَتْقَى": {
+    "pos": "ism",
+    "english": "most God-fearing",
+    "turkish": "en müttaki, en çok sakınan",
+    "glossSource": "generated",
+    "root": "وقي"
+  },
+  "أَثارُ": {
+    "pos": "fil",
+    "english": "to stir up",
+    "turkish": "kaldırmak, savurmak",
+    "glossSource": "generated",
+    "root": "ثور"
+  },
+  "أَجْر": {
+    "pos": "ism",
+    "english": "reward, wage",
+    "turkish": "ecir, ödül, ücret",
+    "glossSource": "deck",
+    "noteId": "ajr",
+    "root": "أجر"
   },
   "أَحَد": {
     "pos": "ism",
@@ -43,6 +112,59 @@
     "noteId": "ahad",
     "root": "أحد"
   },
+  "أَحْسَن": {
+    "pos": "ism",
+    "english": "best, finest",
+    "turkish": "en güzel, en iyi",
+    "glossSource": "deck",
+    "noteId": "ahsan",
+    "root": "حسن"
+  },
+  "أَحْكَم": {
+    "pos": "ism",
+    "english": "most just in judgement",
+    "turkish": "en iyi hüküm veren, hakîm",
+    "glossSource": "generated",
+    "root": "حكم"
+  },
+  "أَخْبار": {
+    "pos": "ism",
+    "english": "news, tidings",
+    "turkish": "haberler",
+    "glossSource": "generated",
+    "root": "خبر"
+  },
+  "أَخْرَجَ": {
+    "pos": "fil",
+    "english": "to bring out, to expel",
+    "turkish": "çıkarmak",
+    "glossSource": "deck",
+    "noteId": "akhraja",
+    "root": "خرج"
+  },
+  "أَخْلَدَ": {
+    "pos": "fil",
+    "english": "to make everlasting",
+    "turkish": "ebedî kılmak, kalıcı yapmak",
+    "glossSource": "generated",
+    "root": "خلد"
+  },
+  "أَدْرَى": {
+    "pos": "fil",
+    "english": "to make know, to inform",
+    "turkish": "bildirmek, haber vermek",
+    "glossSource": "deck",
+    "noteId": "adraa",
+    "root": "دري"
+  },
+  "أَرَيْ": {
+    "pos": "fil",
+    "english": "to show, to make see",
+    "turkish": "göstermek",
+    "glossSource": "deck",
+    "noteId": "araa",
+    "root": "رأي"
+  },
   "أَرْسَلَ": {
     "pos": "fil",
     "english": "to send",
@@ -51,6 +173,35 @@
     "noteId": "arsala",
     "root": "رسل"
   },
+  "أَرْض": {
+    "pos": "ism",
+    "english": "earth, land",
+    "turkish": "arz, yeryüzü",
+    "glossSource": "deck",
+    "noteId": "ard",
+    "root": "أرض"
+  },
+  "أَسْفَل": {
+    "pos": "ism",
+    "english": "lowest",
+    "turkish": "en aşağı, esfel",
+    "glossSource": "generated",
+    "root": "سفل"
+  },
+  "أَشْتات": {
+    "pos": "ism",
+    "english": "in scattered groups",
+    "turkish": "bölük bölük, dağınık",
+    "glossSource": "generated",
+    "root": "شتت"
+  },
+  "أَشْقَى": {
+    "pos": "ism",
+    "english": "most wicked",
+    "turkish": "en azgın, en bedbaht",
+    "glossSource": "generated",
+    "root": "شقو"
+  },
   "أَصْحاب": {
     "pos": "ism",
     "english": "companions, people of",
@@ -58,6 +209,14 @@
     "glossSource": "deck",
     "noteId": "ashab",
     "root": "صحب"
+  },
+  "أَطاعَ": {
+    "pos": "fil",
+    "english": "to obey",
+    "turkish": "itaat etmek, boyun eğmek",
+    "glossSource": "deck",
+    "noteId": "ataa-2",
+    "root": "طوع"
   },
   "أَطْعَمَ": {
     "pos": "fil",
@@ -73,6 +232,21 @@
     "glossSource": "generated",
     "root": "عطو"
   },
+  "أَعْلَى": {
+    "pos": "ism",
+    "english": "highest, most exalted",
+    "turkish": "en yüce, âlâ",
+    "glossSource": "generated",
+    "root": "علو"
+  },
+  "أَغْنَتْ": {
+    "pos": "fil",
+    "english": "to avail, to be of use; to enrich, to free from need",
+    "turkish": "fayda vermek; zengin etmek, ihtiyaçtan kurtarmak",
+    "glossSource": "deck",
+    "noteId": "aghnaa",
+    "root": "غني"
+  },
   "أَغْنَى": {
     "pos": "fil",
     "english": "to enrich, to free from need",
@@ -80,6 +254,164 @@
     "glossSource": "deck",
     "noteId": "aghnaa-2",
     "root": "غني"
+  },
+  "أَفْلَحَ": {
+    "pos": "fil",
+    "english": "to succeed, to prosper",
+    "turkish": "felah bulmak, kurtuluşa ermek",
+    "glossSource": "deck",
+    "noteId": "aflaha",
+    "root": "فلح"
+  },
+  "أَقامَ": {
+    "pos": "fil",
+    "english": "to establish, to set up, to keep up",
+    "turkish": "ikame etmek, ayakta tutmak, yöneltmek",
+    "glossSource": "deck",
+    "noteId": "aqama",
+    "root": "قوم"
+  },
+  "أَقْسَمُ": {
+    "pos": "fil",
+    "english": "to swear, to take an oath",
+    "turkish": "yemin etmek, ant içmek",
+    "glossSource": "deck",
+    "noteId": "aqsama",
+    "root": "قسم"
+  },
+  "أَكْرَم": {
+    "pos": "ism",
+    "english": "most generous",
+    "turkish": "en kerîm, en cömert",
+    "glossSource": "generated",
+    "root": "كرم"
+  },
+  "أَلْف": {
+    "pos": "ism",
+    "english": "a thousand",
+    "turkish": "bin",
+    "glossSource": "generated",
+    "root": "ألف"
+  },
+  "أَلْهَمَ": {
+    "pos": "fil",
+    "english": "to inspire",
+    "turkish": "ilham etmek",
+    "glossSource": "generated",
+    "root": "لهم"
+  },
+  "أَلْهَى": {
+    "pos": "fil",
+    "english": "to distract, to divert",
+    "turkish": "oyalamak, meşgul etmek",
+    "glossSource": "generated",
+    "root": "لهو"
+  },
+  "أَمَرَ": {
+    "pos": "fil",
+    "english": "to command, to enjoin",
+    "turkish": "emretmek, buyurmak",
+    "glossSource": "deck",
+    "noteId": "amara",
+    "root": "أمر"
+  },
+  "أَمِين": {
+    "pos": "ism",
+    "english": "secure, safe",
+    "turkish": "emin, güvenli",
+    "glossSource": "generated",
+    "root": "أمن"
+  },
+  "أَمّا": {
+    "pos": "harf",
+    "english": "as for",
+    "turkish": "-e gelince",
+    "glossSource": "deck",
+    "noteId": "amma"
+  },
+  "أَمْر": {
+    "pos": "ism",
+    "english": "command, matter, affair",
+    "turkish": "emir, iş, buyruk",
+    "glossSource": "deck",
+    "noteId": "amr",
+    "root": "أمر"
+  },
+  "أَن": {
+    "pos": "harf",
+    "english": "that, to (subordinating)",
+    "turkish": "-mesi, -mek (mastar edatı)",
+    "glossSource": "deck",
+    "noteId": "an-2"
+  },
+  "أَنذَرَ": {
+    "pos": "fil",
+    "english": "to warn",
+    "turkish": "uyarmak",
+    "glossSource": "deck",
+    "noteId": "andhara",
+    "root": "نذر"
+  },
+  "أَنزَلَ": {
+    "pos": "fil",
+    "english": "to send down",
+    "turkish": "indirmek",
+    "glossSource": "deck",
+    "noteId": "anzala",
+    "root": "نزل"
+  },
+  "أَنقَضَ": {
+    "pos": "fil",
+    "english": "to weigh down, to burden heavily",
+    "turkish": "belini bükmek, ağır gelmek",
+    "glossSource": "generated",
+    "root": "نقض"
+  },
+  "أَنّ": {
+    "pos": "harf",
+    "english": "that (with a noun clause)",
+    "turkish": "-diğini, ki (isim cümlesi)",
+    "glossSource": "deck",
+    "noteId": "ann"
+  },
+  "أَهْل": {
+    "pos": "ism",
+    "english": "family, people of",
+    "turkish": "aile, ehli, halkı",
+    "glossSource": "deck",
+    "noteId": "ahl",
+    "root": "أهل"
+  },
+  "أَهْلَكَ": {
+    "pos": "fil",
+    "english": "to destroy, to ruin",
+    "turkish": "helak etmek, yok etmek",
+    "glossSource": "deck",
+    "noteId": "ahlaka",
+    "root": "هلك"
+  },
+  "أَو": {
+    "pos": "harf",
+    "english": "or",
+    "turkish": "veya, yahut",
+    "glossSource": "deck",
+    "noteId": "aw"
+  },
+  "أَوَّل": {
+    "pos": "ism",
+    "english": "first, foremost",
+    "turkish": "ilk, birinci",
+    "glossSource": "deck",
+    "noteId": "awwal",
+    "root": "أول"
+  },
+  "أَوْحَى": {
+    "pos": "fil",
+    "english": "to reveal, to inspire",
+    "turkish": "vahyetmek, ilham etmek",
+    "glossSource": "deck",
+    "noteId": "awhaa",
+    "root": "وحي"
   },
   "أَيّ": {
     "pos": "ism",
@@ -89,6 +421,29 @@
     "noteId": "ayy",
     "root": "أيي"
   },
+  "أُمّ": {
+    "pos": "ism",
+    "english": "mother; source, origin",
+    "turkish": "anne; asıl, kaynak",
+    "glossSource": "deck",
+    "noteId": "umm",
+    "root": "أمم"
+  },
+  "أُنثَى": {
+    "pos": "ism",
+    "english": "female",
+    "turkish": "dişi, kadın",
+    "glossSource": "deck",
+    "noteId": "unthaa",
+    "root": "أنث"
+  },
+  "إِذ": {
+    "pos": "ism",
+    "english": "when (of the past)",
+    "turkish": "-diği zaman, hani",
+    "glossSource": "deck",
+    "noteId": "idh"
+  },
   "إِذا": {
     "pos": "ism",
     "english": "when",
@@ -96,12 +451,41 @@
     "glossSource": "deck",
     "noteId": "idha"
   },
+  "إِذْن": {
+    "pos": "ism",
+    "english": "permission, leave",
+    "turkish": "izin",
+    "glossSource": "deck",
+    "noteId": "idhn",
+    "root": "أذن"
+  },
+  "إِطْعام": {
+    "pos": "ism",
+    "english": "feeding, giving food",
+    "turkish": "doyurma, yemek verme",
+    "glossSource": "generated",
+    "root": "طعم"
+  },
   "إِلاف": {
     "pos": "ism",
     "english": "accustoming, covenant of security",
     "turkish": "alıştırma, ülfet",
     "glossSource": "generated",
     "root": "ألف"
+  },
+  "إِلَى": {
+    "pos": "harf",
+    "english": "to, towards",
+    "turkish": "-e / -a (kadar)",
+    "glossSource": "deck",
+    "noteId": "ila"
+  },
+  "إِلّا": {
+    "pos": "harf",
+    "english": "except, only",
+    "turkish": "ancak, -den başka",
+    "glossSource": "deck",
+    "noteId": "illa"
   },
   "إِلٰه": {
     "pos": "ism",
@@ -111,12 +495,42 @@
     "noteId": "ilah",
     "root": "أله"
   },
+  "إِن": {
+    "pos": "harf",
+    "english": "if",
+    "turkish": "eğer, şayet",
+    "glossSource": "deck",
+    "noteId": "in"
+  },
+  "إِنسان": {
+    "pos": "ism",
+    "english": "man, human being",
+    "turkish": "insan",
+    "glossSource": "deck",
+    "noteId": "insan",
+    "root": "أنس"
+  },
   "إِنّ": {
     "pos": "harf",
     "english": "indeed, truly",
     "turkish": "muhakkak ki, şüphesiz",
     "glossSource": "deck",
     "noteId": "inn"
+  },
+  "ابْتِغاء": {
+    "pos": "ism",
+    "english": "seeking, pursuit",
+    "turkish": "arama, talep etme",
+    "glossSource": "generated",
+    "root": "بغي"
+  },
+  "اتَّقَى": {
+    "pos": "fil",
+    "english": "to fear God, to guard oneself",
+    "turkish": "sakınmak, Allah’tan korkmak",
+    "glossSource": "deck",
+    "noteId": "attaqaa",
+    "root": "وقي"
   },
   "اسْتَغْفَرَ": {
     "pos": "fil",
@@ -126,6 +540,13 @@
     "noteId": "astaghfara",
     "root": "غفر"
   },
+  "اسْتَغْنَى": {
+    "pos": "fil",
+    "english": "to think oneself self-sufficient",
+    "turkish": "kendini muhtaç saymamak",
+    "glossSource": "generated",
+    "root": "غني"
+  },
   "اسْم": {
     "pos": "ism",
     "english": "name",
@@ -133,6 +554,20 @@
     "glossSource": "deck",
     "noteId": "asm",
     "root": "سمو"
+  },
+  "اقْتَحَمَ": {
+    "pos": "fil",
+    "english": "to storm, to rush into",
+    "turkish": "atılmak, göze almak",
+    "glossSource": "generated",
+    "root": "قحم"
+  },
+  "اقْتَرَبَ": {
+    "pos": "fil",
+    "english": "to draw near",
+    "turkish": "yaklaşmak, yakın olmak",
+    "glossSource": "generated",
+    "root": "قرب"
   },
   "ال": {
     "pos": "harf",
@@ -163,6 +598,14 @@
     "noteId": "amraat",
     "root": "مرأ"
   },
+  "انتَهَى": {
+    "pos": "fil",
+    "english": "to desist, to refrain; to come to an end",
+    "turkish": "vazgeçmek, son bulmak",
+    "glossSource": "deck",
+    "noteId": "antahaa",
+    "root": "نهي"
+  },
   "انْحَرْ": {
     "pos": "fil",
     "english": "to sacrifice",
@@ -170,12 +613,63 @@
     "glossSource": "generated",
     "root": "نحر"
   },
+  "انۢبَعَثَ": {
+    "pos": "fil",
+    "english": "to be roused, to set out",
+    "turkish": "harekete geçmek, kalkışmak",
+    "glossSource": "generated",
+    "root": "بعث"
+  },
   "ب": {
     "pos": "harf",
     "english": "with, by",
     "turkish": "ile, -le / -la",
     "glossSource": "deck",
     "noteId": "ba"
+  },
+  "بَخِلَ": {
+    "pos": "fil",
+    "english": "to be stingy, to withhold",
+    "turkish": "cimrilik etmek, esirgemek",
+    "glossSource": "generated",
+    "root": "بخل"
+  },
+  "بَرِيَّة": {
+    "pos": "ism",
+    "english": "creation, created beings",
+    "turkish": "mahlûkat, yaratılmışlar",
+    "glossSource": "generated",
+    "root": "برأ"
+  },
+  "بَعْد": {
+    "pos": "ism",
+    "english": "after",
+    "turkish": "sonra",
+    "glossSource": "deck",
+    "noteId": "baad",
+    "root": "بعد"
+  },
+  "بَلَد": {
+    "pos": "ism",
+    "english": "city, land",
+    "turkish": "belde, şehir",
+    "glossSource": "generated",
+    "root": "بلد"
+  },
+  "بَنَى": {
+    "pos": "fil",
+    "english": "to build",
+    "turkish": "bina etmek, kurmak",
+    "glossSource": "generated",
+    "root": "بني"
+  },
+  "بَيِّنَة": {
+    "pos": "ism",
+    "english": "clear proof, clear sign; clear, evident",
+    "turkish": "apaçık delil, açık işaret; apaçık",
+    "glossSource": "deck",
+    "noteId": "bayyina",
+    "root": "بين"
   },
   "بَيْت": {
     "pos": "ism",
@@ -185,12 +679,48 @@
     "noteId": "bayt",
     "root": "بيت"
   },
+  "بُعْثِرَ": {
+    "pos": "fil",
+    "english": "to be turned out, to be scattered",
+    "turkish": "deşilip çıkarılmak",
+    "glossSource": "generated",
+    "root": "بعثر"
+  },
   "تَبَّ": {
     "pos": "fil",
     "english": "to perish, to be ruined",
     "turkish": "kurumak, helak olmak",
     "glossSource": "generated",
     "root": "تبب"
+  },
+  "تَجَلَّى": {
+    "pos": "fil",
+    "english": "to appear, to shine forth",
+    "turkish": "tecelli etmek, ortaya çıkmak",
+    "glossSource": "generated",
+    "root": "جلو"
+  },
+  "تَحْت": {
+    "pos": "ism",
+    "english": "under, beneath",
+    "turkish": "altında",
+    "glossSource": "deck",
+    "noteId": "taht",
+    "root": "تحت"
+  },
+  "تَرَدَّى": {
+    "pos": "fil",
+    "english": "to fall to ruin",
+    "turkish": "yıkıma düşmek, tepetaklak gitmek",
+    "glossSource": "generated",
+    "root": "ردي"
+  },
+  "تَزَكَّى": {
+    "pos": "fil",
+    "english": "to purify oneself",
+    "turkish": "arınmak, temizlenmek",
+    "glossSource": "generated",
+    "root": "زكو"
   },
   "تَضْلِيل": {
     "pos": "ism",
@@ -199,12 +729,134 @@
     "glossSource": "generated",
     "root": "ضلل"
   },
+  "تَفَرَّقَ": {
+    "pos": "fil",
+    "english": "to split into factions",
+    "turkish": "ayrılığa düşmek, bölünmek",
+    "glossSource": "generated",
+    "root": "فرق"
+  },
+  "تَقْهَرْ": {
+    "pos": "fil",
+    "english": "to oppress, to treat harshly",
+    "turkish": "ezmek, hor görmek",
+    "glossSource": "generated",
+    "root": "قهر"
+  },
+  "تَقْوَى": {
+    "pos": "ism",
+    "english": "piety, godliness, fear of God",
+    "turkish": "takva, Allah korkusu, sakınma",
+    "glossSource": "deck",
+    "noteId": "taqwaa",
+    "root": "وقي"
+  },
+  "تَقْوِيم": {
+    "pos": "ism",
+    "english": "form, proportioning",
+    "turkish": "suret, düzgün biçim",
+    "glossSource": "generated",
+    "root": "قوم"
+  },
+  "تَكاثُر": {
+    "pos": "ism",
+    "english": "rivalry in amassing more",
+    "turkish": "çoğaltma yarışı, tekâsür",
+    "glossSource": "generated",
+    "root": "كثر"
+  },
+  "تَلَظَّى": {
+    "pos": "fil",
+    "english": "to blaze",
+    "turkish": "alevlenmek, kızgın yanmak",
+    "glossSource": "generated",
+    "root": "لظي"
+  },
+  "تَلَى": {
+    "pos": "fil",
+    "english": "to recite; to follow",
+    "turkish": "tilavet etmek, okumak; ardından gitmek",
+    "glossSource": "deck",
+    "noteId": "talaa",
+    "root": "تلو"
+  },
+  "تَنَزَّلَتْ": {
+    "pos": "fil",
+    "english": "to descend",
+    "turkish": "inmek, nazil olmak",
+    "glossSource": "generated",
+    "root": "نزل"
+  },
+  "تَنْهَرْ": {
+    "pos": "fil",
+    "english": "to rebuff, to scold away",
+    "turkish": "azarlamak, kovmak",
+    "glossSource": "generated",
+    "root": "نهر"
+  },
+  "تَواصَ": {
+    "pos": "fil",
+    "english": "to enjoin one another",
+    "turkish": "birbirine tavsiye etmek",
+    "glossSource": "generated",
+    "root": "وصي"
+  },
+  "تَوَلَّى": {
+    "pos": "fil",
+    "english": "to turn away, to turn one's back",
+    "turkish": "yüz çevirmek, sırt dönmek",
+    "glossSource": "deck",
+    "noteId": "tawallaa",
+    "root": "ولي"
+  },
   "تَوّاب": {
     "pos": "ism",
     "english": "ever-accepting of repentance",
     "turkish": "tövbeleri çokça kabul eden",
     "glossSource": "generated",
     "root": "توب"
+  },
+  "تُحَدِّثُ": {
+    "pos": "fil",
+    "english": "to speak of, to recount",
+    "turkish": "bahsetmek, anlatmak",
+    "glossSource": "generated",
+    "root": "حدث"
+  },
+  "تِين": {
+    "pos": "ism",
+    "english": "fig",
+    "turkish": "incir",
+    "glossSource": "generated",
+    "root": "تين"
+  },
+  "ثَقَل": {
+    "pos": "ism",
+    "english": "burden, weight",
+    "turkish": "ağırlık, yük",
+    "glossSource": "generated",
+    "root": "ثقل"
+  },
+  "ثَقُلَتْ": {
+    "pos": "fil",
+    "english": "to be heavy",
+    "turkish": "ağır gelmek, ağırlaşmak",
+    "glossSource": "generated",
+    "root": "ثقل"
+  },
+  "ثَمُود": {
+    "pos": "ism",
+    "english": "Thamud (a people)",
+    "turkish": "Semûd (kavmi)",
+    "glossSource": "deck",
+    "noteId": "thamuwd"
+  },
+  "ثُمّ": {
+    "pos": "harf",
+    "english": "then, thereafter",
+    "turkish": "sonra",
+    "glossSource": "deck",
+    "noteId": "thumm"
   },
   "جاءَ": {
     "pos": "fil",
@@ -214,6 +866,46 @@
     "noteId": "jaa",
     "root": "جيأ"
   },
+  "جَبَل": {
+    "pos": "ism",
+    "english": "mountain",
+    "turkish": "dağ",
+    "glossSource": "deck",
+    "noteId": "jabal",
+    "root": "جبل"
+  },
+  "جَحِيم": {
+    "pos": "ism",
+    "english": "Hellfire, blazing fire",
+    "turkish": "cehennem, alevli ateş",
+    "glossSource": "deck",
+    "noteId": "jahiym",
+    "root": "جحم"
+  },
+  "جَرَيْ": {
+    "pos": "fil",
+    "english": "to flow, to run",
+    "turkish": "akmak, cereyan etmek",
+    "glossSource": "deck",
+    "noteId": "jaray",
+    "root": "جري"
+  },
+  "جَزاء": {
+    "pos": "ism",
+    "english": "recompense, requital, reward",
+    "turkish": "karşılık, ceza, mükâfat",
+    "glossSource": "deck",
+    "noteId": "jaza",
+    "root": "جزي"
+  },
+  "جَزَى": {
+    "pos": "fil",
+    "english": "to recompense, to repay, to reward",
+    "turkish": "karşılığını vermek, mükâfatlandırmak",
+    "glossSource": "deck",
+    "noteId": "jazaa",
+    "root": "جزي"
+  },
   "جَعَلَ": {
     "pos": "fil",
     "english": "to make, to place",
@@ -221,6 +913,43 @@
     "glossSource": "deck",
     "noteId": "jaala",
     "root": "جعل"
+  },
+  "جَلَّى": {
+    "pos": "fil",
+    "english": "to make clear, to display",
+    "turkish": "ortaya çıkarmak, aydınlatmak",
+    "glossSource": "generated",
+    "root": "جلو"
+  },
+  "جَمَعَ": {
+    "pos": "fil",
+    "english": "to gather, to collect",
+    "turkish": "toplamak, biriktirmek",
+    "glossSource": "deck",
+    "noteId": "jamaa",
+    "root": "جمع"
+  },
+  "جَمْع": {
+    "pos": "ism",
+    "english": "a host, a gathering",
+    "turkish": "topluluk, cemaat",
+    "glossSource": "generated",
+    "root": "جمع"
+  },
+  "جَنَّة": {
+    "pos": "ism",
+    "english": "garden, paradise",
+    "turkish": "cennet, bahçe",
+    "glossSource": "deck",
+    "noteId": "janna",
+    "root": "جنن"
+  },
+  "جَهَنَّم": {
+    "pos": "ism",
+    "english": "Hell",
+    "turkish": "cehennem",
+    "glossSource": "deck",
+    "noteId": "jahannam"
   },
   "جُوع": {
     "pos": "ism",
@@ -250,12 +979,33 @@
     "glossSource": "generated",
     "root": "حسد"
   },
+  "حاكِم": {
+    "pos": "ism",
+    "english": "judge",
+    "turkish": "hâkim, hüküm veren",
+    "glossSource": "generated",
+    "root": "حكم"
+  },
+  "حامِيَة": {
+    "pos": "ism",
+    "english": "blazing hot",
+    "turkish": "kızgın, harlı ateş",
+    "glossSource": "generated",
+    "root": "حمي"
+  },
   "حَبْل": {
     "pos": "ism",
     "english": "rope",
     "turkish": "ip",
     "glossSource": "generated",
     "root": "حبل"
+  },
+  "حَتَّى": {
+    "pos": "harf",
+    "english": "until, so that",
+    "turkish": "-e kadar, ta ki",
+    "glossSource": "deck",
+    "noteId": "hattaa"
   },
   "حَسَدَ": {
     "pos": "fil",
@@ -264,12 +1014,28 @@
     "glossSource": "generated",
     "root": "حسد"
   },
+  "حَسِبَ": {
+    "pos": "fil",
+    "english": "to think, to reckon",
+    "turkish": "sanmak, hesap etmek",
+    "glossSource": "deck",
+    "noteId": "hasiba",
+    "root": "حسب"
+  },
   "حَطَب": {
     "pos": "ism",
     "english": "firewood",
     "turkish": "odun",
     "glossSource": "generated",
     "root": "حطب"
+  },
+  "حَقّ": {
+    "pos": "ism",
+    "english": "truth, right, due",
+    "turkish": "hak, gerçek",
+    "glossSource": "deck",
+    "noteId": "haqq",
+    "root": "حقق"
   },
   "حَمّالَة": {
     "pos": "ism",
@@ -286,12 +1052,108 @@
     "noteId": "hamd",
     "root": "حمد"
   },
+  "حَنِيف": {
+    "pos": "ism",
+    "english": "upright in faith, hanif",
+    "turkish": "hanîf, dosdoğru inanan",
+    "glossSource": "generated",
+    "root": "حنف"
+  },
+  "حُبّ": {
+    "pos": "ism",
+    "english": "love",
+    "turkish": "sevgi, muhabbet",
+    "glossSource": "generated",
+    "root": "حبب"
+  },
+  "حُسْنَى": {
+    "pos": "ism",
+    "english": "most beautiful, finest; best reward",
+    "turkish": "en güzel; en güzel karşılık",
+    "glossSource": "deck",
+    "noteId": "husnaa",
+    "root": "حسن"
+  },
+  "حُصِّلَ": {
+    "pos": "fil",
+    "english": "to be brought out, to be laid bare",
+    "turkish": "ortaya çıkarılmak, derlenmek",
+    "glossSource": "generated",
+    "root": "حصل"
+  },
+  "حُطَمَة": {
+    "pos": "ism",
+    "english": "the crusher",
+    "turkish": "hutame, kırıp döken ateş",
+    "glossSource": "generated",
+    "root": "حطم"
+  },
   "حِجارَة": {
     "pos": "ism",
     "english": "stones",
     "turkish": "taşlar",
     "glossSource": "generated",
     "root": "حجر"
+  },
+  "حِلّ": {
+    "pos": "ism",
+    "english": "free, lawful to dwell in",
+    "turkish": "helâl, serbest",
+    "glossSource": "generated",
+    "root": "حلل"
+  },
+  "خابَ": {
+    "pos": "fil",
+    "english": "to fail, to be ruined",
+    "turkish": "hüsrana uğramak, kaybetmek",
+    "glossSource": "generated",
+    "root": "خيب"
+  },
+  "خاطِئَة": {
+    "pos": "ism",
+    "english": "sinful, lying",
+    "turkish": "hatalı, günahkâr",
+    "glossSource": "generated",
+    "root": "خطأ"
+  },
+  "خافَ": {
+    "pos": "fil",
+    "english": "to fear",
+    "turkish": "korkmak",
+    "glossSource": "deck",
+    "noteId": "khafa",
+    "root": "خوف"
+  },
+  "خالِد": {
+    "pos": "ism",
+    "english": "abiding forever, everlasting",
+    "turkish": "ebedî kalan, sürekli",
+    "glossSource": "deck",
+    "noteId": "khalid",
+    "root": "خلد"
+  },
+  "خَبِير": {
+    "pos": "ism",
+    "english": "aware, well-informed",
+    "turkish": "haberdar, her şeyden haberi olan",
+    "glossSource": "deck",
+    "noteId": "khabiyr",
+    "root": "خبر"
+  },
+  "خَشِيَ": {
+    "pos": "fil",
+    "english": "to fear, to stand in awe of",
+    "turkish": "korkmak, haşyet duymak",
+    "glossSource": "deck",
+    "noteId": "khashiya",
+    "root": "خشي"
+  },
+  "خَفَّتْ": {
+    "pos": "fil",
+    "english": "to be light",
+    "turkish": "hafif gelmek",
+    "glossSource": "generated",
+    "root": "خفف"
   },
   "خَلَقَ": {
     "pos": "fil",
@@ -316,6 +1178,21 @@
     "noteId": "khawf",
     "root": "خوف"
   },
+  "خَيْر": {
+    "pos": "ism",
+    "english": "good, goodness; better",
+    "turkish": "hayır, iyilik; daha iyi",
+    "glossSource": "deck",
+    "noteId": "khayr",
+    "root": "خير"
+  },
+  "خُسْر": {
+    "pos": "ism",
+    "english": "loss",
+    "turkish": "hüsran, ziyan",
+    "glossSource": "generated",
+    "root": "خسر"
+  },
   "دَخَلَ": {
     "pos": "fil",
     "english": "to enter",
@@ -323,6 +1200,28 @@
     "glossSource": "deck",
     "noteId": "dakhala",
     "root": "دخل"
+  },
+  "دَسَّى": {
+    "pos": "fil",
+    "english": "to corrupt, to stunt",
+    "turkish": "kötülüğe gömmek, alçaltmak",
+    "glossSource": "generated",
+    "root": "دسو"
+  },
+  "دَعا": {
+    "pos": "fil",
+    "english": "to call, to supplicate",
+    "turkish": "çağırmak, dua etmek",
+    "glossSource": "deck",
+    "noteId": "daa",
+    "root": "دعو"
+  },
+  "دَمْدَمَ": {
+    "pos": "fil",
+    "english": "to crush utterly",
+    "turkish": "başlarına yıkmak, helâk etmek",
+    "glossSource": "generated",
+    "root": "دمدم"
   },
   "دِين": {
     "pos": "ism",
@@ -339,12 +1238,50 @@
     "glossSource": "deck",
     "noteId": "dha"
   },
+  "ذَرَّة": {
+    "pos": "ism",
+    "english": "a speck, a mote",
+    "turkish": "zerre",
+    "glossSource": "generated",
+    "root": "ذرر"
+  },
+  "ذَكَر": {
+    "pos": "ism",
+    "english": "male",
+    "turkish": "erkek",
+    "glossSource": "deck",
+    "noteId": "dhakar",
+    "root": "ذكر"
+  },
+  "ذَنب": {
+    "pos": "ism",
+    "english": "sin, offense",
+    "turkish": "günah, suç",
+    "glossSource": "deck",
+    "noteId": "dhanb",
+    "root": "ذنب"
+  },
   "ذُو": {
     "pos": "ism",
     "english": "possessor of, owner of",
     "turkish": "sahip, sahibi",
     "glossSource": "deck",
     "noteId": "dhuw"
+  },
+  "ذِكْر": {
+    "pos": "ism",
+    "english": "remembrance, mention, reminder",
+    "turkish": "zikir, anma, öğüt",
+    "glossSource": "deck",
+    "noteId": "dhikr",
+    "root": "ذكر"
+  },
+  "راضِيَة": {
+    "pos": "ism",
+    "english": "pleasing, contenting",
+    "turkish": "hoşnut, razı olunan",
+    "glossSource": "generated",
+    "root": "رضو"
   },
   "رَأَى": {
     "pos": "fil",
@@ -377,12 +1314,66 @@
     "noteId": "rahman",
     "root": "رحم"
   },
+  "رَدَّ": {
+    "pos": "fil",
+    "english": "to return, to give back; to repel",
+    "turkish": "geri çevirmek, geri vermek",
+    "glossSource": "deck",
+    "noteId": "radda",
+    "root": "ردد"
+  },
+  "رَسُول": {
+    "pos": "ism",
+    "english": "messenger",
+    "turkish": "resul, elçi",
+    "glossSource": "deck",
+    "noteId": "rasuwl",
+    "root": "رسل"
+  },
+  "رَضِيَ": {
+    "pos": "fil",
+    "english": "to be pleased, to be satisfied",
+    "turkish": "razı olmak, hoşnut olmak",
+    "glossSource": "deck",
+    "noteId": "radiya",
+    "root": "رضو"
+  },
+  "رَفَعَ": {
+    "pos": "fil",
+    "english": "to raise, to lift up",
+    "turkish": "yükseltmek, kaldırmak",
+    "glossSource": "deck",
+    "noteId": "rafaa",
+    "root": "رفع"
+  },
+  "رَقَبَة": {
+    "pos": "ism",
+    "english": "a neck; a slave to be freed",
+    "turkish": "boyun; köle",
+    "glossSource": "generated",
+    "root": "رقب"
+  },
   "رَمَى": {
     "pos": "fil",
     "english": "to throw, to pelt",
     "turkish": "atmak, fırlatmak",
     "glossSource": "generated",
     "root": "رمي"
+  },
+  "رُجْعَى": {
+    "pos": "ism",
+    "english": "the return",
+    "turkish": "dönüş",
+    "glossSource": "generated",
+    "root": "رجع"
+  },
+  "رُوح": {
+    "pos": "ism",
+    "english": "spirit, soul",
+    "turkish": "ruh",
+    "glossSource": "deck",
+    "noteId": "ruwh",
+    "root": "روح"
   },
   "رِحْلَة": {
     "pos": "ism",
@@ -391,11 +1382,75 @@
     "glossSource": "generated",
     "root": "رحل"
   },
+  "زَبانِيَة": {
+    "pos": "ism",
+    "english": "the guards of hell",
+    "turkish": "zebaniler",
+    "glossSource": "generated",
+    "root": "زبن"
+  },
+  "زَكاة": {
+    "pos": "ism",
+    "english": "purity; alms, zakat",
+    "turkish": "arınmışlık, temizlik; zekât",
+    "glossSource": "deck",
+    "noteId": "zaka",
+    "root": "زكو"
+  },
+  "زَكَّى": {
+    "pos": "fil",
+    "english": "to purify",
+    "turkish": "arındırmak, temizlemek",
+    "glossSource": "generated",
+    "root": "زكو"
+  },
+  "زَيْتُون": {
+    "pos": "ism",
+    "english": "olive",
+    "turkish": "zeytin",
+    "glossSource": "generated",
+    "root": "زيت"
+  },
+  "زُرْ": {
+    "pos": "fil",
+    "english": "to visit",
+    "turkish": "ziyaret etmek",
+    "glossSource": "generated",
+    "root": "زور"
+  },
+  "زُلْزِلُ": {
+    "pos": "fil",
+    "english": "to be shaken",
+    "turkish": "sarsılmak, zelzeleye tutulmak",
+    "glossSource": "generated",
+    "root": "زلزل"
+  },
+  "زِلْزال": {
+    "pos": "ism",
+    "english": "earthquake, shaking",
+    "turkish": "zelzele, sarsıntı",
+    "glossSource": "generated",
+    "root": "زلزل"
+  },
   "س": {
     "pos": "harf",
     "english": "will (future)",
     "turkish": "-ecek (gelecek)",
     "glossSource": "generated"
+  },
+  "سائِل": {
+    "pos": "ism",
+    "english": "one who asks, a beggar",
+    "turkish": "isteyen, dilenen",
+    "glossSource": "generated",
+    "root": "سأل"
+  },
+  "سافِل": {
+    "pos": "ism",
+    "english": "low, base",
+    "turkish": "aşağı, alçak",
+    "glossSource": "generated",
+    "root": "سفل"
   },
   "ساهي": {
     "pos": "ism",
@@ -403,6 +1458,14 @@
     "turkish": "gafil, yanılan",
     "glossSource": "generated",
     "root": "سهو"
+  },
+  "سَأَلَ": {
+    "pos": "fil",
+    "english": "to ask",
+    "turkish": "sormak, istemek",
+    "glossSource": "deck",
+    "noteId": "saala",
+    "root": "سأل"
   },
   "سَبَّحَ": {
     "pos": "fil",
@@ -412,6 +1475,65 @@
     "noteId": "sabbaha",
     "root": "سبح"
   },
+  "سَجَدَ": {
+    "pos": "fil",
+    "english": "to prostrate, to bow down",
+    "turkish": "secde etmek",
+    "glossSource": "deck",
+    "noteId": "sajada",
+    "root": "سجد"
+  },
+  "سَجَى": {
+    "pos": "fil",
+    "english": "to grow still, to fall quiet",
+    "turkish": "sükûna ermek, dinmek",
+    "glossSource": "generated",
+    "root": "سجو"
+  },
+  "سَعْي": {
+    "pos": "ism",
+    "english": "striving, endeavour",
+    "turkish": "gayret, çabalama",
+    "glossSource": "generated",
+    "root": "سعي"
+  },
+  "سَلام": {
+    "pos": "ism",
+    "english": "peace, safety",
+    "turkish": "selam, esenlik, barış",
+    "glossSource": "deck",
+    "noteId": "salam",
+    "root": "سلم"
+  },
+  "سَماء": {
+    "pos": "ism",
+    "english": "sky, heaven",
+    "turkish": "sema, gök",
+    "glossSource": "deck",
+    "noteId": "sama",
+    "root": "سمو"
+  },
+  "سَوَّى": {
+    "pos": "fil",
+    "english": "to fashion evenly, to proportion",
+    "turkish": "düzgün yaratmak, biçim vermek",
+    "glossSource": "generated",
+    "root": "سوي"
+  },
+  "سَوْف": {
+    "pos": "harf",
+    "english": "will, shall (future particle)",
+    "turkish": "-ecek, yakında (istikbal edatı)",
+    "glossSource": "deck",
+    "noteId": "sawf"
+  },
+  "سُقْيا": {
+    "pos": "ism",
+    "english": "her drink, watering turn",
+    "turkish": "su içme sırası, sulama",
+    "glossSource": "generated",
+    "root": "سقي"
+  },
   "سِجِّيل": {
     "pos": "ism",
     "english": "baked clay",
@@ -419,12 +1541,40 @@
     "glossSource": "generated",
     "root": "سجل"
   },
+  "سِينِين": {
+    "pos": "ism",
+    "english": "Sinai",
+    "turkish": "Sînâ",
+    "glossSource": "generated"
+  },
   "شانِئ": {
     "pos": "ism",
     "english": "hater, enemy",
     "turkish": "düşman, buğzeden",
     "glossSource": "generated",
     "root": "شنأ"
+  },
+  "شَتَّى": {
+    "pos": "ism",
+    "english": "diverse, various",
+    "turkish": "çeşitli, muhtelif",
+    "glossSource": "generated",
+    "root": "شتت"
+  },
+  "شَدِيد": {
+    "pos": "ism",
+    "english": "severe, intense, strong",
+    "turkish": "şiddetli, güçlü",
+    "glossSource": "deck",
+    "noteId": "shadiyd",
+    "root": "شدد"
+  },
+  "شَرَحَ": {
+    "pos": "fil",
+    "english": "to open wide, to expand",
+    "turkish": "açmak, ferahlatmak",
+    "glossSource": "generated",
+    "root": "شرح"
   },
   "شَرّ": {
     "pos": "ism",
@@ -434,12 +1584,66 @@
     "noteId": "sharr",
     "root": "شرر"
   },
+  "شَفَتَيْن": {
+    "pos": "ism",
+    "english": "the two lips",
+    "turkish": "iki dudak",
+    "glossSource": "generated",
+    "root": "شفه"
+  },
+  "شَمْس": {
+    "pos": "ism",
+    "english": "sun",
+    "turkish": "güneş",
+    "glossSource": "deck",
+    "noteId": "shams",
+    "root": "شمس"
+  },
+  "شَهِيد": {
+    "pos": "ism",
+    "english": "witness; martyr",
+    "turkish": "şahit; şehit",
+    "glossSource": "deck",
+    "noteId": "shahiyd",
+    "root": "شهد"
+  },
+  "شَهْر": {
+    "pos": "ism",
+    "english": "month",
+    "turkish": "ay",
+    "glossSource": "deck",
+    "noteId": "shahr",
+    "root": "شهر"
+  },
   "شِتاء": {
     "pos": "ism",
     "english": "winter",
     "turkish": "kış",
     "glossSource": "generated",
     "root": "شتو"
+  },
+  "صالِحَة": {
+    "pos": "ism",
+    "english": "righteous deed, good deed",
+    "turkish": "salih amel, iyi iş",
+    "glossSource": "deck",
+    "noteId": "saliha",
+    "root": "صلح"
+  },
+  "صَبْر": {
+    "pos": "ism",
+    "english": "patience, endurance",
+    "turkish": "sabır",
+    "glossSource": "deck",
+    "noteId": "sabr",
+    "root": "صبر"
+  },
+  "صَدَّقَ": {
+    "pos": "fil",
+    "english": "to affirm as true",
+    "turkish": "tasdik etmek, doğrulamak",
+    "glossSource": "generated",
+    "root": "صدق"
   },
   "صَدْر": {
     "pos": "ism",
@@ -478,6 +1682,48 @@
     "glossSource": "generated",
     "root": "صيف"
   },
+  "صُبْح": {
+    "pos": "ism",
+    "english": "morning",
+    "turkish": "sabah",
+    "glossSource": "generated",
+    "root": "صبح"
+  },
+  "صُحُف": {
+    "pos": "ism",
+    "english": "scriptures, written leaves",
+    "turkish": "sahifeler, yazılı sayfalar",
+    "glossSource": "generated",
+    "root": "صحف"
+  },
+  "ضالّ": {
+    "pos": "ism",
+    "english": "astray, not knowing the way",
+    "turkish": "şaşırmış, yolunu bilmez",
+    "glossSource": "generated",
+    "root": "ضلل"
+  },
+  "ضَبْح": {
+    "pos": "ism",
+    "english": "panting",
+    "turkish": "soluyarak, nefes nefese",
+    "glossSource": "generated",
+    "root": "ضبح"
+  },
+  "ضُحًى": {
+    "pos": "ism",
+    "english": "morning brightness",
+    "turkish": "kuşluk vakti",
+    "glossSource": "generated",
+    "root": "ضحو"
+  },
+  "طَحَى": {
+    "pos": "fil",
+    "english": "to spread out",
+    "turkish": "yayıp döşemek",
+    "glossSource": "generated",
+    "root": "طحو"
+  },
   "طَعام": {
     "pos": "ism",
     "english": "food",
@@ -485,6 +1731,27 @@
     "glossSource": "deck",
     "noteId": "taam",
     "root": "طعم"
+  },
+  "طَغَى": {
+    "pos": "fil",
+    "english": "to transgress, to overstep",
+    "turkish": "azmak, taşkınlık etmek",
+    "glossSource": "generated",
+    "root": "طغي"
+  },
+  "طَغْوَى": {
+    "pos": "ism",
+    "english": "transgression, insolence",
+    "turkish": "azgınlık, taşkınlık",
+    "glossSource": "generated",
+    "root": "طغي"
+  },
+  "طَلَعَ": {
+    "pos": "fil",
+    "english": "to rise over, to reach up to",
+    "turkish": "yükselip sarmak, çıkmak",
+    "glossSource": "generated",
+    "root": "طلع"
   },
   "طَيْر": {
     "pos": "ism",
@@ -494,12 +1761,40 @@
     "noteId": "tayr",
     "root": "طير"
   },
+  "طُور": {
+    "pos": "ism",
+    "english": "mount",
+    "turkish": "dağ, Tûr",
+    "glossSource": "generated",
+    "root": "طور"
+  },
+  "ظَهْر": {
+    "pos": "ism",
+    "english": "back",
+    "turkish": "sırt, arka",
+    "glossSource": "generated",
+    "root": "ظهر"
+  },
+  "عائِل": {
+    "pos": "ism",
+    "english": "poor, in need",
+    "turkish": "yoksul, muhtaç",
+    "glossSource": "generated",
+    "root": "عيل"
+  },
   "عابِد": {
     "pos": "ism",
     "english": "worshipper",
     "turkish": "kulluk eden, ibadet eden",
     "glossSource": "generated",
     "root": "عبد"
+  },
+  "عادِيَة": {
+    "pos": "ism",
+    "english": "charging steed",
+    "turkish": "koşan at",
+    "glossSource": "generated",
+    "root": "عدو"
   },
   "عَبَدَ": {
     "pos": "fil",
@@ -509,12 +1804,61 @@
     "noteId": "abada",
     "root": "عبد"
   },
+  "عَبْد": {
+    "pos": "ism",
+    "english": "servant, slave",
+    "turkish": "kul, köle",
+    "glossSource": "deck",
+    "noteId": "abd",
+    "root": "عبد"
+  },
+  "عَدَّدَ": {
+    "pos": "fil",
+    "english": "to count over, to tally up",
+    "turkish": "sayıp durmak, biriktirmek",
+    "glossSource": "generated",
+    "root": "عدد"
+  },
+  "عَدْن": {
+    "pos": "ism",
+    "english": "Eden",
+    "turkish": "Adn",
+    "glossSource": "generated"
+  },
+  "عَصْر": {
+    "pos": "ism",
+    "english": "the passing time, late afternoon",
+    "turkish": "asır, ikindi vakti",
+    "glossSource": "generated",
+    "root": "عصر"
+  },
   "عَصْف": {
     "pos": "ism",
     "english": "straw, chewed stubble",
     "turkish": "ekin yaprağı, saman",
     "glossSource": "generated",
     "root": "عصف"
+  },
+  "عَقَبَة": {
+    "pos": "ism",
+    "english": "steep path, mountain pass",
+    "turkish": "sarp yokuş, geçit",
+    "glossSource": "generated",
+    "root": "عقب"
+  },
+  "عَقَرَ": {
+    "pos": "fil",
+    "english": "to hamstring, to slaughter",
+    "turkish": "boğazlamak, kesmek",
+    "glossSource": "generated",
+    "root": "عقر"
+  },
+  "عَلَق": {
+    "pos": "ism",
+    "english": "a clinging form, clot",
+    "turkish": "asılıp tutunan, kan pıhtısı",
+    "glossSource": "generated",
+    "root": "علق"
   },
   "عَلَى": {
     "pos": "harf",
@@ -523,12 +1867,59 @@
     "glossSource": "deck",
     "noteId": "ala"
   },
+  "عَلِمَ": {
+    "pos": "fil",
+    "english": "to know",
+    "turkish": "bilmek",
+    "glossSource": "deck",
+    "noteId": "alima",
+    "root": "علم"
+  },
+  "عَلَّمَ": {
+    "pos": "fil",
+    "english": "to teach",
+    "turkish": "öğretmek",
+    "glossSource": "deck",
+    "noteId": "allama",
+    "root": "علم"
+  },
+  "عَمَد": {
+    "pos": "ism",
+    "english": "columns, pillars",
+    "turkish": "direkler, sütunlar",
+    "glossSource": "generated",
+    "root": "عمد"
+  },
+  "عَمَل": {
+    "pos": "ism",
+    "english": "deed, work",
+    "turkish": "amel, iş",
+    "glossSource": "deck",
+    "noteId": "amal",
+    "root": "عمل"
+  },
+  "عَمِلَ": {
+    "pos": "fil",
+    "english": "to do, to work",
+    "turkish": "amel etmek, yapmak",
+    "glossSource": "deck",
+    "noteId": "amila",
+    "root": "عمل"
+  },
   "عَن": {
     "pos": "harf",
     "english": "away from, about",
     "turkish": "-den (uzaklaşma); hakkında",
     "glossSource": "deck",
     "noteId": "an"
+  },
+  "عَيْن": {
+    "pos": "ism",
+    "english": "eye; spring, fountain",
+    "turkish": "göz; pınar, kaynak",
+    "glossSource": "deck",
+    "noteId": "ayn",
+    "root": "عين"
   },
   "عُذْ": {
     "pos": "fil",
@@ -537,6 +1928,27 @@
     "glossSource": "generated",
     "root": "عوذ"
   },
+  "عُسْر": {
+    "pos": "ism",
+    "english": "hardship",
+    "turkish": "zorluk, güçlük",
+    "glossSource": "generated",
+    "root": "عسر"
+  },
+  "عُسْرَى": {
+    "pos": "ism",
+    "english": "the hard path, hardship",
+    "turkish": "zorluk yolu",
+    "glossSource": "generated",
+    "root": "عسر"
+  },
+  "عُقْبَى": {
+    "pos": "ism",
+    "english": "outcome, consequence",
+    "turkish": "akıbet, son",
+    "glossSource": "generated",
+    "root": "عقب"
+  },
   "عُقْدَة": {
     "pos": "ism",
     "english": "knot",
@@ -544,12 +1956,57 @@
     "glossSource": "generated",
     "root": "عقد"
   },
+  "عِلْم": {
+    "pos": "ism",
+    "english": "knowledge",
+    "turkish": "ilim, bilgi",
+    "glossSource": "deck",
+    "noteId": "ilm",
+    "root": "علم"
+  },
+  "عِند": {
+    "pos": "ism",
+    "english": "at, with, in the presence of",
+    "turkish": "yanında, katında",
+    "glossSource": "deck",
+    "noteId": "ind",
+    "root": "عند"
+  },
+  "عِهْن": {
+    "pos": "ism",
+    "english": "wool",
+    "turkish": "yün",
+    "glossSource": "generated",
+    "root": "عهن"
+  },
+  "عِيشَة": {
+    "pos": "ism",
+    "english": "life, living",
+    "turkish": "yaşayış, hayat",
+    "glossSource": "generated",
+    "root": "عيش"
+  },
   "غاسِق": {
     "pos": "ism",
     "english": "darkness, night as it settles",
     "turkish": "karanlık, çöken gece",
     "glossSource": "generated",
     "root": "غسق"
+  },
+  "غَشِيَ": {
+    "pos": "fil",
+    "english": "to cover, to envelop",
+    "turkish": "bürümek, örtmek",
+    "glossSource": "generated",
+    "root": "غشو"
+  },
+  "غَيْر": {
+    "pos": "ism",
+    "english": "other than, not",
+    "turkish": "başka, gayrı, değil",
+    "glossSource": "deck",
+    "noteId": "ghayr",
+    "root": "غير"
   },
   "ف": {
     "pos": "harf",
@@ -564,6 +2021,27 @@
     "glossSource": "generated",
     "root": "فتح"
   },
+  "فَجْر": {
+    "pos": "ism",
+    "english": "dawn",
+    "turkish": "fecir, tan vakti",
+    "glossSource": "generated",
+    "root": "فجر"
+  },
+  "فَراش": {
+    "pos": "ism",
+    "english": "moths",
+    "turkish": "kelebekler, pervaneler",
+    "glossSource": "generated",
+    "root": "فرش"
+  },
+  "فَرَغْ": {
+    "pos": "fil",
+    "english": "to be free of a task, to finish",
+    "turkish": "işini bitirmek, boşalmak",
+    "glossSource": "generated",
+    "root": "فرغ"
+  },
   "فَعَلَ": {
     "pos": "fil",
     "english": "to do, to act",
@@ -571,6 +2049,13 @@
     "glossSource": "deck",
     "noteId": "faala",
     "root": "فعل"
+  },
+  "فَكّ": {
+    "pos": "ism",
+    "english": "freeing, setting loose",
+    "turkish": "çözme, azat etme",
+    "glossSource": "generated",
+    "root": "فكك"
   },
   "فَلَق": {
     "pos": "ism",
@@ -586,6 +2071,21 @@
     "glossSource": "generated",
     "root": "فوج"
   },
+  "فُؤاد": {
+    "pos": "ism",
+    "english": "heart",
+    "turkish": "kalp, gönül",
+    "glossSource": "deck",
+    "noteId": "fuad",
+    "root": "فأد"
+  },
+  "فُجُور": {
+    "pos": "ism",
+    "english": "wickedness, transgression",
+    "turkish": "kötülük, azgınlık",
+    "glossSource": "generated",
+    "root": "فجر"
+  },
   "فِي": {
     "pos": "harf",
     "english": "in, inside",
@@ -600,6 +2100,13 @@
     "glossSource": "generated",
     "root": "فيل"
   },
+  "قارِعَة": {
+    "pos": "ism",
+    "english": "the striking calamity",
+    "turkish": "çarpan âfet, kâria",
+    "glossSource": "generated",
+    "root": "قرع"
+  },
   "قالَ": {
     "pos": "fil",
     "english": "to say",
@@ -607,6 +2114,79 @@
     "glossSource": "deck",
     "noteId": "qala",
     "root": "قول"
+  },
+  "قَبْر": {
+    "pos": "ism",
+    "english": "grave",
+    "turkish": "kabir, mezar",
+    "glossSource": "generated",
+    "root": "قبر"
+  },
+  "قَد": {
+    "pos": "harf",
+    "english": "indeed, already",
+    "turkish": "muhakkak, gerçekten",
+    "glossSource": "deck",
+    "noteId": "qad"
+  },
+  "قَدَرَ": {
+    "pos": "fil",
+    "english": "to have power over, to be able; to decree, to measure out",
+    "turkish": "güç yetirmek; takdir etmek, ölçmek",
+    "glossSource": "deck",
+    "noteId": "qadara",
+    "root": "قدر"
+  },
+  "قَدْح": {
+    "pos": "ism",
+    "english": "striking of hooves",
+    "turkish": "çakma, vuruş",
+    "glossSource": "generated",
+    "root": "قدح"
+  },
+  "قَدْر": {
+    "pos": "ism",
+    "english": "decree, measure, worth",
+    "turkish": "kadir, takdir, değer",
+    "glossSource": "generated",
+    "root": "قدر"
+  },
+  "قَرَأَ": {
+    "pos": "fil",
+    "english": "to read, to recite",
+    "turkish": "kıraat etmek, okumak",
+    "glossSource": "deck",
+    "noteId": "qaraa",
+    "root": "قرأ"
+  },
+  "قَلَم": {
+    "pos": "ism",
+    "english": "pen",
+    "turkish": "kalem",
+    "glossSource": "generated",
+    "root": "قلم"
+  },
+  "قَلَى": {
+    "pos": "fil",
+    "english": "to detest, to abandon in anger",
+    "turkish": "darılmak, terk etmek",
+    "glossSource": "generated",
+    "root": "قلي"
+  },
+  "قَمَر": {
+    "pos": "ism",
+    "english": "moon",
+    "turkish": "ay",
+    "glossSource": "deck",
+    "noteId": "qamar",
+    "root": "قمر"
+  },
+  "قَيِّمَة": {
+    "pos": "ism",
+    "english": "upright, true",
+    "turkish": "dosdoğru, sağlam",
+    "glossSource": "generated",
+    "root": "قوم"
   },
   "قُرَيْش": {
     "pos": "ism",
@@ -621,6 +2201,14 @@
     "turkish": "gibi",
     "glossSource": "deck",
     "noteId": "kaf"
+  },
+  "كاذِب": {
+    "pos": "ism",
+    "english": "liar, lying",
+    "turkish": "yalancı",
+    "glossSource": "deck",
+    "noteId": "kadhib-2",
+    "root": "كذب"
   },
   "كافِر": {
     "pos": "ism",
@@ -638,6 +2226,13 @@
     "noteId": "kana",
     "root": "كون"
   },
+  "كَبَد": {
+    "pos": "ism",
+    "english": "hardship, toil",
+    "turkish": "zorluk, meşakkat",
+    "glossSource": "generated",
+    "root": "كبد"
+  },
   "كَذَّبَ": {
     "pos": "fil",
     "english": "to deny, to call a lie",
@@ -653,6 +2248,28 @@
     "glossSource": "deck",
     "noteId": "kasaba",
     "root": "كسب"
+  },
+  "كَفَرَ": {
+    "pos": "fil",
+    "english": "to disbelieve, to reject",
+    "turkish": "inkâr etmek, kâfir olmak",
+    "glossSource": "deck",
+    "noteId": "kafara",
+    "root": "كفر"
+  },
+  "كَلّا": {
+    "pos": "harf",
+    "english": "nay, by no means",
+    "turkish": "hayır, asla",
+    "glossSource": "deck",
+    "noteId": "kalla"
+  },
+  "كَنُود": {
+    "pos": "ism",
+    "english": "ungrateful",
+    "turkish": "nankör, iyilik bilmez",
+    "glossSource": "generated",
+    "root": "كند"
   },
   "كَوْثَر": {
     "pos": "ism",
@@ -684,6 +2301,22 @@
     "glossSource": "generated",
     "root": "كفأ"
   },
+  "كُلّ": {
+    "pos": "ism",
+    "english": "all, every",
+    "turkish": "her, bütün",
+    "glossSource": "deck",
+    "noteId": "kull",
+    "root": "كلل"
+  },
+  "كِتاب": {
+    "pos": "ism",
+    "english": "book, writing",
+    "turkish": "kitap, yazı",
+    "glossSource": "deck",
+    "noteId": "kitab",
+    "root": "كتب"
+  },
   "ل": {
     "pos": "harf",
     "english": "for, belonging to",
@@ -705,12 +2338,71 @@
     "glossSource": "deck",
     "noteId": "lam-2"
   },
+  "لَن": {
+    "pos": "harf",
+    "english": "never (with the subjunctive)",
+    "turkish": "asla -meyecek",
+    "glossSource": "deck",
+    "noteId": "lan"
+  },
   "لَهَب": {
     "pos": "ism",
     "english": "flame",
     "turkish": "alev",
     "glossSource": "generated",
     "root": "لهب"
+  },
+  "لَو": {
+    "pos": "harf",
+    "english": "if (counterfactual)",
+    "turkish": "keşke, eğer (olmayanı varsayarak)",
+    "glossSource": "deck",
+    "noteId": "law"
+  },
+  "لَيْسَ": {
+    "pos": "fil",
+    "english": "not to be, is not",
+    "turkish": "değildir, yoktur",
+    "glossSource": "deck",
+    "noteId": "laysa",
+    "root": "ليس"
+  },
+  "لَيْل": {
+    "pos": "ism",
+    "english": "night",
+    "turkish": "gece",
+    "glossSource": "deck",
+    "noteId": "layl",
+    "root": "ليل"
+  },
+  "لَيْلَة": {
+    "pos": "ism",
+    "english": "night",
+    "turkish": "gece",
+    "glossSource": "generated",
+    "root": "ليل"
+  },
+  "لُبَد": {
+    "pos": "ism",
+    "english": "abundant, heaped up",
+    "turkish": "çok, yığın yığın",
+    "glossSource": "generated",
+    "root": "لبد"
+  },
+  "لُمَزَة": {
+    "pos": "ism",
+    "english": "a fault-finder, a mocker",
+    "turkish": "ayıplayan, alay eden",
+    "glossSource": "generated",
+    "root": "لمز"
+  },
+  "لِسان": {
+    "pos": "ism",
+    "english": "tongue, language",
+    "turkish": "dil",
+    "glossSource": "deck",
+    "noteId": "lisan",
+    "root": "لسن"
   },
   "ما": {
     "pos": "ism",
@@ -741,12 +2433,83 @@
     "glossSource": "generated",
     "root": "أكل"
   },
+  "مَبْثُوث": {
+    "pos": "ism",
+    "english": "scattered",
+    "turkish": "dağılmış, savrulmuş",
+    "glossSource": "generated",
+    "root": "بثث"
+  },
+  "مَتْرَبَة": {
+    "pos": "ism",
+    "english": "destitution, dust of poverty",
+    "turkish": "sefalet, yoksulluk",
+    "glossSource": "generated",
+    "root": "ترب"
+  },
+  "مَرْحَمَة": {
+    "pos": "ism",
+    "english": "mercy, compassion",
+    "turkish": "merhamet, acıma",
+    "glossSource": "generated",
+    "root": "رحم"
+  },
   "مَسَد": {
     "pos": "ism",
     "english": "twisted palm fibre",
     "turkish": "bükülmüş lif, hurma ipi",
     "glossSource": "generated",
     "root": "مسد"
+  },
+  "مَسْغَبَة": {
+    "pos": "ism",
+    "english": "hunger, famine",
+    "turkish": "kıtlık, açlık",
+    "glossSource": "generated",
+    "root": "سغب"
+  },
+  "مَشْأَمَة": {
+    "pos": "ism",
+    "english": "the left hand, ill fortune",
+    "turkish": "sol yan, uğursuzluk",
+    "glossSource": "generated",
+    "root": "شأم"
+  },
+  "مَطْلَع": {
+    "pos": "ism",
+    "english": "the rising, the break of dawn",
+    "turkish": "doğuş vakti",
+    "glossSource": "generated",
+    "root": "طلع"
+  },
+  "مَع": {
+    "pos": "ism",
+    "english": "with",
+    "turkish": "ile, beraber",
+    "glossSource": "deck",
+    "noteId": "ma-2"
+  },
+  "مَقابِر": {
+    "pos": "ism",
+    "english": "graves",
+    "turkish": "kabirler, mezarlar",
+    "glossSource": "generated",
+    "root": "قبر"
+  },
+  "مَقْرَبَة": {
+    "pos": "ism",
+    "english": "kinship, near relation",
+    "turkish": "yakınlık, akrabalık",
+    "glossSource": "generated",
+    "root": "قرب"
+  },
+  "مَلَك": {
+    "pos": "ism",
+    "english": "angel",
+    "turkish": "melek",
+    "glossSource": "deck",
+    "noteId": "malak",
+    "root": "ملك"
   },
   "مَلِك": {
     "pos": "ism",
@@ -755,6 +2518,26 @@
     "glossSource": "generated",
     "root": "ملك"
   },
+  "مَمْنُون": {
+    "pos": "ism",
+    "english": "cut off, withheld",
+    "turkish": "kesilen, eksiltilen",
+    "glossSource": "generated",
+    "root": "منن"
+  },
+  "مَن": {
+    "pos": "ism",
+    "english": "who, whoever",
+    "turkish": "kim, her kim",
+    "glossSource": "generated"
+  },
+  "مَنفُوش": {
+    "pos": "ism",
+    "english": "carded, fluffed",
+    "turkish": "atılmış, didiklenmiş",
+    "glossSource": "generated",
+    "root": "نفش"
+  },
   "مَنَعَ": {
     "pos": "fil",
     "english": "to withhold, to refuse",
@@ -762,12 +2545,90 @@
     "glossSource": "generated",
     "root": "منع"
   },
+  "مَيْمَنَة": {
+    "pos": "ism",
+    "english": "the right hand, blessedness",
+    "turkish": "sağ yan, meymenet",
+    "glossSource": "generated",
+    "root": "يمن"
+  },
+  "مُؤْصَدَة": {
+    "pos": "ism",
+    "english": "closed over, shut in",
+    "turkish": "üzerine kapatılmış",
+    "glossSource": "generated",
+    "root": "وصد"
+  },
+  "مُخْلِص": {
+    "pos": "ism",
+    "english": "sincere, devoting worship purely",
+    "turkish": "ihlâslı, samimi",
+    "glossSource": "generated",
+    "root": "خلص"
+  },
+  "مُشْرِك": {
+    "pos": "ism",
+    "english": "polytheist, one who associates partners with God",
+    "turkish": "müşrik, ortak koşan",
+    "glossSource": "deck",
+    "noteId": "mushrik",
+    "root": "شرك"
+  },
   "مُصَلّي": {
     "pos": "ism",
     "english": "one who prays",
     "turkish": "namaz kılan",
     "glossSource": "generated",
     "root": "صلو"
+  },
+  "مُطَهَّرَة": {
+    "pos": "ism",
+    "english": "purified",
+    "turkish": "tertemiz kılınmış",
+    "glossSource": "generated",
+    "root": "طهر"
+  },
+  "مُغِيرَة": {
+    "pos": "ism",
+    "english": "raiding at dawn",
+    "turkish": "akın eden, saldıran",
+    "glossSource": "generated",
+    "root": "غير"
+  },
+  "مُمَدَّدَة": {
+    "pos": "ism",
+    "english": "extended, outstretched",
+    "turkish": "uzatılmış",
+    "glossSource": "generated",
+    "root": "مدد"
+  },
+  "مُنفَكّ": {
+    "pos": "ism",
+    "english": "parting, giving up",
+    "turkish": "ayrılan, vazgeçen",
+    "glossSource": "generated",
+    "root": "فكك"
+  },
+  "مُورِيَة": {
+    "pos": "ism",
+    "english": "striking sparks",
+    "turkish": "kıvılcım çıkaran",
+    "glossSource": "generated",
+    "root": "وري"
+  },
+  "مُوقَدَة": {
+    "pos": "ism",
+    "english": "kindled",
+    "turkish": "tutuşturulmuş, yakılmış",
+    "glossSource": "generated",
+    "root": "وقد"
+  },
+  "مِثْقال": {
+    "pos": "ism",
+    "english": "the weight of",
+    "turkish": "ağırlığınca, tartısı",
+    "glossSource": "generated",
+    "root": "ثقل"
   },
   "مِسْكِين": {
     "pos": "ism",
@@ -783,6 +2644,27 @@
     "turkish": "-den / -dan",
     "glossSource": "deck",
     "noteId": "min"
+  },
+  "مِيزان": {
+    "pos": "ism",
+    "english": "balance, scale",
+    "turkish": "mizan, terazi, ölçü",
+    "glossSource": "deck",
+    "noteId": "miyzan",
+    "root": "وزن"
+  },
+  "ن": {
+    "pos": "harf",
+    "english": "(emphatic nun)",
+    "turkish": "(tekit nûnu)",
+    "glossSource": "generated"
+  },
+  "نادِي": {
+    "pos": "ism",
+    "english": "assembly, council",
+    "turkish": "meclis, topluluk",
+    "glossSource": "generated",
+    "root": "ندي"
   },
   "نار": {
     "pos": "ism",
@@ -800,6 +2682,41 @@
     "noteId": "nas",
     "root": "أنس"
   },
+  "ناصِيَة": {
+    "pos": "ism",
+    "english": "forelock",
+    "turkish": "perçem, alın",
+    "glossSource": "generated",
+    "root": "نصي"
+  },
+  "ناقَة": {
+    "pos": "ism",
+    "english": "she-camel",
+    "turkish": "dişi deve",
+    "glossSource": "generated",
+    "root": "نوق"
+  },
+  "نَبَذَ": {
+    "pos": "fil",
+    "english": "to cast, to hurl",
+    "turkish": "atmak, fırlatmak",
+    "glossSource": "generated",
+    "root": "نبذ"
+  },
+  "نَجْدَيْن": {
+    "pos": "ism",
+    "english": "the two highways",
+    "turkish": "iki yol, iki tepe",
+    "glossSource": "generated",
+    "root": "نجد"
+  },
+  "نَسْفَعًۢ": {
+    "pos": "fil",
+    "english": "to seize and drag",
+    "turkish": "alnından tutup sürüklemek",
+    "glossSource": "generated",
+    "root": "سفع"
+  },
   "نَصْر": {
     "pos": "ism",
     "english": "help, victory",
@@ -808,6 +2725,14 @@
     "noteId": "nasr",
     "root": "نصر"
   },
+  "نَعِيم": {
+    "pos": "ism",
+    "english": "bliss, delight",
+    "turkish": "nimet, huzur",
+    "glossSource": "deck",
+    "noteId": "naiym",
+    "root": "نعم"
+  },
   "نَفّاثَة": {
     "pos": "ism",
     "english": "those who blow on knots",
@@ -815,17 +2740,138 @@
     "glossSource": "generated",
     "root": "نفث"
   },
+  "نَفْس": {
+    "pos": "ism",
+    "english": "soul, self",
+    "turkish": "nefis, can, kendi",
+    "glossSource": "deck",
+    "noteId": "nafs",
+    "root": "نفس"
+  },
+  "نَقْع": {
+    "pos": "ism",
+    "english": "dust",
+    "turkish": "toz",
+    "glossSource": "generated",
+    "root": "نقع"
+  },
+  "نَهار": {
+    "pos": "ism",
+    "english": "daytime, day",
+    "turkish": "gündüz",
+    "glossSource": "deck",
+    "noteId": "nahar",
+    "root": "نهر"
+  },
+  "نَهَر": {
+    "pos": "ism",
+    "english": "river",
+    "turkish": "nehir, ırmak",
+    "glossSource": "deck",
+    "noteId": "nahar-2",
+    "root": "نهر"
+  },
+  "نَهَى": {
+    "pos": "fil",
+    "english": "to forbid, to prohibit",
+    "turkish": "menetmek, yasaklamak",
+    "glossSource": "deck",
+    "noteId": "nahaa",
+    "root": "نهي"
+  },
+  "نُصِبَتْ": {
+    "pos": "fil",
+    "english": "to strive hard, to toil",
+    "turkish": "gayretle çalışmak, yorulmak",
+    "glossSource": "generated",
+    "root": "نصب"
+  },
+  "نِعْمَة": {
+    "pos": "ism",
+    "english": "blessing, favor",
+    "turkish": "nimet, lütuf",
+    "glossSource": "deck",
+    "noteId": "nima",
+    "root": "نعم"
+  },
   "ه": {
     "pos": "harf",
     "english": "(attention particle)",
     "turkish": "(tenbih edatı)",
     "glossSource": "generated"
   },
+  "هاوِيَة": {
+    "pos": "ism",
+    "english": "the abyss",
+    "turkish": "uçurum, cehennem çukuru",
+    "glossSource": "generated",
+    "root": "هوي"
+  },
+  "هَدَى": {
+    "pos": "fil",
+    "english": "to guide",
+    "turkish": "hidayet etmek, doğru yola iletmek",
+    "glossSource": "deck",
+    "noteId": "hadaa",
+    "root": "هدي"
+  },
+  "هُدًى": {
+    "pos": "ism",
+    "english": "guidance",
+    "turkish": "hidayet, yol gösterme",
+    "glossSource": "deck",
+    "noteId": "hudana",
+    "root": "هدي"
+  },
+  "هُمَزَة": {
+    "pos": "ism",
+    "english": "a slanderer, a backbiter",
+    "turkish": "çekiştiren, gıybetçi",
+    "glossSource": "generated",
+    "root": "همز"
+  },
   "و": {
     "pos": "harf",
     "english": "and",
     "turkish": "ve",
     "glossSource": "generated"
+  },
+  "والِد": {
+    "pos": "ism",
+    "english": "a father, one who begets",
+    "turkish": "baba, vâlid",
+    "glossSource": "generated",
+    "root": "ولد"
+  },
+  "وَجَدَ": {
+    "pos": "fil",
+    "english": "to find",
+    "turkish": "bulmak",
+    "glossSource": "deck",
+    "noteId": "wajada",
+    "root": "وجد"
+  },
+  "وَجْه": {
+    "pos": "ism",
+    "english": "face",
+    "turkish": "yüz, çehre",
+    "glossSource": "deck",
+    "noteId": "wajh",
+    "root": "وجه"
+  },
+  "وَدَّعَ": {
+    "pos": "fil",
+    "english": "to forsake, to take leave of",
+    "turkish": "terk etmek, bırakmak",
+    "glossSource": "generated",
+    "root": "ودع"
+  },
+  "وَسَطْ": {
+    "pos": "fil",
+    "english": "to plunge into the middle",
+    "turkish": "ortasına dalmak",
+    "glossSource": "generated",
+    "root": "وسط"
   },
   "وَسْواس": {
     "pos": "ism",
@@ -840,6 +2886,14 @@
     "turkish": "vesvese vermek",
     "glossSource": "generated",
     "root": "وسوس"
+  },
+  "وَضَعَ": {
+    "pos": "fil",
+    "english": "to put, to place, to set down",
+    "turkish": "koymak, yerleştirmek",
+    "glossSource": "deck",
+    "noteId": "wadaa",
+    "root": "وضع"
   },
   "وَقَبَ": {
     "pos": "fil",
@@ -861,6 +2915,13 @@
     "turkish": "vay hâline, yazıklar olsun",
     "glossSource": "deck",
     "noteId": "wayl"
+  },
+  "وِزْر": {
+    "pos": "ism",
+    "english": "burden, load",
+    "turkish": "yük, ağırlık",
+    "glossSource": "generated",
+    "root": "وزر"
   },
   "ي": {
     "pos": "harf",
@@ -898,6 +2959,27 @@
     "glossSource": "generated",
     "root": "دعع"
   },
+  "يَرْغَبُ": {
+    "pos": "fil",
+    "english": "to turn with longing, to desire",
+    "turkish": "rağbet etmek, yönelmek",
+    "glossSource": "generated",
+    "root": "رغب"
+  },
+  "يَسَّرَ": {
+    "pos": "fil",
+    "english": "to make easy",
+    "turkish": "kolaylaştırmak",
+    "glossSource": "generated",
+    "root": "يسر"
+  },
+  "يَصْدُرُ": {
+    "pos": "fil",
+    "english": "to come forth, to issue",
+    "turkish": "çıkmak, ortaya çıkmak",
+    "glossSource": "generated",
+    "root": "صدر"
+  },
   "يَصْلَى": {
     "pos": "fil",
     "english": "to burn in, to be roasted in",
@@ -905,11 +2987,47 @@
     "glossSource": "generated",
     "root": "صلي"
   },
+  "يَقِين": {
+    "pos": "ism",
+    "english": "certainty",
+    "turkish": "yakîn, kesin bilgi",
+    "glossSource": "generated",
+    "root": "يقن"
+  },
+  "يَوْم": {
+    "pos": "ism",
+    "english": "day",
+    "turkish": "gün",
+    "glossSource": "deck",
+    "noteId": "yawm",
+    "root": "يوم"
+  },
+  "يُجَنَّبُ": {
+    "pos": "fil",
+    "english": "to be kept away from",
+    "turkish": "uzak tutulmak",
+    "glossSource": "generated",
+    "root": "جنب"
+  },
   "يُراءُ": {
     "pos": "fil",
     "english": "to show off, to be seen doing",
     "turkish": "gösteriş yapmak",
     "glossSource": "generated",
     "root": "رأي"
+  },
+  "يُسْر": {
+    "pos": "ism",
+    "english": "ease",
+    "turkish": "kolaylık",
+    "glossSource": "generated",
+    "root": "يسر"
+  },
+  "يُسْرَى": {
+    "pos": "ism",
+    "english": "the easy path, ease",
+    "turkish": "kolaylık yolu",
+    "glossSource": "generated",
+    "root": "يسر"
   }
 }

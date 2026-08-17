@@ -23,11 +23,13 @@ import {
   headSegment,
   load,
   parseTanzil,
+  sliceSegments,
   splitBasmala,
   toJson,
   tokenize,
   unusedGlosses,
 } from './generateReadingText'
+import type { CorpusLine } from '../src/content/corpus/types'
 
 const OUT = join(import.meta.dirname, '../src/content/corpus')
 
@@ -94,6 +96,18 @@ describe('splitBasmala', () => {
     expect(split.text.startsWith(basmala)).toBe(false)
     expect(`${split.basmala} ${split.text}`).toBe(ayat.get('112:1'))
   })
+
+  it('keeps the heading at-Tin is written with, shadda and all', () => {
+    // Tanzil marks a shadda on the ba of bismi here and in al-Qadr. Rejoining
+    // has to give the line back exactly, so the heading is that surah's own.
+    const split = splitBasmala(ayat.get('95:1')!, basmala, 95)
+    expect(split.basmala).not.toBe(basmala)
+    expect(`${split.basmala} ${split.text}`).toBe(ayat.get('95:1'))
+  })
+
+  it('refuses a first ayah that does not open with it', () => {
+    expect(() => splitBasmala(ayat.get('2:2')!, basmala, 2)).toThrow(/basmala/)
+  })
 })
 
 describe('tokenize', () => {
@@ -110,8 +124,67 @@ describe('tokenize', () => {
   })
 })
 
+describe('sliceSegments', () => {
+  it('cuts a word between its segments', () => {
+    expect(sliceSegments('abcd', ['ab', 'cd'], 'test')).toEqual(['ab', 'cd'])
+  })
+
+  it('refuses a segment the text does not spell', () => {
+    expect(() => sliceSegments('abcd', ['ab', 'ce'], 'test')).toThrow(/does not spell/)
+  })
+
+  it('refuses letters left over past the last segment', () => {
+    expect(() => sliceSegments('abcd', ['ab'], 'test')).toThrow(/past its segments/)
+  })
+})
+
+describe('the fold between the two sources', () => {
+  it('covers exactly the words they spell differently', () => {
+    // The fold is what lets a word be cut into its segments when Tanzil and
+    // the morphology write one of its marks differently, and it is deliberately
+    // narrow (see `spelling`). This is what keeps it narrow: a corpus swap that
+    // introduced a disagreement anywhere else would land here rather than be
+    // absorbed. The stored form is the Tanzil one, so a word is on this list
+    // exactly when the two sources disagree about it.
+    const differing: string[] = []
+    for (const surah of built.surahs) {
+      const lines: { where: string; line: CorpusLine; morphology: string[] }[] = surah.ayat.map(
+        (ayah) => ({
+          where: `${surah.surah}:${ayah.ayah}`,
+          line: ayah,
+          morphology: morphologyWords(surah.surah, ayah.ayah),
+        }),
+      )
+      // The heading's morphology is al-Fatiha 1:1, whatever surah it heads.
+      if (surah.basmala) {
+        lines.push({
+          where: `${surah.surah} basmala`,
+          line: surah.basmala,
+          morphology: morphologyWords(1, 1),
+        })
+      }
+      for (const { where, line, morphology } of lines) {
+        for (const [i, token] of line.tokens.entries()) {
+          const stored = token.segments.map((s) => s.form).join('')
+          if (stored !== morphology[i]) differing.push(`${where}:${i + 1}`)
+        }
+      }
+    }
+    expect(differing.sort()).toEqual(['92:13:3', '93:4:1', '95 basmala:1', '97 basmala:1'])
+  })
+})
+
 function rowsOfAyah(surah: number, ayah: number) {
   return rows.filter((r) => r.surah === surah && r.ayah === ayah)
+}
+
+/** The words of an ayah as the morphology spells them, its segments rejoined. */
+function morphologyWords(surah: number, ayah: number): string[] {
+  const byWord = new Map<number, string>()
+  for (const row of rowsOfAyah(surah, ayah)) {
+    byWord.set(row.word, (byWord.get(row.word) ?? '') + row.form)
+  }
+  return [...byWord.keys()].sort((a, b) => a - b).map((w) => byWord.get(w)!)
 }
 
 describe('the built corpus', () => {

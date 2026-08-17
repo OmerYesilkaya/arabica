@@ -47,8 +47,17 @@ function storedLines(): { cite: string; line: string }[] {
 // The same skeleton reduction checkCitations.test.ts uses: strip every mark
 // that is not a base letter, then fold the alif and hamza-carrier variants
 // that differ between mushaf orthography and plain imla'i writing.
+//
+// One fold runs first, before even the normalizing, because it turns a mark
+// into a letter: the hamza an alif carries after a prefix is written above a
+// tatweel in the Tanzil text and as a standalone hamza by the API, so
+// stripping the marks would leave a hamza on one side and nothing on the
+// other. Before normalizing because NFC reorders that hamza past the vowel
+// beside it, which would leave nothing for the fold to match. It affects
+// al-akhira at 92:13 and 93:4.
 function skeleton(text: string): string {
   return text
+    .replace(/ـٔ/g, 'ء')
     .normalize('NFC')
     .replace(/[ً-ٰٟۖ-ۭـ]/g, '')
     .replace(/[ٱآأإ]/g, 'ا')

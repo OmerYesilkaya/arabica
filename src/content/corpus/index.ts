@@ -3,12 +3,12 @@ import type { CorpusLemmas, CorpusSurah } from './types'
 
 /**
  * The Texts the reader can open: whole surahs, in their own order. The last
- * ten to begin with — short enough to be read in one sitting, and the ones a
- * learner is most likely to already recite.
+ * twenty-five — short enough to be read in one sitting, and the ones a learner
+ * is most likely to already recite.
  *
  * Names are authored here rather than taken from the corpus: neither Tanzil's
- * text file nor the morphology carries them, and ten of them are not worth a
- * second vendored file.
+ * text file nor the morphology carries them, and this many are still not worth
+ * a second vendored file.
  */
 export interface TextRef {
   surah: number
@@ -22,6 +22,21 @@ export interface TextRef {
 }
 
 export const readingTexts: TextRef[] = [
+  { surah: 90, nameArabic: 'البَلَد', name: 'al-Balad', meaning: { english: 'The City', turkish: 'Belde, şehir' }, ayat: 20 },
+  { surah: 91, nameArabic: 'الشَّمْس', name: 'ash-Shams', meaning: { english: 'The Sun', turkish: 'Güneş' }, ayat: 15 },
+  { surah: 92, nameArabic: 'اللَّيْل', name: 'al-Layl', meaning: { english: 'The Night', turkish: 'Gece' }, ayat: 21 },
+  { surah: 93, nameArabic: 'الضُّحَى', name: 'aḍ-Ḍuḥā', meaning: { english: 'The Morning Light', turkish: 'Kuşluk vakti' }, ayat: 11 },
+  { surah: 94, nameArabic: 'الشَّرْح', name: 'ash-Sharḥ', meaning: { english: 'The Relief', turkish: 'İnşirah, ferahlama' }, ayat: 8 },
+  { surah: 95, nameArabic: 'التِّين', name: 'at-Tīn', meaning: { english: 'The Fig', turkish: 'İncir' }, ayat: 8 },
+  { surah: 96, nameArabic: 'العَلَق', name: 'al-ʿAlaq', meaning: { english: 'The Clinging Form', turkish: 'Alaka, kan pıhtısı' }, ayat: 19 },
+  { surah: 97, nameArabic: 'القَدْر', name: 'al-Qadr', meaning: { english: 'Destiny', turkish: 'Kadir, takdir' }, ayat: 5 },
+  { surah: 98, nameArabic: 'البَيِّنَة', name: 'al-Bayyina', meaning: { english: 'The Clear Evidence', turkish: 'Beyyine, apaçık delil' }, ayat: 8 },
+  { surah: 99, nameArabic: 'الزَّلْزَلَة', name: 'az-Zalzala', meaning: { english: 'The Earthquake', turkish: 'Zelzele, deprem' }, ayat: 8 },
+  { surah: 100, nameArabic: 'العَادِيَات', name: 'al-ʿĀdiyāt', meaning: { english: 'The Charging Steeds', turkish: 'Koşan atlar' }, ayat: 11 },
+  { surah: 101, nameArabic: 'القَارِعَة', name: 'al-Qāriʿa', meaning: { english: 'The Calamity', turkish: 'Kâria, çarpan âfet' }, ayat: 11 },
+  { surah: 102, nameArabic: 'التَّكَاثُر', name: 'at-Takāthur', meaning: { english: 'Rivalry in Increase', turkish: 'Mal çoğaltma yarışı' }, ayat: 8 },
+  { surah: 103, nameArabic: 'العَصْر', name: 'al-ʿAṣr', meaning: { english: 'The Passing Time', turkish: 'Asır, ikindi vakti' }, ayat: 3 },
+  { surah: 104, nameArabic: 'الهُمَزَة', name: 'al-Humaza', meaning: { english: 'The Slanderer', turkish: 'Hümeze, gıybetçi' }, ayat: 9 },
   { surah: 105, nameArabic: 'الفِيل', name: 'al-Fīl', meaning: { english: 'The Elephant', turkish: 'Fil' }, ayat: 5 },
   { surah: 106, nameArabic: 'قُرَيْش', name: 'Quraysh', meaning: { english: 'Quraysh', turkish: 'Kureyş' }, ayat: 4 },
   { surah: 107, nameArabic: 'المَاعُون', name: 'al-Māʿūn', meaning: { english: 'Small Kindnesses', turkish: 'Küçük İyilikler' }, ayat: 7 },
@@ -58,8 +73,8 @@ export const PROVENANCE = {
 
 /*
  * Lazy loading. Each surah is its own chunk, fetched when it is opened, so the
- * main bundle does not grow with the corpus — ten surahs today, and the same
- * shape if all 114 are ever added.
+ * main bundle does not grow with the corpus — twenty-five surahs today, and
+ * the same shape if all 114 are ever added.
  *
  * import.meta.glob rather than a bare dynamic import: it keeps the JSON out of
  * the typechecker (a literal type per ayah would be enormous and useless)

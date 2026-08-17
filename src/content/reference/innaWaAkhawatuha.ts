@@ -26,7 +26,7 @@ export const innaWaAkhawatuha: ReferenceEntry = {
   id: 'inna-wa-akhawatuha',
   title: 'Inna and its Sisters',
   titleArabic: 'إِنَّ وَأَخَوَاتُهَا',
-  order: 8,
+  order: 9,
   summary: 'The particles that put the subject into naṣb and raise the predicate.',
   sections: [
     {

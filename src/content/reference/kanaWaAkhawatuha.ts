@@ -21,7 +21,7 @@ export const kanaWaAkhawatuha: ReferenceEntry = {
   id: 'kana-wa-akhawatuha',
   title: 'Kāna and its Sisters',
   titleArabic: 'كَانَ وَأَخَوَاتُهَا',
-  order: 7,
+  order: 8,
   summary: 'The verbs that raise the subject and put the predicate into naṣb.',
   sections: [
     {

@@ -27,7 +27,7 @@ export const nawasibAlFil: ReferenceEntry = {
   id: 'nawasib-al-fil',
   title: 'Naṣb Particles of the Verb',
   titleArabic: 'نَوَاصِبُ الْفِعْلِ',
-  order: 4,
+  order: 5,
   summary: 'The ten particles that put the present verb into naṣb, with their signs.',
   sections: [
     {

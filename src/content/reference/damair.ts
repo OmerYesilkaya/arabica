@@ -20,7 +20,7 @@ export const damair: ReferenceEntry = {
   id: 'damair',
   title: 'Pronouns',
   titleArabic: 'اَلضَّمَائِرُ',
-  order: 6,
+  order: 7,
   summary: 'Attached and detached pronoun tables.',
   sections: [
     {

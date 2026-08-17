@@ -17,7 +17,7 @@ export const verbConjugation: ReferenceEntry = {
   id: 'verb-conjugation',
   title: 'Verb Conjugation Tables',
   titleArabic: 'تَصْرِيفُ الْأَفْعَالِ',
-  order: 9,
+  order: 10,
   summary: 'Māḍī, muḍāriʿ, and amr tables for the sound triliteral verb.',
   sections: [
     {

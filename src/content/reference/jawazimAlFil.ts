@@ -25,7 +25,7 @@ export const jawazimAlFil: ReferenceEntry = {
   id: 'jawazim-al-fil',
   title: 'Jazm Particles of the Verb',
   titleArabic: 'جَوَازِمُ الْفِعْلِ',
-  order: 5,
+  order: 6,
   summary:
     'The particles that put the present verb into jazm: the group that governs one verb and the conditionals that govern two.',
   sections: [

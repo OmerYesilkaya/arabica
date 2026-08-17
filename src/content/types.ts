@@ -294,7 +294,12 @@ export interface ReferenceEntry {
   id: string
   title: string
   titleArabic: string
-  /** Ājurrūmiyya order. */
+  /**
+   * Course order: the order the entries are taught in, which follows the
+   * Ājurrūmiyya wherever the matn has a chapter and interleaves the entries it
+   * has none for where they are needed. Not the matn's own sequence — see
+   * docs/adr/0003-reference-order-is-course-order.md.
+   */
   order: number
   summary: string
   /** Locked entries render as "coming soon" and cannot be opened. */

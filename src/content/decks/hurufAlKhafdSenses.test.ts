@@ -37,9 +37,15 @@ describe('hurufAlKhafdSenses deck', () => {
     }
   })
 
-  it('gives every sense at least one example to ask from', () => {
+  it('gives every sense a pool to rotate, not one sentence', () => {
+    // A single example turns a sense card into an item card: after a few reps
+    // the answer comes from recognising the sentence rather than from reading
+    // the harf in it. Three is the floor; the shipped pools hold four.
     for (const { harf, sense } of allSenses) {
-      expect(sense.examples.length, `${harf.id} / ${sense.term}`).toBeGreaterThan(0)
+      expect(
+        sense.examples.length,
+        `${harf.id} / ${sense.term}`,
+      ).toBeGreaterThanOrEqual(3)
     }
   })
 

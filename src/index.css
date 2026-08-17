@@ -1127,6 +1127,12 @@ table.ref-table .cell-source {
 
 /* ---------- Quran coverage ---------- */
 
+/* main.page is plain block flow with no gap, so every card carries its own
+   bottom margin. Without this the panel butts against the stat tiles below. */
+.coverage {
+  margin-bottom: 16px;
+}
+
 .coverage-head {
   display: flex;
   align-items: flex-start;

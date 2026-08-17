@@ -96,6 +96,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 17:1',
               highlight: { english: 'from', turkish: 'dan' },
             },
+            {
+              arabic: 'وَمِنْ حَيْثُ خَرَجْتَ فَوَلِّ وَجْهَكَ',
+              english: 'And from wherever you set out, turn your face',
+              turkish: 'Nereden çıkarsan, yüzünü o yöne çevir',
+              source: 'Qur’an 2:149',
+              highlight: { english: 'from', turkish: 'den' },
+            },
+            {
+              arabic: 'أُسِّسَ عَلَى التَّقْوَى مِنْ أَوَّلِ يَوْمٍ',
+              english: 'founded upon piety from the first day',
+              turkish: 'ilk günden beri takva üzerine kurulmuş',
+              source: 'Qur’an 9:108',
+              highlight: { english: 'from', turkish: 'den' },
+            },
+            {
+              arabic: 'أَنْ خَلَقَكُمْ مِنْ تُرَابٍ',
+              english: 'that He created you from dust',
+              turkish: 'sizi topraktan yaratması',
+              source: 'Qur’an 30:20',
+              highlight: { english: 'from', turkish: 'tan' },
+            },
           ],
         },
         {
@@ -103,9 +124,32 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           termArabic: 'اَلتَّبْعِيضُ',
           english: 'Partitive: "some of".',
           turkish: 'Kısmîlik bildirir: "bir kısmı, -den bazısı".',
-          // DRAFT (fusha fallback): clear Quranic partitives use the contracted
-          // mimma, which hides the harf; a plain min + noun reads as ibtidāʾ.
           examples: [
+            {
+              arabic: 'خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً',
+              english: 'Take from their wealth a charity',
+              turkish: 'Mallarının bir kısmını sadaka olarak al',
+              source: 'Qur’an 9:103',
+              highlight: { english: 'from', turkish: 'bir kısmını' },
+            },
+            {
+              arabic: 'أَنْفِقُوا مِنْ طَيِّبَاتِ مَا كَسَبْتُمْ',
+              english: 'Spend from the good things you have earned',
+              turkish: 'Kazandıklarınızın iyilerinden infak edin',
+              source: 'Qur’an 2:267',
+              highlight: { english: 'from', turkish: 'lerinden' },
+            },
+            {
+              arabic: 'كُلُوا مِنْ ثَمَرِهِ إِذَا أَثْمَرَ',
+              english: 'Eat some of its fruit when it bears fruit',
+              turkish: 'Ürün verdiğinde meyvesinden yiyin',
+              source: 'Qur’an 6:141',
+              highlight: { english: 'some of', turkish: 'sinden' },
+            },
+            // The textbook's own partitive, kept last: it is the one sentence
+            // here where the partitive reading is forced rather than read off
+            // the context, which is what makes it worth drilling beside the
+            // three ayat.
             {
               arabic: 'أَخَذْتُ مِنَ الدَّرَاهِمِ',
               english: 'I took some of the dirhams',
@@ -127,6 +171,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 22:30',
               highlight: { english: 'of', turkish: 'dan' },
             },
+            {
+              arabic: 'أَسَاوِرَ مِنْ ذَهَبٍ',
+              english: 'bracelets of gold',
+              turkish: 'altından bilezikler',
+              source: 'Qur’an 22:23',
+              highlight: { english: 'of', turkish: 'dan' },
+            },
+            {
+              arabic: 'وَأَنْهَارٌ مِنْ عَسَلٍ مُصَفًّى',
+              english: 'and rivers of purified honey',
+              turkish: 've süzme baldan ırmaklar',
+              source: 'Qur’an 47:15',
+              highlight: { english: 'of', turkish: 'dan' },
+            },
+            {
+              arabic: 'وَيَلْبَسُونَ ثِيَابًا خُضْرًا مِنْ سُنْدُسٍ',
+              english: 'and they will wear green garments of fine silk',
+              turkish: 've ince ipekten yeşil elbiseler giyecekler',
+              source: 'Qur’an 18:31',
+              highlight: { english: 'of', turkish: 'ten' },
+            },
           ],
         },
         {
@@ -134,12 +199,33 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           termArabic: 'زَائِدَةٌ',
           english: 'Extra, for emphasis, usually after a negation.',
           turkish: 'Tekid için zâid gelir, çoğunlukla olumsuzdan sonra.',
+          // No highlight on any of these: a zaidah harf adds emphasis and
+          // nothing a translation renders as a word of its own, so there is no
+          // counterpart span to mark.
           examples: [
             {
               arabic: 'مَا جَاءَنَا مِن بَشِيرٍ وَلَا نَذِيرٍ',
               english: 'No bringer of glad tidings has come to us, nor a warner',
               turkish: 'Bize ne bir müjdeci ne de bir uyarıcı geldi',
               source: 'Qur’an 5:19',
+            },
+            {
+              arabic: 'مَا فَرَّطْنَا فِي الْكِتَابِ مِنْ شَيْءٍ',
+              english: 'We have not neglected a thing in the Book',
+              turkish: 'Kitapta hiçbir şeyi eksik bırakmadık',
+              source: 'Qur’an 6:38',
+            },
+            {
+              arabic: 'وَمَا تَسْقُطُ مِنْ وَرَقَةٍ إِلَّا يَعْلَمُهَا',
+              english: 'and not a leaf falls but He knows it',
+              turkish: 've O bilmedikçe bir yaprak bile düşmez',
+              source: 'Qur’an 6:59',
+            },
+            {
+              arabic: 'مَا يَفْتَحِ اللَّهُ لِلنَّاسِ مِنْ رَحْمَةٍ',
+              english: 'whatever mercy Allah opens for people',
+              turkish: 'Allah insanlara hangi rahmeti açarsa',
+              source: 'Qur’an 35:2',
             },
           ],
         },
@@ -165,6 +251,28 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 2:187',
               highlight: { english: 'until', turkish: 'kadar' },
             },
+            {
+              arabic: 'وَأَيْدِيَكُمْ إِلَى الْمَرَافِقِ',
+              english: 'and your hands up to the elbows',
+              turkish: 've dirseklere kadar ellerinizi',
+              source: 'Qur’an 5:6',
+              highlight: { english: 'up to', turkish: 'kadar' },
+            },
+            {
+              arabic: 'وَلَكُمْ فِي الْأَرْضِ مُسْتَقَرٌّ وَمَتَاعٌ إِلَى حِينٍ',
+              english:
+                'and for you on the earth is a dwelling and provision until a time',
+              turkish: 'Yerde bir süreye kadar barınak ve geçimlik sizin içindir',
+              source: 'Qur’an 2:36',
+              highlight: { english: 'until', turkish: 'kadar' },
+            },
+            {
+              arabic: 'إِنَّ إِلَى رَبِّكَ الرُّجْعَى',
+              english: 'Indeed, to your Lord is the return',
+              turkish: 'Şüphesiz dönüş Rabbinedir',
+              source: 'Qur’an 96:8',
+              highlight: { english: 'to', turkish: 'ne' },
+            },
           ],
         },
       ],
@@ -188,6 +296,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               turkish: 've cahillerden yüz çevir',
               source: 'Qur’an 7:199',
               highlight: { english: 'away from', turkish: 'den' },
+            },
+            {
+              arabic: 'وَالَّذِينَ هُمْ عَنِ اللَّغْوِ مُعْرِضُونَ',
+              english: 'and those who turn away from vain talk',
+              turkish: 'boş sözden yüz çevirenler',
+              source: 'Qur’an 23:3',
+              highlight: { english: 'away from', turkish: 'den' },
+            },
+            {
+              arabic: 'الَّذِينَ يَصْدِفُونَ عَنْ آيَاتِنَا',
+              english: 'those who turn away from Our signs',
+              turkish: 'ayetlerimizden yüz çevirenler',
+              source: 'Qur’an 6:157',
+              highlight: { english: 'away from', turkish: 'den' },
+            },
+            {
+              arabic: 'فَمَنْ زُحْزِحَ عَنِ النَّارِ',
+              english: 'so whoever is drawn away from the Fire',
+              turkish: 'kim ateşten uzaklaştırılırsa',
+              source: 'Qur’an 3:185',
+              highlight: { english: 'away from', turkish: 'ten' },
             },
           ],
         },
@@ -213,6 +342,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 23:22',
               highlight: { english: 'upon', turkish: 'üstünde' },
             },
+            {
+              arabic: 'الَّذِينَ يَمْشُونَ عَلَى الْأَرْضِ هَوْنًا',
+              english: 'those who walk upon the earth humbly',
+              turkish: 'yeryüzünde alçakgönüllüce yürüyenler',
+              source: 'Qur’an 25:63',
+              highlight: { english: 'upon', turkish: 'nde' },
+            },
+            {
+              arabic: 'وَكَانَ عَرْشُهُ عَلَى الْمَاءِ',
+              english: 'and His Throne was upon the water',
+              turkish: 've Arşı suyun üstündeydi',
+              source: 'Qur’an 11:7',
+              highlight: { english: 'upon', turkish: 'üstünde' },
+            },
+            {
+              arabic: 'عَلَى سُرُرٍ مُتَقَابِلِينَ',
+              english: 'upon couches, facing one another',
+              turkish: 'karşılıklı tahtlar üzerinde',
+              source: 'Qur’an 37:44',
+              highlight: { english: 'upon', turkish: 'üzerinde' },
+            },
           ],
         },
       ],
@@ -237,6 +387,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 30:4',
               highlight: { english: 'within', turkish: 'içinde' },
             },
+            {
+              arabic: 'فِي بُيُوتٍ أَذِنَ اللَّهُ أَنْ تُرْفَعَ',
+              english: 'in houses that Allah has ordered to be raised high',
+              turkish: 'Allah’ın yükseltilmesini buyurduğu evlerde',
+              source: 'Qur’an 24:36',
+              highlight: { english: 'in', turkish: 'lerde' },
+            },
+            {
+              arabic: 'فَلَبِثَ فِي السِّجْنِ بِضْعَ سِنِينَ',
+              english: 'so he stayed in prison for several years',
+              turkish: 'hapishanede birkaç yıl kaldı',
+              source: 'Qur’an 12:42',
+              highlight: { english: 'in', turkish: 'de' },
+            },
+            {
+              arabic: 'فِي يَوْمٍ كَانَ مِقْدَارُهُ أَلْفَ سَنَةٍ',
+              english: 'in a day whose measure is a thousand years',
+              turkish: 'ölçüsü bin yıl olan bir günde',
+              source: 'Qur’an 32:5',
+              highlight: { english: 'in', turkish: 'de' },
+            },
           ],
         },
       ],
@@ -256,13 +427,33 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           turkish:
             'Çokluk ("nice") veya bağlama göre azlık bildirir. Yalnız nekre (belirsiz) isimlerin başına gelir.',
           // DRAFT (fusha fallback): rubba occurs in the Qur’an only as rubama
-          // (15:2), which does not enter on a bare indefinite noun as here.
+          // (15:2), which does not enter on a bare indefinite noun as here. The
+          // whole pool is therefore textbook fusha, and the last one is the
+          // taqlīl reading, which only the context distinguishes.
           examples: [
             {
               arabic: 'رُبَّ رَجُلٍ كَرِيمٍ لَقِيتُهُ',
               english: 'Many a generous man have I met',
               turkish: 'Nice cömert adamla karşılaştım',
               highlight: { english: 'Many a', turkish: 'Nice' },
+            },
+            {
+              arabic: 'رُبَّ كِتَابٍ نَافِعٍ قَرَأْتُهُ',
+              english: 'Many a useful book have I read',
+              turkish: 'Nice faydalı kitap okudum',
+              highlight: { english: 'Many a', turkish: 'Nice' },
+            },
+            {
+              arabic: 'رُبَّ سَاعَةٍ غَيَّرَتْ حَيَاةَ إِنْسَانٍ',
+              english: 'Many an hour has changed a person’s life',
+              turkish: 'Nice saat bir insanın hayatını değiştirdi',
+              highlight: { english: 'Many an', turkish: 'Nice' },
+            },
+            {
+              arabic: 'رُبَّ عَالِمٍ يَعْمَلُ بِعِلْمِهِ',
+              english: 'Rarely does a scholar act on his knowledge',
+              turkish: 'Pek az âlim ilmiyle amel eder',
+              highlight: { english: 'Rarely', turkish: 'Pek az' },
             },
           ],
         },
@@ -281,9 +472,34 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           termArabic: 'اَلْإِلْصَاقُ',
           english: 'Attachment or contact: "at, by, in contact with".',
           turkish: 'Yapışma ve temas bildirir: "değme, temas".',
-          // DRAFT (fusha fallback): the textbook ilṣāq example; the Qur’anic
-          // "bi-ru'usikum" (5:6) is disputed (ilṣāq vs tabʿīḍ), so it teaches less cleanly.
+          // The Qur’anic ilṣāq here is all of grasping and clinging, where the
+          // contact is physical and undisputed. The much-quoted "bi-ru'usikum"
+          // (5:6) is left out: ilṣāq vs tabʿīḍ is contested there, so it
+          // teaches the argument rather than the sense.
           examples: [
+            {
+              arabic: 'وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا',
+              english: 'And hold fast, all of you, to the rope of Allah',
+              turkish: 'Hepiniz Allah’ın ipine sımsıkı sarılın',
+              source: 'Qur’an 3:103',
+              highlight: { english: 'to', turkish: 'ipine' },
+            },
+            {
+              arabic: 'وَأَخَذَ بِرَأْسِ أَخِيهِ يَجُرُّهُ إِلَيْهِ',
+              english: 'and he seized his brother by the head, dragging him towards himself',
+              turkish: 'kardeşinin başını tutup kendine doğru çekti',
+              source: 'Qur’an 7:150',
+              highlight: { english: 'by', turkish: 'başını' },
+            },
+            {
+              arabic: 'وَخُذْ بِيَدِكَ ضِغْثًا',
+              english: 'And take in your hand a bunch of grass',
+              turkish: 'Eline bir demet al',
+              source: 'Qur’an 38:44',
+              highlight: { english: 'in', turkish: 'Eline' },
+            },
+            // The textbook's own ilṣāq example, kept last: "marartu bi-" is the
+            // sentence the sense is usually named from.
             {
               arabic: 'مَرَرْتُ بِزَيْدٍ',
               english: 'I passed by Zayd',
@@ -305,6 +521,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 96:4',
               highlight: { english: 'by', turkish: 'kalemle' },
             },
+            {
+              arabic: 'وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ',
+              english: 'And seek help through patience and prayer',
+              turkish: 'Sabır ve namaz ile yardım isteyin',
+              source: 'Qur’an 2:45',
+              highlight: { english: 'through', turkish: 'ile' },
+            },
+            {
+              arabic: 'وَأَيَّدَهُ بِجُنُودٍ لَمْ تَرَوْهَا',
+              english: 'and He supported him with soldiers you did not see',
+              turkish: 'onu görmediğiniz askerlerle destekledi',
+              source: 'Qur’an 9:40',
+              highlight: { english: 'with', turkish: 'askerlerle' },
+            },
+            {
+              arabic: 'تَرْمِيهِمْ بِحِجَارَةٍ مِنْ سِجِّيلٍ',
+              english: 'pelting them with stones of baked clay',
+              turkish: 'onlara pişmiş çamurdan taşlar atıyorlardı',
+              source: 'Qur’an 105:4',
+              highlight: { english: 'with', turkish: 'taşlar' },
+            },
           ],
         },
         {
@@ -319,6 +556,29 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               turkish: 'her birini günahı sebebiyle yakaladık',
               source: 'Qur’an 29:40',
               highlight: { english: 'for', turkish: 'sebebiyle' },
+            },
+            {
+              arabic: 'فَبِظُلْمٍ مِنَ الَّذِينَ هَادُوا حَرَّمْنَا عَلَيْهِمْ طَيِّبَاتٍ',
+              english:
+                'So because of the wrongdoing of those who were Jews, We forbade them good things',
+              turkish:
+                'Yahudilerin zulmü sebebiyle onlara helal olan temiz şeyleri haram kıldık',
+              source: 'Qur’an 4:160',
+              highlight: { english: 'because of', turkish: 'sebebiyle' },
+            },
+            {
+              arabic: 'ذَلِكَ بِأَنَّهُمْ كَانُوا يَكْفُرُونَ بِآيَاتِ اللَّهِ',
+              english: 'That was because they used to disbelieve in the signs of Allah',
+              turkish: 'Bu, Allah’ın ayetlerini inkâr etmeleri sebebiyleydi',
+              source: 'Qur’an 2:61',
+              highlight: { english: 'because', turkish: 'sebebiyle' },
+            },
+            {
+              arabic: 'بِمَا كَسَبَتْ أَيْدِي النَّاسِ',
+              english: 'because of what the hands of men have earned',
+              turkish: 'insanların elleriyle kazandıkları sebebiyle',
+              source: 'Qur’an 30:41',
+              highlight: { english: 'because of', turkish: 'sebebiyle' },
             },
           ],
         },
@@ -343,6 +603,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               english: 'like a donkey carrying books',
               turkish: 'kitaplar taşıyan eşek gibi',
               source: 'Qur’an 62:5',
+              highlight: { english: 'like', turkish: 'gibi' },
+            },
+            {
+              arabic: 'الْجِبَالُ كَالْعِهْنِ الْمَنْفُوشِ',
+              english: 'the mountains like carded wool',
+              turkish: 'dağlar atılmış yün gibi',
+              source: 'Qur’an 101:5',
+              highlight: { english: 'like', turkish: 'gibi' },
+            },
+            {
+              arabic: 'خَلَقَ الْإِنْسَانَ مِنْ صَلْصَالٍ كَالْفَخَّارِ',
+              english: 'He created man from clay like pottery',
+              turkish: 'İnsanı pişmiş çamur gibi bir balçıktan yarattı',
+              source: 'Qur’an 55:14',
+              highlight: { english: 'like', turkish: 'gibi' },
+            },
+            {
+              arabic: 'أَعْمَالُهُمْ كَسَرَابٍ بِقِيعَةٍ',
+              english: 'their deeds are like a mirage in a desert plain',
+              turkish: 'amelleri çöl düzlüğündeki bir serap gibidir',
+              source: 'Qur’an 24:39',
               highlight: { english: 'like', turkish: 'gibi' },
             },
           ],
@@ -370,6 +651,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 2:284',
               highlight: { english: 'belongs', turkish: 'ındır' },
             },
+            {
+              arabic: 'وَلِلَّهِ مُلْكُ السَّمَاوَاتِ وَالْأَرْضِ',
+              english: 'And to Allah belongs the dominion of the heavens and the earth',
+              turkish: 'Göklerin ve yerin mülkü Allah’ındır',
+              source: 'Qur’an 3:189',
+              highlight: { english: 'belongs', turkish: 'ındır' },
+            },
+            {
+              arabic: 'لِلرِّجَالِ نَصِيبٌ مِمَّا تَرَكَ الْوَالِدَانِ',
+              english: 'For men is a share of what the parents leave',
+              turkish: 'Ana babanın bıraktığından erkeklere bir pay vardır',
+              source: 'Qur’an 4:7',
+              highlight: { english: 'For', turkish: 'erkeklere' },
+            },
+            {
+              arabic: 'لِمَنِ الْمُلْكُ الْيَوْمَ لِلَّهِ الْوَاحِدِ الْقَهَّارِ',
+              english: 'Whose is the sovereignty today? Allah’s, the One, the Prevailing',
+              turkish: 'Bugün mülk kimin? Tek ve mutlak güç sahibi Allah’ın',
+              source: 'Qur’an 40:16',
+              highlight: { english: 'Whose', turkish: 'kimin' },
+            },
           ],
         },
         {
@@ -377,14 +679,36 @@ export const hurufAlKhafdRef: ReferenceEntry = {
           termArabic: 'اَلتَّعْلِيلُ',
           english: 'Reason or purpose: "for, in order to".',
           turkish: 'Sebep ve amaç bildirir: "için".',
-          // DRAFT (fusha fallback): the Qur’anic lām of taʿlīl governs verbs
-          // (lām kay), e.g. "li-yaʿbuduni" (51:56); a short one over a bare noun is not at hand.
+          // Mostly fusha, and for a reason worth keeping: the Qur’anic lām of
+          // taʿlīl usually governs a verb (lām kay), e.g. "li-yaʿbuduni"
+          // (51:56), and a verb after it is in naṣb, not khafḍ — which is the
+          // wrong thing to teach on a card about the particles of khafḍ. The
+          // one ayah here is a lām of taʿlīl over a noun.
           examples: [
+            {
+              arabic: 'إِنَّمَا نُطْعِمُكُمْ لِوَجْهِ اللَّهِ',
+              english: 'We feed you only for the sake of Allah',
+              turkish: 'Biz size sadece Allah rızası için yemek veriyoruz',
+              source: 'Qur’an 76:9',
+              highlight: { english: 'for the sake of', turkish: 'için' },
+            },
             {
               arabic: 'جِئْتُ لِلْعِلْمِ',
               english: 'I came for knowledge',
               turkish: 'İlim için geldim',
               highlight: { english: 'for', turkish: 'için' },
+            },
+            {
+              arabic: 'سَافَرْتُ لِلتِّجَارَةِ',
+              english: 'I travelled for trade',
+              turkish: 'Ticaret için yolculuk yaptım',
+              highlight: { english: 'for', turkish: 'için' },
+            },
+            {
+              arabic: 'دَرَسْتُ لِلنَّجَاحِ',
+              english: 'I studied in order to succeed',
+              turkish: 'Başarmak için çalıştım',
+              highlight: { english: 'in order to', turkish: 'için' },
             },
           ],
         },
@@ -413,6 +737,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 103:1',
               highlight: { english: 'By', turkish: 'andolsun' },
             },
+            {
+              arabic: 'وَالشَّمْسِ وَضُحَاهَا',
+              english: 'By the sun and its brightness',
+              turkish: 'Güneşe ve onun aydınlığına andolsun',
+              source: 'Qur’an 91:1',
+              highlight: { english: 'By', turkish: 'andolsun' },
+            },
+            {
+              arabic: 'وَالتِّينِ وَالزَّيْتُونِ',
+              english: 'By the fig and the olive',
+              turkish: 'İncire ve zeytine andolsun',
+              source: 'Qur’an 95:1',
+              highlight: { english: 'By', turkish: 'andolsun' },
+            },
+            {
+              arabic: 'فَوَرَبِّكَ لَنَسْأَلَنَّهُمْ أَجْمَعِينَ',
+              english: 'So by your Lord, We will surely question them all',
+              turkish: 'Rabbine andolsun ki onların hepsini mutlaka sorguya çekeceğiz',
+              source: 'Qur’an 15:92',
+              highlight: { english: 'by', turkish: 'andolsun' },
+            },
           ],
         },
       ],
@@ -440,6 +785,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               source: 'Qur’an 16:38',
               highlight: { english: 'by', turkish: 'yemin' },
             },
+            {
+              arabic: 'لَا أُقْسِمُ بِيَوْمِ الْقِيَامَةِ',
+              english: 'I swear by the Day of Resurrection',
+              turkish: 'Kıyamet gününe yemin ederim',
+              source: 'Qur’an 75:1',
+              highlight: { english: 'by', turkish: 'yemin' },
+            },
+            {
+              arabic: 'قَالَ فَبِعِزَّتِكَ لَأُغْوِيَنَّهُمْ أَجْمَعِينَ',
+              english: 'He said: By Your might, I will surely mislead them all',
+              turkish: 'Senin izzetine yemin olsun ki onların hepsini saptıracağım, dedi',
+              source: 'Qur’an 38:82',
+              highlight: { english: 'By', turkish: 'yemin' },
+            },
+            {
+              arabic: 'وَيَحْلِفُونَ بِاللَّهِ إِنَّهُمْ لَمِنْكُمْ',
+              english: 'And they swear by Allah that they are of you',
+              turkish: 'Sizden olduklarına dair Allah’a yemin ediyorlar',
+              source: 'Qur’an 9:56',
+              highlight: { english: 'by', turkish: 'yemin' },
+            },
           ],
         },
       ],
@@ -463,6 +829,27 @@ export const hurufAlKhafdRef: ReferenceEntry = {
               english: 'By Allah, I will surely plot against your idols',
               turkish: 'Allah’a andolsun, putlarınıza mutlaka bir tuzak kuracağım',
               source: 'Qur’an 21:57',
+              highlight: { english: 'By', turkish: 'andolsun' },
+            },
+            {
+              arabic: 'قَالُوا تَاللَّهِ لَقَدْ آثَرَكَ اللَّهُ عَلَيْنَا',
+              english: 'They said: By Allah, Allah has certainly preferred you over us',
+              turkish: 'Allah’a andolsun ki Allah seni bize üstün kıldı, dediler',
+              source: 'Qur’an 12:91',
+              highlight: { english: 'By', turkish: 'andolsun' },
+            },
+            {
+              arabic: 'تَاللَّهِ لَتُسْأَلُنَّ عَمَّا كُنْتُمْ تَفْتَرُونَ',
+              english: 'By Allah, you will surely be questioned about what you used to invent',
+              turkish: 'Allah’a andolsun, uydurduklarınızdan mutlaka sorguya çekileceksiniz',
+              source: 'Qur’an 16:56',
+              highlight: { english: 'By', turkish: 'andolsun' },
+            },
+            {
+              arabic: 'قَالَ تَاللَّهِ إِنْ كِدْتَ لَتُرْدِينِ',
+              english: 'He said: By Allah, you almost ruined me',
+              turkish: 'Allah’a andolsun, neredeyse beni de helak edecektin, dedi',
+              source: 'Qur’an 37:56',
               highlight: { english: 'By', turkish: 'andolsun' },
             },
           ],

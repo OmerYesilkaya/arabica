@@ -205,7 +205,7 @@ const english = {
     known: 'known',
     occurrences: 'Occurrences',
     /** Principal-part labels, keyed by the `label` a Note's form carries. */
-    forms: { mudari: 'Muḍāriʿ', masdar: 'Maṣdar' } as Record<string, string>,
+    forms: { mudari: 'Muḍāriʿ', masdar: 'Maṣdar', plural: 'Plural' } as Record<string, string>,
     rolePrefix: 'prefixed',
     roleStem: 'the word',
     roleSuffix: 'attached',
@@ -405,7 +405,7 @@ const turkish: Strings = {
     irab: 'İrab',
     known: 'malum',
     occurrences: 'Vuku',
-    forms: { mudari: 'Muzâri', masdar: 'Masdar' } as Record<string, string>,
+    forms: { mudari: 'Muzâri', masdar: 'Masdar', plural: 'Cemi' } as Record<string, string>,
     rolePrefix: 'başta',
     roleStem: 'kelime',
     roleSuffix: 'bitişik',

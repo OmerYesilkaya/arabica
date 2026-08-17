@@ -77,7 +77,7 @@ export const quranVocab9: DeckDef = {
       id: 'jadala',
       arabic: 'جادَلُ',
       english: 'to dispute, to argue',
-      turkish: 'tartışmak, mücadele etmek',
+      turkish: 'mücadele etmek, tartışmak',
       example: {
         arabic: 'وَمِنَ ٱلنَّاسِ مَن يُجَٰدِلُ فِى ٱللَّهِ بِغَيْرِ عِلْمٍۢ وَيَتَّبِعُ كُلَّ شَيْطَٰنٍۢ مَّرِيدٍۢ',
         english: 'And among the people is he who disputes about Allah without knowledge and follows every rebellious devil.',
@@ -352,7 +352,7 @@ export const quranVocab9: DeckDef = {
       id: 'taifa',
       arabic: 'طائِفَة',
       english: 'group, party, band',
-      turkish: 'grup, taife, bölük',
+      turkish: 'taife, grup, bölük',
       example: {
         arabic: 'إِذْ هَمَّت طَّآئِفَتَانِ مِنكُمْ أَن تَفْشَلَا وَٱللَّهُ وَلِيُّهُمَا ۗ وَعَلَى ٱللَّهِ فَلْيَتَوَكَّلِ ٱلْمُؤْمِنُونَ',
         english: 'When two parties among you were about to lose heart, though Allah was their protector. And upon Allah let the believers rely.',
@@ -647,7 +647,7 @@ export const quranVocab9: DeckDef = {
       id: 'zuluma',
       arabic: 'ظُلُمَة',
       english: 'darkness',
-      turkish: 'karanlık',
+      turkish: 'zulmet, karanlık',
       example: {
         arabic: 'وَلَا ٱلظُّلُمَٰتُ وَلَا ٱلنُّورُ',
         english: 'nor are the darknesses and the light,',
@@ -669,7 +669,7 @@ export const quranVocab9: DeckDef = {
       id: 'fatana',
       arabic: 'فَتَنُ',
       english: 'to try, to put to trial; to tempt',
-      turkish: 'denemek, imtihan etmek; fitneye düşürmek',
+      turkish: 'imtihan etmek, denemek; fitneye düşürmek',
       example: {
         arabic: 'يَوْمَ هُمْ عَلَى ٱلنَّارِ يُفْتَنُونَ',
         english: 'The Day they will be tried over the Fire.',

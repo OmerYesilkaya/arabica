@@ -162,7 +162,7 @@ export const quranVocab5: DeckDef = {
       id: 'mujrim',
       arabic: 'مُجْرِم',
       english: 'criminal, guilty one',
-      turkish: 'suçlu, günahkâr',
+      turkish: 'mücrim, suçlu',
       example: {
         arabic: 'كُلُوا۟ وَتَمَتَّعُوا۟ قَلِيلًا إِنَّكُم مُّجْرِمُونَ',
         english: 'Eat and enjoy yourselves a little; indeed, you are criminals.',
@@ -230,7 +230,7 @@ export const quranVocab5: DeckDef = {
       id: 'basiyr',
       arabic: 'بَصِير',
       english: 'seeing, all-seeing',
-      turkish: 'gören, basîr',
+      turkish: 'basîr, gören',
       example: {
         arabic: 'إِنَّكَ كُنتَ بِنَا بَصِيرًۭا',
         english: 'Indeed, You have always been Seeing of us.',
@@ -550,7 +550,7 @@ export const quranVocab5: DeckDef = {
       id: 'basar',
       arabic: 'بَصَر',
       english: 'sight, vision; eye',
-      turkish: 'göz, görme',
+      turkish: 'basar, görme; göz',
       example: {
         arabic: 'أَبْصَٰرُهَا خَٰشِعَةٌۭ',
         english: 'their eyes humbled.',
@@ -635,7 +635,7 @@ export const quranVocab5: DeckDef = {
       id: 'samiy',
       arabic: 'سَمِيع',
       english: 'hearing, all-hearing',
-      turkish: 'işiten, semî',
+      turkish: 'semî, işiten',
       example: {
         arabic: 'وَإِنْ عَزَمُوا۟ ٱلطَّلَٰقَ فَإِنَّ ٱللَّهَ سَمِيعٌ عَلِيمٌۭ',
         english: 'And if they resolve on divorce, then indeed Allah is Hearing and Knowing.',
@@ -805,7 +805,7 @@ export const quranVocab5: DeckDef = {
       id: 'sirat',
       arabic: 'صِراط',
       english: 'path, way',
-      turkish: 'yol',
+      turkish: 'sırat, yol',
       example: {
         arabic: 'وَلَهَدَيْنَٰهُمْ صِرَٰطًۭا مُّسْتَقِيمًۭا',
         english: 'And We would have guided them to a straight path.',
@@ -1078,7 +1078,7 @@ export const quranVocab5: DeckDef = {
       id: 'nuwr',
       arabic: 'نُور',
       english: 'light',
-      turkish: 'ışık, nur',
+      turkish: 'nur, ışık',
       example: {
         arabic: 'وَجَعَلَ ٱلْقَمَرَ فِيهِنَّ نُورًۭا وَجَعَلَ ٱلشَّمْسَ سِرَاجًۭا',
         english: 'And He made the moon in them a light and made the sun a lamp.',

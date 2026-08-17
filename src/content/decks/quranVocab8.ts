@@ -527,7 +527,7 @@ export const quranVocab8: DeckDef = {
       id: 'maghfira',
       arabic: 'مَغْفِرَة',
       english: 'forgiveness, pardon',
-      turkish: 'bağışlanma, mağfiret',
+      turkish: 'mağfiret, bağışlanma',
       example: {
         arabic: 'فَٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ لَهُم مَّغْفِرَةٌۭ وَرِزْقٌۭ كَرِيمٌۭ',
         english: 'So those who believe and do righteous deeds — for them is forgiveness and noble provision.',
@@ -546,7 +546,7 @@ export const quranVocab8: DeckDef = {
       id: 'aflaha',
       arabic: 'أَفْلَحَ',
       english: 'to succeed, to prosper',
-      turkish: 'kurtuluşa ermek, felah bulmak',
+      turkish: 'felah bulmak, kurtuluşa ermek',
       example: {
         arabic: 'قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ',
         english: 'Certainly the believers have succeeded.',
@@ -678,7 +678,7 @@ export const quranVocab8: DeckDef = {
       id: 'qaddama',
       arabic: 'قَدَّمَ',
       english: 'to put forward, to send ahead, to offer',
-      turkish: 'öne sürmek, önden göndermek, takdim etmek',
+      turkish: 'takdim etmek, öne sürmek, önden göndermek',
       example: {
         arabic: 'عَلِمَتْ نَفْسٌۭ مَّا قَدَّمَتْ وَأَخَّرَتْ',
         english: 'A soul will know what it sent forward and what it left behind.',
@@ -741,7 +741,7 @@ export const quranVocab8: DeckDef = {
       id: 'makan',
       arabic: 'مَكان',
       english: 'place, position, station',
-      turkish: 'yer, mekân, konum',
+      turkish: 'mekân, yer, konum',
       example: {
         arabic: 'وَرَفَعْنَٰهُ مَكَانًا عَلِيًّا',
         english: 'And We raised him to a high station.',

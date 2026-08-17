@@ -201,7 +201,7 @@ export const quranVocab2: DeckDef = {
       id: 'aliym',
       arabic: 'عَلِيم',
       english: 'knowing, learned',
-      turkish: 'bilen, bilgili',
+      turkish: 'alîm, bilen',
       example: {
         arabic: 'يَأْتُوكَ بِكُلِّ سَٰحِرٍ عَلِيمٍۢ',
         english: 'that they bring you every learned magician.',
@@ -411,7 +411,7 @@ export const quranVocab2: DeckDef = {
       id: 'hadaa',
       arabic: 'هَدَى',
       english: 'to guide',
-      turkish: 'doğru yola iletmek, hidayet etmek',
+      turkish: 'hidayet etmek, doğru yola iletmek',
       example: {
         arabic: 'وَأَضَلَّ فِرْعَوْنُ قَوْمَهُۥ وَمَا هَدَىٰ',
         english: 'And Pharaoh led his people astray and did not guide them.',
@@ -493,7 +493,7 @@ export const quranVocab2: DeckDef = {
       id: 'attabaa',
       arabic: 'اتَّبَعَ',
       english: 'to follow',
-      turkish: 'uymak, tabi olmak',
+      turkish: 'tabi olmak, uymak',
       example: {
         arabic: 'لَعَلَّنَا نَتَّبِعُ ٱلسَّحَرَةَ إِن كَانُوا۟ هُمُ ٱلْغَٰلِبِينَ',
         english: 'so that we may follow the magicians if they are the victors.',
@@ -727,7 +727,7 @@ export const quranVocab2: DeckDef = {
       id: 'abada',
       arabic: 'عَبَدَ',
       english: 'to worship, to serve',
-      turkish: 'kulluk etmek, ibadet etmek',
+      turkish: 'ibadet etmek, kulluk etmek',
       example: {
         arabic: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',
         english: 'You alone we worship, and You alone we ask for help.',
@@ -1048,7 +1048,7 @@ export const quranVocab2: DeckDef = {
       id: 'hakiym',
       arabic: 'حَكِيم',
       english: 'wise',
-      turkish: 'hikmetli, bilge',
+      turkish: 'hakîm, hikmet sahibi',
       example: {
         arabic: 'فِيهَا يُفْرَقُ كُلُّ أَمْرٍ حَكِيمٍ',
         english: 'In it every wise matter is made distinct,',

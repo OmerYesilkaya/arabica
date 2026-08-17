@@ -33,7 +33,7 @@ export const quranVocab3: DeckDef = {
       id: 'hal',
       arabic: 'هَل',
       english: 'is it? did? (question particle)',
-      turkish: 'mi, mı (soru edatı)',
+      turkish: 'mi, mı (istifham edatı)',
       example: {
         arabic: 'هَلْ أَتَىٰكَ حَدِيثُ مُوسَىٰٓ',
         english: 'Has the story of Moses reached you?',
@@ -73,7 +73,7 @@ export const quranVocab3: DeckDef = {
       id: 'qawl',
       arabic: 'قَوْل',
       english: 'word, speech, saying',
-      turkish: 'söz, kelam',
+      turkish: 'kelam, söz',
       example: {
         arabic: 'إِنَّكُمْ لَفِى قَوْلٍۢ مُّخْتَلِفٍۢ',
         english: 'Indeed, you are in differing speech.',
@@ -95,7 +95,7 @@ export const quranVocab3: DeckDef = {
       id: 'ghafuwr',
       arabic: 'غَفُور',
       english: 'forgiving, ever-forgiving',
-      turkish: 'bağışlayan, çok affedici',
+      turkish: 'gafûr, çok bağışlayan',
       example: {
         arabic: 'نُزُلًۭا مِّنْ غَفُورٍۢ رَّحِيمٍۢ',
         english: 'an accommodation from a Forgiving, Merciful One.',
@@ -178,7 +178,7 @@ export const quranVocab3: DeckDef = {
       id: 'mathal',
       arabic: 'مَثَل',
       english: 'example, parable, likeness',
-      turkish: 'örnek, misal, benzetme',
+      turkish: 'misal, örnek, benzetme',
       example: {
         arabic: 'فَأَهْلَكْنَآ أَشَدَّ مِنْهُم بَطْشًۭا وَمَضَىٰ مَثَلُ ٱلْأَوَّلِينَ',
         english: 'So We destroyed those stronger than them in power, and the example of the former peoples has passed on.',
@@ -331,7 +331,7 @@ export const quranVocab3: DeckDef = {
       id: 'fadl',
       arabic: 'فَضْل',
       english: 'bounty, favor, grace',
-      turkish: 'lütuf, ihsan, fazl',
+      turkish: 'fazl, lütuf, ihsan',
       example: {
         arabic: 'فَضْلًۭا مِّن رَّبِّكَ ۚ ذَٰلِكَ هُوَ ٱلْفَوْزُ ٱلْعَظِيمُ',
         english: 'As a bounty from your Lord. That is the great attainment.',
@@ -545,7 +545,7 @@ export const quranVocab3: DeckDef = {
       id: 'ashab',
       arabic: 'أَصْحاب',
       english: 'companions, people of',
-      turkish: 'arkadaşlar, ashab, sahipleri',
+      turkish: 'ashab, arkadaşlar, sahipleri',
       example: {
         arabic: 'قُتِلَ أَصْحَٰبُ ٱلْأُخْدُودِ',
         english: 'Slain were the companions of the trench,',
@@ -970,7 +970,7 @@ export const quranVocab3: DeckDef = {
       id: 'aliym-2',
       arabic: 'أَلِيم',
       english: 'painful, agonizing',
-      turkish: 'acı veren, elem verici',
+      turkish: 'elem verici, acı veren',
       example: {
         arabic: 'فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ',
         english: 'So give them tidings of a painful punishment,',

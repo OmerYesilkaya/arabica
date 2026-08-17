@@ -130,7 +130,7 @@ export const quranVocab1: DeckDef = {
       id: 'alladhiy',
       arabic: 'الَّذِي',
       english: 'who, which (relative)',
-      turkish: 'ki o, -en/-an (ilgi zamiri)',
+      turkish: 'ki o, -en/-an (ism-i mevsûl)',
       example: {
         arabic: 'ٱلَّذِى خَلَقَ فَسَوَّىٰ',
         english: 'who created and proportioned,',
@@ -173,7 +173,7 @@ export const quranVocab1: DeckDef = {
       id: 'dha',
       arabic: 'ذا',
       english: 'this, that (demonstrative)',
-      turkish: 'bu, şu, o (işaret)',
+      turkish: 'bu, şu, o (ism-i işaret)',
       example: {
         arabic: 'ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى لِّلْمُتَّقِينَ',
         english: 'That is the Book about which there is no doubt, a guidance for the righteous.',
@@ -293,7 +293,7 @@ export const quranVocab1: DeckDef = {
       id: 'ard',
       arabic: 'أَرْض',
       english: 'earth, land',
-      turkish: 'yeryüzü, toprak',
+      turkish: 'arz, yeryüzü',
       example: {
         arabic: 'وَإِذَا ٱلْأَرْضُ مُدَّتْ',
         english: 'And when the earth is spread out,',
@@ -333,7 +333,7 @@ export const quranVocab1: DeckDef = {
       id: 'qad',
       arabic: 'قَد',
       english: 'indeed, already',
-      turkish: 'gerçekten, muhakkak',
+      turkish: 'muhakkak, gerçekten',
       example: {
         arabic: 'قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ',
         english: 'Certainly will the believers have succeeded.',
@@ -513,7 +513,7 @@ export const quranVocab1: DeckDef = {
       id: 'rasuwl',
       arabic: 'رَسُول',
       english: 'messenger',
-      turkish: 'elçi, resul',
+      turkish: 'resul, elçi',
       example: {
         arabic: 'إِنَّهُۥ لَقَوْلُ رَسُولٍۢ كَرِيمٍۢ',
         english: 'Indeed, it is the word of a noble messenger.',
@@ -554,7 +554,7 @@ export const quranVocab1: DeckDef = {
       id: 'sama',
       arabic: 'سَماء',
       english: 'sky, heaven',
-      turkish: 'gök, sema',
+      turkish: 'sema, gök',
       example: {
         arabic: 'وَفُتِحَتِ ٱلسَّمَآءُ فَكَانَتْ أَبْوَٰبًۭا',
         english: 'And the sky is opened and will become gateways,',
@@ -701,7 +701,7 @@ export const quranVocab1: DeckDef = {
       id: 'amila',
       arabic: 'عَمِلَ',
       english: 'to do, to work',
-      turkish: 'yapmak, amel etmek',
+      turkish: 'amel etmek, yapmak',
       example: {
         arabic: 'فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًۭا يَرَهُۥ',
         english: 'So whoever does an atom’s weight of good will see it,',

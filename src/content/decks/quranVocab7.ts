@@ -165,7 +165,7 @@ export const quranVocab7: DeckDef = {
       id: 'akhtalafa',
       arabic: 'اخْتَلَفَ',
       english: 'to differ, to disagree',
-      turkish: 'ayrılığa düşmek, ihtilaf etmek',
+      turkish: 'ihtilaf etmek, ayrılığa düşmek',
       example: {
         arabic: 'ٱللَّهُ يَحْكُمُ بَيْنَكُمْ يَوْمَ ٱلْقِيَٰمَةِ فِيمَا كُنتُمْ فِيهِ تَخْتَلِفُونَ',
         english: 'Allah will judge between you on the Day of Resurrection concerning that over which you used to differ.',
@@ -211,7 +211,7 @@ export const quranVocab7: DeckDef = {
       id: 'bayyana',
       arabic: 'بَيَّنُ',
       english: 'to make clear, to explain',
-      turkish: 'açıklamak, beyan etmek',
+      turkish: 'beyan etmek, açıklamak',
       example: {
         arabic: 'كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمْ ءَايَٰتِهِۦ لَعَلَّكُمْ تَعْقِلُونَ',
         english: 'Thus does Allah make clear to you His verses, that you might use reason.',
@@ -433,7 +433,7 @@ export const quranVocab7: DeckDef = {
       id: 'fitna',
       arabic: 'فِتْنَة',
       english: 'trial, temptation; discord',
-      turkish: 'imtihan, fitne, ayartma',
+      turkish: 'fitne, imtihan, ayartma',
       example: {
         arabic: 'إِنَّا جَعَلْنَٰهَا فِتْنَةًۭ لِّلظَّٰلِمِينَ',
         english: 'Indeed, We have made it a trial for the wrongdoers.',
@@ -619,7 +619,7 @@ export const quranVocab7: DeckDef = {
       id: 'khasir',
       arabic: 'خاسِر',
       english: 'loser, one who loses out',
-      turkish: 'kaybeden, hüsrana uğrayan',
+      turkish: 'hüsrana uğrayan, kaybeden',
       example: {
         arabic: 'يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِن تُطِيعُوا۟ ٱلَّذِينَ كَفَرُوا۟ يَرُدُّوكُمْ عَلَىٰٓ أَعْقَٰبِكُمْ فَتَنقَلِبُوا۟ خَٰسِرِينَ',
         english: 'O you who have believed, if you obey those who disbelieve, they will turn you back on your heels, and you will turn back as losers.',
@@ -726,7 +726,7 @@ export const quranVocab7: DeckDef = {
       id: 'kafaa',
       arabic: 'كَفَى',
       english: 'to suffice, to be enough',
-      turkish: 'yetmek, kâfi gelmek',
+      turkish: 'kâfi gelmek, yetmek',
       example: {
         arabic: 'ٱقْرَأْ كِتَٰبَكَ كَفَىٰ بِنَفْسِكَ ٱلْيَوْمَ عَلَيْكَ حَسِيبًۭا',
         english: 'Read your record. Sufficient is your own self this day as an accountant against you.',
@@ -749,7 +749,7 @@ export const quranVocab7: DeckDef = {
       id: 'nahaa',
       arabic: 'نَهَى',
       english: 'to forbid, to prohibit',
-      turkish: 'yasaklamak, menetmek',
+      turkish: 'menetmek, yasaklamak',
       example: {
         arabic: 'أَرَءَيْتَ ٱلَّذِى يَنْهَىٰ',
         english: 'Have you seen the one who forbids',
@@ -809,7 +809,7 @@ export const quranVocab7: DeckDef = {
       id: 'hasana',
       arabic: 'حَسَنَة',
       english: 'good deed, good thing',
-      turkish: 'iyilik, güzellik',
+      turkish: 'hasene, iyilik',
       example: {
         arabic: 'وَءَاتَيْنَٰهُ فِى ٱلدُّنْيَا حَسَنَةًۭ ۖ وَإِنَّهُۥ فِى ٱلْءَاخِرَةِ لَمِنَ ٱلصَّٰلِحِينَ',
         english: 'And We gave him good in this world, and indeed, in the Hereafter he is among the righteous.',
@@ -955,7 +955,7 @@ export const quranVocab7: DeckDef = {
       id: 'sharr',
       arabic: 'شَرّ',
       english: 'evil, harm',
-      turkish: 'kötülük, şer',
+      turkish: 'şer, kötülük',
       example: {
         arabic: 'مِن شَرِّ مَا خَلَقَ',
         english: 'from the evil of what He created,',
@@ -1037,7 +1037,7 @@ export const quranVocab7: DeckDef = {
       id: 'quwwa',
       arabic: 'قُوَّة',
       english: 'strength, power',
-      turkish: 'güç, kuvvet',
+      turkish: 'kuvvet, güç',
       example: {
         arabic: 'ذِى قُوَّةٍ عِندَ ذِى ٱلْعَرْشِ مَكِينٍۢ',
         english: 'possessor of strength, secure in rank with the Owner of the Throne,',
@@ -1059,7 +1059,7 @@ export const quranVocab7: DeckDef = {
       id: 'kariym',
       arabic: 'كَرِيم',
       english: 'noble, generous, honourable',
-      turkish: 'cömert, değerli, şerefli',
+      turkish: 'kerîm, cömert, şerefli',
       example: {
         arabic: 'كِرَامٍۭ بَرَرَةٍۢ',
         english: 'noble and dutiful.',

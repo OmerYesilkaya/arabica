@@ -52,7 +52,7 @@ export const quranVocab11: DeckDef = {
       id: 'musaddiq',
       arabic: 'مُصَدِّق',
       english: 'confirming, confirmer',
-      turkish: 'doğrulayıcı, tasdik eden',
+      turkish: 'tasdik eden, doğrulayıcı',
       example: {
         arabic: 'نَزَّلَ عَلَيْكَ ٱلْكِتَٰبَ بِٱلْحَقِّ مُصَدِّقًۭا لِّمَا بَيْنَ يَدَيْهِ وَأَنزَلَ ٱلتَّوْرَىٰةَ وَٱلْإِنجِيلَ',
         english: 'He sent down to you the Book in truth, confirming what came before it, and He sent down the Torah and the Gospel,',
@@ -532,7 +532,7 @@ export const quranVocab11: DeckDef = {
       id: 'alim',
       arabic: 'عالِم',
       english: 'knower, one who knows',
-      turkish: 'bilen, âlim',
+      turkish: 'âlim, bilen',
       example: {
         arabic: 'عَٰلِمُ ٱلْغَيْبِ وَٱلشَّهَٰدَةِ ٱلْكَبِيرُ ٱلْمُتَعَالِ',
         english: 'Knower of the unseen and the witnessed, the Great, the Exalted.',
@@ -618,7 +618,7 @@ export const quranVocab11: DeckDef = {
       id: 'mawlaa',
       arabic: 'مَوْلَى',
       english: 'protector, ally, master',
-      turkish: 'dost, veli, efendi',
+      turkish: 'veli, dost, efendi',
       example: {
         arabic: 'يَوْمَ لَا يُغْنِى مَوْلًى عَن مَّوْلًۭى شَيْـًۭٔا وَلَا هُمْ يُنصَرُونَ',
         english: 'The Day no ally will avail an ally in anything, nor will they be helped,',
@@ -640,7 +640,7 @@ export const quranVocab11: DeckDef = {
       id: 'nima-2',
       arabic: 'نِعْمَ',
       english: 'how excellent!, what a fine (verb of praise)',
-      turkish: 'ne güzel!, ne iyi! (övgü fiili)',
+      turkish: 'ne güzel!, ne iyi! (medih fiili)',
       example: {
         arabic: 'وَوَهَبْنَا لِدَاوُۥدَ سُلَيْمَٰنَ ۚ نِعْمَ ٱلْعَبْدُ ۖ إِنَّهُۥٓ أَوَّابٌ',
         english: 'And to David We granted Solomon. What an excellent servant! Indeed, he turned back constantly.',
@@ -659,7 +659,7 @@ export const quranVocab11: DeckDef = {
       id: 'waffaa',
       arabic: 'وَفَّى',
       english: 'to fulfil, to discharge fully',
-      turkish: 'yerine getirmek, tam olarak ifa etmek',
+      turkish: 'ifa etmek, tam olarak yerine getirmek',
       example: {
         arabic: 'وَإِبْرَٰهِيمَ ٱلَّذِى وَفَّىٰٓ',
         english: 'and Abraham, who fulfilled his covenant,',
@@ -681,7 +681,7 @@ export const quranVocab11: DeckDef = {
       id: 'ahata',
       arabic: 'أَحاطَ',
       english: 'to encompass, to encircle, to comprehend',
-      turkish: 'kuşatmak, kavramak',
+      turkish: 'ihata etmek, kuşatmak',
       example: {
         arabic: 'وَكَيْفَ تَصْبِرُ عَلَىٰ مَا لَمْ تُحِطْ بِهِۦ خُبْرًۭا',
         english: 'And how can you be patient about what you do not encompass in knowledge?',
@@ -772,7 +772,7 @@ export const quranVocab11: DeckDef = {
       id: 'ahwa',
       arabic: 'أَهْواء',
       english: 'whims, vain desires, caprices',
-      turkish: 'hevesler, nefsî arzular',
+      turkish: 'heva, nefsî arzular',
       example: {
         arabic: 'وَكَذَّبُوا۟ وَٱتَّبَعُوٓا۟ أَهْوَآءَهُمْ ۚ وَكُلُّ أَمْرٍۢ مُّسْتَقِرٌّۭ',
         english: 'And they denied and followed their own desires, yet every matter will settle in its place.',
@@ -876,7 +876,7 @@ export const quranVocab11: DeckDef = {
       id: 'tawiyl',
       arabic: 'تَأْوِيل',
       english: 'interpretation; outcome, final result',
-      turkish: 'yorum, tevil; sonuç, akıbet',
+      turkish: 'tevil, yorum; akıbet, sonuç',
       example: {
         arabic: 'وَأَوْفُوا۟ ٱلْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا۟ بِٱلْقِسْطَاسِ ٱلْمُسْتَقِيمِ ۚ ذَٰلِكَ خَيْرٌۭ وَأَحْسَنُ تَأْوِيلًۭا',
         english: 'And give full measure when you measure, and weigh with an even balance. That is better and finer in outcome.',
@@ -974,7 +974,7 @@ export const quranVocab11: DeckDef = {
       id: 'hamiyd',
       arabic: 'حَمِيد',
       english: 'praiseworthy, worthy of praise',
-      turkish: 'övgüye layık, hamde layık',
+      turkish: 'hamîd, hamde layık',
       example: {
         arabic: 'وَمَا نَقَمُوا۟ مِنْهُمْ إِلَّآ أَن يُؤْمِنُوا۟ بِٱللَّهِ ٱلْعَزِيزِ ٱلْحَمِيدِ',
         english: 'And they resented them only because they believed in Allah, the Mighty, the Praiseworthy,',
@@ -1030,7 +1030,7 @@ export const quranVocab11: DeckDef = {
       id: 'fahisha',
       arabic: 'فاحِشَة',
       english: 'immorality, indecency, shameful deed',
-      turkish: 'hayâsızlık, çirkin iş, fuhuş',
+      turkish: 'fahşa, hayâsızlık, çirkin iş',
       example: {
         arabic: 'وَلَا تَقْرَبُوا۟ ٱلزِّنَىٰٓ ۖ إِنَّهُۥ كَانَ فَٰحِشَةًۭ وَسَآءَ سَبِيلًۭا',
         english: 'And do not come near fornication. Indeed, it is an immorality and an evil way.',
@@ -1052,7 +1052,7 @@ export const quranVocab11: DeckDef = {
       id: 'fassala',
       arabic: 'فَصَّلَ',
       english: 'to explain in detail, to set out distinctly',
-      turkish: 'ayrıntılı açıklamak, tafsil etmek',
+      turkish: 'tafsil etmek, ayrıntılı açıklamak',
       example: {
         arabic: 'وَكَذَٰلِكَ نُفَصِّلُ ٱلْءَايَٰتِ وَلَعَلَّهُمْ يَرْجِعُونَ',
         english: 'And thus do We explain the signs in detail, so that perhaps they will return.',

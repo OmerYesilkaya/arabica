@@ -78,7 +78,7 @@ export const quranVocab12: DeckDef = {
       id: 'muhtady',
       arabic: 'مُهْتَدي',
       english: 'rightly guided',
-      turkish: 'doğru yolu bulmuş, hidayete ermiş',
+      turkish: 'hidayete ermiş, doğru yolu bulmuş',
       example: {
         arabic: 'ٱتَّبِعُوا۟ مَن لَّا يَسْـَٔلُكُمْ أَجْرًۭا وَهُم مُّهْتَدُونَ',
         english: 'Follow those who do not ask you for a reward, and they are rightly guided.',
@@ -142,7 +142,7 @@ export const quranVocab12: DeckDef = {
       id: 'tafakkara',
       arabic: 'يَتَفَكَّرُ',
       english: 'to reflect, to ponder',
-      turkish: 'düşünmek, tefekkür etmek',
+      turkish: 'tefekkür etmek, düşünmek',
       example: {
         arabic: 'أَوَلَمْ يَتَفَكَّرُوا۟ ۗ مَا بِصَاحِبِهِم مِّن جِنَّةٍ ۚ إِنْ هُوَ إِلَّا نَذِيرٌۭ مُّبِينٌ',
         english: 'Have they not reflected? There is no madness in their companion. He is only a clear warner.',
@@ -363,7 +363,7 @@ export const quranVocab12: DeckDef = {
       id: 'khasira',
       arabic: 'خَسِرَ',
       english: 'to lose, to suffer loss',
-      turkish: 'kaybetmek, hüsrana uğramak',
+      turkish: 'hüsrana uğramak, kaybetmek',
       example: {
         arabic: 'وَلِلَّهِ مُلْكُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ۚ وَيَوْمَ تَقُومُ ٱلسَّاعَةُ يَوْمَئِذٍۢ يَخْسَرُ ٱلْمُبْطِلُونَ',
         english: 'And to Allah belongs the dominion of the heavens and the earth. And on the Day the Hour comes to pass, that Day the falsifiers will lose.',
@@ -581,7 +581,7 @@ export const quranVocab12: DeckDef = {
       id: 'qaraa',
       arabic: 'قَرَأَ',
       english: 'to read, to recite',
-      turkish: 'okumak',
+      turkish: 'kıraat etmek, okumak',
       example: {
         arabic: 'ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ',
         english: 'Recite, and your Lord is the most Generous,',
@@ -604,7 +604,7 @@ export const quranVocab12: DeckDef = {
       id: 'qurbaa',
       arabic: 'قُرْبَى',
       english: 'kinship, near relationship',
-      turkish: 'yakınlık, akrabalık',
+      turkish: 'akrabalık, yakınlık',
       example: {
         arabic: 'وَءَاتِ ذَا ٱلْقُرْبَىٰ حَقَّهُۥ وَٱلْمِسْكِينَ وَٱبْنَ ٱلسَّبِيلِ وَلَا تُبَذِّرْ تَبْذِيرًا',
         english: 'And give the relative his right, and the poor and the traveler, and do not spend wastefully.',
@@ -623,7 +623,7 @@ export const quranVocab12: DeckDef = {
       id: 'marji',
       arabic: 'مَرْجِع',
       english: 'return, place of return',
-      turkish: 'dönüş, dönülecek yer',
+      turkish: 'merci, dönülecek yer',
       example: {
         arabic: 'ثُمَّ إِنَّ مَرْجِعَهُمْ لَإِلَى ٱلْجَحِيمِ',
         english: 'Then indeed, their return will be to the Hellfire.',
@@ -645,7 +645,7 @@ export const quranVocab12: DeckDef = {
       id: 'miyzan',
       arabic: 'مِيزان',
       english: 'balance, scale',
-      turkish: 'terazi, ölçü',
+      turkish: 'mizan, terazi, ölçü',
       example: {
         arabic: 'فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ',
         english: 'As for one whose scales are heavy,',

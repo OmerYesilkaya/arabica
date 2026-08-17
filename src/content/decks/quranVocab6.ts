@@ -140,7 +140,7 @@ export const quranVocab6: DeckDef = {
       id: 'sawf',
       arabic: 'سَوْف',
       english: 'will, shall (future particle)',
-      turkish: '-ecek, yakında (gelecek edatı)',
+      turkish: '-ecek, yakında (istikbal edatı)',
       example: {
         arabic: 'كَلَّا سَوْفَ تَعْلَمُونَ',
         english: 'No! You are going to know.',
@@ -331,7 +331,7 @@ export const quranVocab6: DeckDef = {
       id: 'astaghfara',
       arabic: 'اسْتَغْفَرَ',
       english: 'to ask forgiveness',
-      turkish: 'bağışlanma dilemek, istiğfar etmek',
+      turkish: 'istiğfar etmek, bağışlanma dilemek',
       example: {
         arabic: 'قَالُوا۟ يَٰٓأَبَانَا ٱسْتَغْفِرْ لَنَا ذُنُوبَنَآ إِنَّا كُنَّا خَٰطِـِٔينَ',
         english: 'They said: O our father, ask forgiveness for us for our sins; indeed, we have been sinners.',
@@ -354,7 +354,7 @@ export const quranVocab6: DeckDef = {
       id: 'astakbara',
       arabic: 'اسْتَكْبَرَ',
       english: 'to be arrogant, to scorn',
-      turkish: 'büyüklenmek, kibirlenmek',
+      turkish: 'kibirlenmek, büyüklenmek',
       example: {
         arabic: 'إِلَّآ إِبْلِيسَ ٱسْتَكْبَرَ وَكَانَ مِنَ ٱلْكَٰفِرِينَ',
         english: 'except Iblis; he was arrogant and was one of the disbelievers.',
@@ -400,7 +400,7 @@ export const quranVocab6: DeckDef = {
       id: 'bisa',
       arabic: 'بِئْسَ',
       english: 'how wretched is, evil is (verb of blame)',
-      turkish: 'ne kötü, ne fena (yergi fiili)',
+      turkish: 'ne kötü, ne fena (zem fiili)',
       example: {
         arabic: 'وَأُتْبِعُوا۟ فِى هَٰذِهِۦ لَعْنَةًۭ وَيَوْمَ ٱلْقِيَٰمَةِ ۚ بِئْسَ ٱلرِّفْدُ ٱلْمَرْفُودُ',
         english: 'And they were followed in this world by a curse, and on the Day of Resurrection. Wretched is the gift that is given.',
@@ -511,7 +511,7 @@ export const quranVocab6: DeckDef = {
       id: 'shariyk',
       arabic: 'شَرِيك',
       english: 'partner, associate',
-      turkish: 'ortak, şerik',
+      turkish: 'şerik, ortak',
       example: {
         arabic: 'لَا شَرِيكَ لَهُۥ ۖ وَبِذَٰلِكَ أُمِرْتُ وَأَنَا۠ أَوَّلُ ٱلْمُسْلِمِينَ',
         english: 'He has no partner. And this I have been commanded, and I am the first of those who submit.',
@@ -573,7 +573,7 @@ export const quranVocab6: DeckDef = {
       id: 'ala-2',
       arabic: 'أَلا',
       english: 'behold, indeed (attention particle)',
-      turkish: 'dikkat edin, iyi bilin ki',
+      turkish: 'dikkat edin, iyi bilin ki (tenbih edatı)',
       example: {
         arabic: 'أَلَآ إِنَّهُم مِّنْ إِفْكِهِمْ لَيَقُولُونَ',
         english: 'Unquestionably, out of their falsehood they say,',
@@ -787,7 +787,7 @@ export const quranVocab6: DeckDef = {
       id: 'dalal',
       arabic: 'ضَلال',
       english: 'error, straying',
-      turkish: 'sapıklık, dalâlet',
+      turkish: 'dalâlet, sapıklık',
       example: {
         arabic: 'إِنِّىٓ إِذًۭا لَّفِى ضَلَٰلٍۢ مُّبِينٍ',
         english: 'Indeed, I would then be in clear error.',
@@ -806,7 +806,7 @@ export const quranVocab6: DeckDef = {
       id: 'muhsin',
       arabic: 'مُحْسِن',
       english: 'doer of good',
-      turkish: 'iyilik eden, muhsin',
+      turkish: 'muhsin, iyilik eden',
       example: {
         arabic: 'إِنَّ ٱللَّهَ مَعَ ٱلَّذِينَ ٱتَّقَوا۟ وَّٱلَّذِينَ هُم مُّحْسِنُونَ',
         english: 'Indeed, Allah is with those who fear Him and those who are doers of good.',
@@ -869,7 +869,7 @@ export const quranVocab6: DeckDef = {
       id: 'bashar',
       arabic: 'بَشَر',
       english: 'human being, mortal',
-      turkish: 'insan, beşer',
+      turkish: 'beşer, insan',
       example: {
         arabic: 'وَلَئِنْ أَطَعْتُم بَشَرًۭا مِّثْلَكُمْ إِنَّكُمْ إِذًۭا لَّخَٰسِرُونَ',
         english: 'And if you obey a human being like yourselves, indeed you would then be losers.',
@@ -1020,7 +1020,7 @@ export const quranVocab6: DeckDef = {
       id: 'kufr',
       arabic: 'كُفْر',
       english: 'disbelief, ingratitude',
-      turkish: 'inkâr, küfür, nankörlük',
+      turkish: 'küfür, inkâr, nankörlük',
       example: {
         arabic: '۞ أَلَمْ تَرَ إِلَى ٱلَّذِينَ بَدَّلُوا۟ نِعْمَتَ ٱللَّهِ كُفْرًۭا وَأَحَلُّوا۟ قَوْمَهُمْ دَارَ ٱلْبَوَارِ',
         english: 'Have you not seen those who exchanged the favor of Allah for disbelief and settled their people in the home of ruin?',

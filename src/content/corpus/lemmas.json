@@ -54,7 +54,7 @@
   "أَصْحاب": {
     "pos": "ism",
     "english": "companions, people of",
-    "turkish": "arkadaşlar, ashab, sahipleri",
+    "turkish": "ashab, arkadaşlar, sahipleri",
     "glossSource": "deck",
     "noteId": "ashab",
     "root": "صحب"
@@ -121,7 +121,7 @@
   "اسْتَغْفَرَ": {
     "pos": "fil",
     "english": "to ask forgiveness",
-    "turkish": "bağışlanma dilemek, istiğfar etmek",
+    "turkish": "istiğfar etmek, bağışlanma dilemek",
     "glossSource": "deck",
     "noteId": "astaghfara",
     "root": "غفر"
@@ -151,7 +151,7 @@
   "الَّذِي": {
     "pos": "ism",
     "english": "who, which (relative)",
-    "turkish": "ki o, -en/-an (ilgi zamiri)",
+    "turkish": "ki o, -en/-an (ism-i mevsûl)",
     "glossSource": "deck",
     "noteId": "alladhiy"
   },
@@ -335,7 +335,7 @@
   "ذا": {
     "pos": "ism",
     "english": "this, that (demonstrative)",
-    "turkish": "bu, şu, o (işaret)",
+    "turkish": "bu, şu, o (ism-i işaret)",
     "glossSource": "deck",
     "noteId": "dha"
   },
@@ -429,7 +429,7 @@
   "شَرّ": {
     "pos": "ism",
     "english": "evil, harm",
-    "turkish": "kötülük, şer",
+    "turkish": "şer, kötülük",
     "glossSource": "deck",
     "noteId": "sharr",
     "root": "شرر"
@@ -504,7 +504,7 @@
   "عَبَدَ": {
     "pos": "fil",
     "english": "to worship, to serve",
-    "turkish": "kulluk etmek, ibadet etmek",
+    "turkish": "ibadet etmek, kulluk etmek",
     "glossSource": "deck",
     "noteId": "abada",
     "root": "عبد"

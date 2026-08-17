@@ -99,7 +99,7 @@ export const quranVocab4: DeckDef = {
       id: 'quran',
       arabic: 'قُرْءان',
       english: 'Qur\'an; recitation',
-      turkish: 'Kur\'an; okuma',
+      turkish: 'Kur’an; kıraat',
       example: {
         arabic: 'بَلْ هُوَ قُرْءَانٌۭ مَّجِيدٌۭ',
         english: 'Rather, it is a glorious Qur\'an,',
@@ -200,7 +200,7 @@ export const quranVocab4: DeckDef = {
       id: 'anfaqa',
       arabic: 'أَنفَقَ',
       english: 'to spend',
-      turkish: 'harcamak, infak etmek',
+      turkish: 'infak etmek, harcamak',
       example: {
         arabic: 'ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَٰهُمْ يُنفِقُونَ',
         english: 'those who establish the prayer and spend out of what We have provided them.',
@@ -245,7 +245,7 @@ export const quranVocab4: DeckDef = {
       id: 'ghafara',
       arabic: 'غَفَرَ',
       english: 'to forgive',
-      turkish: 'bağışlamak, affetmek',
+      turkish: 'affetmek, bağışlamak',
       example: {
         arabic: 'وَقُل رَّبِّ ٱغْفِرْ وَٱرْحَمْ وَأَنتَ خَيْرُ ٱلرَّٰحِمِينَ',
         english: 'And say: My Lord, forgive and have mercy, and You are the best of the merciful.',
@@ -592,7 +592,7 @@ export const quranVocab4: DeckDef = {
       id: 'talaa',
       arabic: 'تَلَى',
       english: 'to recite; to follow',
-      turkish: 'okumak; ardından gitmek',
+      turkish: 'tilavet etmek, okumak; ardından gitmek',
       example: {
         arabic: 'رَسُولٌۭ مِّنَ ٱللَّهِ يَتْلُوا۟ صُحُفًۭا مُّطَهَّرَةًۭ',
         english: 'a messenger from Allah reciting purified scriptures,',
@@ -638,7 +638,7 @@ export const quranVocab4: DeckDef = {
       id: 'sadiq',
       arabic: 'صادِق',
       english: 'truthful, sincere',
-      turkish: 'doğru sözlü, sadık',
+      turkish: 'sadık, doğru sözlü',
       example: {
         arabic: 'تَرْجِعُونَهَآ إِن كُنتُمْ صَٰدِقِينَ',
         english: 'bring it back, if you are truthful.',

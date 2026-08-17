@@ -75,7 +75,7 @@ export const quranVocab10: DeckDef = {
       id: 'wahaba',
       arabic: 'وَهَبَ',
       english: 'to grant, to bestow',
-      turkish: 'bağışlamak, ihsan etmek',
+      turkish: 'ihsan etmek, bağışlamak',
       example: {
         arabic: 'رَبِّ هَبْ لِى مِنَ ٱلصَّٰلِحِينَ',
         english: 'My Lord, grant me one of the righteous.',
@@ -144,7 +144,7 @@ export const quranVocab10: DeckDef = {
       id: 'amaa',
       arabic: 'أَعْمَى',
       english: 'blind',
-      turkish: 'kör, âmâ',
+      turkish: 'âmâ, kör',
       example: {
         arabic: 'صُمٌّۢ بُكْمٌ عُمْىٌۭ فَهُمْ لَا يَرْجِعُونَ',
         english: 'Deaf, dumb, blind, so they will not return.',
@@ -189,7 +189,7 @@ export const quranVocab10: DeckDef = {
       id: 'astahzaa',
       arabic: 'اسْتُهْزِئَ',
       english: 'to mock, to ridicule',
-      turkish: 'alay etmek, eğlenmek',
+      turkish: 'istihza etmek, alay etmek',
       example: {
         arabic: 'ٱللَّهُ يَسْتَهْزِئُ بِهِمْ وَيَمُدُّهُمْ فِى طُغْيَٰنِهِمْ يَعْمَهُونَ',
         english: 'Allah mocks them and prolongs them in their transgression, wandering blindly.',
@@ -386,7 +386,7 @@ export const quranVocab10: DeckDef = {
       id: 'musammana',
       arabic: 'مُسَمًّى',
       english: 'named, appointed, specified',
-      turkish: 'belirlenmiş, adı konmuş',
+      turkish: 'müsemma, belirlenmiş',
       example: {
         arabic: 'وَلَوْلَا كَلِمَةٌۭ سَبَقَتْ مِن رَّبِّكَ لَكَانَ لِزَامًۭا وَأَجَلٌۭ مُّسَمًّۭى',
         english: 'And if not for a word that preceded from your Lord and an appointed term, it would have been unavoidable.',
@@ -428,7 +428,7 @@ export const quranVocab10: DeckDef = {
       id: 'mufsid',
       arabic: 'مُفْسِد',
       english: 'corrupter, one who spreads corruption',
-      turkish: 'bozguncu, fesat çıkaran',
+      turkish: 'fesat çıkaran, bozguncu',
       example: {
         arabic: 'وَلَا تَبْخَسُوا۟ ٱلنَّاسَ أَشْيَآءَهُمْ وَلَا تَعْثَوْا۟ فِى ٱلْأَرْضِ مُفْسِدِينَ',
         english: 'And do not deprive people of their things, and do not roam the earth spreading corruption.',
@@ -472,7 +472,7 @@ export const quranVocab10: DeckDef = {
       id: 'nasiyb',
       arabic: 'نَصِيب',
       english: 'share, portion',
-      turkish: 'pay, nasip',
+      turkish: 'nasip, pay',
       example: {
         arabic: 'أُو۟لَٰٓئِكَ لَهُمْ نَصِيبٌۭ مِّمَّا كَسَبُوا۟ ۚ وَٱللَّهُ سَرِيعُ ٱلْحِسَابِ',
         english: 'Those will have a share of what they have earned, and Allah is swift in account.',
@@ -583,7 +583,7 @@ export const quranVocab10: DeckDef = {
       id: 'amina',
       arabic: 'أَمِنَ',
       english: 'to be safe, to feel secure',
-      turkish: 'güvende olmak, emin olmak',
+      turkish: 'emin olmak, güvende olmak',
       example: {
         arabic: 'أَفَأَمِنُوا۟ مَكْرَ ٱللَّهِ ۚ فَلَا يَأْمَنُ مَكْرَ ٱللَّهِ إِلَّا ٱلْقَوْمُ ٱلْخَٰسِرُونَ',
         english: 'Did they then feel secure from the plan of Allah? But none feels secure from the plan of Allah except the losing people.',
@@ -629,7 +629,7 @@ export const quranVocab10: DeckDef = {
       id: 'awfaa',
       arabic: 'أَوْفَى',
       english: 'to fulfill, to discharge fully',
-      turkish: 'yerine getirmek, tam olarak ifa etmek',
+      turkish: 'ifa etmek, tam olarak yerine getirmek',
       example: {
         arabic: 'بَلَىٰ مَنْ أَوْفَىٰ بِعَهْدِهِۦ وَٱتَّقَىٰ فَإِنَّ ٱللَّهَ يُحِبُّ ٱلْمُتَّقِينَ',
         english: 'Yes, whoever fulfills his covenant and fears Allah, then indeed Allah loves the righteous.',
@@ -675,7 +675,7 @@ export const quranVocab10: DeckDef = {
       id: 'hizb',
       arabic: 'حِزْب',
       english: 'party, faction, group',
-      turkish: 'grup, hizip, taraf',
+      turkish: 'hizip, grup, taraf',
       example: {
         arabic: 'فَتَقَطَّعُوٓا۟ أَمْرَهُم بَيْنَهُمْ زُبُرًۭا ۖ كُلُّ حِزْبٍۭ بِمَا لَدَيْهِمْ فَرِحُونَ',
         english: 'But they cut up their affair among themselves into pieces, each party rejoicing in what it has.',
@@ -889,7 +889,7 @@ export const quranVocab10: DeckDef = {
       id: 'qassa',
       arabic: 'قَصَّ',
       english: 'to relate, to narrate',
-      turkish: 'anlatmak, kıssa etmek',
+      turkish: 'kıssa etmek, anlatmak',
       example: {
         arabic: 'نَّحْنُ نَقُصُّ عَلَيْكَ نَبَأَهُم بِٱلْحَقِّ ۚ إِنَّهُمْ فِتْيَةٌ ءَامَنُوا۟ بِرَبِّهِمْ وَزِدْنَٰهُمْ هُدًۭى',
         english: 'We relate to you their story in truth. Indeed, they were youths who believed in their Lord, and We increased them in guidance.',
@@ -1035,7 +1035,7 @@ export const quranVocab10: DeckDef = {
       id: 'ziyna',
       arabic: 'زِينَة',
       english: 'adornment, ornament',
-      turkish: 'süs, ziynet',
+      turkish: 'ziynet, süs',
       example: {
         arabic: 'إِنَّا جَعَلْنَا مَا عَلَى ٱلْأَرْضِ زِينَةًۭ لَّهَا لِنَبْلُوَهُمْ أَيُّهُمْ أَحْسَنُ عَمَلًۭا',
         english: 'Indeed, We have made what is on the earth an adornment for it, so that We may test them as to which of them is best in deed.',

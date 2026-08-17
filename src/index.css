@@ -401,30 +401,61 @@ button:disabled {
 
 /* ---------- reference ---------- */
 
-.ref-list a.ref-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+/* One card of hairline-separated rows rather than a card per entry: the entries
+   are one ordered sequence, and ten bordered boxes drew them as ten unrelated
+   things. `overflow: hidden` keeps the first and last row inside the radius. */
+ol.ref-list {
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ref-row + .ref-row {
+  border-top: 1px solid var(--border);
+}
+
+/* The whole row is the tap target, so the padding lives here and not on the
+   list. Baseline alignment puts the lesson number on the English title's line
+   rather than the middle of a two-line row. */
+.ref-row .ref-link,
+.ref-row .ref-static {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 0 12px;
   padding: 14px 16px;
-  margin-bottom: 10px;
   text-decoration: none;
   color: inherit;
 }
 
-.ref-row .ref-arabic {
-  font-size: 1.3rem;
-  white-space: nowrap;
-}
-
-.ref-row h2 {
-  font-size: 1rem;
-}
-
-.ref-row p {
-  font-size: 0.85rem;
+.ref-num {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
   color: var(--text-muted);
-  margin-top: 2px;
+}
+
+/* `align-items: flex-start` shrink-wraps the Arabic title to its own width, so
+   it sits directly under the English one. Left to fill the row it would be a
+   right-aligned line of RTL text hugging the far edge of the card, reading as
+   detached from the title it belongs to. */
+.ref-titles {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.ref-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Under the English title, never beside it: two scripts sharing one line is
+   what let a long title widen the page, and a stacked row cannot. */
+.ref-row .ref-arabic {
+  font-size: 1.1rem;
+  color: var(--text-muted);
 }
 
 .ref-row.locked {
@@ -440,13 +471,11 @@ button:disabled {
   white-space: nowrap;
 }
 
-div.ref-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 16px;
-  margin-bottom: 10px;
+/* The entry's own one-line abstract, where the list no longer carries it. */
+.ref-summary {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: -8px 0 16px;
 }
 
 /* Meaning language switch, above the sections it re-renders. */
@@ -510,9 +539,12 @@ table.ref-table th {
   white-space: nowrap;
 }
 
+/* Deliberately wrapping. A cell holds either a single paradigm form or a quoted
+   fragment of an ayah; the form never breaks (Arabic has no intra-word break
+   without `overflow-wrap`), so nowrap bought nothing for it and made every
+   quoted fragment a column as wide as the sentence. */
 table.ref-table .arabic {
   font-size: 1.25rem;
-  white-space: nowrap;
 }
 
 table.ref-table .cell-footnote {

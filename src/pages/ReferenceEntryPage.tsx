@@ -160,6 +160,9 @@ export function ReferenceEntryPage() {
       <h1 className="page-title">
         {entry.title} · <span className="arabic">{entry.titleArabic}</span>
       </h1>
+      {/* The list is a syllabus and carries titles only, so the entry is where
+          the summary is read. */}
+      <p className="ref-summary">{entry.summary}</p>
       <LangSwitch lang={lang} />
       {entry.sections.map((section, i) => {
         switch (section.kind) {

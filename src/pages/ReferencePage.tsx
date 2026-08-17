@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { referenceEntries } from '../content/reference'
 import type { ReferenceEntry } from '../content/types'
+import { useStrings } from '../i18n/strings'
 
 /**
  * A row's contents, shared by the linked and the locked row.
@@ -10,6 +11,7 @@ import type { ReferenceEntry } from '../content/types'
  * still the true one.
  */
 function RowBody({ entry }: { entry: ReferenceEntry }) {
+  const s = useStrings()
   return (
     <>
       <span className="ref-num">{String(entry.order).padStart(2, '0')}</span>
@@ -17,7 +19,7 @@ function RowBody({ entry }: { entry: ReferenceEntry }) {
         <span className="ref-title">{entry.title}</span>
         <span className="ref-arabic arabic">{entry.titleArabic}</span>
       </span>
-      {entry.locked && <span className="lock">🔒 coming soon</span>}
+      {entry.locked && <span className="lock">{s.reference.comingSoon}</span>}
     </>
   )
 }
@@ -33,9 +35,10 @@ function RowBody({ entry }: { entry: ReferenceEntry }) {
  * widen the page, and no length of title can do that to a stacked row.
  */
 export function ReferencePage() {
+  const s = useStrings()
   return (
     <main className="page">
-      <h1 className="page-title">Reference</h1>
+      <h1 className="page-title">{s.reference.title}</h1>
       <ol className="card ref-list">
         {referenceEntries.map((entry) => (
           <li key={entry.id} className={entry.locked ? 'ref-row locked' : 'ref-row'}>

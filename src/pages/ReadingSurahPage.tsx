@@ -14,6 +14,7 @@ import {
   useReadingHideTashkeel,
 } from '../reading/settings'
 import { stripTashkeel } from '../text/arabic'
+import { useStrings } from '../i18n/strings'
 
 /** Arabic-Indic digits, as the mushaf writes an ayah number. */
 function arabicNumber(n: number): string {
@@ -111,6 +112,7 @@ function LineText({
  * error are the only writes, and each is a deliberate act.
  */
 export function ReadingSurahPage() {
+  const s = useStrings()
   const { surah: param } = useParams()
   const surah = Number(param)
   const ref = textRef(surah)
@@ -163,9 +165,9 @@ export function ReadingSurahPage() {
   if (!ref) {
     return (
       <main className="page">
-        <p>That surah is not in the reader yet.</p>
-        <p style={{ marginTop: 12 }}>
-          <Link to="/reading">← Reading</Link>
+        <p>{s.reading.notInReader}</p>
+        <p>
+          <Link to="/reading">{s.reading.back}</Link>
         </p>
       </main>
     )
@@ -189,9 +191,9 @@ export function ReadingSurahPage() {
 
   return (
     <main className="page reading-page">
-      <p style={{ marginBottom: 8 }}>
-        <Link to="/reading" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-          ← Reading
+      <p>
+        <Link className="back" to="/reading">
+          {s.reading.back}
         </Link>
       </p>
       <h1 className="page-title">
@@ -205,7 +207,7 @@ export function ReadingSurahPage() {
           aria-pressed={hideTashkeel}
           onClick={() => void setReadingHideTashkeel(!hideTashkeel)}
         >
-          Hide tashkeel
+          {s.reading.hideTashkeel}
         </button>
         <button
           type="button"
@@ -213,12 +215,12 @@ export function ReadingSurahPage() {
           aria-pressed={markKnown}
           onClick={() => void setMarkKnown(!markKnown)}
         >
-          Mark known words
+          {s.reading.markKnown}
         </button>
       </div>
 
-      {failed && <p className="reading-empty">That surah could not be loaded.</p>}
-      {!text && !failed && <p className="reading-empty">Loading…</p>}
+      {failed && <p className="reading-empty">{s.reading.loadFailed}</p>}
+      {!text && !failed && <p className="reading-empty">{s.reading.loading}</p>}
 
       {text && lemmas && (
         <div className="arabic reading-text">

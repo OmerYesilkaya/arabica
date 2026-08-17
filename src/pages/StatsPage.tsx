@@ -6,6 +6,8 @@ import { computeForecast } from '../srs/forecast'
 import { computeLeeches, type Leech } from '../srs/leeches'
 import { computeHeatmap, type HeatmapCell } from '../srs/heatmap'
 import { computeCoverage, type Coverage } from '../srs/coverage'
+import { useStrings, type Strings } from '../i18n/strings'
+import { useLang, type Lang } from '../settings/useLang'
 
 interface Bar {
   day: number
@@ -14,7 +16,7 @@ interface Bar {
 
 const HEATMAP_LEVEL_OPACITY = [0, 0.28, 0.5, 0.74, 1]
 
-function Heatmap({ weeks }: { weeks: HeatmapCell[][] }) {
+function Heatmap({ weeks, s }: { weeks: HeatmapCell[][]; s: Strings }) {
   const cell = 13
   const gap = 3
   const step = cell + gap
@@ -27,7 +29,7 @@ function Heatmap({ weeks }: { weeks: HeatmapCell[][] }) {
         viewBox={`0 0 ${width} ${height}`}
         style={{ width: '100%', height: 'auto', display: 'block' }}
         role="img"
-        aria-label="Reviews per day, last 26 weeks"
+        aria-label={s.stats.activityLabel}
       >
         {weeks.map((column, col) =>
           column.map((c, row) => {
@@ -40,7 +42,7 @@ function Heatmap({ weeks }: { weeks: HeatmapCell[][] }) {
                 width={cell}
                 height={cell}
                 rx={2}
-                fill={c.level === 0 ? 'var(--surface-2)' : 'var(--accent)'}
+                fill={c.level === 0 ? 'var(--surface-2)' : 'var(--mark)'}
                 fillOpacity={c.level === 0 ? 1 : HEATMAP_LEVEL_OPACITY[c.level]}
                 stroke={c.isToday ? 'var(--text)' : 'none'}
                 strokeWidth={c.isToday ? 1.5 : 0}
@@ -50,8 +52,8 @@ function Heatmap({ weeks }: { weeks: HeatmapCell[][] }) {
         )}
       </svg>
       <p className="caption" style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span>26 weeks ago</span>
-        <span>today</span>
+        <span>{s.stats.weeksAgo26}</span>
+        <span>{s.stats.today}</span>
       </p>
     </div>
   )
@@ -62,14 +64,12 @@ function referenceLink(referenceId: string): string {
   return anchor ? `/reference/${entry}?h=${anchor}` : `/reference/${entry}`
 }
 
-function LeechRow({ leech }: { leech: Leech }) {
+function LeechRow({ leech, s, lang }: { leech: Leech; s: Strings; lang: Lang }) {
   const body = (
     <>
       <span className="arabic leech-arabic">{leech.arabic}</span>
-      <span className="leech-meaning">
-        {leech.english} · {leech.turkish}
-      </span>
-      <span className="leech-lapses">{leech.lapses} lapses</span>
+      <span className="leech-meaning">{leech[lang]}</span>
+      <span className="leech-lapses">{s.stats.lapses(leech.lapses)}</span>
     </>
   )
   return leech.referenceId ? (
@@ -116,7 +116,7 @@ function BarChart({
               width={barWidth}
               height={h}
               rx={2}
-              fill="var(--accent)"
+              fill="var(--mark)"
               opacity={b.value === 0 ? 0.15 : 1}
             />
           )
@@ -138,7 +138,7 @@ function BarChart({
  * vocabulary track is ordered by frequency. The denominator is stated so the
  * number can be read as a claim rather than a score.
  */
-function CoveragePanel({ coverage }: { coverage: Coverage }) {
+function CoveragePanel({ coverage, s }: { coverage: Coverage; s: Strings }) {
   const percent = coverage.percent
   const shown = percent > 0 && percent < 1 ? percent.toFixed(1) : Math.round(percent)
 
@@ -150,12 +150,12 @@ function CoveragePanel({ coverage }: { coverage: Coverage }) {
             {shown}
             <span className="coverage-unit">%</span>
           </div>
-          <div className="label">of the Qurʾan you can read</div>
+          <div className="label">{s.stats.canRead}</div>
         </div>
         {coverage.gained > 0 && (
           <div className="coverage-gain">
             +{coverage.gained < 1 ? coverage.gained.toFixed(1) : Math.round(coverage.gained)}%
-            <span className="label">this month</span>
+            <span className="label">{s.stats.thisMonth}</span>
           </div>
         )}
       </div>
@@ -165,15 +165,19 @@ function CoveragePanel({ coverage }: { coverage: Coverage }) {
       </div>
 
       <p className="coverage-note">
-        {coverage.words} word{coverage.words === 1 ? '' : 's'} known, covering{' '}
-        {coverage.known.toLocaleString()} of {coverage.total.toLocaleString()} word
-        occurrences. Attached particles are excluded from both sides.
+        {s.stats.coverageNote(
+          coverage.words,
+          coverage.known.toLocaleString(s.common.locale),
+          coverage.total.toLocaleString(s.common.locale),
+        )}
       </p>
     </div>
   )
 }
 
 export function StatsPage() {
+  const s = useStrings()
+  const lang = useLang()
   const stats = useLiveQuery(() => computeStats(db, new Date()))
   const forecast = useLiveQuery(() => computeForecast(db, new Date()))
   const leeches = useLiveQuery(() => computeLeeches(db))
@@ -185,22 +189,22 @@ export function StatsPage() {
 
   return (
     <main className="page">
-      <h1 className="page-title">Stats</h1>
+      <h1 className="page-title">{s.stats.title}</h1>
 
-      <CoveragePanel coverage={coverage} />
+      <CoveragePanel coverage={coverage} s={s} />
 
       <div className="stat-tiles">
         <div className="card">
           <div className="value">{stats.reviewsToday}</div>
-          <div className="label">reviews today</div>
+          <div className="label">{s.stats.reviewsToday}</div>
         </div>
         <div className="card">
           <div className="value">{stats.newToday}</div>
-          <div className="label">new cards today</div>
+          <div className="label">{s.stats.newToday}</div>
         </div>
         <div className="card">
           <div className="value">{stats.streakDays}</div>
-          <div className="label">day streak</div>
+          <div className="label">{s.stats.dayStreak}</div>
         </div>
         <div className="card">
           <div className="value">
@@ -208,46 +212,42 @@ export function StatsPage() {
               ? '—'
               : `${Math.round(stats.retention * 100)}%`}
           </div>
-          <div className="label">retention (review cards)</div>
+          <div className="label">{s.stats.retention}</div>
         </div>
       </div>
 
-      <h2 className="chart-title">Reviews per day</h2>
+      <h2 className="chart-title">{s.stats.reviewsPerDay}</h2>
       <BarChart
         bars={stats.last30Days.map((d) => ({ day: d.day, value: d.reviews }))}
-        ariaLabel="Reviews per day, last 30 days"
-        leftLabel="30 days ago"
-        rightLabel="today"
+        ariaLabel={s.stats.reviewsPerDayLabel}
+        leftLabel={s.stats.daysAgo30}
+        rightLabel={s.stats.today}
       />
 
-      <h2 className="chart-title">Review forecast</h2>
+      <h2 className="chart-title">{s.stats.forecast}</h2>
       <BarChart
         bars={forecast.map((d) => ({ day: d.day, value: d.due }))}
-        ariaLabel="Cards due per day, next 30 days"
-        leftLabel="today"
-        rightLabel="in 30 days"
+        ariaLabel={s.stats.forecastLabel}
+        leftLabel={s.stats.today}
+        rightLabel={s.stats.inDays30}
       />
 
-      <h2 className="chart-title">Activity</h2>
-      <Heatmap weeks={heatmap.weeks} />
+      <h2 className="chart-title">{s.stats.activity}</h2>
+      <Heatmap weeks={heatmap.weeks} s={s} />
 
       {leeches.length > 0 && (
         <>
-          <h2 className="chart-title">Leeches</h2>
-          <p className="caption" style={{ marginBottom: 8 }}>
-            Cards that keep lapsing. Fix them in the deck.
-          </p>
+          <h2 className="chart-title">{s.stats.leeches}</h2>
+          <p className="caption">{s.stats.leechNote}</p>
           <div className="leech-list">
             {leeches.map((leech) => (
-              <LeechRow key={leech.cardId} leech={leech} />
+              <LeechRow key={leech.cardId} leech={leech} s={s} lang={lang} />
             ))}
           </div>
         </>
       )}
 
-      <p className="caption" style={{ marginTop: 12 }}>
-        {stats.totalReviews} reviews all time.
-      </p>
+      <p className="caption">{s.stats.totalReviews(stats.totalReviews)}</p>
     </main>
   )
 }

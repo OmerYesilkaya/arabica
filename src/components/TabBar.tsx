@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom'
+import { useStrings, type Strings } from '../i18n/strings'
 
 const tabs = [
   {
     to: '/',
-    label: 'Study',
+    label: (s: Strings) => s.tabs.study,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <rect x="4" y="7" width="14" height="13" rx="2" />
@@ -13,7 +14,7 @@ const tabs = [
   },
   {
     to: '/reading',
-    label: 'Reading',
+    label: (s: Strings) => s.tabs.reading,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M12 6.5C10.5 5 8.5 4.5 6 4.5H3v14h3c2.5 0 4.5.5 6 2 1.5-1.5 3.5-2 6-2h3v-14h-3c-2.5 0-4.5.5-6 2Z" />
@@ -23,7 +24,7 @@ const tabs = [
   },
   {
     to: '/reference',
-    label: 'Reference',
+    label: (s: Strings) => s.tabs.reference,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5Z" />
@@ -33,7 +34,7 @@ const tabs = [
   },
   {
     to: '/stats',
-    label: 'Stats',
+    label: (s: Strings) => s.tabs.stats,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <path d="M5 20V12" />
@@ -45,7 +46,7 @@ const tabs = [
   },
   {
     to: '/settings',
-    label: 'Settings',
+    label: (s: Strings) => s.tabs.settings,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <circle cx="12" cy="12" r="3" />
@@ -56,6 +57,7 @@ const tabs = [
 ]
 
 export function TabBar() {
+  const s = useStrings()
   return (
     <nav className="tabbar">
       {tabs.map((tab) => (
@@ -66,7 +68,7 @@ export function TabBar() {
           className={({ isActive }) => (isActive ? 'active' : undefined)}
         >
           {tab.icon}
-          {tab.label}
+          {tab.label(s)}
         </NavLink>
       ))}
     </nav>

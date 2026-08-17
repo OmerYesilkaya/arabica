@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { useLang } from './settings/useLang'
 import { TabBar } from './components/TabBar'
 import { DecksPage } from './pages/DecksPage'
 import { StudySessionPage } from './pages/StudySessionPage'
@@ -9,9 +11,26 @@ import { ReferenceEntryPage } from './pages/ReferenceEntryPage'
 import { StatsPage } from './pages/StatsPage'
 import { SettingsPage } from './pages/SettingsPage'
 
+/** BCP 47 tags for the two Languages, for the `lang` attribute. */
+const HTML_LANG = { english: 'en', turkish: 'tr' } as const
+
 export default function App() {
   const location = useLocation()
+  const lang = useLang()
   const inStudySession = location.pathname.startsWith('/study/')
+
+  /*
+   * The document's language, not just the interface's.
+   *
+   * Load-bearing for Turkish specifically: `text-transform: uppercase` is
+   * locale-sensitive, and only under `lang="tr"` does a dotted i uppercase to
+   * a dotted capital. Without this the uppercase micro-labels read MISAL where
+   * Turkish spells it MİSAL — a different letter, and the giveaway that an
+   * interface was translated rather than written.
+   */
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG[lang]
+  }, [lang])
 
   return (
     <>

@@ -11,10 +11,12 @@ import {
 } from '../content/decks/quranVocabTrack'
 import { trackStatus } from '../srs/vocabTrack'
 import { LAST_EXPORT_KEY } from '../db/exportImport'
+import { useStrings } from '../i18n/strings'
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000
 
 function ExportReminder() {
+  const s = useStrings()
   const show = useLiveQuery(async () => {
     const total = await db.reviewLog.count()
     if (total === 0) return false
@@ -25,13 +27,14 @@ function ExportReminder() {
   if (!show) return null
   return (
     <div className="banner">
-      <span>Backup is due: your progress lives only on this device.</span>
-      <Link to="/settings">Export now</Link>
+      <span>{s.decks.backupDue}</span>
+      <Link to="/settings">{s.decks.exportNow}</Link>
     </div>
   )
 }
 
 function LockedDeckRow({ deckId }: { deckId: string }) {
+  const s = useStrings()
   const deck = decks.find((d) => d.id === deckId)!
   return (
     <div className="card deck-row locked">
@@ -40,12 +43,13 @@ function LockedDeckRow({ deckId }: { deckId: string }) {
         <div className="deck-arabic arabic">{deck.nameArabic}</div>
         <p className="deck-locked-note">{deck.description}</p>
       </div>
-      <span className="lock">Locked</span>
+      <span className="lock">{s.decks.locked}</span>
     </div>
   )
 }
 
 function DeckRow({ deckId }: { deckId: string }) {
+  const s = useStrings()
   const deck = decks.find((d) => d.id === deckId)!
   const counts = useLiveQuery(
     () => deckCounts(db, deck, new Date()),
@@ -61,17 +65,17 @@ function DeckRow({ deckId }: { deckId: string }) {
         <h2>{deck.name}</h2>
         <div className="deck-arabic arabic">{deck.nameArabic}</div>
         <div className="counts">
-          <span className="new">{counts?.newCount ?? 0} new</span>
-          <span className="learn">{counts?.learningCount ?? 0} learning</span>
-          <span className="due">{counts?.dueCount ?? 0} due</span>
+          <span className="new">{s.decks.countNew(counts?.newCount ?? 0)}</span>
+          <span className="learn">{s.decks.countLearning(counts?.learningCount ?? 0)}</span>
+          <span className="due">{s.decks.countDue(counts?.dueCount ?? 0)}</span>
         </div>
       </div>
       {total > 0 ? (
         <Link className="button-primary" to={`/study/${deck.id}`}>
-          Study
+          {s.decks.study}
         </Link>
       ) : (
-        <span className="muted">Done ✓</span>
+        <span className="muted">{s.decks.done}</span>
       )}
     </div>
   )
@@ -94,6 +98,7 @@ function LevelDot({ done, current }: { done: boolean; current: boolean }) {
  * stated once, on the only level it currently applies to.
  */
 function VocabTrackRow() {
+  const s = useStrings()
   const [expanded, setExpanded] = useState(false)
   const status = useLiveQuery(() => trackStatus(db, quranVocabTrack), [])
 
@@ -116,7 +121,7 @@ function VocabTrackRow() {
       >
         <span className="track-head">
           <span className="track-title">
-            <h2>Quran Vocabulary</h2>
+            <h2>{s.decks.trackName}</h2>
             <span className="deck-arabic arabic">مُفْرَدَاتُ الْقُرْآنِ</span>
           </span>
           <span className="track-count">
@@ -143,9 +148,11 @@ function VocabTrackRow() {
 
         <span className="track-foot">
           <span className="muted">
-            Level {status.currentLevel} of {status.levels.length} · {percent}% known
+            {s.decks.trackProgress(status.currentLevel, status.levels.length, percent)}
           </span>
-          <span className="track-chevron">{expanded ? 'Hide levels' : 'All levels'}</span>
+          <span className="track-chevron">
+            {expanded ? s.decks.hideLevels : s.decks.allLevels}
+          </span>
         </span>
       </button>
 
@@ -159,13 +166,13 @@ function VocabTrackRow() {
               <li key={level.deck.id} className={level.unlocked ? 'open' : 'shut'}>
                 <LevelDot done={done} current={current} />
                 <span className="level-name">
-                  Level {index + 1}
+                  {s.decks.level(index + 1)}
                   <span className="level-band">
-                    words {index * level.total + 1}–{(index + 1) * level.total}
+                    {s.decks.band(index * level.total + 1, (index + 1) * level.total)}
                   </span>
                 </span>
 
-                {done && <span className="muted">all {level.total} known</span>}
+                {done && <span className="muted">{s.decks.allKnown(level.total)}</span>}
 
                 {current && (
                   <span className="level-progress">
@@ -181,15 +188,11 @@ function VocabTrackRow() {
                   </span>
                 )}
 
-                {isNext && (
-                  <span className="muted">
-                    {toUnlock} more to open
-                  </span>
-                )}
+                {isNext && <span className="muted">{s.decks.moreToOpen(toUnlock)}</span>}
 
                 {level.unlocked ? (
                   <Link className="level-go" to={`/study/${level.deck.id}`}>
-                    Study
+                    {s.decks.study}
                   </Link>
                 ) : (
                   <span className="level-go placeholder" aria-hidden="true" />
@@ -204,10 +207,11 @@ function VocabTrackRow() {
 }
 
 export function DecksPage() {
+  const s = useStrings()
   const standalone = decks.filter((deck) => !isVocabTrackDeck(deck.id))
   return (
     <main className="page">
-      <h1 className="page-title">Study</h1>
+      <h1 className="page-title">{s.decks.title}</h1>
       <ExportReminder />
       {standalone.map((deck) =>
         deck.locked ? (

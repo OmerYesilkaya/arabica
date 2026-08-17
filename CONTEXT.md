@@ -103,6 +103,16 @@ The vowel marks. Content always stores full tashkeel; hiding it is a
 render-time choice, never a change to the data.
 _Avoid_: vowels, harakat, diacritics
 
+**Language**:
+Which language the app is in — its own chrome, and which half of every Meaning
+is on screen. One choice, English or Turkish, persisted per device and swapped
+from the session bar or Settings. Like hiding Tashkeel it is a render-time
+choice: a Meaning is still both languages together, and nothing here touches
+Content or Progress. The interface strings live in `src/i18n/strings.ts`;
+Content is never translated at render time, because both languages of it are
+already authored. See `docs/adr/0004-basalt-one-ramp-one-language.md`.
+_Avoid_: locale, i18n, translation, meaning language
+
 **DRAFT**:
 A file-top marker meaning the content has not yet been verified against the
 matn. Draft content may still be studied, at the learner's risk.

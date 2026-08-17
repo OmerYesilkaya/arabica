@@ -180,18 +180,41 @@ export function previewIntervals(
   }
 }
 
+/**
+ * The unit suffixes of a compact interval label, in one Language.
+ *
+ * Passed in rather than imported so this module stays what its header says it
+ * is: scheduling, with no dependency on the interface. The caller has the
+ * Language already.
+ */
+export interface IntervalUnits {
+  minute: string
+  hour: string
+  day: string
+  month: string
+  year: string
+}
+
+const DEFAULT_UNITS: IntervalUnits = {
+  minute: 'm',
+  hour: 'h',
+  day: 'd',
+  month: 'mo',
+  year: 'y',
+}
+
 /** Anki-style compact interval label: 1m, 10m, 3h, 4d, 2mo, 1.5y */
-export function intervalLabel(from: Date, to: Date): string {
+export function intervalLabel(from: Date, to: Date, units: IntervalUnits = DEFAULT_UNITS): string {
   const minutes = Math.max(1, Math.round((to.getTime() - from.getTime()) / 60000))
-  if (minutes < 60) return `${minutes}m`
+  if (minutes < 60) return `${minutes}${units.minute}`
   const hours = Math.round(minutes / 60)
-  if (hours < 24) return `${hours}h`
+  if (hours < 24) return `${hours}${units.hour}`
   const days = Math.round(hours / 24)
-  if (days < 30) return `${days}d`
+  if (days < 30) return `${days}${units.day}`
   const months = days / 30.44
-  if (months < 12) return `${Math.round(months)}mo`
+  if (months < 12) return `${Math.round(months)}${units.month}`
   const years = days / 365.25
-  return `${years < 3 ? years.toFixed(1) : Math.round(years)}y`
+  return `${years < 3 ? years.toFixed(1) : Math.round(years)}${units.year}`
 }
 
 /** Count of cards introduced today (first review had state New). */

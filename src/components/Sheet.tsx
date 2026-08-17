@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useStrings } from '../i18n/strings'
 
 /** Drag further than this and the sheet closes on release. */
 const DISMISS_PX = 80
@@ -25,6 +26,7 @@ export function Sheet({
   onClose: () => void
   children: ReactNode
 }) {
+  const strings = useStrings()
   const [dragY, setDragY] = useState(0)
   const startY = useRef<number | null>(null)
 
@@ -68,7 +70,7 @@ export function Sheet({
         <div className="sheet-grip" aria-hidden="true" />
         {children}
         <button type="button" className="sheet-close" onClick={onClose}>
-          Close
+          {strings.common.close}
         </button>
       </div>
     </div>

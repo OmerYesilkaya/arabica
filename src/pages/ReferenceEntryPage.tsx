@@ -2,18 +2,15 @@ import { useEffect } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { referenceById } from '../content/reference'
 import type { RefHarf, RefLabel, RefProse, RefTable, RefText } from '../content/types'
-import {
-  setMeaningLang,
-  useMeaningLang,
-  type MeaningLang,
-} from '../settings/useMeaningLang'
+import { useLang, type Lang } from '../settings/useLang'
+import { useStrings } from '../i18n/strings'
 
 /** A RefLabel in the reader's language. */
-function label(value: RefLabel, lang: MeaningLang): string {
+function label(value: RefLabel, lang: Lang): string {
   return typeof value === 'string' ? value : value[lang]
 }
 
-function TextCell({ value, lang }: { value: RefText; lang: MeaningLang }) {
+function TextCell({ value, lang }: { value: RefText; lang: Lang }) {
   if (typeof value === 'string' || !('ar' in value)) return <>{label(value, lang)}</>
   return (
     <>
@@ -26,7 +23,7 @@ function TextCell({ value, lang }: { value: RefText; lang: MeaningLang }) {
   )
 }
 
-function ProseSection({ section, lang }: { section: RefProse; lang: MeaningLang }) {
+function ProseSection({ section, lang }: { section: RefProse; lang: Lang }) {
   return (
     <section className="ref-section">
       {section.title && <h2>{label(section.title, lang)}</h2>}
@@ -38,7 +35,7 @@ function ProseSection({ section, lang }: { section: RefProse; lang: MeaningLang 
   )
 }
 
-function TableSection({ section, lang }: { section: RefTable; lang: MeaningLang }) {
+function TableSection({ section, lang }: { section: RefTable; lang: Lang }) {
   return (
     <section className="ref-section">
       {section.title && <h2>{label(section.title, lang)}</h2>}
@@ -71,7 +68,7 @@ function TableSection({ section, lang }: { section: RefTable; lang: MeaningLang 
   )
 }
 
-function HarfSection({ section, lang }: { section: RefHarf; lang: MeaningLang }) {
+function HarfSection({ section, lang }: { section: RefHarf; lang: Lang }) {
   return (
     <section className="ref-section harf-detail card" id={section.id}>
       <div className="harf-head">
@@ -101,35 +98,13 @@ function HarfSection({ section, lang }: { section: RefHarf; lang: MeaningLang })
   )
 }
 
-const LANGS: { value: MeaningLang; label: string }[] = [
-  { value: 'english', label: 'English' },
-  { value: 'turkish', label: 'Türkçe' },
-]
-
-function LangSwitch({ lang }: { lang: MeaningLang }) {
-  return (
-    <div className="ref-toolbar">
-      {LANGS.map((option) => (
-        <button
-          key={option.value}
-          type="button"
-          className={option.value === lang ? 'toggle on' : 'toggle'}
-          aria-pressed={option.value === lang}
-          onClick={() => void setMeaningLang(option.value)}
-        >
-          {option.label}
-        </button>
-      ))}
-    </div>
-  )
-}
-
 export function ReferenceEntryPage() {
   const { entryId } = useParams()
   const [searchParams] = useSearchParams()
   const entry = entryId ? referenceById(entryId) : undefined
   const anchor = searchParams.get('h')
-  const lang = useMeaningLang()
+  const lang = useLang()
+  const s = useStrings()
 
   useEffect(() => {
     if (!anchor) return
@@ -142,9 +117,11 @@ export function ReferenceEntryPage() {
   if (!entry || entry.locked) {
     return (
       <main className="page">
-        <p>This entry is not available yet.</p>
-        <p style={{ marginTop: 12 }}>
-          <Link to="/reference">← Reference</Link>
+        <p>{s.reference.comingSoon}</p>
+        <p>
+          <Link className="back" to="/reference">
+            ← {s.reference.title}
+          </Link>
         </p>
       </main>
     )
@@ -152,9 +129,9 @@ export function ReferenceEntryPage() {
 
   return (
     <main className="page">
-      <p style={{ marginBottom: 8 }}>
-        <Link to="/reference" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-          ← Reference
+      <p>
+        <Link className="back" to="/reference">
+          ← {s.reference.title}
         </Link>
       </p>
       <h1 className="page-title">
@@ -163,7 +140,6 @@ export function ReferenceEntryPage() {
       {/* The list is a syllabus and carries titles only, so the entry is where
           the summary is read. */}
       <p className="ref-summary">{entry.summary}</p>
-      <LangSwitch lang={lang} />
       {entry.sections.map((section, i) => {
         switch (section.kind) {
           case 'prose':

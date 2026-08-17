@@ -1,41 +1,113 @@
+/*
+ * ============================================================================
+ * Basalt: the design tokens.
+ * ============================================================================
+ *
+ * Everything below this block is written in terms of these names, and nothing
+ * outside it declares a colour, a font size, a radius or a gap. Restyling the
+ * app is editing this block; see docs/adr/0004-basalt-one-ramp-one-language.md
+ * for why these values and not others.
+ *
+ * Three rules the rest of the file obeys:
+ *
+ *   1. No borders. Basalt separates by fill and by space. The one exception is
+ *      a hairline *inside* a surface -- table rows, sheet rows -- where the
+ *      line divides one thing from the next rather than boxing it in.
+ *   2. One hue. `--mark` is the only colour on the screen; it means state,
+ *      nothing else. Counts rank by weight, not by three competing hues.
+ *   3. Two ramps, never mixed. Arabic is measured apart from Latin because IBM
+ *      Plex Sans Arabic sets smaller than Inter at the same font-size, so a
+ *      shared scale would draw the script two steps quieter than it should be.
+ */
+
 :root {
-  --bg: #faf7f2;
+  /* ---- Basalt, light: warm stone, a near-black slab, one verdigris ---- */
+  --bg: #e9e7e2;
   --surface: #ffffff;
-  --surface-2: #f1ece3;
-  --text: #2b2620;
-  --text-muted: #7a7266;
-  --border: #e3dccf;
-  --accent: #0e6b4f;
-  --accent-contrast: #ffffff;
-  --new: #1f6feb;
-  --learn: #c04a1d;
-  --due: #0e6b4f;
-  --danger: #b0301f;
-  --shadow: 0 1px 3px rgba(43, 38, 32, 0.08);
+  --surface-2: #dcd9d2;
+  --text: #1b1c1a;
+  --muted: #71736e;
+  /* Only ever drawn on --surface, never on --bg, where it would vanish. */
+  --line: #dcd9d2;
+  --accent: #1b1c1a;
+  --accent-ink: #f2f1ed;
+  --mark: #2f6d5b;
+  --mark-ink: #f4f6f4;
+  --scrim: rgba(27, 28, 26, 0.45);
+
+  /*
+   * Card state. New is ink, learning is grey, due is the one green thing:
+   * urgency ranked by weight rather than coded in three hues you have to
+   * learn. A highlight has to fill rather than recolour for the same reason --
+   * against near-black ink, a hue shift alone is a whisper.
+   */
+  --new: #1b1c1a;
+  --learn: #71736e;
+  --due: #2f6d5b;
+  --danger: #8f4034;
+
+  /* ---- the Latin ramp ---- */
+  --t-micro: 11px; /* section labels, tabs, the ask; uppercase, +0.12em */
+  --t-caption: 12.5px; /* citations, intervals, provenance, hints */
+  --t-sub: 14px; /* the second language, example translations, links */
+  --t-body: 15px; /* meanings, prose, list rows */
+  --t-lead: 19px; /* the answer headline -- one per card */
+  --t-title: 21px; /* a page title */
+  --t-figure: 34px; /* a number that is the point of its tile */
+
+  /* ---- the Arabic ramp ---- */
+  --a-inline: 19px; /* Arabic sitting beside Latin */
+  --a-quote: 23px; /* an example ayah inside an answer */
+  --a-read: 26px; /* running text in the reader */
+  --a-answer: 30px; /* an Arabic answer, or a word under the loupe */
+  --a-prompt: 34px; /* the front of a card */
+
+  --lh-latin: 1.5;
+  --lh-lead: 1.3;
+  --lh-arabic: 1.95;
+  /* The reader only: tap targets are words on a dense line and have to be
+     reachable without hitting the word beside them. */
+  --lh-read: 2.5;
+
+  /* ---- space and shape ---- */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 20px;
+  --s5: 28px;
+  --r: 10px;
+  --r-sm: 8px;
+  --r-pill: 999px;
 
   color-scheme: light dark;
-  font-family: 'Merriweather Variable', Georgia, 'Times New Roman', serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: var(--t-body);
+  line-height: var(--lh-latin);
+  letter-spacing: -0.008em;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #17140f;
-    --surface: #211d16;
-    --surface-2: #2a251c;
-    --text: #ece7de;
-    --text-muted: #a39a8b;
-    --border: #3a342a;
-    --accent: #3dbd8f;
-    --accent-contrast: #10231c;
-    --new: #58a6ff;
-    --learn: #e8804f;
-    --due: #3dbd8f;
-    --danger: #e5604f;
-    --shadow: none;
+    /* The slab inverts to bone on charcoal rather than tinting: the monochrome
+       has to hold in both modes or it was never monochrome. */
+    --bg: #131412;
+    --surface: #1c1e1b;
+    --surface-2: #262924;
+    --text: #eceae4;
+    --muted: #8e918a;
+    --line: #262924;
+    --accent: #eceae4;
+    --accent-ink: #131412;
+    --mark: #6fbfa6;
+    --mark-ink: #0c1512;
+    --scrim: rgba(0, 0, 0, 0.6);
+
+    --new: #eceae4;
+    --learn: #8e918a;
+    --due: #6fbfa6;
+    --danger: #d4796a;
   }
 }
 
@@ -63,10 +135,11 @@ body {
 }
 
 .arabic {
-  font-family: 'Noto Naskh Arabic', serif;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
   direction: rtl;
   unicode-bidi: isolate;
-  line-height: 1.9;
+  line-height: var(--lh-arabic);
+  letter-spacing: normal;
 }
 
 main.page {
@@ -74,12 +147,42 @@ main.page {
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
-  padding: 16px 16px calc(72px + env(safe-area-inset-bottom));
+  padding: var(--s3) var(--s3) calc(76px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
 }
 
 h1.page-title {
-  font-size: 1.35rem;
-  margin: 8px 0 16px;
+  font-size: var(--t-title);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: var(--s1);
+}
+
+/* The one uppercase treatment in the app: a label that names the thing under
+   it without competing with it. */
+.micro,
+.prompt-ask,
+.lang,
+.pane-tab,
+.segment-role,
+table.ref-table th {
+  font-size: var(--t-micro);
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.caption {
+  font-size: var(--t-caption);
+  color: var(--muted);
 }
 
 /* ---------- tab bar ---------- */
@@ -91,7 +194,7 @@ nav.tabbar {
   right: 0;
   display: flex;
   background: var(--surface);
-  border-top: 1px solid var(--border);
+  box-shadow: 0 -1px 0 var(--line);
   padding-bottom: env(safe-area-inset-bottom);
   z-index: 10;
 }
@@ -101,107 +204,129 @@ nav.tabbar a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  padding: 8px 0 6px;
-  font-size: 0.68rem;
+  gap: 3px;
+  padding: 9px 0 10px;
+  font-size: 10px;
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 nav.tabbar a.active {
-  color: var(--accent);
+  color: var(--mark);
 }
 
 nav.tabbar svg {
-  width: 22px;
-  height: 22px;
+  width: 21px;
+  height: 21px;
 }
 
-/* ---------- cards & lists ---------- */
+/* ---------- tiles ---------- */
 
+/*
+ * A tile, not a card: no border and no shadow, because the fill is what
+ * separates it from the ground. Kept named `.card` so every page's markup
+ * reads the way it always did.
+ */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: var(--shadow);
+  border-radius: var(--r);
+  padding: var(--s3);
 }
 
 .deck-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: var(--s3);
 }
 
 .deck-row .deck-info {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  /* Shrink-wraps the Arabic title to its own width so it sits under the
+     English one instead of ranging right against the far edge. */
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .deck-row h2 {
-  font-size: 1.05rem;
+  font-size: var(--t-body);
+  font-weight: 600;
 }
 
-.deck-row .deck-arabic {
-  font-size: 1.1rem;
-  color: var(--text-muted);
+.deck-arabic {
+  font-size: var(--a-inline);
+  color: var(--muted);
 }
 
+/* Turkish runs longer than English here, so the row wraps by whole counts
+   rather than breaking one of them in half. */
 .counts {
   display: flex;
-  gap: 10px;
-  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 2px var(--s2);
+  margin-top: 2px;
+  font-size: var(--t-caption);
   font-variant-numeric: tabular-nums;
-  margin-top: 4px;
 }
 
-.counts .new { color: var(--new); }
+.counts > span {
+  white-space: nowrap;
+}
+
+.counts .new { color: var(--new); font-weight: 600; }
 .counts .learn { color: var(--learn); }
-.counts .due { color: var(--due); }
+.counts .due { color: var(--due); font-weight: 600; }
 
 .deck-row.locked {
   opacity: 0.6;
 }
 
 .deck-row .deck-locked-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 6px;
+  font-size: var(--t-caption);
+  color: var(--muted);
+  margin-top: var(--s1);
 }
 
-.deck-row .lock {
-  font-size: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 2px 10px;
-  color: var(--text-muted);
+.lock {
+  font-size: var(--t-caption);
+  background: var(--surface-2);
+  border-radius: var(--r-pill);
+  padding: 3px 10px;
+  color: var(--muted);
   white-space: nowrap;
 }
+
+/* ---------- buttons ---------- */
 
 button.primary,
 a.button-primary {
   appearance: none;
-  border: none;
+  border: 0;
   background: var(--accent);
-  color: var(--accent-contrast);
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 10px;
+  color: var(--accent-ink);
+  font: inherit;
+  font-size: var(--t-sub);
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: var(--r-sm);
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
 }
 
 button.secondary {
   appearance: none;
   background: var(--surface-2);
   color: var(--text);
-  border: 1px solid var(--border);
-  font-size: 0.95rem;
-  padding: 10px 18px;
-  border-radius: 10px;
+  border: 0;
+  font: inherit;
+  font-size: var(--t-sub);
+  padding: 9px 16px;
+  border-radius: var(--r-sm);
   cursor: pointer;
 }
 
@@ -210,180 +335,338 @@ button:disabled {
   cursor: default;
 }
 
-/* ---------- review screen ---------- */
+/* A text button that is a link in everything but routing. */
+.info-link,
+.detail-button {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: var(--t-sub);
+  color: var(--mark);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*
+ * A render-time toggle in the bar of them: hareke, and the language. Both
+ * change what is drawn and neither changes any data, so they look alike and
+ * live together.
+ */
+.chrome-toggle {
+  appearance: none;
+  font: inherit;
+  font-size: var(--t-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 0;
+  border-radius: var(--r-pill);
+  padding: 4px 9px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+/* The hareke sample is a tatweel carrying a fatha, so it has to be set in the
+   Arabic face -- a Latin face draws it as a stray dash. */
+.chrome-toggle .mark-sample {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  /* A fatha on a tatweel is two hairlines; at label size it is invisible, and
+     the control then reads as a bare dash. */
+  font-size: var(--t-sub);
+  line-height: 1;
+}
+
+.chrome-toggle .swap {
+  letter-spacing: normal;
+  opacity: 0.75;
+}
+
+.chrome-toggle[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- the study session ---------- */
 
 .session-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  gap: var(--s2);
+  min-width: 0;
+  font-size: var(--t-caption);
+  color: var(--muted);
 }
 
-.session-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  padding: 28px 20px;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  text-align: center;
-}
-
-/* Names what the front asks for, so the two directions of a note never
-   read as the same card. Matches the .lang micro-label treatment. */
-.session-card .prompt-ask {
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.session-card .prompt-arabic {
-  font-size: 3rem;
-}
-
-.session-card .answer-arabic {
-  font-size: 2.4rem;
-}
-
-.session-card .meaning {
-  font-size: 1.25rem;
-}
-
-.session-card .meaning .lang {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 2px;
-}
-
-.session-card hr {
-  width: 60%;
-  border: none;
-  border-top: 1px solid var(--border);
-}
-
-.session-card .example {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.session-card .example .arabic {
-  font-size: 1.4rem;
-  color: var(--text);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.info-link {
-  font-size: 0.85rem;
-  color: var(--accent);
+/* A back link, wherever one appears: quiet, and never wide enough to push the
+   controls beside it off the bar. */
+.back {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: var(--t-caption);
   text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 3px 12px;
 }
 
-/* Per-sense card: the example is the prompt, the harf is highlighted. */
-.session-card .sense-prompt {
-  font-size: 2.2rem;
-  line-height: 1.9;
+.session-top .fill {
+  flex: 1 1 auto;
 }
 
-.harf-mark {
-  background: color-mix(in srgb, var(--accent) 22%, transparent);
-  color: inherit;
-  border-radius: 4px;
-  padding: 0 2px;
+.session-top .count {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 /*
- * The counterpart of .harf-mark in a translation line: the same accent, so the
- * two read as one pair, but lighter and undersized to sit inside muted prose
- * — and lifted to full text colour, which is what makes it legible there. It
- * marks a span, not a word: a Turkish counterpart is often a suffix, so the
- * padding stays tight enough not to split the word it sits inside.
+ * The card is two zones: the question on its own ground, and the answer under
+ * it. What the old centred stack did with one flex column and one gap -- where
+ * the sense term, the second gloss and the citation all looked equally
+ * important -- is done here by grouping instead.
  */
-.meaning-mark {
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  color: var(--text);
-  border-radius: 3px;
-  padding: 0 1px;
+.session-card {
+  background: var(--surface);
+  border-radius: var(--r);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.session-card .sense-term {
+.card-prompt {
+  background: var(--surface-2);
+  padding: var(--s4) var(--s3) var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+/*
+ * A headword is centred, a sentence is ranged right. Not an inconsistency: one
+ * is a specimen and the other is running text, and a lone word pinned to the
+ * right edge of an empty band reads as having fallen off the card.
+ */
+.card-prompt .prompt-arabic {
+  font-size: var(--a-prompt);
+  text-align: center;
+}
+
+.card-prompt .prompt-arabic.sense-prompt {
+  font-size: var(--a-quote);
+  text-align: right;
+}
+
+.card-prompt .meaning {
+  font-size: var(--t-body);
+}
+
+.card-answer {
+  padding: var(--s4) var(--s3) var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.card-lead {
+  font-size: var(--t-lead);
+  line-height: var(--lh-lead);
   font-weight: 600;
-  font-size: 1.05rem;
+  letter-spacing: -0.02em;
 }
 
-.session-card .sense-term .arabic {
+/* `margin-left`, not `margin-inline-start`: the span is `direction: rtl`, so
+   its inline-start is its right edge and the logical property would open the
+   gap on the wrong side of the word. */
+.card-lead .arabic {
+  font-size: var(--a-inline);
   font-weight: 400;
-  margin-left: 10px;
+  color: var(--muted);
+  margin-left: var(--s3);
 }
 
-/* The senses this card's answer was chosen against. Quieter than the answer
-   itself: it is there to be read after the term, not competed with. */
-.session-card .sense-contrast {
+.card-lead .answer-arabic {
+  display: block;
+  font-size: var(--a-answer);
+  margin-left: 0;
+  color: var(--text);
+}
+
+.pane-tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+button.pane-tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button.pane-tab[aria-selected='true'] {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/*
+ * A floor, not a height: the card must not resize as you move between panes,
+ * because the grading row sits under it and a row that moves under the thumb
+ * is a row you mis-tap.
+ */
+.pane {
+  min-height: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  align-items: flex-start;
+  font-size: var(--t-sub);
+}
+
+.pane .body {
+  font-size: var(--t-body);
+}
+
+.pane .arabic {
+  font-size: var(--a-quote);
+}
+
+.pane .source {
+  font-size: var(--t-caption);
+  color: var(--muted);
+}
+
+/* The senses this card's answer was chosen against: named, not explained. The
+   full entry behind the link is where each one is spelled out. */
+.sense-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  width: 100%;
+}
+
+.sense-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s3);
+}
+
+.sense-list .arabic {
+  font-size: var(--a-inline);
+  color: var(--muted);
+}
+
+/*
+ * A word's principal parts, wherever they are shown: on the back of a card, in
+ * the vocabulary sheet, in the reader's word sheet. `align-items: flex-start`
+ * shrink-wraps the Arabic value so it sits under its label; left to fill the
+ * cell it ranges right and reads as belonging to the next column.
+ */
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s2) var(--s3);
+  width: 100%;
+}
+
+.fact-grid .fact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  min-width: 0;
+}
+
+.fact-grid .fact-key {
+  font-size: var(--t-caption);
+  color: var(--muted);
+}
+
+.fact-grid .arabic {
+  font-size: var(--a-inline);
+}
+
+.fact-grid .fact-value {
+  font-size: var(--t-body);
+  font-variant-numeric: tabular-nums;
+}
+
+.card-links {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 10px;
-  margin-top: 10px;
-  font-size: 0.85rem;
-  opacity: 0.65;
+  gap: var(--s3);
 }
 
-.session-card .sense-contrast .sense-other .arabic {
-  margin-left: 6px;
+.harf-mark {
+  background: var(--mark);
+  color: var(--mark-ink);
+  border-radius: 4px;
+  padding: 1px 5px;
 }
 
-/* Subtle source citation on card backs and in Reference. */
+/*
+ * The counterpart of .harf-mark in a translation line. It tints its ground and
+ * keeps ink text rather than reversing out: at 14px, inside muted prose,
+ * reversed text is what stops being readable. It marks a span, not a word -- a
+ * Turkish counterpart is often a suffix -- so the padding stays tight enough
+ * not to split the word it sits inside.
+ */
+.meaning-mark {
+  background: color-mix(in srgb, var(--mark) 26%, transparent);
+  color: var(--text);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
 .source {
   display: block;
-  margin-top: 4px;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  color: var(--text-muted);
+  font-size: var(--t-caption);
+  color: var(--muted);
 }
 
 .answer-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-top: 16px;
+  gap: 6px;
 }
 
 .answer-buttons button {
   appearance: none;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: 0;
+  border-radius: var(--r-sm);
   background: var(--surface);
   color: var(--text);
-  padding: 10px 4px;
+  padding: 9px 2px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   align-items: center;
+  font-family: inherit;
 }
 
 .answer-buttons .grade {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--t-sub);
 }
 
 .answer-buttons .ivl {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: var(--t-caption);
+  color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 
@@ -394,15 +677,27 @@ button:disabled {
 
 .show-answer {
   width: 100%;
-  margin-top: 16px;
-  padding: 14px;
-  font-size: 1rem;
+  padding: 13px;
+  font-size: var(--t-body);
+}
+
+.done-screen {
+  text-align: center;
+  padding: 48px var(--s3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.done-screen .big {
+  font-size: var(--t-figure);
 }
 
 /* ---------- reference ---------- */
 
-/* One card of hairline-separated rows rather than a card per entry: the entries
-   are one ordered sequence, and ten bordered boxes drew them as ten unrelated
+/* One tile of hairline-separated rows rather than a tile per entry: the
+   entries are one ordered sequence, and ten boxes drew them as ten unrelated
    things. `overflow: hidden` keeps the first and last row inside the radius. */
 ol.ref-list {
   list-style: none;
@@ -411,7 +706,7 @@ ol.ref-list {
 }
 
 .ref-row + .ref-row {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
 }
 
 /* The whole row is the tap target, so the padding lives here and not on the
@@ -422,22 +717,22 @@ ol.ref-list {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: baseline;
-  gap: 0 12px;
-  padding: 14px 16px;
+  gap: 0 var(--s3);
+  padding: var(--s3);
   text-decoration: none;
   color: inherit;
 }
 
 .ref-num {
-  font-size: 0.8rem;
+  font-size: var(--t-caption);
   font-variant-numeric: tabular-nums;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 /* `align-items: flex-start` shrink-wraps the Arabic title to its own width, so
    it sits directly under the English one. Left to fill the row it would be a
-   right-aligned line of RTL text hugging the far edge of the card, reading as
-   detached from the title it belongs to. */
+   right-aligned line of RTL text hugging the far edge, reading as detached
+   from the title it belongs to. */
 .ref-titles {
   min-width: 0;
   display: flex;
@@ -447,84 +742,67 @@ ol.ref-list {
 }
 
 .ref-title {
-  font-size: 1rem;
+  font-size: var(--t-body);
   font-weight: 600;
 }
 
 /* Under the English title, never beside it: two scripts sharing one line is
    what let a long title widen the page, and a stacked row cannot. */
 .ref-row .ref-arabic {
-  font-size: 1.1rem;
-  color: var(--text-muted);
+  font-size: var(--a-inline);
+  color: var(--muted);
 }
 
 .ref-row.locked {
   opacity: 0.55;
 }
 
-.ref-row.locked .lock {
-  font-size: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 2px 10px;
-  color: var(--text-muted);
-  white-space: nowrap;
-}
-
 /* The entry's own one-line abstract, where the list no longer carries it. */
 .ref-summary {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin: -8px 0 16px;
-}
-
-/* Meaning language switch, above the sections it re-renders. */
-.ref-toolbar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  font-size: var(--t-sub);
+  color: var(--muted);
+  margin-top: calc(-1 * var(--s2));
 }
 
 .ref-section {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
 }
 
 .ref-section h2 {
-  font-size: 1.05rem;
-  margin-bottom: 8px;
+  font-size: var(--t-body);
+  font-weight: 600;
 }
 
 .ref-section .source-arabic {
-  font-size: 1.5rem;
+  font-size: var(--a-quote);
   background: var(--surface-2);
-  border-radius: 10px;
-  padding: 12px 16px;
-  margin-bottom: 10px;
+  border-radius: var(--r-sm);
+  padding: var(--s3);
   text-align: right;
 }
 
 .ref-section p {
-  font-size: 0.95rem;
-  margin-bottom: 6px;
+  font-size: var(--t-sub);
 }
 
 .table-scroll {
   overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--r-sm);
   background: var(--surface);
 }
 
 table.ref-table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: var(--t-sub);
 }
 
 table.ref-table th,
 table.ref-table td {
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--border);
+  padding: var(--s2) 10px;
+  border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
 }
@@ -535,92 +813,90 @@ table.ref-table tr:last-child td {
 
 table.ref-table th {
   background: var(--surface-2);
-  font-weight: 600;
   white-space: nowrap;
 }
 
-/* Deliberately wrapping. A cell holds either a single paradigm form or a quoted
-   fragment of an ayah; the form never breaks (Arabic has no intra-word break
-   without `overflow-wrap`), so nowrap bought nothing for it and made every
-   quoted fragment a column as wide as the sentence. */
+/* Deliberately wrapping. A cell holds either a single paradigm form or a
+   quoted fragment of an ayah; the form never breaks (Arabic has no intra-word
+   break without `overflow-wrap`), so nowrap bought nothing for it and made
+   every quoted fragment a column as wide as the sentence. */
 table.ref-table .arabic {
-  font-size: 1.25rem;
+  font-size: var(--a-inline);
 }
 
 table.ref-table .cell-footnote {
   display: block;
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: var(--t-caption);
+  color: var(--muted);
   direction: ltr;
 }
 
 /* A citation reads as a citation everywhere: same treatment as .source. */
 table.ref-table .cell-source {
   display: block;
-  font-size: 0.7rem;
-  color: var(--text-muted);
+  font-size: var(--t-caption);
+  color: var(--muted);
   font-style: italic;
   direction: ltr;
 }
 
-.caption {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin: 6px 2px;
-}
-
 .harf-detail {
-  margin-bottom: 16px;
-  scroll-margin-top: 16px;
+  scroll-margin-top: var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
 }
 
 .harf-detail .harf-head {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--s3);
   flex-wrap: wrap;
-  margin-bottom: 10px;
 }
 
 .harf-detail .harf-head .arabic {
-  font-size: 2rem;
+  font-size: var(--a-answer);
 }
 
 .harf-detail .harf-head .meaning {
-  color: var(--text-muted);
-  font-size: 0.95rem;
+  color: var(--muted);
+  font-size: var(--t-sub);
 }
 
 .sense {
-  border-top: 1px solid var(--border);
-  padding: 10px 0 4px;
+  border-top: 1px solid var(--line);
+  padding-top: var(--s2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  align-items: flex-start;
 }
 
-.sense .sense-term {
+.sense-term {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--t-body);
 }
 
-.sense .sense-term .arabic {
+.sense-term .arabic {
   font-weight: 400;
-  font-size: 1.15rem;
+  font-size: var(--a-inline);
   margin-left: 10px;
 }
 
 .sense p {
-  font-size: 0.9rem;
-  margin: 4px 0;
+  font-size: var(--t-sub);
 }
 
 .sense .example {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 6px;
+  font-size: var(--t-caption);
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sense .example .arabic {
-  display: block;
-  font-size: 1.35rem;
+  font-size: var(--a-quote);
   color: var(--text);
 }
 
@@ -629,35 +905,31 @@ table.ref-table .cell-source {
 .stat-tiles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.stat-tiles .card {
-  padding: 12px 14px;
+  gap: var(--s2);
 }
 
 .stat-tiles .value {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
 }
 
 .stat-tiles .label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: var(--t-caption);
+  color: var(--muted);
 }
 
 .chart-title {
-  font-size: 0.95rem;
+  font-size: var(--t-body);
   font-weight: 600;
-  margin: 16px 0 8px;
+  margin-top: var(--s2);
 }
 
 .leech-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--s2);
 }
 
 .leech-row {
@@ -665,52 +937,52 @@ table.ref-table .cell-source {
   grid-template-columns: auto 1fr auto;
   align-items: baseline;
   gap: 10px;
-  padding: 10px 14px;
   text-decoration: none;
   color: var(--text);
 }
 
 .leech-arabic {
-  font-size: 1.2rem;
+  font-size: var(--a-inline);
 }
 
 .leech-meaning {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: var(--t-caption);
+  color: var(--muted);
   min-width: 0;
 }
 
 .leech-lapses {
-  font-size: 0.8rem;
+  font-size: var(--t-caption);
   font-weight: 600;
   color: var(--danger);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- settings ---------- */
 
 .settings-block {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  align-items: flex-start;
 }
 
 .settings-block h2 {
-  font-size: 1rem;
-  margin-bottom: 6px;
+  font-size: var(--t-body);
+  font-weight: 600;
 }
 
 .settings-block p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 10px;
+  font-size: var(--t-sub);
+  color: var(--muted);
 }
 
 .banner {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.85rem;
-  margin-bottom: 14px;
+  background: var(--surface);
+  border-radius: var(--r-sm);
+  padding: 10px var(--s3);
+  font-size: var(--t-sub);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -718,41 +990,28 @@ table.ref-table .cell-source {
 }
 
 .banner a {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--mark);
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.done-screen {
-  text-align: center;
-  padding: 48px 16px;
-}
-
-.done-screen .big {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-}
-
-.muted {
-  color: var(--text-muted);
 }
 
 .settings-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 4px;
+  gap: var(--s2);
 }
 
 .optimize-result {
-  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  width: 100%;
 }
 
 .optimize-metrics {
-  font-size: 0.9rem;
+  font-size: var(--t-sub);
   font-variant-numeric: tabular-nums;
-  margin-bottom: 10px;
 }
 
 .optimize-metrics > div {
@@ -763,47 +1022,26 @@ table.ref-table .cell-source {
   margin-right: 6px;
 }
 
-.params-compare {
-  margin-bottom: 12px;
-}
-
 .params-compare summary {
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: var(--t-sub);
 }
 
 .params-compare p {
-  margin: 8px 0 0;
+  margin-top: var(--s2);
 }
 
 .params-compare code {
   display: block;
   margin-top: 2px;
-  padding: 8px;
+  padding: var(--s2);
   background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.72rem;
+  border-radius: var(--r-sm);
+  font-size: var(--t-caption);
   line-height: 1.4;
   overflow-x: auto;
   white-space: pre-wrap;
   word-break: break-word;
-}
-
-.tashkeel-toggle {
-  appearance: none;
-  background: var(--surface-2);
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-.tashkeel-toggle[aria-pressed='true'] {
-  color: var(--accent);
-  border-color: var(--accent);
 }
 
 .setting-row {
@@ -811,7 +1049,8 @@ table.ref-table .cell-source {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  font-size: 0.95rem;
+  font-size: var(--t-body);
+  width: 100%;
 }
 
 .setting-row input[type='checkbox'] {
@@ -822,11 +1061,18 @@ table.ref-table .cell-source {
 
 .setting-hint {
   display: block;
-  font-size: 0.8rem;
+  font-size: var(--t-caption);
   margin-top: 2px;
 }
 
-/* ---------- Vocabulary detail sheet ---------- */
+/* A two-value setting drawn as its two values, so the choice is visible
+   without opening anything. */
+.setting-choice {
+  display: flex;
+  gap: 6px;
+}
+
+/* ---------- the bottom sheet ---------- */
 
 /*
  * A bottom sheet, not an inline expander: an expander reflows the card and
@@ -836,7 +1082,7 @@ table.ref-table .cell-source {
   position: fixed;
   inset: 0;
   z-index: 20;
-  background: rgba(43, 38, 32, 0.45);
+  background: var(--scrim);
   display: flex;
   align-items: flex-end;
   animation: sheet-fade 140ms ease-out;
@@ -849,87 +1095,137 @@ table.ref-table .cell-source {
   background: var(--surface);
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  border-top: 1px solid var(--border);
-  padding: 8px 20px calc(20px + env(safe-area-inset-bottom));
+  padding: var(--s2) var(--s4) calc(var(--s4) + env(safe-area-inset-bottom));
   animation: sheet-up 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
   /* Dragging sets an inline transform; keep the release snap smooth. */
   transition: transform 140ms ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
 }
 
 .sheet-grip {
   width: 36px;
   height: 4px;
-  margin: 4px auto 12px;
+  margin: var(--s1) auto 0;
   border-radius: 2px;
-  background: var(--border);
+  background: var(--surface-2);
+  flex: none;
 }
 
+/*
+ * The word under the loupe, on its own ground: the same two-zone shape as the
+ * card, for the same reason. What you tapped is the question, everything under
+ * it is the answer.
+ */
 .sheet-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  gap: var(--s3);
+  background: var(--surface-2);
+  border-radius: var(--r-sm);
+  padding: var(--s3);
+  margin: 0 calc(-1 * var(--s2));
 }
 
 .sheet-word {
-  font-size: 28px;
+  font-size: var(--a-answer);
 }
 
 .sheet-pos {
-  color: var(--text-muted);
-  font-size: 13px;
-}
-
-.sheet-rows {
-  margin: 0;
-  padding: 4px 0 16px;
-}
-
-.sheet-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.sheet-row:last-child {
-  border-bottom: none;
-}
-
-.sheet-row dt {
-  color: var(--text-muted);
-  font-size: 13px;
-}
-
-.sheet-row dd {
-  margin: 0;
+  color: var(--muted);
+  font-size: var(--t-caption);
   text-align: right;
 }
 
-.sheet-row dd.arabic {
-  font-size: 20px;
+/* The gloss is the answer, so it is the one large Latin line in the sheet. */
+.sheet-lead {
+  font-size: var(--t-lead);
+  line-height: var(--lh-lead);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.sheet-close {
+.sheet-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+/*
+ * One segment of a word: the piece itself, what role it plays, and what it is.
+ * A grid rather than a row of spans so the three columns line up down the
+ * list, which is the only way a four-segment word is readable at a glance.
+ */
+.segment-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.segment-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 2px var(--s3);
+}
+
+.segment-form {
+  font-size: var(--a-inline);
+  grid-row: span 2;
+}
+
+.segment-role {
+  align-self: end;
+}
+
+.segment-traits {
+  font-size: var(--t-caption);
+  color: var(--muted);
+}
+
+.known-badge {
+  color: var(--mark);
+}
+
+.sheet-close,
+.token-more,
+.token-flag {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: transparent;
+  padding: var(--s3);
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
   color: var(--text);
   font: inherit;
+  font-size: var(--t-sub);
+  cursor: pointer;
 }
 
-.detail-button {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
+.token-flag.flagged {
+  color: var(--danger);
+}
+
+.token-reference {
+  display: block;
+  padding: var(--s3);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  color: var(--mark);
+  font-size: var(--t-sub);
+  text-decoration: none;
+}
+
+.token-provenance {
+  color: var(--muted);
+  font-size: var(--t-caption);
+  line-height: 1.6;
+}
+
+.token-provenance a {
+  color: var(--muted);
 }
 
 @keyframes sheet-up {
@@ -951,17 +1247,30 @@ table.ref-table .cell-source {
   }
 }
 
-/* ---------- Vocabulary track ---------- */
+/* ---------- the vocabulary track ---------- */
 
+/*
+ * The one thing the learner is progressing through, drawn as the one filled
+ * block on the page. Twelve peer rows, ten of them repeating the same "locked"
+ * sentence, would be noise.
+ */
 .deck-track {
+  background: var(--accent);
+  color: var(--accent-ink);
   padding: 0;
   overflow: hidden;
+}
+
+.deck-track .muted,
+.deck-track .deck-arabic,
+.deck-track .track-chevron {
+  color: color-mix(in srgb, var(--accent-ink) 72%, transparent);
 }
 
 .track-summary {
   display: block;
   width: 100%;
-  padding: 16px;
+  padding: var(--s3);
   background: none;
   border: none;
   color: inherit;
@@ -974,15 +1283,22 @@ table.ref-table .cell-source {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--s3);
+}
+
+.track-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .track-title h2 {
-  margin: 0;
+  font-size: var(--t-body);
+  font-weight: 600;
 }
 
 .track-count {
-  font-size: 15px;
+  font-size: var(--t-sub);
   white-space: nowrap;
 }
 
@@ -1001,9 +1317,9 @@ table.ref-table .cell-source {
 
 .meter-cell {
   flex: 1;
-  height: 6px;
+  height: 5px;
   border-radius: 3px;
-  background: var(--border);
+  background: color-mix(in srgb, var(--accent-ink) 25%, transparent);
   overflow: hidden;
 }
 
@@ -1015,28 +1331,21 @@ table.ref-table .cell-source {
   display: block;
   height: 100%;
   border-radius: 3px;
-  background: var(--accent);
+  background: var(--mark);
 }
 
 .track-foot {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
-  font-size: 13px;
+  gap: var(--s3);
+  font-size: var(--t-caption);
 }
-
-.track-chevron {
-  color: var(--accent);
-}
-
-/* ---------- expanded level list ---------- */
 
 .track-levels {
-  margin: 0;
-  padding: 4px 16px 8px;
+  padding: var(--s1) var(--s3) var(--s2);
   list-style: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid color-mix(in srgb, var(--accent-ink) 20%, transparent);
 }
 
 .track-levels li {
@@ -1044,7 +1353,8 @@ table.ref-table .cell-source {
   align-items: center;
   gap: 10px;
   padding: 11px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-ink) 12%, transparent);
+  font-size: var(--t-sub);
 }
 
 .track-levels li:last-child {
@@ -1052,7 +1362,7 @@ table.ref-table .cell-source {
 }
 
 .track-levels li.shut {
-  color: var(--text-muted);
+  opacity: 0.6;
 }
 
 .level-dot {
@@ -1060,17 +1370,17 @@ table.ref-table .cell-source {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid var(--border);
+  border: 2px solid color-mix(in srgb, var(--accent-ink) 35%, transparent);
 }
 
 .level-dot.done {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--mark);
+  border-color: var(--mark);
 }
 
 .level-dot.current {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+  border-color: var(--mark);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mark) 30%, transparent);
 }
 
 .level-name {
@@ -1083,37 +1393,37 @@ table.ref-table .cell-source {
 /* Which slice of the frequency order this level teaches - the one thing a
    locked level can usefully say about itself. */
 .level-band {
-  color: var(--text-muted);
-  font-size: 12px;
+  font-size: var(--t-caption);
+  color: color-mix(in srgb, var(--accent-ink) 65%, transparent);
 }
 
 .level-progress {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
+  gap: var(--s2);
+  font-size: var(--t-caption);
 }
 
 .level-bar {
   width: 52px;
   height: 4px;
   border-radius: 2px;
-  background: var(--border);
+  background: color-mix(in srgb, var(--accent-ink) 25%, transparent);
   overflow: hidden;
 }
 
 .level-bar-fill {
   display: block;
   height: 100%;
-  background: var(--accent);
+  background: var(--mark);
 }
 
 .level-go {
   flex: none;
   min-width: 56px;
   text-align: right;
-  color: var(--accent);
-  font-size: 14px;
+  color: var(--mark);
+  font-size: var(--t-sub);
 }
 
 .level-go.placeholder {
@@ -1121,40 +1431,40 @@ table.ref-table .cell-source {
 }
 
 .track-levels .muted {
-  font-size: 13px;
+  font-size: var(--t-caption);
   white-space: nowrap;
 }
 
 /* ---------- Quran coverage ---------- */
 
-/* main.page is plain block flow with no gap, so every card carries its own
-   bottom margin. Without this the panel butts against the stat tiles below. */
-.coverage {
-  margin-bottom: 16px;
-}
-
 .coverage-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--s3);
 }
 
 .coverage-value {
-  font-size: 40px;
+  font-size: var(--t-figure);
   line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
 }
 
 .coverage-unit {
   font-size: 22px;
-  margin-left: 2px;
-  color: var(--text-muted);
+  color: var(--muted);
+}
+
+.coverage .label {
+  font-size: var(--t-caption);
+  color: var(--muted);
 }
 
 .coverage-gain {
-  color: var(--accent);
-  font-size: 15px;
+  color: var(--mark);
+  font-size: var(--t-sub);
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -1164,101 +1474,85 @@ table.ref-table .cell-source {
 }
 
 .coverage-bar {
-  height: 8px;
+  height: 6px;
   margin: 14px 0 10px;
-  border-radius: 4px;
-  background: var(--border);
+  border-radius: 3px;
+  background: var(--surface-2);
   overflow: hidden;
 }
 
 .coverage-bar-fill {
   height: 100%;
-  border-radius: 4px;
-  background: var(--accent);
+  border-radius: 3px;
+  background: var(--mark);
 }
 
 .coverage-note {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 12px;
-  line-height: 1.5;
+  color: var(--muted);
+  font-size: var(--t-caption);
+  line-height: 1.55;
 }
 
-/* ---------- Reading ---------- */
+/* ---------- reading ---------- */
 
-.page-intro {
-  margin-bottom: 16px;
-  color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
+.page-intro,
 .corpus-credit {
-  margin-top: 20px;
-  color: var(--text-muted);
-  font-size: 12px;
+  color: var(--muted);
+  font-size: var(--t-caption);
   line-height: 1.6;
 }
 
 .corpus-credit a {
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .reading-toolbar {
   display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 button.toggle {
-  padding: 7px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text-muted);
+  appearance: none;
+  padding: 6px 11px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--muted);
   font: inherit;
-  font-size: 12px;
+  font-size: var(--t-caption);
   cursor: pointer;
+  white-space: nowrap;
 }
 
 button.toggle.on {
-  border-color: var(--accent);
   background: var(--accent);
-  color: var(--accent-contrast);
+  color: var(--accent-ink);
 }
 
 .reading-text {
-  font-size: 26px;
-  /*
-   * Roomy lines and a tall line-height are not decoration: the tap targets are
-   * words on a dense Arabic line, and at phone width they have to be reachable
-   * without hitting the word beside them.
-   */
-  line-height: 2.5;
+  font-size: var(--a-read);
+  line-height: var(--lh-read);
   text-align: justify;
   text-align-last: right;
 }
 
 .reading-basmala {
-  margin-bottom: 18px;
+  margin-bottom: var(--s3);
   text-align: center;
   text-align-last: center;
-  font-size: 22px;
-  color: var(--text-muted);
-}
-
-.reading-body {
-  margin: 0;
+  font-size: var(--a-quote);
+  color: var(--muted);
 }
 
 .reading-empty {
-  color: var(--text-muted);
-  font-size: 14px;
+  color: var(--muted);
+  font-size: var(--t-sub);
 }
 
 /*
  * A word. A button rather than a span so that it is reachable by keyboard and
- * announced as tappable, but it must not look like one — the page is meant to
+ * announced as tappable, but it must not look like one -- the page is meant to
  * read as plain text until it is touched.
  */
 button.tok {
@@ -1283,102 +1577,27 @@ button.tok:active {
  * into a dashboard.
  *
  * The letters themselves carry the mark rather than a rule under them. An
- * underline is a second object on an already dense line — it collides with the
- * kasra below the baseline and it reads as a link — where colouring the word
+ * underline is a second object on an already dense line -- it collides with the
+ * kasra below the baseline and it reads as a link -- where colouring the word
  * says the same thing with nothing added. It also survives hide-tashkeel
  * unchanged, which a mark positioned against the vowels does not.
  */
 button.tok.known {
-  color: var(--accent);
+  color: var(--mark);
 }
 
 button.tok.flagged {
-  background: color-mix(in srgb, var(--danger) 14%, transparent);
+  background: color-mix(in srgb, var(--danger) 18%, transparent);
 }
 
 .ayah-mark {
   display: inline-block;
-  margin: 0 6px;
-  padding: 0 8px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text-muted);
-  font-size: 15px;
+  margin: 0 5px;
+  padding: 0 7px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: var(--t-sub);
   line-height: 1.7;
   vertical-align: middle;
-}
-
-/* ---------- Reading: the word detail sheet ---------- */
-
-.token-gloss {
-  padding: 12px 0 4px;
-}
-
-.token-english {
-  font-size: 17px;
-}
-
-.token-turkish {
-  margin-top: 2px;
-  color: var(--text-muted);
-  font-size: 15px;
-}
-
-.known-badge {
-  color: var(--accent);
-}
-
-.segment-form {
-  font-size: 19px;
-  margin-inline-end: 8px;
-}
-
-.segment-role {
-  color: var(--text-muted);
-  font-size: 11px;
-}
-
-.sheet-row dd {
-  font-size: 13px;
-}
-
-.token-more,
-.token-flag {
-  width: 100%;
-  margin-bottom: 8px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.token-flag.flagged {
-  border-color: var(--danger);
-  color: var(--danger);
-}
-
-.token-reference {
-  display: block;
-  margin: 4px 0 14px;
-  padding: 12px;
-  border-radius: 10px;
-  background: var(--surface-2);
-  color: var(--accent);
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.token-provenance {
-  margin-bottom: 14px;
-  color: var(--text-muted);
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-.token-provenance a {
-  color: var(--text-muted);
 }

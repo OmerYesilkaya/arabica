@@ -35,3 +35,28 @@ where the learner sees it, rather than in a comment where only you do.
 `scripts/conventions.test.ts` enforces this over `src/` and `scripts/`. It checks
 comments only, which is why the allowances above need no exception in it: data,
 literals and character maps are code, not comments.
+
+## Turkish prefers an Arabic root
+
+When writing Turkish — the Turkish half of a Meaning, an Example, a Reference
+paragraph, or a string in `src/i18n/strings.ts` — reach first for the ordinary
+Turkish word that came from Arabic.
+
+Write **mana**, not anlam. **Misal**, not örnek. **Tercüme**, not çeviri.
+**Kelime**, not sözcük. **Sual**, **vecih**, **kaide**, **tafsil**, **malum**,
+**tahkik**, **vuku**, **seviye**, **hareke**, **sarf**, **kıraat**.
+
+Why: the reader is learning Arabic. A Turkish sentence built from Arabic roots
+teaches vocabulary while it explains, and the root is often the very root the
+card is about — a gloss that says "iman etmek" for *āmana* has already shown
+the learner something a gloss saying "inanmak" hides.
+
+The rule stops where the word stops being ordinary. Turkish has no everyday
+Arabic-rooted word for good, easy, day or export; *hasen*, *sehil* and *yevm*
+do not stand alone in the modern language, and forcing them produces something
+nobody says. Where there is no natural choice, use the natural Turkish word.
+Prefer a rewrite over a reach: recasting a sentence around **ihata etmek** is
+usually worse than one that simply says kapsamak.
+
+This is a preference, not a filter. Never choose a word a Turkish reader would
+have to look up in order to satisfy it.

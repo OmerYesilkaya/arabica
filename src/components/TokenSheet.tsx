@@ -89,13 +89,13 @@ export function TokenSheet({
   const lang = useLang()
   const { token, lemma, written, known, flagged } = detail
   const head = token.segments[token.head]
-  const irab = irabOf(token)
+  const irab = irabOf(token, lang)
   const note = lemma?.noteId ? noteById(lemma.noteId) : undefined
   const reference = referenceFor(token, note?.referenceId)
   // A pronoun carries no lemma in the corpus, so its meaning is read off its
   // person, gender and number instead.
   const gloss = lemma ?? pronounGloss(head)
-  const headDescription = describeSegment(head)
+  const headDescription = describeSegment(head, lang)
 
   const facts = [
     ...(head.lemma && head.lemma !== written
@@ -146,7 +146,7 @@ export function TokenSheet({
           {token.segments.length > 1 && (
             <ul className="segment-list">
               {token.segments.map((segment, i) => {
-                const described = describeSegment(segment)
+                const described = describeSegment(segment, lang)
                 return (
                   <li className="segment-row" key={`${segment.form}-${i}`}>
                     <span className="arabic segment-form">{segment.form}</span>

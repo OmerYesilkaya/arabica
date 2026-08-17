@@ -152,9 +152,28 @@ would cost a tap on every card that needed the other language.
 - **Adding a screen means adding strings in two languages.** `src/i18n/strings.ts`
   types the Turkish record against the English one, so a missing key does not
   compile. That is the intended friction.
-- **The grammar vocabulary is still English.** `src/text/morphology.ts` names
-  features in English — "definite article", "masculine singular" — and those
-  strings surface in the reader's word sheet under a Turkish interface. They
-  are their own lexicon (harf-i tarif, muzekker, mufred) and their own change,
-  because making them Language-aware means threading it through pure functions
-  the module's header promises are pure. Known gap, deliberately left.
+- **The grammar vocabulary follows too.** `src/text/morphology.ts` carries a
+  second set of labels — harf-i tarif, zamir, ism-i mevsul, muzekker mufred,
+  mechul, nekre — and `irabOf` and `describeSegment` take a Language. It
+  defaults to English, which is why the existing callers and tests read
+  unchanged. Two things there are not translations:
+
+  - **Turkish says cer where English says khafd.** The matn's term is khafd
+    and the English keeps it, so the Reference entry a word links to still
+    agrees with the word. But Turkish grammar teaching says *mecrur* and
+    *harf-i cer* almost without exception, and a reader made to learn a second
+    name for a state they already know has been taught nothing. Where the two
+    conflict, the Turkish that a Turkish speaker actually uses wins over
+    fidelity to the matn's wording.
+  - **The parse composes in a different order.** English leads with the state,
+    "makhfud bi-l-kasra"; Turkish is head-final and leads with the sign,
+    "kesra ile mecrur". `joinIrab` is per Language, because a lookup table
+    alone would produce a word-for-word rendering rather than a sentence.
+
+- **Content is still English in four places.** `ReferenceEntry.title` and
+  `.summary`, `DeckDef.name` and `.description`, and a reading Text's
+  `english` name are plain `string`, so a Turkish reader meets an English
+  entry title above a Turkish table. Fixing it is one type change —
+  `string` → `Meaning` — plus authoring roughly ten entries, thirteen decks
+  and ten surah names. Known gap; the app is not yet usable by someone with no
+  English until it closes.

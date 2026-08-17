@@ -161,6 +161,51 @@ describe('describeSegment', () => {
   })
 })
 
+describe('the Turkish labels', () => {
+  it('names the state after cer, not khafd', async () => {
+    // The English keeps the matn's khafd; Turkish grammar teaching says cer
+    // almost without exception, and a reader should not have to learn a second
+    // name for a state they already know.
+    const t = await token(105, 'أَصْحَٰبِ')
+    expect(irabOf(t, 'english').label).toBe('makhfūḍ bi-l-kasra')
+    expect(irabOf(t, 'turkish').label).toBe('kesra ile mecrûr')
+  })
+
+  it('puts the sign before the state, because Turkish is head-final', async () => {
+    const t = await token(110, 'نَصْرُ')
+    expect(irabOf(t, 'turkish').label).toBe('damme ile merfû')
+  })
+
+  it('names a state with no sign on its own', async () => {
+    const t = await token(112, 'هُوَ')
+    expect(irabOf(t, 'turkish').label).toBe('mebnî')
+  })
+
+  it('reads the P tag as harf-i cer on a particle and cemi on a noun', async () => {
+    const particle = await token(105, 'أَصْحَٰبِ')
+    expect(describeSegment(particle.segments[0], 'turkish').traits).toEqual(['harf-i cer'])
+    const noun = await token(110, 'أَفْوَاجًا')
+    expect(describeSegment(noun.segments[noun.head], 'turkish').traits).toContain('cemi')
+  })
+
+  it('names tense, bab and person on a verb', async () => {
+    const t = await token(105, 'فَعَلَ')
+    expect(describeSegment(t.segments[t.head], 'turkish').traits).toEqual([
+      'mâzî',
+      'I. bâb',
+      'o (müzekker)',
+    ])
+  })
+
+  it('defaults to English, which is what keeps every other caller unchanged', async () => {
+    const t = await token(105, 'فَعَلَ')
+    expect(describeSegment(t.segments[t.head])).toEqual(
+      describeSegment(t.segments[t.head], 'english'),
+    )
+    expect(irabOf(t).label).toBe(irabOf(t, 'english').label)
+  })
+})
+
 describe('pronounGloss', () => {
   it('reads a detached pronoun off its person, which the corpus does not lemmatize', async () => {
     // al-Ikhlas 112:1, "huwa": the corpus gives no pronoun a lemma, so without

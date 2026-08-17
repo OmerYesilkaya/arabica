@@ -6,9 +6,18 @@
 // say "genitive", and only one that shares your curriculum can say makhfud
 // bi-l-kasra and send you to the Hurūf al-Khafd entry that taught it.
 //
-// Pure functions over corpus data. No content, no progress, no side effects.
+// Pure functions over corpus data and a Language. No content, no progress, no
+// side effects — the Language is a parameter, never read from the database, so
+// this module stays testable without one. `Lang` is a type-only import and is
+// erased at compile time, so nothing here depends on the settings module at
+// runtime.
+//
+// Every label defaults to English, which is why the existing callers and tests
+// read unchanged: English is this module's canonical naming, and the Turkish
+// is a second set beside it rather than a translation layer over it.
 
 import type { CorpusSegment, CorpusToken } from '../content/corpus/types'
+import type { Lang } from '../settings/useLang'
 
 // ---------- iʿrāb ----------
 
@@ -19,12 +28,30 @@ import type { CorpusSegment, CorpusToken } from '../content/corpus/types'
  */
 export type IrabState = 'raf' | 'nasb' | 'khafd' | 'jazm' | 'mabni'
 
-const STATE_LABEL: Record<IrabState, string> = {
-  raf: 'marfūʿ',
-  nasb: 'manṣūb',
-  khafd: 'makhfūḍ',
-  jazm: 'majzūm',
-  mabni: 'mabnī',
+/*
+ * The Turkish says mecrur where the English says makhfud, and harf-i cer where
+ * it says preposition. This is the one place the two Languages name the same
+ * thing after different roots, and it is deliberate: the matn's own term is
+ * khafd, but Turkish grammar teaching says cer almost without exception, and a
+ * reader who has to learn a second name for a state they already know has been
+ * taught nothing. The English keeps khafd, so the Reference entry it links to
+ * still agrees with it.
+ */
+const STATE_LABEL: Record<Lang, Record<IrabState, string>> = {
+  english: {
+    raf: 'marfūʿ',
+    nasb: 'manṣūb',
+    khafd: 'makhfūḍ',
+    jazm: 'majzūm',
+    mabni: 'mabnī',
+  },
+  turkish: {
+    raf: 'merfû',
+    nasb: 'mansûb',
+    khafd: 'mecrûr',
+    jazm: 'meczûm',
+    mabni: 'mebnî',
+  },
 }
 
 /** The sign that shows the state, which is the half every reader gets wrong. */
@@ -41,18 +68,45 @@ export type IrabSign =
   | 'hadhf-illa'
   | 'muqaddara'
 
-const SIGN_LABEL: Record<IrabSign, string> = {
-  damma: 'bi-ḍ-ḍamma',
-  fatha: 'bi-l-fatḥa',
-  kasra: 'bi-l-kasra',
-  sukun: 'bi-s-sukūn',
-  waw: 'bi-l-wāw',
-  alif: 'bi-l-alif',
-  ya: 'bi-l-yāʾ',
-  'thubut-nun': 'bi-thubūt an-nūn',
-  'hadhf-nun': 'bi-ḥadhf an-nūn',
-  'hadhf-illa': 'bi-ḥadhf ḥarf al-ʿilla',
-  muqaddara: 'bi-ḍamma muqaddara',
+const SIGN_LABEL: Record<Lang, Record<IrabSign, string>> = {
+  english: {
+    damma: 'bi-ḍ-ḍamma',
+    fatha: 'bi-l-fatḥa',
+    kasra: 'bi-l-kasra',
+    sukun: 'bi-s-sukūn',
+    waw: 'bi-l-wāw',
+    alif: 'bi-l-alif',
+    ya: 'bi-l-yāʾ',
+    'thubut-nun': 'bi-thubūt an-nūn',
+    'hadhf-nun': 'bi-ḥadhf an-nūn',
+    'hadhf-illa': 'bi-ḥadhf ḥarf al-ʿilla',
+    muqaddara: 'bi-ḍamma muqaddara',
+  },
+  turkish: {
+    damma: 'damme ile',
+    fatha: 'fetha ile',
+    kasra: 'kesra ile',
+    sukun: 'sükûn ile',
+    waw: 'vav ile',
+    alif: 'elif ile',
+    ya: 'ya ile',
+    'thubut-nun': 'nûnun sübûtu ile',
+    'hadhf-nun': 'nûnun hazfi ile',
+    'hadhf-illa': 'illet harfinin hazfi ile',
+    muqaddara: 'mukadder damme ile',
+  },
+}
+
+/**
+ * State and sign into one label.
+ *
+ * The order is not a formatting detail. Arabic and English both lead with the
+ * state — "makhfud bi-l-kasra". Turkish is head-final and leads with the
+ * instrument, so it reads "kesra ile mecrur". Composing per Language is the
+ * only way to get a sentence rather than a word-for-word rendering of one.
+ */
+function joinIrab(state: string, sign: string, lang: Lang): string {
+  return lang === 'turkish' ? `${sign} ${state}` : `${state} ${sign}`
 }
 
 /**
@@ -237,83 +291,164 @@ function nounSign(head: CorpusSegment): IrabSign | undefined {
  * report, which does not happen in the corpus as shipped but is not worth
  * crashing over.
  */
-export function irabOf(token: CorpusToken): Irab {
+export function irabOf(token: CorpusToken, lang: Lang = 'english'): Irab {
   const head = token.segments[token.head]
   const state = stateOf(head)
-  if (state === 'mabni') return { state, label: STATE_LABEL.mabni }
+  const states = STATE_LABEL[lang]
+  if (state === 'mabni') return { state, label: states.mabni }
 
   const raw = head.tag === 'V' ? verbSign(token, head, state) : nounSign(head)
   const sign = raw && ALLOWED[state].includes(raw) ? raw : undefined
   return {
     state,
     sign,
-    label: sign ? `${STATE_LABEL[state]} ${SIGN_LABEL[sign]}` : STATE_LABEL[state],
+    label: sign ? joinIrab(states[state], SIGN_LABEL[lang][sign], lang) : states[state],
   }
 }
 
 // ---------- the rest of the morphology ----------
 
-/** Corpus feature tags, as the app names them. Ambiguous ones are read by tag. */
-const FEATURE_LABEL: Record<string, string> = {
-  DET: 'definite article',
-  CONJ: 'conjunction',
-  NEG: 'negation',
-  INTG: 'interrogative',
-  EQ: 'equalizing hamza',
-  FUT: 'future particle',
-  VOC: 'vocative particle',
-  ATT: 'particle of attention',
-  REM: 'resumption',
-  RSLT: 'result',
-  DIST: 'particle of distance',
-  ADDR: 'particle of address',
-  PRON: 'pronoun',
-  REL: 'relative pronoun',
-  DEM: 'demonstrative',
-  T: 'adverb of time',
-  PN: 'proper noun',
-  ADJ: 'adjective',
-  VN: 'maṣdar',
-  ACT_PCPL: 'ism al-fāʿil',
-  PASS_PCPL: 'ism al-mafʿūl',
-  PERF: 'māḍī',
-  IMPF: 'muḍāriʿ',
-  IMPV: 'amr',
-  PASS: 'passive',
-  INDEF: 'indefinite',
+/*
+ * Corpus feature tags, as the app names them. Ambiguous ones are read by tag.
+ *
+ * The Turkish is the vocabulary a Turkish sarf lesson uses, which is
+ * Arabic-rooted almost throughout — zamir, sifat, nekre, mechul, ism-i mevsul.
+ * That is the point rather than a side effect: naming a feature after the root
+ * it comes from teaches the root while it labels the word.
+ */
+const FEATURE_LABEL: Record<Lang, Record<string, string>> = {
+  english: {
+    DET: 'definite article',
+    CONJ: 'conjunction',
+    NEG: 'negation',
+    INTG: 'interrogative',
+    EQ: 'equalizing hamza',
+    FUT: 'future particle',
+    VOC: 'vocative particle',
+    ATT: 'particle of attention',
+    REM: 'resumption',
+    RSLT: 'result',
+    DIST: 'particle of distance',
+    ADDR: 'particle of address',
+    PRON: 'pronoun',
+    REL: 'relative pronoun',
+    DEM: 'demonstrative',
+    T: 'adverb of time',
+    PN: 'proper noun',
+    ADJ: 'adjective',
+    VN: 'maṣdar',
+    ACT_PCPL: 'ism al-fāʿil',
+    PASS_PCPL: 'ism al-mafʿūl',
+    PERF: 'māḍī',
+    IMPF: 'muḍāriʿ',
+    IMPV: 'amr',
+    PASS: 'passive',
+    INDEF: 'indefinite',
+  },
+  turkish: {
+    DET: 'harf-i tarif',
+    CONJ: 'atıf harfi',
+    NEG: 'nefiy harfi',
+    INTG: 'istifham harfi',
+    EQ: 'tesviye hemzesi',
+    FUT: 'istikbal harfi',
+    VOC: 'nida harfi',
+    ATT: 'tenbih harfi',
+    REM: 'istinaf harfi',
+    RSLT: 'cevap harfi',
+    DIST: 'uzaklık lâmı',
+    ADDR: 'hitap kâfı',
+    PRON: 'zamir',
+    REL: 'ism-i mevsûl',
+    DEM: 'ism-i işaret',
+    T: 'zarf-ı zaman',
+    PN: 'ism-i alem',
+    ADJ: 'sıfat',
+    VN: 'masdar',
+    ACT_PCPL: 'ism-i fâil',
+    PASS_PCPL: 'ism-i mef’ûl',
+    PERF: 'mâzî',
+    IMPF: 'muzâri',
+    IMPV: 'emir',
+    PASS: 'meçhul',
+    INDEF: 'nekre',
+  },
 }
 
 /** Person, gender and number, as the corpus writes them on a verb or pronoun. */
-const PERSON_LABEL: Record<string, string> = {
-  '1S': 'I',
-  '1P': 'we',
-  '2MS': 'you (m. sg.)',
-  '2FS': 'you (f. sg.)',
-  '2MP': 'you (m. pl.)',
-  '2FP': 'you (f. pl.)',
-  '2D': 'you (dual)',
-  '3MS': 'he',
-  '3FS': 'she',
-  '3MP': 'they (m.)',
-  '3FP': 'they (f.)',
-  '3D': 'they (dual)',
+const PERSON_LABEL: Record<Lang, Record<string, string>> = {
+  english: {
+    '1S': 'I',
+    '1P': 'we',
+    '2MS': 'you (m. sg.)',
+    '2FS': 'you (f. sg.)',
+    '2MP': 'you (m. pl.)',
+    '2FP': 'you (f. pl.)',
+    '2D': 'you (dual)',
+    '3MS': 'he',
+    '3FS': 'she',
+    '3MP': 'they (m.)',
+    '3FP': 'they (f.)',
+    '3D': 'they (dual)',
+  },
+  // Spelled out rather than abbreviated: muzekker, muennes, mufred and cemi
+  // are four of the words a learner most needs, and a parse is read slowly.
+  turkish: {
+    '1S': 'ben',
+    '1P': 'biz',
+    '2MS': 'sen (müzekker müfred)',
+    '2FS': 'sen (müennes müfred)',
+    '2MP': 'siz (müzekker cemi)',
+    '2FP': 'siz (müennes cemi)',
+    '2D': 'siz (tesniye)',
+    '3MS': 'o (müzekker)',
+    '3FS': 'o (müennes)',
+    '3MP': 'onlar (müzekker)',
+    '3FP': 'onlar (müennes)',
+    '3D': 'o ikisi (tesniye)',
+  },
 }
 
 /** Gender and number on a noun. The same letters mean other things on a verb. */
-const NUMBER_LABEL: Record<string, string> = {
-  M: 'masculine',
-  F: 'feminine',
-  MS: 'masculine singular',
-  FS: 'feminine singular',
-  MD: 'masculine dual',
-  FD: 'feminine dual',
-  MP: 'masculine plural',
-  FP: 'feminine plural',
-  P: 'plural',
-  D: 'dual',
+const NUMBER_LABEL: Record<Lang, Record<string, string>> = {
+  english: {
+    M: 'masculine',
+    F: 'feminine',
+    MS: 'masculine singular',
+    FS: 'feminine singular',
+    MD: 'masculine dual',
+    FD: 'feminine dual',
+    MP: 'masculine plural',
+    FP: 'feminine plural',
+    P: 'plural',
+    D: 'dual',
+  },
+  turkish: {
+    M: 'müzekker',
+    F: 'müennes',
+    MS: 'müzekker müfred',
+    FS: 'müennes müfred',
+    MD: 'müzekker tesniye',
+    FD: 'müennes tesniye',
+    MP: 'müzekker cemi',
+    FP: 'müennes cemi',
+    P: 'cemi',
+    D: 'tesniye',
+  },
+}
+
+/** `P` names the prepositions on a particle and the plural on a noun. */
+const P_LABEL: Record<Lang, { harf: string; ism: string }> = {
+  english: { harf: 'preposition', ism: 'plural' },
+  turkish: { harf: 'harf-i cer', ism: 'cemi' },
 }
 
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+
+/** Turkish teaches the augmented verb forms as babs, and counts them the same. */
+function formLabel(roman: string, lang: Lang): string {
+  return lang === 'turkish' ? `${roman}. bâb` : `Form ${roman}`
+}
 
 /**
  * The corpus gives a pronoun no lemma — neither the attached ones nor the
@@ -362,22 +497,25 @@ export interface SegmentDescription {
   traits: string[]
 }
 
-export function describeSegment(segment: CorpusSegment): SegmentDescription {
+export function describeSegment(
+  segment: CorpusSegment,
+  lang: Lang = 'english',
+): SegmentDescription {
   const traits: string[] = []
   for (const feature of segment.features) {
     if (feature === 'PREF' || feature === 'SUFF') continue
-    // `P` names the prepositions on a particle and the plural on a noun.
     if (feature === 'P') {
-      traits.push(segment.tag === 'P' ? 'preposition' : 'plural')
+      traits.push(segment.tag === 'P' ? P_LABEL[lang].harf : P_LABEL[lang].ism)
       continue
     }
-    const named = FEATURE_LABEL[feature] ?? PERSON_LABEL[feature] ?? NUMBER_LABEL[feature]
+    const named =
+      FEATURE_LABEL[lang][feature] ?? PERSON_LABEL[lang][feature] ?? NUMBER_LABEL[lang][feature]
     if (named) {
       traits.push(named)
       continue
     }
     const form = feature.startsWith('VF:') ? Number(feature.slice(3)) : undefined
-    if (form && ROMAN[form]) traits.push(`Form ${ROMAN[form]}`)
+    if (form && ROMAN[form]) traits.push(formLabel(ROMAN[form], lang))
     // NOM/ACC/GEN/MOOD are the iʿrāb, reported on their own; FAM names the
     // family a word belongs to, which the reference link says better than a
     // trait would.

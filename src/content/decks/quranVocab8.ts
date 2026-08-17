@@ -209,9 +209,9 @@ export const quranVocab8: DeckDef = {
       example: {
         arabic: 'أَطَّلَعَ ٱلْغَيْبَ أَمِ ٱتَّخَذَ عِندَ ٱلرَّحْمَٰنِ عَهْدًۭا',
         english: 'Has he looked into the unseen, or has he taken a covenant with the Most Merciful?',
-        turkish: 'Gaybı mı gördü, yoksa Rahmân’ın katından bir söz mü aldı?',
+        turkish: 'Gaybı mı gördü, yoksa Rahmân’ın katından bir ahit mi aldı?',
         source: 'Qur\'an 19:78',
-        highlight: { english: 'covenant', turkish: 'söz' },
+        highlight: { english: 'covenant', turkish: 'ahit' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -359,9 +359,9 @@ export const quranVocab8: DeckDef = {
       example: {
         arabic: '۞ إِنَّمَا يَسْتَجِيبُ ٱلَّذِينَ يَسْمَعُونَ ۘ وَٱلْمَوْتَىٰ يَبْعَثُهُمُ ٱللَّهُ ثُمَّ إِلَيْهِ يُرْجَعُونَ',
         english: 'Only those who hear will respond. And the dead — Allah will raise them, then to Him they will be returned.',
-        turkish: 'Ancak işitenler cevap verir. Ölüleri ise Allah diriltir; sonra O’na döndürülürler.',
+        turkish: 'Ancak işitenler icabet eder. Ölüleri ise Allah diriltir; sonra O’na döndürülürler.',
         source: 'Qur\'an 6:36',
-        highlight: { english: 'respond', turkish: 'cevap verir' },
+        highlight: { english: 'respond', turkish: 'icabet eder' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -531,9 +531,9 @@ export const quranVocab8: DeckDef = {
       example: {
         arabic: 'فَٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ لَهُم مَّغْفِرَةٌۭ وَرِزْقٌۭ كَرِيمٌۭ',
         english: 'So those who believe and do righteous deeds — for them is forgiveness and noble provision.',
-        turkish: 'İman edip salih ameller işleyenlere bağışlanma ve değerli bir rızık vardır.',
+        turkish: 'İman edip salih ameller işleyenlere mağfiret ve değerli bir rızık vardır.',
         source: 'Qur\'an 22:50',
-        highlight: { english: 'forgiveness', turkish: 'bağışlanma' },
+        highlight: { english: 'forgiveness', turkish: 'mağfiret' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -550,9 +550,9 @@ export const quranVocab8: DeckDef = {
       example: {
         arabic: 'قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ',
         english: 'Certainly the believers have succeeded.',
-        turkish: 'Müminler gerçekten kurtuluşa ermiştir.',
+        turkish: 'Müminler gerçekten felah bulmuştur.',
         source: 'Qur\'an 23:1',
-        highlight: { english: 'have succeeded', turkish: 'kurtuluşa ermiştir' },
+        highlight: { english: 'have succeeded', turkish: 'felah bulmuştur' },
       },
       vocab: {
         partOfSpeech: 'fil',

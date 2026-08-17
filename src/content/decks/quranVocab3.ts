@@ -77,9 +77,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'إِنَّكُمْ لَفِى قَوْلٍۢ مُّخْتَلِفٍۢ',
         english: 'Indeed, you are in differing speech.',
-        turkish: 'Şüphesiz siz çelişkili bir söz içindesiniz.',
+        turkish: 'Muhakkak siz muhtelif bir kelam içindesiniz.',
         source: 'Qur\'an 51:8',
-        highlight: { english: 'speech', turkish: 'söz' },
+        highlight: { english: 'speech', turkish: 'kelam' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -99,9 +99,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'نُزُلًۭا مِّنْ غَفُورٍۢ رَّحِيمٍۢ',
         english: 'an accommodation from a Forgiving, Merciful One.',
-        turkish: 'Çok bağışlayan, çok merhamet eden tarafından bir ağırlama olarak.',
+        turkish: 'Gafûr ve rahîm olandan bir ikram olarak.',
         source: 'Qur\'an 41:32',
-        highlight: { english: 'Forgiving', turkish: 'bağışlayan' },
+        highlight: { english: 'Forgiving', turkish: 'Gafûr' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -159,7 +159,7 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'كَذَٰلِكَ نَفْعَلُ بِٱلْمُجْرِمِينَ',
         english: 'Thus do We deal with the criminals.',
-        turkish: 'İşte biz suçlulara böyle yaparız.',
+        turkish: 'İşte biz mücrimlere böyle yaparız.',
         source: 'Qur\'an 77:18',
         highlight: { english: 'deal with', turkish: 'yaparız' },
       },
@@ -182,9 +182,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'فَأَهْلَكْنَآ أَشَدَّ مِنْهُم بَطْشًۭا وَمَضَىٰ مَثَلُ ٱلْأَوَّلِينَ',
         english: 'So We destroyed those stronger than them in power, and the example of the former peoples has passed on.',
-        turkish: 'Biz onlardan daha güçlü olanları helak ettik; öncekilerin örneği geçti.',
+        turkish: 'Biz onlardan daha güçlü olanları helak ettik; öncekilerin misali geçti.',
         source: 'Qur\'an 43:8',
-        highlight: { english: 'example', turkish: 'örneği' },
+        highlight: { english: 'example', turkish: 'misali' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -271,9 +271,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'خَٰلِدِينَ فِيهَآ أَبَدًۭا ۖ لَّا يَجِدُونَ وَلِيًّۭا وَلَا نَصِيرًۭا',
         english: 'abiding therein forever; they will find no protector and no helper.',
-        turkish: 'Orada ebedî kalıcıdırlar; ne bir dost ne de bir yardımcı bulurlar.',
+        turkish: 'Orada ebedî kalıcıdırlar; ne bir veli ne de bir yardımcı bulurlar.',
         source: 'Qur\'an 33:65',
-        highlight: { english: 'protector', turkish: 'dost' },
+        highlight: { english: 'protector', turkish: 'veli' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -312,9 +312,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'فَكُلُوا۟ مِمَّا ذُكِرَ ٱسْمُ ٱللَّهِ عَلَيْهِ إِن كُنتُم بِـَٔايَٰتِهِۦ مُؤْمِنِينَ',
         english: 'So eat of that over which the name of Allah has been mentioned, if you are believers in His verses.',
-        turkish: 'Ayetlerine inanıyorsanız, üzerine Allah\'ın adı anılan şeylerden yiyin.',
+        turkish: 'Ayetlerine mümin iseniz, üzerine Allah’ın adı zikredilen şeylerden yiyin.',
         source: 'Qur\'an 6:118',
-        highlight: { english: 'mentioned', turkish: 'anılan' },
+        highlight: { english: 'mentioned', turkish: 'zikredilen' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -335,9 +335,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'فَضْلًۭا مِّن رَّبِّكَ ۚ ذَٰلِكَ هُوَ ٱلْفَوْزُ ٱلْعَظِيمُ',
         english: 'As a bounty from your Lord. That is the great attainment.',
-        turkish: 'Rabbinden bir lütuf olarak. İşte bu, büyük kurtuluştur.',
+        turkish: 'Rabbinden bir fazl olarak. İşte bu, azîm kurtuluştur.',
         source: 'Qur\'an 44:57',
-        highlight: { english: 'bounty', turkish: 'lütuf' },
+        highlight: { english: 'bounty', turkish: 'fazl' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -399,9 +399,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'أُو۟لَٰٓئِكَ عَلَيْهِمْ صَلَوَٰتٌۭ مِّن رَّبِّهِمْ وَرَحْمَةٌۭ ۖ وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُهْتَدُونَ',
         english: 'Those are the ones upon whom are blessings from their Lord and mercy, and it is those who are the rightly guided.',
-        turkish: 'İşte Rablerinden bağışlamalar ve rahmet onlaradır; doğru yolu bulanlar da onlardır.',
+        turkish: 'İşte Rablerinden salât ve rahmet onlaradır; hidayete erenler de onlardır.',
         source: 'Qur\'an 2:157',
-        highlight: { english: 'blessings', turkish: 'bağışlamalar' },
+        highlight: { english: 'blessings', turkish: 'salât' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -549,9 +549,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'قُتِلَ أَصْحَٰبُ ٱلْأُخْدُودِ',
         english: 'Slain were the companions of the trench,',
-        turkish: 'Kahrolsun o hendek halkı,',
+        turkish: 'Kahrolsun o hendek ashabı,',
         source: 'Qur\'an 85:4',
-        highlight: { english: 'companions', turkish: 'halkı' },
+        highlight: { english: 'companions', turkish: 'ashab' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -906,7 +906,7 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'كَذَٰلِكَ نَجْزِى ٱلْمُحْسِنِينَ',
         english: 'Thus do We reward the doers of good.',
-        turkish: 'İşte biz iyilik edenleri böyle mükâfatlandırırız.',
+        turkish: 'İşte biz muhsinleri böyle mükâfatlandırırız.',
         source: 'Qur\'an 37:110',
         highlight: { english: 'reward', turkish: 'mükâfatlandırırız' },
       },
@@ -974,9 +974,9 @@ export const quranVocab3: DeckDef = {
       example: {
         arabic: 'فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ',
         english: 'So give them tidings of a painful punishment,',
-        turkish: 'Onlara acı bir azabı müjdele,',
+        turkish: 'Onlara elem verici bir azabı müjdele,',
         source: 'Qur\'an 84:24',
-        highlight: { english: 'painful', turkish: 'acı' },
+        highlight: { english: 'painful', turkish: 'elem verici' },
       },
       vocab: {
         partOfSpeech: 'ism',

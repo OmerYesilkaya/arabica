@@ -82,9 +82,9 @@ export const quranVocab12: DeckDef = {
       example: {
         arabic: 'ٱتَّبِعُوا۟ مَن لَّا يَسْـَٔلُكُمْ أَجْرًۭا وَهُم مُّهْتَدُونَ',
         english: 'Follow those who do not ask you for a reward, and they are rightly guided.',
-        turkish: 'Sizden bir ücret istemeyenlere uyun; onlar doğru yoldadırlar.',
+        turkish: 'Sizden bir ücret istemeyenlere uyun; onlar hidayete ermiş kimselerdir.',
         source: 'Qur\'an 36:21',
-        highlight: { english: 'rightly guided', turkish: 'doğru yoldadırlar' },
+        highlight: { english: 'rightly guided', turkish: 'hidayete ermiş' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -146,9 +146,9 @@ export const quranVocab12: DeckDef = {
       example: {
         arabic: 'أَوَلَمْ يَتَفَكَّرُوا۟ ۗ مَا بِصَاحِبِهِم مِّن جِنَّةٍ ۚ إِنْ هُوَ إِلَّا نَذِيرٌۭ مُّبِينٌ',
         english: 'Have they not reflected? There is no madness in their companion. He is only a clear warner.',
-        turkish: 'Hiç düşünmediler mi? Arkadaşlarında delilik yoktur. O ancak apaçık bir uyarıcıdır.',
+        turkish: 'Hiç tefekkür etmediler mi? Arkadaşlarında delilik yoktur. O ancak apaçık bir uyarıcıdır.',
         source: 'Qur\'an 7:184',
-        highlight: { english: 'reflected', turkish: 'düşünmediler' },
+        highlight: { english: 'reflected', turkish: 'tefekkür etmediler' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -585,7 +585,7 @@ export const quranVocab12: DeckDef = {
       example: {
         arabic: 'ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ',
         english: 'Recite, and your Lord is the most Generous,',
-        turkish: 'Oku! Rabbin en cömert olandır,',
+        turkish: 'Oku! Rabbin en kerîm olandır,',
         source: 'Qur\'an 96:3',
         highlight: { english: 'Recite', turkish: 'Oku' },
       },
@@ -627,9 +627,9 @@ export const quranVocab12: DeckDef = {
       example: {
         arabic: 'ثُمَّ إِنَّ مَرْجِعَهُمْ لَإِلَى ٱلْجَحِيمِ',
         english: 'Then indeed, their return will be to the Hellfire.',
-        turkish: 'Sonra şüphesiz onların dönüşü cehennemedir.',
+        turkish: 'Sonra şüphesiz onların mercii cehennemdir.',
         source: 'Qur\'an 37:68',
-        highlight: { english: 'return', turkish: 'dönüşü' },
+        highlight: { english: 'return', turkish: 'merci' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -649,9 +649,9 @@ export const quranVocab12: DeckDef = {
       example: {
         arabic: 'فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ',
         english: 'As for one whose scales are heavy,',
-        turkish: 'Kimin tartıları ağır gelirse,',
+        turkish: 'Kimin mizanı ağır gelirse,',
         source: 'Qur\'an 101:6',
-        highlight: { english: 'scales', turkish: 'tartıları' },
+        highlight: { english: 'scales', turkish: 'mizan' },
       },
       vocab: {
         partOfSpeech: 'ism',

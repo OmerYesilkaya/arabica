@@ -335,9 +335,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'قَالُوا۟ يَٰٓأَبَانَا ٱسْتَغْفِرْ لَنَا ذُنُوبَنَآ إِنَّا كُنَّا خَٰطِـِٔينَ',
         english: 'They said: O our father, ask forgiveness for us for our sins; indeed, we have been sinners.',
-        turkish: 'Dediler ki: Ey babamız! Günahlarımız için bizim adımıza bağışlanma dile; doğrusu biz hata edenlerdik.',
+        turkish: 'Dediler ki: Ey babamız! Günahlarımız için bizim adımıza istiğfar et; doğrusu biz hata edenlerdik.',
         source: 'Qur\'an 12:97',
-        highlight: { english: 'ask forgiveness', turkish: 'bağışlanma dile' },
+        highlight: { english: 'ask forgiveness', turkish: 'istiğfar et' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -358,9 +358,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'إِلَّآ إِبْلِيسَ ٱسْتَكْبَرَ وَكَانَ مِنَ ٱلْكَٰفِرِينَ',
         english: 'except Iblis; he was arrogant and was one of the disbelievers.',
-        turkish: 'Ancak İblis hariç; o büyüklendi ve kâfirlerden oldu.',
+        turkish: 'Ancak İblis hariç; o kibirlendi ve kâfirlerden oldu.',
         source: 'Qur\'an 38:74',
-        highlight: { english: 'was arrogant', turkish: 'büyüklendi' },
+        highlight: { english: 'was arrogant', turkish: 'kibirlendi' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -515,9 +515,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'لَا شَرِيكَ لَهُۥ ۖ وَبِذَٰلِكَ أُمِرْتُ وَأَنَا۠ أَوَّلُ ٱلْمُسْلِمِينَ',
         english: 'He has no partner. And this I have been commanded, and I am the first of those who submit.',
-        turkish: 'O\'nun ortağı yoktur. Bana böyle emrolundu ve ben müslümanların ilkiyim.',
+        turkish: 'O’nun şeriki yoktur. Bana böyle emrolundu ve ben müslümanların ilkiyim.',
         source: 'Qur\'an 6:163',
-        highlight: { english: 'partner', turkish: 'ortağı' },
+        highlight: { english: 'partner', turkish: 'şerik' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -791,9 +791,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'إِنِّىٓ إِذًۭا لَّفِى ضَلَٰلٍۢ مُّبِينٍ',
         english: 'Indeed, I would then be in clear error.',
-        turkish: 'Doğrusu o zaman ben apaçık bir sapıklık içinde olurum.',
+        turkish: 'Doğrusu o zaman ben apaçık bir dalâlet içinde olurum.',
         source: 'Qur\'an 36:24',
-        highlight: { english: 'error', turkish: 'sapıklık' },
+        highlight: { english: 'error', turkish: 'dalâlet' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -810,9 +810,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'إِنَّ ٱللَّهَ مَعَ ٱلَّذِينَ ٱتَّقَوا۟ وَّٱلَّذِينَ هُم مُّحْسِنُونَ',
         english: 'Indeed, Allah is with those who fear Him and those who are doers of good.',
-        turkish: 'Şüphesiz Allah, sakınanlarla ve iyilik edenlerle beraberdir.',
+        turkish: 'Şüphesiz Allah, sakınanlarla ve muhsin olanlarla beraberdir.',
         source: 'Qur\'an 16:128',
-        highlight: { english: 'doers of good', turkish: 'iyilik edenlerle' },
+        highlight: { english: 'doers of good', turkish: 'muhsin' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -873,9 +873,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'وَلَئِنْ أَطَعْتُم بَشَرًۭا مِّثْلَكُمْ إِنَّكُمْ إِذًۭا لَّخَٰسِرُونَ',
         english: 'And if you obey a human being like yourselves, indeed you would then be losers.',
-        turkish: 'Eğer kendiniz gibi bir insana itaat ederseniz, o zaman siz mutlaka hüsrana uğrayanlardan olursunuz.',
+        turkish: 'Eğer kendiniz gibi bir beşere itaat ederseniz, o zaman siz mutlaka hüsrana uğrayanlardan olursunuz.',
         source: 'Qur\'an 23:34',
-        highlight: { english: 'human being', turkish: 'insana' },
+        highlight: { english: 'human being', turkish: 'beşer' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1024,9 +1024,9 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: '۞ أَلَمْ تَرَ إِلَى ٱلَّذِينَ بَدَّلُوا۟ نِعْمَتَ ٱللَّهِ كُفْرًۭا وَأَحَلُّوا۟ قَوْمَهُمْ دَارَ ٱلْبَوَارِ',
         english: 'Have you not seen those who exchanged the favor of Allah for disbelief and settled their people in the home of ruin?',
-        turkish: 'Allah\'ın nimetini nankörlükle değiştiren ve kavimlerini helak yurduna indirenleri görmedin mi?',
+        turkish: 'Allah’ın nimetini küfürle değiştiren ve kavimlerini helak yurduna indirenleri görmedin mi?',
         source: 'Qur\'an 14:28',
-        highlight: { english: 'disbelief', turkish: 'nankörlükle' },
+        highlight: { english: 'disbelief', turkish: 'küfür' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1043,7 +1043,7 @@ export const quranVocab6: DeckDef = {
       example: {
         arabic: 'وَلَهَدَيْنَٰهُمْ صِرَٰطًۭا مُّسْتَقِيمًۭا',
         english: 'And We would have guided them to a straight path.',
-        turkish: 'Ve onları elbette dosdoğru bir yola iletirdik.',
+        turkish: 'Ve onları elbette dosdoğru bir sırata iletirdik.',
         source: 'Qur\'an 4:68',
         highlight: { english: 'straight', turkish: 'dosdoğru' },
       },

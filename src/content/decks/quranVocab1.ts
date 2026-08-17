@@ -93,9 +93,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'إِنَّ لِلْمُتَّقِينَ مَفَازًا',
         english: 'Indeed, for the righteous is attainment.',
-        turkish: 'Şüphesiz takva sahipleri için bir kurtuluş vardır.',
+        turkish: 'Muhakkak ki takva sahipleri için bir kurtuluş vardır.',
         source: 'Qur\'an 78:31',
-        highlight: { english: 'Indeed', turkish: 'Şüphesiz' },
+        highlight: { english: 'Indeed', turkish: 'Muhakkak ki' },
       },
       vocab: {
         partOfSpeech: 'harf',
@@ -134,7 +134,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'ٱلَّذِى خَلَقَ فَسَوَّىٰ',
         english: 'who created and proportioned,',
-        turkish: 'O ki yarattı, düzenledi,',
+        turkish: 'O ki yarattı, sonra düzene koydu,',
         source: 'Qur\'an 87:2',
         highlight: { english: 'who', turkish: 'O ki' },
       },
@@ -155,7 +155,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'يَٰلَيْتَهَا كَانَتِ ٱلْقَاضِيَةَ',
         english: 'I wish it had been the decisive one.',
-        turkish: 'Keşke o iş bitirici olsaydı.',
+        turkish: 'Keşke o, işi bitiren olsaydı.',
         source: 'Qur\'an 69:27',
         highlight: { english: 'had been', turkish: 'olsaydı' },
       },
@@ -177,7 +177,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى لِّلْمُتَّقِينَ',
         english: 'That is the Book about which there is no doubt, a guidance for the righteous.',
-        turkish: 'İşte o kitap, kendisinde şüphe yoktur; takva sahipleri için bir yol göstericidir.',
+        turkish: 'İşte o kitap; onda şüphe yoktur, takva sahipleri için hidayettir.',
         source: 'Qur\'an 2:2',
         highlight: { english: 'That', turkish: 'İşte o' },
       },
@@ -252,9 +252,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'إِنَّهُۥ كَانَ لَا يُؤْمِنُ بِٱللَّهِ ٱلْعَظِيمِ',
         english: 'Indeed, he did not use to believe in Allah, the Most Great,',
-        turkish: 'Çünkü o, yüce Allah’a inanmıyordu,',
+        turkish: 'Zira o, azîm olan Allah’a iman etmiyordu,',
         source: 'Qur\'an 69:33',
-        highlight: { english: 'believe', turkish: 'inanmıyordu' },
+        highlight: { english: 'believe', turkish: 'iman etmiyordu' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -275,7 +275,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'مَٰلِكِ يَوْمِ ٱلدِّينِ',
         english: 'Sovereign of the Day of Recompense.',
-        turkish: 'Din gününün sahibi.',
+        turkish: 'Din gününün maliki.',
         source: 'Qur\'an 1:4',
         highlight: { english: 'Day', turkish: 'gün' },
       },
@@ -297,9 +297,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'وَإِذَا ٱلْأَرْضُ مُدَّتْ',
         english: 'And when the earth is spread out,',
-        turkish: 'Yer uzatıldığı zaman,',
+        turkish: 'Arz uzatıldığı zaman,',
         source: 'Qur\'an 84:3',
-        highlight: { english: 'earth', turkish: 'Yer' },
+        highlight: { english: 'earth', turkish: 'Arz' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -337,9 +337,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ',
         english: 'Certainly will the believers have succeeded.',
-        turkish: 'Müminler gerçekten kurtuluşa ermiştir.',
+        turkish: 'Muhakkak müminler felah bulmuştur.',
         source: 'Qur\'an 23:1',
-        highlight: { english: 'Certainly', turkish: 'gerçekten' },
+        highlight: { english: 'Certainly', turkish: 'Muhakkak' },
       },
       vocab: {
         partOfSpeech: 'harf',
@@ -355,9 +355,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'قَالَ إِنَّكُمْ قَوْمٌۭ مُّنكَرُونَ',
         english: 'He said: Indeed, you are a people unknown.',
-        turkish: 'Dedi ki: Doğrusu siz tanınmayan bir topluluksunuz.',
+        turkish: 'Dedi ki: Doğrusu siz tanınmayan bir kavimsiniz.',
         source: 'Qur\'an 15:62',
-        highlight: { english: 'people', turkish: 'topluluk' },
+        highlight: { english: 'people', turkish: 'kavim' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -477,9 +477,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'أَلَمْ نَجْعَلِ ٱلْأَرْضَ مِهَٰدًۭا',
         english: 'Have We not made the earth a resting place,',
-        turkish: 'Biz yeryüzünü bir döşek yapmadık mı?',
+        turkish: 'Biz arzı bir döşek kılmadık mı?',
         source: 'Qur\'an 78:6',
-        highlight: { english: 'made', turkish: 'yapmadık' },
+        highlight: { english: 'made', turkish: 'kılmadık' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -517,9 +517,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'إِنَّهُۥ لَقَوْلُ رَسُولٍۢ كَرِيمٍۢ',
         english: 'Indeed, it is the word of a noble messenger.',
-        turkish: 'Şüphesiz o, değerli bir elçinin sözüdür.',
+        turkish: 'Şüphesiz o, kerîm bir resulün sözüdür.',
         source: 'Qur\'an 81:19',
-        highlight: { english: 'messenger', turkish: 'elçi' },
+        highlight: { english: 'messenger', turkish: 'resul' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -539,7 +539,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'دُحُورًۭا ۖ وَلَهُمْ عَذَابٌۭ وَاصِبٌ',
         english: 'repelled, and for them is a constant punishment,',
-        turkish: 'Kovulurlar; onlara sürekli bir azap vardır,',
+        turkish: 'Kovulurlar; onlara daimî bir azap vardır,',
         source: 'Qur\'an 37:9',
         highlight: { english: 'punishment', turkish: 'azap' },
       },
@@ -558,9 +558,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'وَفُتِحَتِ ٱلسَّمَآءُ فَكَانَتْ أَبْوَٰبًۭا',
         english: 'And the sky is opened and will become gateways,',
-        turkish: 'Gök açılmış, kapı kapı olmuştur,',
+        turkish: 'Sema açılmış, kapı kapı olmuştur,',
         source: 'Qur\'an 78:19',
-        highlight: { english: 'sky', turkish: 'Gök' },
+        highlight: { english: 'sky', turkish: 'Sema' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -580,9 +580,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'إِذِ ٱنۢبَعَثَ أَشْقَىٰهَا',
         english: 'when the most wretched of them was sent forth.',
-        turkish: 'En bedbahtları ileri atıldığında.',
+        turkish: 'En bedbahtları ayaklandığı zaman.',
         source: 'Qur\'an 91:12',
-        highlight: { english: 'when', turkish: 'dığında' },
+        highlight: { english: 'when', turkish: 'zaman' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -683,7 +683,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'فَإِذَا جَآءَتِ ٱلصَّآخَّةُ',
         english: 'But when there comes the Deafening Blast,',
-        turkish: 'Kulakları sağır eden o ses geldiği zaman,',
+        turkish: 'O kulakları sağır eden ses geldiği zaman,',
         source: 'Qur\'an 80:33',
         highlight: { english: 'comes', turkish: 'geldiği' },
       },
@@ -705,9 +705,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًۭا يَرَهُۥ',
         english: 'So whoever does an atom’s weight of good will see it,',
-        turkish: 'Kim zerre ağırlığınca hayır işlerse onu görür,',
+        turkish: 'Kim zerre ağırlığınca hayır amel ederse onu görür,',
         source: 'Qur\'an 99:7',
-        highlight: { english: 'does', turkish: 'işlerse' },
+        highlight: { english: 'does', turkish: 'amel ederse' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -751,7 +751,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'وَبُرِّزَتِ ٱلْجَحِيمُ لِمَن يَرَىٰ',
         english: 'And Hellfire will be brought forth for whoever sees,',
-        turkish: 'Cehennem de gören kimseler için açığa çıkarılır,',
+        turkish: 'Cehennem, gören kimseler için açığa çıkarılır,',
         source: 'Qur\'an 79:36',
         highlight: { english: 'sees', turkish: 'gören' },
       },
@@ -793,7 +793,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'فَتَوَلَّىٰ فِرْعَوْنُ فَجَمَعَ كَيْدَهُۥ ثُمَّ أَتَىٰ',
         english: 'So Pharaoh turned away, gathered his plan, then came.',
-        turkish: 'Firavun dönüp gitti, hilesini topladı, sonra geldi.',
+        turkish: 'Firavun yüz çevirdi, hilesini topladı, sonra geldi.',
         source: 'Qur\'an 20:60',
         highlight: { english: 'came', turkish: 'geldi' },
       },
@@ -837,7 +837,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'وَفِىٓ أَمْوَٰلِهِمْ حَقٌّۭ لِّلسَّآئِلِ وَٱلْمَحْرُومِ',
         english: 'And in their wealth was a right for the beggar and the deprived.',
-        turkish: 'Mallarında isteyen ve yoksun olan için bir hak vardı.',
+        turkish: 'Mallarında, isteyen ve mahrum olan için bir hak vardı.',
         source: 'Qur\'an 51:19',
         highlight: { english: 'right', turkish: 'hak' },
       },
@@ -859,7 +859,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'إِنَّهُمْ كَانُوا۟ قَبْلَ ذَٰلِكَ مُتْرَفِينَ',
         english: 'Indeed they were, before that, indulging in luxury,',
-        turkish: 'Çünkü onlar bundan önce varlık içinde şımartılmışlardı,',
+        turkish: 'Çünkü onlar bundan önce refah içinde şımarmışlardı,',
         source: 'Qur\'an 56:45',
         highlight: { english: 'before', turkish: 'önce' },
       },
@@ -897,7 +897,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'فَمَن شَآءَ ذَكَرَهُۥ',
         english: 'So whoever wills may remember it.',
-        turkish: 'Dileyen onu düşünüp öğüt alır.',
+        turkish: 'Dileyen onu zikreder.',
         source: 'Qur\'an 80:12',
         highlight: { english: 'wills', turkish: 'Dileyen' },
       },
@@ -939,9 +939,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'قَالُوا۟ بَل لَّمْ تَكُونُوا۟ مُؤْمِنِينَ',
         english: 'They will say: But you were not believers,',
-        turkish: 'Derler ki: Hayır, siz zaten inanmıyordunuz,',
+        turkish: 'Derler ki: Hayır, siz mümin değildiniz,',
         source: 'Qur\'an 37:29',
-        highlight: { english: 'believers', turkish: 'inanmıyordunuz' },
+        highlight: { english: 'believers', turkish: 'mümin' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -961,7 +961,7 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'وَدُّوا۟ لَوْ تُدْهِنُ فَيُدْهِنُونَ',
         english: 'They wish that you would soften, so they would soften.',
-        turkish: 'İsterler ki sen yumuşak davranasın da onlar da yumuşasınlar.',
+        turkish: 'Arzu ettiler ki sen yumuşak davranasın da onlar da yumuşasınlar.',
         source: 'Qur\'an 68:9',
         highlight: { english: 'that', turkish: 'ki' },
       },
@@ -979,9 +979,9 @@ export const quranVocab1: DeckDef = {
       example: {
         arabic: 'وَٱلْأَرْضَ بَعْدَ ذَٰلِكَ دَحَىٰهَآ',
         english: 'And after that He spread the earth.',
-        turkish: 'Ardından yeri döşeyip yaydı.',
+        turkish: 'Arzı da bundan sonra döşeyip yaydı.',
         source: 'Qur\'an 79:30',
-        highlight: { english: 'after', turkish: 'Ardından' },
+        highlight: { english: 'after', turkish: 'sonra' },
       },
       vocab: {
         partOfSpeech: 'ism',

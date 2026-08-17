@@ -169,9 +169,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'ٱللَّهُ يَحْكُمُ بَيْنَكُمْ يَوْمَ ٱلْقِيَٰمَةِ فِيمَا كُنتُمْ فِيهِ تَخْتَلِفُونَ',
         english: 'Allah will judge between you on the Day of Resurrection concerning that over which you used to differ.',
-        turkish: 'Allah, kıyamet günü, ayrılığa düştüğünüz konularda aranızda hüküm verecektir.',
+        turkish: 'Allah, kıyamet günü, ihtilafa düştüğünüz konularda aranızda hüküm verecektir.',
         source: 'Qur\'an 22:69',
-        highlight: { english: 'differ', turkish: 'ayrılığa düştüğünüz' },
+        highlight: { english: 'differ', turkish: 'ihtilafa düştüğünüz' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -215,9 +215,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمْ ءَايَٰتِهِۦ لَعَلَّكُمْ تَعْقِلُونَ',
         english: 'Thus does Allah make clear to you His verses, that you might use reason.',
-        turkish: 'Allah size ayetlerini böyle açıklıyor ki akledesiniz.',
+        turkish: 'Allah size ayetlerini böyle beyan ediyor ki akledesiniz.',
         source: 'Qur\'an 2:242',
-        highlight: { english: 'make clear', turkish: 'açıklıyor' },
+        highlight: { english: 'make clear', turkish: 'beyan ediyor' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -437,9 +437,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'إِنَّا جَعَلْنَٰهَا فِتْنَةًۭ لِّلظَّٰلِمِينَ',
         english: 'Indeed, We have made it a trial for the wrongdoers.',
-        turkish: 'Şüphesiz biz onu zalimler için bir imtihan kıldık.',
+        turkish: 'Şüphesiz biz onu zalimler için bir fitne kıldık.',
         source: 'Qur\'an 37:63',
-        highlight: { english: 'trial', turkish: 'imtihan' },
+        highlight: { english: 'trial', turkish: 'fitne' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -730,9 +730,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'ٱقْرَأْ كِتَٰبَكَ كَفَىٰ بِنَفْسِكَ ٱلْيَوْمَ عَلَيْكَ حَسِيبًۭا',
         english: 'Read your record. Sufficient is your own self this day as an accountant against you.',
-        turkish: 'Kitabını oku! Bugün kendi nefsin, sana karşı hesap görücü olarak yeter.',
+        turkish: 'Kitabını oku! Bugün kendi nefsin, sana karşı hesap görücü olarak kâfidir.',
         source: 'Qur\'an 17:14',
-        highlight: { english: 'Sufficient', turkish: 'yeter' },
+        highlight: { english: 'Sufficient', turkish: 'kâfi' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -753,9 +753,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'أَرَءَيْتَ ٱلَّذِى يَنْهَىٰ',
         english: 'Have you seen the one who forbids',
-        turkish: 'Gördün mü şu engelleyeni,',
+        turkish: 'Gördün mü şu menedeni,',
         source: 'Qur\'an 96:9',
-        highlight: { english: 'forbids', turkish: 'engelleyeni' },
+        highlight: { english: 'forbids', turkish: 'menedeni' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -813,9 +813,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'وَءَاتَيْنَٰهُ فِى ٱلدُّنْيَا حَسَنَةًۭ ۖ وَإِنَّهُۥ فِى ٱلْءَاخِرَةِ لَمِنَ ٱلصَّٰلِحِينَ',
         english: 'And We gave him good in this world, and indeed, in the Hereafter he is among the righteous.',
-        turkish: 'Ona dünyada iyilik verdik; şüphesiz o, ahirette de salihlerdendir.',
+        turkish: 'Ona dünyada bir hasene verdik; şüphesiz o, ahirette de salihlerdendir.',
         source: 'Qur\'an 16:122',
-        highlight: { english: 'good', turkish: 'iyilik' },
+        highlight: { english: 'good', turkish: 'hasene' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1041,9 +1041,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'ذِى قُوَّةٍ عِندَ ذِى ٱلْعَرْشِ مَكِينٍۢ',
         english: 'possessor of strength, secure in rank with the Owner of the Throne,',
-        turkish: 'Güç sahibi, Arş’ın sahibi katında itibarlı,',
+        turkish: 'Kuvvet sahibi, Arş’ın sahibi katında itibarlı,',
         source: 'Qur\'an 81:20',
-        highlight: { english: 'strength', turkish: 'Güç' },
+        highlight: { english: 'strength', turkish: 'Kuvvet' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1063,9 +1063,9 @@ export const quranVocab7: DeckDef = {
       example: {
         arabic: 'كِرَامٍۭ بَرَرَةٍۢ',
         english: 'noble and dutiful.',
-        turkish: 'Şerefli ve iyilik sever olan.',
+        turkish: 'Kerîm ve iyilik sever olan.',
         source: 'Qur\'an 80:16',
-        highlight: { english: 'noble', turkish: 'Şerefli' },
+        highlight: { english: 'noble', turkish: 'Kerîm' },
       },
       vocab: {
         partOfSpeech: 'ism',

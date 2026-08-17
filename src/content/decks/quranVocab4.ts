@@ -103,9 +103,9 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: 'بَلْ هُوَ قُرْءَانٌۭ مَّجِيدٌۭ',
         english: 'Rather, it is a glorious Qur\'an,',
-        turkish: 'Hayır, o şanlı bir Kur\'an\'dır,',
+        turkish: 'Hayır, o mecîd bir Kur’an’dır,',
         source: 'Qur\'an 85:21',
-        highlight: { english: 'Qur\'an', turkish: 'Kur\'an' },
+        highlight: { english: 'Qur\'an', turkish: 'Kur’an' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -163,7 +163,7 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: 'وَعَدَ ٱللَّهُ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ ۙ لَهُم مَّغْفِرَةٌۭ وَأَجْرٌ عَظِيمٌۭ',
         english: 'Allah has promised those who believe and do righteous deeds: for them is forgiveness and a great reward.',
-        turkish: 'Allah, iman edip salih ameller işleyenlere vaat etti: onlar için bir bağışlanma ve büyük bir ödül vardır.',
+        turkish: 'Allah, iman edip salih ameller işleyenlere vaat etti: onlar için mağfiret ve azîm bir ecir vardır.',
         source: 'Qur\'an 5:9',
         highlight: { english: 'promised', turkish: 'vaat etti' },
       },
@@ -417,9 +417,9 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: 'وَمِمَّنْ خَلَقْنَآ أُمَّةٌۭ يَهْدُونَ بِٱلْحَقِّ وَبِهِۦ يَعْدِلُونَ',
         english: 'And among those We created is a community that guides by the truth and by it does justice.',
-        turkish: 'Yarattıklarımızdan, hakka yönelten ve onunla adaleti uygulayan bir topluluk vardır.',
+        turkish: 'Yarattıklarımızdan, hakka yönelten ve onunla adaleti uygulayan bir ümmet vardır.',
         source: 'Qur\'an 7:181',
-        highlight: { english: 'community', turkish: 'topluluk' },
+        highlight: { english: 'community', turkish: 'ümmet' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -596,9 +596,9 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: 'رَسُولٌۭ مِّنَ ٱللَّهِ يَتْلُوا۟ صُحُفًۭا مُّطَهَّرَةًۭ',
         english: 'a messenger from Allah reciting purified scriptures,',
-        turkish: 'Allah\'tan gelen, tertemiz sahifeler okuyan bir elçi,',
+        turkish: 'Allah’tan gelen, tertemiz sahifeler tilavet eden bir elçi,',
         source: 'Qur\'an 98:2',
-        highlight: { english: 'reciting', turkish: 'okuyan' },
+        highlight: { english: 'reciting', turkish: 'tilavet eden' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -642,9 +642,9 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: 'تَرْجِعُونَهَآ إِن كُنتُمْ صَٰدِقِينَ',
         english: 'bring it back, if you are truthful.',
-        turkish: 'onu geri çevirsenize, eğer doğru söyleyenlerseniz.',
+        turkish: 'onu geri çevirsenize, eğer sadıklarsanız.',
         source: 'Qur\'an 56:87',
-        highlight: { english: 'truthful', turkish: 'doğru söyleyenlerseniz' },
+        highlight: { english: 'truthful', turkish: 'sadık' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -900,9 +900,9 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: 'عَلَّمَهُۥ شَدِيدُ ٱلْقُوَىٰ',
         english: 'One of mighty powers taught him,',
-        turkish: 'Ona, üstün güçlere sahip olan öğretti,',
+        turkish: 'Ona, şiddetli güçlere sahip olan öğretti,',
         source: 'Qur\'an 53:5',
-        highlight: { english: 'mighty', turkish: 'üstün' },
+        highlight: { english: 'mighty', turkish: 'şiddetli' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1029,7 +1029,7 @@ export const quranVocab4: DeckDef = {
       example: {
         arabic: '۞ وَلَمَّا ضُرِبَ ٱبْنُ مَرْيَمَ مَثَلًا إِذَا قَوْمُكَ مِنْهُ يَصِدُّونَ',
         english: 'And when the son of Mary was set forth as an example, at once your people clamoured at it,',
-        turkish: 'Meryem oğlu bir örnek olarak anlatılınca, kavmin hemen ondan dolayı bağrışmaya başladı,',
+        turkish: 'Meryem oğlu bir misal olarak anlatılınca, kavmin hemen ondan dolayı bağrışmaya başladı,',
         source: 'Qur\'an 43:57',
         highlight: { english: 'set forth as an example', turkish: 'anlatılınca' },
       },

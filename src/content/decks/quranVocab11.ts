@@ -56,9 +56,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'نَزَّلَ عَلَيْكَ ٱلْكِتَٰبَ بِٱلْحَقِّ مُصَدِّقًۭا لِّمَا بَيْنَ يَدَيْهِ وَأَنزَلَ ٱلتَّوْرَىٰةَ وَٱلْإِنجِيلَ',
         english: 'He sent down to you the Book in truth, confirming what came before it, and He sent down the Torah and the Gospel,',
-        turkish: 'Sana Kitab’ı, kendinden öncekini doğrulayıcı olarak hak ile indirdi; Tevrat’ı ve İncil’i de indirdi,',
+        turkish: 'Sana Kitab’ı, kendinden öncekini tasdik edici olarak hak ile indirdi; Tevrat’ı ve İncil’i de indirdi,',
         source: 'Qur\'an 3:3',
-        highlight: { english: 'confirming', turkish: 'doğrulayıcı' },
+        highlight: { english: 'confirming', turkish: 'tasdik edici' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -536,9 +536,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'عَٰلِمُ ٱلْغَيْبِ وَٱلشَّهَٰدَةِ ٱلْكَبِيرُ ٱلْمُتَعَالِ',
         english: 'Knower of the unseen and the witnessed, the Great, the Exalted.',
-        turkish: 'Görülmeyeni de görüleni de bilendir; büyüktür, yücedir.',
+        turkish: 'Görülmeyeni de görüleni de bilen âlimdir; büyüktür, yücedir.',
         source: 'Qur\'an 13:9',
-        highlight: { english: 'Knower', turkish: 'bilendir' },
+        highlight: { english: 'Knower', turkish: 'âlim' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -622,9 +622,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'يَوْمَ لَا يُغْنِى مَوْلًى عَن مَّوْلًۭى شَيْـًۭٔا وَلَا هُمْ يُنصَرُونَ',
         english: 'The Day no ally will avail an ally in anything, nor will they be helped,',
-        turkish: 'O gün dost dosttan bir şeyi savamaz ve onlara yardım da edilmez,',
+        turkish: 'O gün hiçbir veli, yakınından bir şeyi savamaz ve onlara yardım da edilmez,',
         source: 'Qur\'an 44:41',
-        highlight: { english: 'no ally', turkish: 'dost dosttan' },
+        highlight: { english: 'no ally', turkish: 'veli' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -663,9 +663,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَإِبْرَٰهِيمَ ٱلَّذِى وَفَّىٰٓ',
         english: 'and Abraham, who fulfilled his covenant,',
-        turkish: 've ahdini yerine getiren İbrahim’in,',
+        turkish: 've ahdini ifa eden İbrahim’in,',
         source: 'Qur\'an 53:37',
-        highlight: { english: 'fulfilled', turkish: 'yerine getiren' },
+        highlight: { english: 'fulfilled', turkish: 'ifa eden' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -685,9 +685,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَكَيْفَ تَصْبِرُ عَلَىٰ مَا لَمْ تُحِطْ بِهِۦ خُبْرًۭا',
         english: 'And how can you be patient about what you do not encompass in knowledge?',
-        turkish: 'Bilgice kavrayamadığın bir şeye nasıl sabredeceksin?',
+        turkish: 'Bilgice ihata edemediğin bir şeye nasıl sabredeceksin?',
         source: 'Qur\'an 18:68',
-        highlight: { english: 'encompass', turkish: 'kavrayamadığın' },
+        highlight: { english: 'encompass', turkish: 'ihata edemediğin' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -776,9 +776,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَكَذَّبُوا۟ وَٱتَّبَعُوٓا۟ أَهْوَآءَهُمْ ۚ وَكُلُّ أَمْرٍۢ مُّسْتَقِرٌّۭ',
         english: 'And they denied and followed their own desires, yet every matter will settle in its place.',
-        turkish: 'Yalanladılar ve kendi heveslerine uydular; oysa her iş yerini bulacaktır.',
+        turkish: 'Yalanladılar ve kendi hevalarına uydular; oysa her iş yerini bulacaktır.',
         source: 'Qur\'an 54:3',
-        highlight: { english: 'desires', turkish: 'heveslerine' },
+        highlight: { english: 'desires', turkish: 'heva' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -880,9 +880,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَأَوْفُوا۟ ٱلْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا۟ بِٱلْقِسْطَاسِ ٱلْمُسْتَقِيمِ ۚ ذَٰلِكَ خَيْرٌۭ وَأَحْسَنُ تَأْوِيلًۭا',
         english: 'And give full measure when you measure, and weigh with an even balance. That is better and finer in outcome.',
-        turkish: 'Ölçtüğünüzde ölçüyü tam yapın ve doğru terazi ile tartın. Bu daha hayırlı ve sonuç bakımından daha güzeldir.',
+        turkish: 'Ölçtüğünüzde ölçüyü tam yapın ve doğru mizan ile tartın. Bu daha hayırlı ve tevil bakımından daha güzeldir.',
         source: 'Qur\'an 17:35',
-        highlight: { english: 'outcome', turkish: 'sonuç' },
+        highlight: { english: 'outcome', turkish: 'tevil' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -978,9 +978,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَمَا نَقَمُوا۟ مِنْهُمْ إِلَّآ أَن يُؤْمِنُوا۟ بِٱللَّهِ ٱلْعَزِيزِ ٱلْحَمِيدِ',
         english: 'And they resented them only because they believed in Allah, the Mighty, the Praiseworthy,',
-        turkish: 'Onlardan, yalnızca aziz ve övgüye layık olan Allah’a iman ettikleri için öç aldılar,',
+        turkish: 'Onlardan, yalnızca aziz ve hamîd olan Allah’a iman ettikleri için öç aldılar,',
         source: 'Qur\'an 85:8',
-        highlight: { english: 'Praiseworthy', turkish: 'övgüye layık' },
+        highlight: { english: 'Praiseworthy', turkish: 'hamîd' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1034,9 +1034,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَلَا تَقْرَبُوا۟ ٱلزِّنَىٰٓ ۖ إِنَّهُۥ كَانَ فَٰحِشَةًۭ وَسَآءَ سَبِيلًۭا',
         english: 'And do not come near fornication. Indeed, it is an immorality and an evil way.',
-        turkish: 'Zinaya yaklaşmayın; çünkü o bir hayâsızlıktır ve kötü bir yoldur.',
+        turkish: 'Zinaya yaklaşmayın; çünkü o bir fahşadır ve kötü bir yoldur.',
         source: 'Qur\'an 17:32',
-        highlight: { english: 'immorality', turkish: 'hayâsızlıktır' },
+        highlight: { english: 'immorality', turkish: 'fahşa' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -1056,9 +1056,9 @@ export const quranVocab11: DeckDef = {
       example: {
         arabic: 'وَكَذَٰلِكَ نُفَصِّلُ ٱلْءَايَٰتِ وَلَعَلَّهُمْ يَرْجِعُونَ',
         english: 'And thus do We explain the signs in detail, so that perhaps they will return.',
-        turkish: 'İşte ayetleri böyle ayrıntılı açıklıyoruz; belki dönerler.',
+        turkish: 'İşte ayetleri böyle tafsil ediyoruz; belki dönerler.',
         source: 'Qur\'an 7:174',
-        highlight: { english: 'explain the signs in detail', turkish: 'ayrıntılı açıklıyoruz' },
+        highlight: { english: 'explain the signs in detail', turkish: 'tafsil ediyoruz' },
       },
       vocab: {
         partOfSpeech: 'fil',

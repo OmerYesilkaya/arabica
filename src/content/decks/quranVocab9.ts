@@ -81,9 +81,9 @@ export const quranVocab9: DeckDef = {
       example: {
         arabic: 'وَمِنَ ٱلنَّاسِ مَن يُجَٰدِلُ فِى ٱللَّهِ بِغَيْرِ عِلْمٍۢ وَيَتَّبِعُ كُلَّ شَيْطَٰنٍۢ مَّرِيدٍۢ',
         english: 'And among the people is he who disputes about Allah without knowledge and follows every rebellious devil.',
-        turkish: 'İnsanlardan kimi, bilgisizce Allah hakkında tartışır ve her azgın şeytanın ardına düşer.',
+        turkish: 'İnsanlardan kimi, bilgisizce Allah hakkında mücadele eder ve her azgın şeytanın ardına düşer.',
         source: 'Qur\'an 22:3',
-        highlight: { english: 'disputes', turkish: 'tartışır' },
+        highlight: { english: 'disputes', turkish: 'mücadele eder' },
       },
       vocab: {
         partOfSpeech: 'fil',
@@ -356,9 +356,9 @@ export const quranVocab9: DeckDef = {
       example: {
         arabic: 'إِذْ هَمَّت طَّآئِفَتَانِ مِنكُمْ أَن تَفْشَلَا وَٱللَّهُ وَلِيُّهُمَا ۗ وَعَلَى ٱللَّهِ فَلْيَتَوَكَّلِ ٱلْمُؤْمِنُونَ',
         english: 'When two parties among you were about to lose heart, though Allah was their protector. And upon Allah let the believers rely.',
-        turkish: 'Hani sizden iki grup bozulmaya yüz tutmuştu; oysa Allah onların dostuydu. Müminler yalnız Allah\'a güvensinler.',
+        turkish: 'Hani sizden iki taife bozulmaya yüz tutmuştu; oysa Allah onların dostuydu. Müminler yalnız Allah’a güvensinler.',
         source: 'Qur\'an 3:122',
-        highlight: { english: 'two parties', turkish: 'iki grup' },
+        highlight: { english: 'two parties', turkish: 'taife' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -651,9 +651,9 @@ export const quranVocab9: DeckDef = {
       example: {
         arabic: 'وَلَا ٱلظُّلُمَٰتُ وَلَا ٱلنُّورُ',
         english: 'nor are the darknesses and the light,',
-        turkish: 'ne karanlıklar ne de aydınlık,',
+        turkish: 'ne zulmetler ne de nur,',
         source: 'Qur\'an 35:20',
-        highlight: { english: 'darknesses', turkish: 'karanlıklar' },
+        highlight: { english: 'darknesses', turkish: 'zulmet' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -673,9 +673,9 @@ export const quranVocab9: DeckDef = {
       example: {
         arabic: 'يَوْمَ هُمْ عَلَى ٱلنَّارِ يُفْتَنُونَ',
         english: 'The Day they will be tried over the Fire.',
-        turkish: 'O gün onlar ateş üzerinde denenirler.',
+        turkish: 'O gün onlar ateş üzerinde imtihan edilirler.',
         source: 'Qur\'an 51:13',
-        highlight: { english: 'tried', turkish: 'denenirler' },
+        highlight: { english: 'tried', turkish: 'imtihan edilirler' },
       },
       vocab: {
         partOfSpeech: 'fil',

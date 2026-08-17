@@ -166,9 +166,9 @@ export const quranVocab5: DeckDef = {
       example: {
         arabic: 'كُلُوا۟ وَتَمَتَّعُوا۟ قَلِيلًا إِنَّكُم مُّجْرِمُونَ',
         english: 'Eat and enjoy yourselves a little; indeed, you are criminals.',
-        turkish: 'Yiyin ve biraz faydalanın; şüphesiz siz suçlularsınız.',
+        turkish: 'Yiyin ve biraz faydalanın; şüphesiz siz mücrimlersiniz.',
         source: 'Qur\'an 77:46',
-        highlight: { english: 'criminals', turkish: 'suçlularsınız' },
+        highlight: { english: 'criminals', turkish: 'mücrim' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -639,9 +639,9 @@ export const quranVocab5: DeckDef = {
       example: {
         arabic: 'وَإِنْ عَزَمُوا۟ ٱلطَّلَٰقَ فَإِنَّ ٱللَّهَ سَمِيعٌ عَلِيمٌۭ',
         english: 'And if they resolve on divorce, then indeed Allah is Hearing and Knowing.',
-        turkish: 'Eğer boşanmaya karar verirlerse, şüphesiz Allah işitendir, bilendir.',
+        turkish: 'Eğer boşanmaya karar verirlerse, şüphesiz Allah semîdir, alîmdir.',
         source: 'Qur\'an 2:227',
-        highlight: { english: 'Hearing', turkish: 'işitendir' },
+        highlight: { english: 'Hearing', turkish: 'semî' },
       },
       vocab: {
         partOfSpeech: 'ism',
@@ -809,9 +809,9 @@ export const quranVocab5: DeckDef = {
       example: {
         arabic: 'وَلَهَدَيْنَٰهُمْ صِرَٰطًۭا مُّسْتَقِيمًۭا',
         english: 'And We would have guided them to a straight path.',
-        turkish: 'Ve onları elbette dosdoğru bir yola iletirdik.',
+        turkish: 'Ve onları elbette dosdoğru bir sırata iletirdik.',
         source: 'Qur\'an 4:68',
-        highlight: { english: 'path', turkish: 'yola' },
+        highlight: { english: 'path', turkish: 'sırat' },
       },
       vocab: {
         partOfSpeech: 'ism',

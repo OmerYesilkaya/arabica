@@ -1,4 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#0e6b4f"/>
-  <text x="256" y="352" font-size="320" text-anchor="middle" fill="#faf7f2" font-family="Noto Naskh Arabic, Geeza Pro, serif">ع</text>
+  <!--
+    The mark: an ayn on a basalt slab.
+
+    Two Basalt tokens and nothing else: the slab is `accent`, the letter is
+    `accent-ink`, the same pair the app's primary button wears. The icon does
+    not follow the colour scheme, so both are the light mode values.
+
+    The letter is the outline of the isolated ayn from IBM Plex Sans Arabic 600,
+    the face the app renders every Arabic form in, lifted at the font's own
+    1000-unit em. It is a path rather than a <text> element on purpose: the old
+    icon asked for Noto Naskh Arabic or Geeza Pro and drew whatever the device
+    had instead, so the mark differed per platform and the favicon needed a font
+    it could not load.
+
+    316px tall on this 512 grid, which is the largest size one drawing can serve
+    every use: it puts the letter's bounding box inside a circle of radius 190,
+    and a maskable icon is only guaranteed the middle 80% (radius 204.8). One
+    size means the masked icon is this file flattened, not a second drawing to
+    keep in step with it.
+
+    Every PNG in icons/ derives from this file:
+      icon-512, icon-192      resize; the transparent corners are the point
+      icon-maskable-512       resize, then flatten onto `accent`, because
+                              Android masks the tile itself and wants
+                              full-bleed art
+      apple-touch-icon (180)  the same, since iOS applies its own squircle and
+                              composites transparent corners to black
+  -->
+  <rect width="512" height="512" rx="112" fill="#1b1c1a"/>
+  <path
+    transform="translate(149.67 307.37) scale(0.33761 -0.33761)"
+    fill="#f2f1ed"
+    d="M341 -304Q199 -304 119 -236.5Q39 -169 39 -45Q39 35 86 99Q133 163 230 208L230 213Q110 286 110 404Q110 450 125.5 491Q141 532 170 563.5Q199 595 240 613.5Q281 632 332 632Q401 632 450 601.5Q499 571 530 519L440 435Q417 470 388 485.5Q359 501 317 501Q263 501 232 475.5Q201 450 201 403Q201 351 241 326Q281 301 355 301Q405 301 473 313L554 327L574 207L443 183Q285 155 212 107Q139 59 139 -19L139 -33Q139 -102 192.5 -137Q246 -172 341 -172Q410 -172 476 -146.5Q542 -121 593 -73L662 -176Q599 -239 517 -271.5Q435 -304 341 -304Z"
+  />
 </svg>
